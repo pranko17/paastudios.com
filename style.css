@@ -1,0 +1,67 @@
+/* PAA Studios — linen and floss, like Stitch Tales */
+:root {
+  --bg: #f2ece0;
+  --surface: #fbf8f2;
+  --text: #2a231c;
+  --muted: #5f5444;
+  --accent: #b3263a;
+  --stitch: #edb3b8;
+}
+
+html {
+  background: var(--bg);
+}
+
+body {
+  margin: 0 auto;
+  max-width: 720px;
+  padding: 32px 20px 64px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  background: var(--bg);
+  color: var(--text);
+}
+
+h1 {
+  font-size: 28px;
+  line-height: 1.25;
+  margin-bottom: 4px;
+}
+
+h2 {
+  font-size: 20px;
+  margin-top: 32px;
+}
+
+a {
+  color: var(--accent);
+}
+
+.date,
+.crumbs,
+.muted {
+  color: var(--muted);
+}
+
+.crumbs {
+  font-size: 14px;
+  margin: 0 0 24px;
+}
+
+.date {
+  margin-top: 0;
+}
+
+/* A patch with a stitched border, like the cards in the game */
+.patch {
+  background: var(--surface);
+  border-radius: 24px;
+  outline: 1.5px dashed var(--stitch);
+  outline-offset: -8px;
+  padding: 24px 28px;
+  margin: 24px 0;
+}
+
+.patch h2 {
+  margin-top: 0;
+}
