@@ -109,10 +109,13 @@ export const games = [
     ],
     support: {
       email: 'pixtangle.support@paastudios.com',
-      url: 'https://pranko17.github.io/pixtangle-legal/support.html',
+      url: '/pixtangle/support.html',
     },
-    privacyPolicy: 'https://pranko17.github.io/pixtangle-legal/privacy-policy.html',
-    pages: [],
+    privacyPolicy: '/pixtangle/privacy-policy.html',
+    pages: [
+      { path: 'privacy-policy.html', title: 'Privacy Policy', content: 'privacy-policy.html' },
+      { path: 'support.html', title: 'Support', content: 'support.html' },
+    ],
   },
   {
     slug: 'stitch-tales',
