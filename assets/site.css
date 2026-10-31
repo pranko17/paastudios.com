@@ -796,9 +796,13 @@ p {
   scrollbar-width: thin;
 }
 
+/* The percent padding of .device resolves against the parent, and here that is
+   the full-width strip: the bezel is set from the phone's own width instead */
 .shot {
+  --shot-width: clamp(190px, 22vw, 250px);
   flex: none;
-  width: clamp(190px, 22vw, 250px);
+  width: var(--shot-width);
+  padding: calc(var(--shot-width) * 0.054);
   scroll-snap-align: start;
 }
 
