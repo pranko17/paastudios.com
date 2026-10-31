@@ -57,7 +57,7 @@ export const games = [
     art: {
       phones: [
         { image: '/pixtangle/images/screen-1.webp', alt: 'A Medium board with rectangles in progress' },
-        { image: '/pixtangle/images/screen-3.webp', alt: 'The finished lion pixel art' },
+        { image: '/pixtangle/images/screen-3.webp', alt: 'The finished sakura pixel art' },
         { image: '/pixtangle/images/screen-4.webp', alt: 'The collection of pixel arts by category' },
       ],
     },
@@ -75,11 +75,12 @@ export const games = [
     },
     screenshots: [
       { image: '/pixtangle/images/screen-1.webp', alt: 'A Medium board with rectangles in progress' },
-      { image: '/pixtangle/images/screen-2.webp', alt: 'The sakura board halfway to its pixel art' },
-      { image: '/pixtangle/images/screen-3.webp', alt: 'The finished lion pixel art' },
+      { image: '/pixtangle/images/screen-2.webp', alt: 'The sakura board before the first rectangle' },
+      { image: '/pixtangle/images/screen-3.webp', alt: 'The finished sakura pixel art' },
       { image: '/pixtangle/images/screen-4.webp', alt: 'Collections of pixel arts by category' },
       { image: '/pixtangle/images/screen-5.webp', alt: 'The daily challenge calendar' },
-      { image: '/pixtangle/images/screen-6.webp', alt: 'Six difficulties of classic levels' },
+      { image: '/pixtangle/images/screen-6.webp', alt: 'A Marathon run: boards against the clock' },
+      { image: '/pixtangle/images/screen-7.webp', alt: 'Six difficulties of classic levels' },
     ],
     features: [
       {
