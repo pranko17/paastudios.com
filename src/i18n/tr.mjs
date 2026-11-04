@@ -49,6 +49,11 @@ export default {
         'zeka oyunu',
         'beyin jimnastiği',
         'akıl oyunu',
+        'oyun',
+        'mobil oyun',
+        'bulmaca oyunu',
+        'ücretsiz oyun',
+        'internetsiz oyun',
       ],
       art: {
         alts: [

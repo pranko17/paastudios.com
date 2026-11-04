@@ -50,6 +50,11 @@ export default {
         'pixel art',
         'trò chơi trí tuệ',
         'rèn luyện trí não',
+        'trò chơi',
+        'game di động',
+        'game giải đố',
+        'game miễn phí',
+        'game offline',
       ],
       art: {
         alts: [

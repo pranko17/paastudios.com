@@ -50,6 +50,10 @@ export default {
         'pixel art',
         'casse-tête',
         'jeu de réflexion',
+        'jeu',
+        'jeu mobile',
+        'jeu gratuit',
+        'jeu hors ligne',
       ],
       art: {
         alts: [

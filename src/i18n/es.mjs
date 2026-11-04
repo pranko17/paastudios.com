@@ -50,6 +50,10 @@ export default {
         'pixel art',
         'rompecabezas',
         'juego de ingenio',
+        'juego',
+        'juego móvil',
+        'juego gratis',
+        'juego sin internet',
       ],
       art: {
         alts: [

@@ -47,6 +47,12 @@ export const games = [
       'number puzzle',
       'pixel art puzzle',
       'brain teaser',
+      'puzzle game',
+      'mobile game',
+      'free game',
+      'offline game',
+      'iphone game',
+      'android game',
     ],
     stores: {
       appStore: { url: 'https://apps.apple.com/app/id6802114673', id: '6802114673' },

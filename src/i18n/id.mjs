@@ -50,6 +50,11 @@ export default {
         'pixel art',
         'seni piksel',
         'asah otak',
+        'game',
+        'game mobile',
+        'game puzzle',
+        'game gratis',
+        'game offline',
       ],
       art: {
         alts: [

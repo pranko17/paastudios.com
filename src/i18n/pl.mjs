@@ -50,6 +50,10 @@ export default {
         'pixel art',
         'zagadki logiczne',
         'gry na myślenie',
+        'gra',
+        'gra mobilna',
+        'darmowa gra',
+        'gra offline',
       ],
       art: {
         alts: [

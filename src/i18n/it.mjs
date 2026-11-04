@@ -50,6 +50,11 @@ export default {
         'pixel art',
         'rompicapo',
         'giochi per la mente',
+        'gioco',
+        'gioco per cellulare',
+        'gioco rompicapo',
+        'gioco gratis',
+        'gioco offline',
       ],
       art: {
         alts: [

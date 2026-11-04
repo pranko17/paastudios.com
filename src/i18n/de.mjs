@@ -50,6 +50,11 @@ export default {
         'Denksport',
         'Knobelspiel',
         'Gehirnjogging',
+        'Spiel',
+        'Handyspiel',
+        'Rätselspiel',
+        'kostenloses Spiel',
+        'Offline-Spiel',
       ],
       art: {
         alts: [

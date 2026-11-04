@@ -50,6 +50,11 @@ export default {
         'pixel art',
         'desafio mental',
         'jogo de raciocínio',
+        'jogo',
+        'jogo para celular',
+        'jogo de quebra-cabeça',
+        'jogo grátis',
+        'jogo offline',
       ],
       art: {
         alts: [
