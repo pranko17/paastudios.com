@@ -1,7 +1,329 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url><loc>https://paastudios.com/</loc></url>
-  <url><loc>https://paastudios.com/pixtangle/</loc></url>
+  <url><loc>https://paastudios.com/pixtangle/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://paastudios.com/pixtangle/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://paastudios.com/pixtangle/ru/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://paastudios.com/pixtangle/uk/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://paastudios.com/pixtangle/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://paastudios.com/pixtangle/fr/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://paastudios.com/pixtangle/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://paastudios.com/pixtangle/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://paastudios.com/pixtangle/pt/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://paastudios.com/pixtangle/pl/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://paastudios.com/pixtangle/tr/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://paastudios.com/pixtangle/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://paastudios.com/pixtangle/ko/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://paastudios.com/pixtangle/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://paastudios.com/pixtangle/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://paastudios.com/pixtangle/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://paastudios.com/pixtangle/id/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://paastudios.com/pixtangle/vi/"/>
+  </url>
+  <url><loc>https://paastudios.com/pixtangle/ru/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://paastudios.com/pixtangle/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://paastudios.com/pixtangle/ru/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://paastudios.com/pixtangle/uk/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://paastudios.com/pixtangle/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://paastudios.com/pixtangle/fr/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://paastudios.com/pixtangle/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://paastudios.com/pixtangle/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://paastudios.com/pixtangle/pt/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://paastudios.com/pixtangle/pl/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://paastudios.com/pixtangle/tr/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://paastudios.com/pixtangle/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://paastudios.com/pixtangle/ko/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://paastudios.com/pixtangle/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://paastudios.com/pixtangle/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://paastudios.com/pixtangle/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://paastudios.com/pixtangle/id/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://paastudios.com/pixtangle/vi/"/>
+  </url>
+  <url><loc>https://paastudios.com/pixtangle/uk/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://paastudios.com/pixtangle/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://paastudios.com/pixtangle/ru/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://paastudios.com/pixtangle/uk/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://paastudios.com/pixtangle/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://paastudios.com/pixtangle/fr/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://paastudios.com/pixtangle/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://paastudios.com/pixtangle/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://paastudios.com/pixtangle/pt/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://paastudios.com/pixtangle/pl/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://paastudios.com/pixtangle/tr/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://paastudios.com/pixtangle/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://paastudios.com/pixtangle/ko/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://paastudios.com/pixtangle/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://paastudios.com/pixtangle/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://paastudios.com/pixtangle/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://paastudios.com/pixtangle/id/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://paastudios.com/pixtangle/vi/"/>
+  </url>
+  <url><loc>https://paastudios.com/pixtangle/de/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://paastudios.com/pixtangle/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://paastudios.com/pixtangle/ru/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://paastudios.com/pixtangle/uk/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://paastudios.com/pixtangle/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://paastudios.com/pixtangle/fr/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://paastudios.com/pixtangle/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://paastudios.com/pixtangle/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://paastudios.com/pixtangle/pt/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://paastudios.com/pixtangle/pl/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://paastudios.com/pixtangle/tr/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://paastudios.com/pixtangle/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://paastudios.com/pixtangle/ko/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://paastudios.com/pixtangle/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://paastudios.com/pixtangle/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://paastudios.com/pixtangle/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://paastudios.com/pixtangle/id/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://paastudios.com/pixtangle/vi/"/>
+  </url>
+  <url><loc>https://paastudios.com/pixtangle/fr/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://paastudios.com/pixtangle/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://paastudios.com/pixtangle/ru/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://paastudios.com/pixtangle/uk/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://paastudios.com/pixtangle/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://paastudios.com/pixtangle/fr/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://paastudios.com/pixtangle/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://paastudios.com/pixtangle/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://paastudios.com/pixtangle/pt/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://paastudios.com/pixtangle/pl/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://paastudios.com/pixtangle/tr/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://paastudios.com/pixtangle/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://paastudios.com/pixtangle/ko/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://paastudios.com/pixtangle/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://paastudios.com/pixtangle/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://paastudios.com/pixtangle/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://paastudios.com/pixtangle/id/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://paastudios.com/pixtangle/vi/"/>
+  </url>
+  <url><loc>https://paastudios.com/pixtangle/es/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://paastudios.com/pixtangle/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://paastudios.com/pixtangle/ru/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://paastudios.com/pixtangle/uk/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://paastudios.com/pixtangle/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://paastudios.com/pixtangle/fr/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://paastudios.com/pixtangle/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://paastudios.com/pixtangle/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://paastudios.com/pixtangle/pt/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://paastudios.com/pixtangle/pl/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://paastudios.com/pixtangle/tr/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://paastudios.com/pixtangle/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://paastudios.com/pixtangle/ko/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://paastudios.com/pixtangle/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://paastudios.com/pixtangle/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://paastudios.com/pixtangle/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://paastudios.com/pixtangle/id/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://paastudios.com/pixtangle/vi/"/>
+  </url>
+  <url><loc>https://paastudios.com/pixtangle/it/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://paastudios.com/pixtangle/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://paastudios.com/pixtangle/ru/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://paastudios.com/pixtangle/uk/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://paastudios.com/pixtangle/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://paastudios.com/pixtangle/fr/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://paastudios.com/pixtangle/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://paastudios.com/pixtangle/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://paastudios.com/pixtangle/pt/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://paastudios.com/pixtangle/pl/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://paastudios.com/pixtangle/tr/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://paastudios.com/pixtangle/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://paastudios.com/pixtangle/ko/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://paastudios.com/pixtangle/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://paastudios.com/pixtangle/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://paastudios.com/pixtangle/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://paastudios.com/pixtangle/id/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://paastudios.com/pixtangle/vi/"/>
+  </url>
+  <url><loc>https://paastudios.com/pixtangle/pt/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://paastudios.com/pixtangle/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://paastudios.com/pixtangle/ru/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://paastudios.com/pixtangle/uk/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://paastudios.com/pixtangle/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://paastudios.com/pixtangle/fr/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://paastudios.com/pixtangle/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://paastudios.com/pixtangle/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://paastudios.com/pixtangle/pt/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://paastudios.com/pixtangle/pl/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://paastudios.com/pixtangle/tr/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://paastudios.com/pixtangle/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://paastudios.com/pixtangle/ko/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://paastudios.com/pixtangle/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://paastudios.com/pixtangle/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://paastudios.com/pixtangle/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://paastudios.com/pixtangle/id/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://paastudios.com/pixtangle/vi/"/>
+  </url>
+  <url><loc>https://paastudios.com/pixtangle/pl/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://paastudios.com/pixtangle/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://paastudios.com/pixtangle/ru/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://paastudios.com/pixtangle/uk/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://paastudios.com/pixtangle/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://paastudios.com/pixtangle/fr/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://paastudios.com/pixtangle/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://paastudios.com/pixtangle/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://paastudios.com/pixtangle/pt/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://paastudios.com/pixtangle/pl/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://paastudios.com/pixtangle/tr/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://paastudios.com/pixtangle/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://paastudios.com/pixtangle/ko/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://paastudios.com/pixtangle/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://paastudios.com/pixtangle/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://paastudios.com/pixtangle/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://paastudios.com/pixtangle/id/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://paastudios.com/pixtangle/vi/"/>
+  </url>
+  <url><loc>https://paastudios.com/pixtangle/tr/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://paastudios.com/pixtangle/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://paastudios.com/pixtangle/ru/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://paastudios.com/pixtangle/uk/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://paastudios.com/pixtangle/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://paastudios.com/pixtangle/fr/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://paastudios.com/pixtangle/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://paastudios.com/pixtangle/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://paastudios.com/pixtangle/pt/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://paastudios.com/pixtangle/pl/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://paastudios.com/pixtangle/tr/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://paastudios.com/pixtangle/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://paastudios.com/pixtangle/ko/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://paastudios.com/pixtangle/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://paastudios.com/pixtangle/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://paastudios.com/pixtangle/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://paastudios.com/pixtangle/id/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://paastudios.com/pixtangle/vi/"/>
+  </url>
+  <url><loc>https://paastudios.com/pixtangle/ja/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://paastudios.com/pixtangle/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://paastudios.com/pixtangle/ru/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://paastudios.com/pixtangle/uk/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://paastudios.com/pixtangle/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://paastudios.com/pixtangle/fr/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://paastudios.com/pixtangle/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://paastudios.com/pixtangle/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://paastudios.com/pixtangle/pt/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://paastudios.com/pixtangle/pl/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://paastudios.com/pixtangle/tr/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://paastudios.com/pixtangle/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://paastudios.com/pixtangle/ko/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://paastudios.com/pixtangle/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://paastudios.com/pixtangle/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://paastudios.com/pixtangle/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://paastudios.com/pixtangle/id/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://paastudios.com/pixtangle/vi/"/>
+  </url>
+  <url><loc>https://paastudios.com/pixtangle/ko/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://paastudios.com/pixtangle/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://paastudios.com/pixtangle/ru/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://paastudios.com/pixtangle/uk/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://paastudios.com/pixtangle/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://paastudios.com/pixtangle/fr/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://paastudios.com/pixtangle/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://paastudios.com/pixtangle/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://paastudios.com/pixtangle/pt/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://paastudios.com/pixtangle/pl/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://paastudios.com/pixtangle/tr/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://paastudios.com/pixtangle/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://paastudios.com/pixtangle/ko/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://paastudios.com/pixtangle/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://paastudios.com/pixtangle/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://paastudios.com/pixtangle/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://paastudios.com/pixtangle/id/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://paastudios.com/pixtangle/vi/"/>
+  </url>
+  <url><loc>https://paastudios.com/pixtangle/zh-hans/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://paastudios.com/pixtangle/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://paastudios.com/pixtangle/ru/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://paastudios.com/pixtangle/uk/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://paastudios.com/pixtangle/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://paastudios.com/pixtangle/fr/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://paastudios.com/pixtangle/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://paastudios.com/pixtangle/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://paastudios.com/pixtangle/pt/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://paastudios.com/pixtangle/pl/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://paastudios.com/pixtangle/tr/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://paastudios.com/pixtangle/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://paastudios.com/pixtangle/ko/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://paastudios.com/pixtangle/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://paastudios.com/pixtangle/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://paastudios.com/pixtangle/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://paastudios.com/pixtangle/id/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://paastudios.com/pixtangle/vi/"/>
+  </url>
+  <url><loc>https://paastudios.com/pixtangle/zh-hant/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://paastudios.com/pixtangle/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://paastudios.com/pixtangle/ru/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://paastudios.com/pixtangle/uk/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://paastudios.com/pixtangle/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://paastudios.com/pixtangle/fr/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://paastudios.com/pixtangle/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://paastudios.com/pixtangle/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://paastudios.com/pixtangle/pt/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://paastudios.com/pixtangle/pl/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://paastudios.com/pixtangle/tr/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://paastudios.com/pixtangle/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://paastudios.com/pixtangle/ko/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://paastudios.com/pixtangle/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://paastudios.com/pixtangle/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://paastudios.com/pixtangle/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://paastudios.com/pixtangle/id/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://paastudios.com/pixtangle/vi/"/>
+  </url>
+  <url><loc>https://paastudios.com/pixtangle/hi/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://paastudios.com/pixtangle/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://paastudios.com/pixtangle/ru/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://paastudios.com/pixtangle/uk/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://paastudios.com/pixtangle/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://paastudios.com/pixtangle/fr/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://paastudios.com/pixtangle/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://paastudios.com/pixtangle/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://paastudios.com/pixtangle/pt/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://paastudios.com/pixtangle/pl/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://paastudios.com/pixtangle/tr/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://paastudios.com/pixtangle/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://paastudios.com/pixtangle/ko/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://paastudios.com/pixtangle/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://paastudios.com/pixtangle/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://paastudios.com/pixtangle/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://paastudios.com/pixtangle/id/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://paastudios.com/pixtangle/vi/"/>
+  </url>
+  <url><loc>https://paastudios.com/pixtangle/id/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://paastudios.com/pixtangle/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://paastudios.com/pixtangle/ru/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://paastudios.com/pixtangle/uk/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://paastudios.com/pixtangle/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://paastudios.com/pixtangle/fr/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://paastudios.com/pixtangle/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://paastudios.com/pixtangle/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://paastudios.com/pixtangle/pt/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://paastudios.com/pixtangle/pl/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://paastudios.com/pixtangle/tr/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://paastudios.com/pixtangle/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://paastudios.com/pixtangle/ko/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://paastudios.com/pixtangle/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://paastudios.com/pixtangle/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://paastudios.com/pixtangle/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://paastudios.com/pixtangle/id/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://paastudios.com/pixtangle/vi/"/>
+  </url>
+  <url><loc>https://paastudios.com/pixtangle/vi/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://paastudios.com/pixtangle/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://paastudios.com/pixtangle/ru/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://paastudios.com/pixtangle/uk/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://paastudios.com/pixtangle/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://paastudios.com/pixtangle/fr/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://paastudios.com/pixtangle/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://paastudios.com/pixtangle/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://paastudios.com/pixtangle/pt/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://paastudios.com/pixtangle/pl/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://paastudios.com/pixtangle/tr/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://paastudios.com/pixtangle/ja/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://paastudios.com/pixtangle/ko/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://paastudios.com/pixtangle/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://paastudios.com/pixtangle/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://paastudios.com/pixtangle/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://paastudios.com/pixtangle/id/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://paastudios.com/pixtangle/vi/"/>
+  </url>
   <url><loc>https://paastudios.com/pixtangle/privacy-policy.html</loc></url>
   <url><loc>https://paastudios.com/pixtangle/support.html</loc></url>
   <url><loc>https://paastudios.com/stitch-tales/</loc></url>

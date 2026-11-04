@@ -2,6 +2,10 @@
 export const studio = {
   name: 'PAA Studios',
   url: 'https://paastudios.com',
+  // Provider token of the App Store Connect account: App Store links carry it
+  // with a campaign name (ct), and App Analytics → Campaigns counts page views
+  // and downloads per campaign. Public — it is part of every such link
+  appStoreProviderToken: '129254796',
   title: 'PAA Studios — small, calm puzzle games',
   description:
     'PAA Studios makes cozy logic puzzle games for iPhone, iPad and Android: Pixtangle and Stitch Tales.',
