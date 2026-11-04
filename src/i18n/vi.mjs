@@ -32,6 +32,36 @@ export default {
     moreFrom: 'Thêm trò chơi từ {studio}',
     language: 'Ngôn ngữ',
     gameTitle: '{name} — {genre} | {studio}',
+    studioEyebrow: 'Studio game độc lập',
+    ourGames: 'Trò chơi của chúng tôi',
+    howWeMake: 'Cách chúng tôi làm trò chơi',
+    sayHello: 'Gửi lời chào',
+    sayHelloText:
+      'Câu hỏi, ý tưởng, một lỗi — hay chỉ là một lời tử tế. Hãy viết cho trò chơi bạn đang chơi, chúng tôi đọc mọi tin nhắn.',
+    discover: 'Khám phá {name}',
+    docDescription: '{title} — {name}, trò chơi của {studio}.',
+  },
+  studio: {
+    title: 'PAA Studios — trò chơi giải đố nhỏ và thư thái',
+    description:
+      'PAA Studios làm những trò chơi giải đố logic ấm áp cho iPhone, iPad và Android: Pixtangle và Stitch Tales.',
+    headline: 'Trò chơi giải đố\nnhỏ và [thư thái].',
+    intro:
+      'Chúng tôi làm những câu đố logic ấm áp cho iPhone, iPad và Android. Mỗi câu đố kết thúc bằng một bức tranh nhỏ — một chú thú pixel art, một chú bướm thêu — và chẳng bao giờ phải vội vàng để đến được đó.',
+    principles: [
+      {
+        title: 'Chơi ngoại tuyến',
+        text: 'Không cần kết nối. Giải đố trên máy bay, trên tàu điện hay ở nơi chẳng có chút sóng nào.',
+      },
+      {
+        title: 'Không cần tài khoản',
+        text: 'Mở trò chơi là chơi. Không đăng ký, không đăng nhập, không phải đưa địa chỉ email.',
+      },
+      {
+        title: 'Tiến trình là của bạn',
+        text: 'Tiến trình nằm trên thiết bị của bạn và được sao lưu vào tài khoản iCloud hoặc Google của chính bạn — chúng tôi không có máy chủ nào để gửi nó đến.',
+      },
+    ],
   },
   games: {
     pixtangle: {
@@ -138,6 +168,70 @@ export default {
           a: 'Sáu mức độ khó đưa bạn từ những bảng Dễ nhỏ đến những bảng Điên rồ lớn đầy dấu chấm hỏi, cùng thử thách hằng ngày mới mỗi ngày và Marathon tính giờ.',
         },
       ],
+    },
+    'stitch-tales': {
+      genre: 'Nonogram thêu chữ thập',
+      tagline: 'Mỗi câu đố là một mũi thêu trong bức tranh lớn hơn.',
+      summary:
+        'Đọc các con số dọc theo hàng và cột, tô đúng các ô — và mỗi nonogram giải xong sẽ được thêu vào một cảnh trên khung thêu của bạn.',
+      platforms: 'iPhone, iPad và Android',
+      keywords: [
+        'nonogram',
+        'giải đố nonogram',
+        'picross',
+        'griddlers',
+        'ô chữ Nhật Bản',
+        'thêu chữ thập',
+        'tranh thêu',
+        'thêu',
+        'trò chơi logic',
+        'giải đố logic',
+        'pixel art',
+        'trò chơi',
+        'game di động',
+        'game giải đố',
+        'game miễn phí',
+        'game offline',
+      ],
+      art: {
+        alt: 'Khung thêu với đồng hoa đã thêu: một chú bướm, mặt trời, những bông hoa và một cây nấm còn chờ thêu',
+      },
+      rules: {
+        steps: [
+          'Các con số cạnh mỗi hàng và cột là độ dài các đoạn ô được tô, theo đúng thứ tự.',
+          'Thêu những ô chắc chắn được tô; đánh dấu X những ô để trống.',
+          'Cẩn thận — một mũi thêu sai sẽ mất một mạng, một trong những trái tim thêu của bạn.',
+          'Giải xong lưới, hình sẽ được thêu vào cảnh trên khung thêu của bạn.',
+        ],
+        alt: 'Nonogram hình chú mèo sắp giải xong: các ô thêu màu đỏ lựu, dấu X ở các ô trống',
+      },
+      features: [
+        {
+          title: 'Những cảnh để thêu',
+          text: 'Đồng hoa, Stonehenge, dã ngoại trái cây, Hệ Mặt Trời, vườn Nhật Bản, nhà búp bê, làng mùa đông, đáy biển và nhiều cảnh khác nữa.',
+        },
+        {
+          title: 'Mũi thêu thật sự',
+          text: 'Mũi sa tanh, mũi xích, mũi xương cá và mũi nút kiểu Pháp — mỗi hình được thêu bằng chỉ và chất liệu riêng.',
+        },
+        {
+          title: 'Khăn thêu bất tận',
+          text: 'Sau cảnh đầu tiên, một chiếc khăn thêu hoa văn dân gian sẽ mở ra — và hoa văn trên đó không bao giờ hết.',
+        },
+        {
+          title: 'Gợi ý khi bị kẹt',
+          text: 'Mở một ô hoặc cả một dòng, rồi thêu tiếp.',
+        },
+        {
+          title: 'Quà mỗi ngày',
+          text: 'Ghé mỗi ngày để nhận phần thưởng tăng dần theo chuỗi ngày của bạn.',
+        },
+        {
+          title: 'Dịu mắt',
+          text: 'Màu vải lanh dịu nhẹ, tiếng thêu êm ái, không cần tài khoản và không cần internet.',
+        },
+      ],
+      supportNote: 'Bạn cũng có thể liên hệ với chúng tôi ngay trong trò chơi: Hồ sơ → Liên hệ.',
     },
   },
 };

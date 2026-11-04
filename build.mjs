@@ -11,13 +11,23 @@ import { fileURLToPath } from 'node:url';
 import { games } from './src/games.mjs';
 import { studio } from './src/studio.mjs';
 import en from './src/i18n/en.mjs';
-import { docPage, gamePage, homePage, notFoundPage, sitemap } from './src/templates.mjs';
+import {
+  docPage,
+  docPath,
+  gamePage,
+  homePage,
+  homePath,
+  IMAGE_WIDTHS,
+  imageVariant,
+  notFoundPage,
+  sitemap,
+} from './src/templates.mjs';
 
 const root = path.dirname(fileURLToPath(import.meta.url));
 
-// Languages in the order of the language list on game pages. English is the
-// source; a language whose file is missing is skipped, and a game page is
-// built only in the languages that translate that game
+// Languages in the order of the language menu. English is the source; a
+// language whose file is missing is skipped, and a game page is built only in
+// the languages that translate that game
 const LOCALE_ORDER = [
   'en',
   'ru',
@@ -38,6 +48,9 @@ const LOCALE_ORDER = [
   'vi',
 ];
 
+// Texts of src/studio.mjs that a translation carries under `studio`
+const STUDIO_KEYS = ['title', 'description', 'headline', 'intro', 'principles'];
+
 async function loadLocales() {
   const locales = [];
   for (const code of LOCALE_ORDER) {
@@ -53,6 +66,16 @@ async function loadLocales() {
     const missing = Object.keys(en.ui).filter((key) => {
       return !(key in locale.ui);
     });
+    // The same for the studio texts of the home page
+    if (code !== 'en') {
+      missing.push(
+        ...STUDIO_KEYS.filter((key) => {
+          return !locale.studio?.[key];
+        }).map((key) => {
+          return `studio.${key}`;
+        })
+      );
+    }
     if (missing.length) {
       console.warn(`${code}: no ${missing.join(', ')} — English used`);
     }
@@ -69,6 +92,12 @@ function localesOf(game) {
   });
 }
 
+// A translated page from content/ exists in every language of its game,
+// the rest only in English
+function docLocalesOf(game, page) {
+  return page.translated ? localesOf(game) : [en];
+}
+
 async function write(file, content) {
   const full = path.join(root, file);
   await mkdir(path.dirname(full), { recursive: true });
@@ -77,10 +106,18 @@ async function write(file, content) {
 }
 
 // Every image a game refers to must be in the repository: a missing file
-// would ship as a broken picture. og.jpg is the link preview from tools/og.py
+// would ship as a broken picture. og.jpg is the link preview from tools/og.py;
+// the icon and screenshots also have their smaller copies
 async function checkImages(game) {
+  const screens = [...(game.art.phones ?? []), ...game.screenshots].map((shot) => {
+    return shot.image;
+  });
   const images = [
     game.icon,
+    imageVariant(game.icon, IMAGE_WIDTHS.icon[0]),
+    ...screens.map((image) => {
+      return imageVariant(image, IMAGE_WIDTHS.screen[0]);
+    }),
     `/${game.slug}/images/og.jpg`,
     game.rules.image,
     game.art.image,
@@ -106,7 +143,12 @@ for (const game of games) {
   await checkImages(game);
 }
 
-await write('index.html', homePage({ studio, games, mosaic, locale: en }));
+for (const locale of locales) {
+  await write(
+    `${homePath(locale).slice(1)}index.html`,
+    homePage({ studio, games, mosaic, locale, locales })
+  );
+}
 for (const game of games) {
   const gameLocales = localesOf(game);
   for (const locale of gameLocales) {
@@ -114,9 +156,23 @@ for (const game of games) {
     await write(`${folder}/index.html`, gamePage({ studio, games, game, locale, locales: gameLocales }));
   }
   for (const page of game.pages) {
-    const content = await readFile(path.join(root, 'content', game.slug, page.content), 'utf8');
-    await write(`${game.slug}/${page.path}`, docPage({ studio, games, game, page, content, locale: en }));
+    const pageLocales = docLocalesOf(game, page);
+    for (const locale of pageLocales) {
+      // English is content/<slug>/<file>, a translation content/<slug>/<code>/<file>
+      const folder = locale.code === 'en' ? game.slug : `${game.slug}/${locale.code}`;
+      const file = path.join(root, 'content', folder, page.content);
+      let content;
+      try {
+        content = await readFile(file, 'utf8');
+      } catch {
+        throw new Error(`${game.slug}: ${page.path} is translated, but there is no ${path.relative(root, file)}`);
+      }
+      await write(
+        docPath(game, page, locale).slice(1),
+        docPage({ studio, games, game, page, content, locale, locales: pageLocales })
+      );
+    }
   }
 }
 await write('404.html', notFoundPage({ studio, games, locale: en }));
-await write('sitemap.xml', sitemap({ studio, games, localesOf }));
+await write('sitemap.xml', sitemap({ studio, games, locales, localesOf, docLocalesOf }));

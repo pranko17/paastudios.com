@@ -32,6 +32,36 @@ export default {
     moreFrom: 'Inne gry {studio}',
     language: 'Język',
     gameTitle: '{name} — {genre} | {studio}',
+    studioEyebrow: 'Niezależne studio gier',
+    ourGames: 'Nasze gry',
+    howWeMake: 'Jak je tworzymy',
+    sayHello: 'Odezwij się',
+    sayHelloText:
+      'Pytanie, pomysł, błąd — albo po prostu miłe słowo. Napisz na adres gry, w którą grasz — czytamy każdą wiadomość.',
+    discover: 'Poznaj {name}',
+    docDescription: '{title}: {name}, gra od {studio}.',
+  },
+  studio: {
+    title: 'PAA Studios — małe, spokojne łamigłówki',
+    description:
+      'PAA Studios tworzy przytulne łamigłówki logiczne na iPhone’a, iPada i Androida: Pixtangle i Stitch Tales.',
+    headline: 'Małe, [spokojne]\nłamigłówki.',
+    intro:
+      'Tworzymy przytulne łamigłówki logiczne na iPhone’a, iPada i Androida. Każda kończy się małym obrazkiem — zwierzakiem w stylu pixel art, wyhaftowanym motylem — i nigdy nie trzeba się do niego spieszyć.',
+    principles: [
+      {
+        title: 'Działa offline',
+        text: 'Internet nie jest potrzebny. Rozwiązuj w samolocie, w metrze albo tam, gdzie nie ma zasięgu.',
+      },
+      {
+        title: 'Bez kont',
+        text: 'Otwórz grę i graj. Bez rejestracji, bez logowania, bez podawania adresu e-mail.',
+      },
+      {
+        title: 'Twój postęp należy do ciebie',
+        text: 'Zostaje na twoim urządzeniu, a jego kopia zapasowa trafia na twoje konto iCloud lub Google — nie mamy serwerów, na które moglibyśmy go wysyłać.',
+      },
+    ],
   },
   games: {
     pixtangle: {
@@ -137,6 +167,69 @@ export default {
           a: 'Sześć poziomów trudności prowadzi od małych plansz na poziomie Łatwy po duże plansze na poziomie Szalony, pełne znaków zapytania, a do tego codzienne wyzwanie, nowe każdego dnia, i Maraton na czas.',
         },
       ],
+    },
+    'stitch-tales': {
+      genre: 'Haftowane obrazki logiczne',
+      tagline: 'Każda łamigłówka to ścieg w większym obrazie.',
+      summary:
+        'Czytaj liczby przy wierszach i kolumnach, haftuj właściwe pola — a każdy rozwiązany obrazek logiczny zostanie wyhaftowany w scenie na twoim tamborku.',
+      platforms: 'iPhone, iPad i Android',
+      keywords: [
+        'obrazki logiczne',
+        'obrazek logiczny',
+        'nonogram',
+        'nonogramy',
+        'picross',
+        'japońskie krzyżówki',
+        'haft krzyżykowy',
+        'haft',
+        'łamigłówka logiczna',
+        'gra logiczna',
+        'gry na myślenie',
+        'gra',
+        'gra mobilna',
+        'darmowa gra',
+        'gra offline',
+      ],
+      art: {
+        alt: 'Tamborek z wyhaftowaną łąką: motyl, słońce, kwiaty i muchomor, który dopiero czeka na wyhaftowanie',
+      },
+      rules: {
+        steps: [
+          'Liczby przy każdym wierszu i kolumnie mówią, ile pól pod rząd wyhaftować w kolejnych odcinkach.',
+          'Haftuj pola, które muszą być wypełnione, a te, które zostają puste, oznaczaj krzyżykiem.',
+          'Uważaj — błędny ścieg kosztuje życie, jedno z wyhaftowanych serc.',
+          'Rozwiąż planszę, a figura zostanie wyhaftowana w scenie na twoim tamborku.',
+        ],
+        alt: 'Prawie rozwiązany obrazek logiczny z kotem: pola wyhaftowane bordową nicią, krzyżyki w pustych',
+      },
+      features: [
+        {
+          title: 'Sceny do wyhaftowania',
+          text: 'Kwitnąca łąka, Stonehenge, owocowy piknik, Układ Słoneczny, ogród japoński, domek dla lalek, zimowa wioska, dno morskie… i nie tylko.',
+        },
+        {
+          title: 'Prawdziwe ściegi hafciarskie',
+          text: 'Ścieg atłaskowy, łańcuszkowy, rybia ość i supełki francuskie — każda figura jest wyszyta własną nicią i ma własną fakturę.',
+        },
+        {
+          title: 'Nieskończony wzornik',
+          text: 'Po pierwszej scenie otwiera się wzornik z ludowymi motywami — a jego wzory nigdy się nie kończą.',
+        },
+        {
+          title: 'Podpowiedzi, gdy utkniesz',
+          text: 'Odkryj jedno pole albo całą linię i haftuj dalej.',
+        },
+        {
+          title: 'Prezent każdego dnia',
+          text: 'Wracaj codziennie po nagrodę, która rośnie razem z serią.',
+        },
+        {
+          title: 'Przyjazna dla oczu',
+          text: 'Łagodne lniane barwy, ciche dźwięki haftowania. Bez konta i bez internetu.',
+        },
+      ],
+      supportNote: 'Możesz też napisać do nas z gry: „Profil” → „Napisz do nas”.',
     },
   },
 };

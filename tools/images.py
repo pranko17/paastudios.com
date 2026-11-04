@@ -2,15 +2,19 @@
 """Prepare a game's images for the site: icon and screenshots in WebP.
 
     python3 tools/images.py <slug> --icon icon-1024.png --screens 01.png 02.png ...
+    python3 tools/images.py <slug>      # only the smaller copies, from the files there
 
 --island draws the camera cutout on the screenshots: the simulator leaves it in
 some frames and not in others, and side by side they look like different phones.
 
-Writes <slug>/images/icon.webp (256 px, shown at up to 120 px) and
-<slug>/images/screen-<n>.webp (600 px wide, shown at up to 280 px), numbered in
-the order given. Needs Pillow with WebP support.
+Writes <slug>/images/icon.webp (256 px, shown at up to 112 px) and
+<slug>/images/screen-<n>.webp (600 px wide, shown at up to 230 px), numbered in
+the order given, and next to each a smaller copy — icon-128.webp and
+screen-<n>-360.webp — for screens of low density (srcset in src/templates.mjs,
+IMAGE_WIDTHS). Needs Pillow with WebP support.
 """
 import argparse
+import glob
 import os
 
 from PIL import Image, ImageDraw
@@ -18,6 +22,9 @@ from PIL import Image, ImageDraw
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ICON_SIZE = 256
 SCREEN_WIDTH = 600
+# Widths of the smaller copies, as in IMAGE_WIDTHS of src/templates.mjs
+ICON_SMALL = 128
+SCREEN_SMALL = 360
 # The cutout as measured on a 1320 x 2868 frame of the 6.9" iPhone
 ISLAND_BOX = (518 / 1320, 42 / 1320, 802 / 1320, 152 / 1320)
 
@@ -26,6 +33,14 @@ def save_webp(image, path, quality):
     os.makedirs(os.path.dirname(path), exist_ok=True)
     image.save(path, 'WEBP', quality=quality, method=6)
     print(f'{os.path.relpath(path, ROOT)}  {os.path.getsize(path) // 1024} KB')
+
+
+def save_small(path, width, quality):
+    image = Image.open(path).convert('RGB')
+    height = round(image.height * width / image.width)
+    small = image.resize((width, height), Image.LANCZOS)
+    base, ext = os.path.splitext(path)
+    save_webp(small, f'{base}-{width}{ext}', quality)
 
 
 def main():
@@ -49,6 +64,13 @@ def main():
         height = round(screen.height * SCREEN_WIDTH / screen.width)
         screen = screen.resize((SCREEN_WIDTH, height), Image.LANCZOS)
         save_webp(screen, os.path.join(folder, f'screen-{index}.webp'), 82)
+
+    icon_path = os.path.join(folder, 'icon.webp')
+    if os.path.exists(icon_path):
+        save_small(icon_path, ICON_SMALL, 90)
+    for path in sorted(glob.glob(os.path.join(folder, 'screen-*.webp'))):
+        if not path.endswith(f'-{SCREEN_SMALL}.webp'):
+            save_small(path, SCREEN_SMALL, 82)
 
 
 if __name__ == '__main__':

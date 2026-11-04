@@ -32,6 +32,36 @@ export default {
     moreFrom: 'Outros jogos de {studio}',
     language: 'Idioma',
     gameTitle: '{name} — {genre} | {studio}',
+    studioEyebrow: 'Estúdio independente de jogos',
+    ourGames: 'Nossos jogos',
+    howWeMake: 'Como fazemos nossos jogos',
+    sayHello: 'Diga oi',
+    sayHelloText:
+      'Dúvidas, ideias, um bug — ou só uma palavra gentil. Escreva para o jogo que você joga: lemos todas as mensagens.',
+    discover: 'Conheça {name}',
+    docDescription: '{title} do {name}, jogo da {studio}.',
+  },
+  studio: {
+    title: 'PAA Studios — jogos de quebra-cabeça pequenos e tranquilos',
+    description:
+      'A PAA Studios cria jogos de lógica aconchegantes para iPhone, iPad e Android: Pixtangle e Stitch Tales.',
+    headline: 'Jogos de lógica\npequenos e [tranquilos].',
+    intro:
+      'Criamos quebra-cabeças de lógica aconchegantes para iPhone, iPad e Android. Cada um termina com uma pequena imagem — um bichinho em pixel art, uma borboleta bordada — e nunca há pressa para chegar lá.',
+    principles: [
+      {
+        title: 'Funciona offline',
+        text: 'Não precisa de conexão. Resolva quebra-cabeças no avião, no metrô ou onde não houver sinal algum.',
+      },
+      {
+        title: 'Sem conta',
+        text: 'Abra o jogo e jogue. Sem cadastro, sem login, sem ter que informar seu e-mail.',
+      },
+      {
+        title: 'Seu progresso é seu',
+        text: 'Ele fica no seu aparelho e tem backup na sua própria conta do iCloud ou do Google — não temos servidores para onde enviá-lo.',
+      },
+    ],
   },
   games: {
     pixtangle: {
@@ -138,6 +168,69 @@ export default {
           a: 'Seis dificuldades levam você de pequenos tabuleiros no Fácil a grandes tabuleiros no Insano cheios de pontos de interrogação, além de um desafio diário novo todo dia e uma Maratona contra o relógio.',
         },
       ],
+    },
+    'stitch-tales': {
+      genre: 'Nonograma em ponto cruz',
+      tagline: 'Cada quebra-cabeça é um ponto de uma imagem maior.',
+      summary:
+        'Leia os números ao longo das linhas e colunas, preencha as casas certas — e cada nonograma resolvido é bordado numa cena do seu bastidor.',
+      platforms: 'iPhone, iPad e Android',
+      keywords: [
+        'nonograma',
+        'nonogram',
+        'jogo de nonograma',
+        'picross',
+        'griddlers',
+        'ponto cruz',
+        'bordado',
+        'quebra-cabeça de lógica',
+        'jogo de lógica',
+        'pixel art',
+        'jogo',
+        'jogo para celular',
+        'jogo de quebra-cabeça',
+        'jogo grátis',
+        'jogo offline',
+      ],
+      art: {
+        alt: 'Um bastidor com um campo florido bordado: uma borboleta, um sol, flores e um cogumelo ainda por bordar',
+      },
+      rules: {
+        steps: [
+          'Os números ao lado de cada linha e coluna são os trechos de casas preenchidas, em ordem.',
+          'Borde as casas que precisam ser preenchidas; marque com uma cruz as que ficam vazias.',
+          'Cuidado — um ponto errado custa uma vida, um dos seus corações bordados.',
+          'Resolva a grade, e a figura é bordada na cena do seu bastidor.',
+        ],
+        alt: 'Um nonograma de um gato quase resolvido: casas bordadas em grená e cruzes nas vazias',
+      },
+      features: [
+        {
+          title: 'Cenas para bordar',
+          text: 'Um campo florido, Stonehenge, um piquenique de frutas, o sistema solar, um jardim japonês, uma casa de bonecas, uma vila de inverno, o fundo do mar… e muito mais.',
+        },
+        {
+          title: 'Pontos de bordado de verdade',
+          text: 'Ponto cheio, ponto corrente, espinha de peixe e nó francês — cada figura é bordada com linha e textura próprias.',
+        },
+        {
+          title: 'Uma toalha bordada sem fim',
+          text: 'Depois da primeira cena, abre-se uma toalha bordada com motivos folclóricos — e os motivos nunca acabam.',
+        },
+        {
+          title: 'Dicas quando você travar',
+          text: 'Revele uma casa ou uma linha inteira e continue bordando.',
+        },
+        {
+          title: 'Um presente todo dia',
+          text: 'Volte todos os dias para ganhar uma recompensa que cresce com a sua sequência.',
+        },
+        {
+          title: 'Descanso para os olhos',
+          text: 'Tons suaves de linho, sons delicados de bordado, sem conta e sem precisar de internet.',
+        },
+      ],
+      supportNote: 'Você também pode falar com a gente pelo jogo, em Perfil → Fale conosco.',
     },
   },
 };

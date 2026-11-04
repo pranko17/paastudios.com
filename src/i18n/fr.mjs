@@ -32,6 +32,36 @@ export default {
     moreFrom: 'Autres jeux de {studio}',
     language: 'Langue',
     gameTitle: '{name} — {genre} | {studio}',
+    studioEyebrow: 'Studio de jeux indépendant',
+    ourGames: 'Nos jeux',
+    howWeMake: 'Notre façon de faire',
+    sayHello: 'Dites-nous bonjour',
+    sayHelloText:
+      'Une question, une idée, un bug — ou simplement un mot gentil. Écrivez au jeu auquel vous jouez : nous lisons chaque message.',
+    discover: 'Découvrir {name}',
+    docDescription: '{title} — {name}, un jeu de {studio}.',
+  },
+  studio: {
+    title: 'PAA Studios — de petits jeux de réflexion apaisants',
+    description:
+      'PAA Studios crée des casse-têtes logiques tout en douceur pour iPhone, iPad et Android : Pixtangle et Stitch Tales.',
+    headline: 'Petits casse-têtes,\ngrand [calme].',
+    intro:
+      'Nous créons des casse-têtes logiques tout en douceur pour iPhone, iPad et Android. Chaque énigme se termine par une petite image — un animal en pixel art, un papillon brodé — et rien ne presse pour y arriver.',
+    principles: [
+      {
+        title: 'Se joue hors ligne',
+        text: 'Aucune connexion nécessaire. Jouez en avion, dans le métro ou là où il n’y a pas de réseau du tout.',
+      },
+      {
+        title: 'Sans compte',
+        text: 'Ouvrez le jeu et jouez. Pas d’inscription, pas d’identifiant, pas d’adresse e-mail à fournir.',
+      },
+      {
+        title: 'Votre progression vous appartient',
+        text: 'Elle reste sur votre appareil et est sauvegardée sur votre propre compte iCloud ou Google — nous n’avons aucun serveur où l’envoyer.',
+      },
+    ],
   },
   games: {
     pixtangle: {
@@ -137,6 +167,69 @@ export default {
           a: 'Six difficultés vous mènent des petites grilles Facile aux grandes grilles Démentiel remplies de points d’interrogation, avec en plus un défi quotidien, nouveau chaque jour, et un Marathon chronométré.',
         },
       ],
+    },
+    'stitch-tales': {
+      genre: 'Logimage au point de croix',
+      tagline: 'Chaque énigme est un point dans un tableau plus grand.',
+      summary:
+        'Lisez les chiffres le long des lignes et des colonnes, brodez les bonnes cases — et chaque logimage résolu vient se broder dans une scène de votre tambour.',
+      platforms: 'iPhone, iPad et Android',
+      keywords: [
+        'logimage',
+        'nonogramme',
+        'nonogram',
+        'picross',
+        'hanjie',
+        'point de croix',
+        'broderie',
+        'jeu de logique',
+        'casse-tête logique',
+        'pixel art',
+        'jeu',
+        'jeu mobile',
+        'jeu de réflexion',
+        'jeu gratuit',
+        'jeu hors ligne',
+      ],
+      art: {
+        alt: 'Un tambour de broderie avec une prairie fleurie brodée : un papillon, un soleil, des fleurs et un champignon encore à broder',
+      },
+      rules: {
+        steps: [
+          'Les chiffres à côté de chaque ligne et de chaque colonne donnent, dans l’ordre, les blocs de cases remplies.',
+          'Brodez les cases à remplir ; marquez d’une croix celles qui restent vides.',
+          'Attention — un point mal placé vous coûte une vie, l’un de vos cœurs brodés.',
+          'Résolvez la grille, et la figure vient se broder dans la scène de votre tambour.',
+        ],
+        alt: 'Un logimage de chat presque résolu : des cases brodées grenat, des croix dans les cases vides',
+      },
+      features: [
+        {
+          title: 'Des scènes à broder',
+          text: 'Une prairie fleurie, Stonehenge, un pique-nique fruité, le système solaire, un jardin japonais, une maison de poupée, un village d’hiver, le monde sous la mer… et bien d’autres.',
+        },
+        {
+          title: 'De vrais points de broderie',
+          text: 'Passé plat, point de chaînette, point d’arête et points de nœud — chaque figure est brodée avec son propre fil et sa propre texture.',
+        },
+        {
+          title: 'Un marquoir sans fin',
+          text: 'Après votre première scène, un marquoir de motifs traditionnels s’ouvre à vous — et ses motifs ne s’épuisent jamais.',
+        },
+        {
+          title: 'Des indices quand vous bloquez',
+          text: 'Révélez une case ou une ligne entière, et continuez à broder.',
+        },
+        {
+          title: 'Un cadeau chaque jour',
+          text: 'Revenez chaque jour pour une récompense qui grandit avec votre série.',
+        },
+        {
+          title: 'Doux pour les yeux',
+          text: 'Des couleurs de lin tout en douceur, le léger bruit de l’aiguille, sans compte et sans connexion.',
+        },
+      ],
+      supportNote: 'Vous pouvez aussi nous écrire depuis le jeu : Profil → Nous écrire.',
     },
   },
 };

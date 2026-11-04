@@ -24,11 +24,16 @@
 //   support       email, optional support page url and note
 //   privacyPolicy url of the game's privacy policy; a policy kept in this
 //                 repository is listed in `pages` and built from content/
-//   pages         extra pages of the game: { path, title, content } —
-//                 content/<slug>/<file> holds the page body
+//   pages         extra pages of the game: { path, titleKey, content,
+//                 translated } — content/<slug>/<file> holds the page body,
+//                 titleKey names its title among the interface strings
+//                 (src/i18n); a translated page has its body in every language
+//                 of the game, content/<slug>/<code>/<file>, and lives at
+//                 /<slug>/<code>/<path>
 //
 // Texts here are English; translations live in src/i18n/<language>.mjs under
-// `games.<slug>` and replace them on the game page in that language.
+// `games.<slug>` and replace them on the game page in that language (the
+// support note — as `supportNote`).
 export const games = [
   {
     slug: 'pixtangle',
@@ -167,8 +172,8 @@ export const games = [
     },
     privacyPolicy: '/pixtangle/privacy-policy.html',
     pages: [
-      { path: 'privacy-policy.html', title: 'Privacy Policy', content: 'privacy-policy.html' },
-      { path: 'support.html', title: 'Support', content: 'support.html' },
+      { path: 'privacy-policy.html', titleKey: 'privacyPolicy', content: 'privacy-policy.html' },
+      { path: 'support.html', titleKey: 'support', content: 'support.html', translated: true },
     ],
   },
   {
@@ -179,6 +184,22 @@ export const games = [
     summary:
       'Read the numbers along the rows and columns, fill the right cells — and each solved nonogram is embroidered into a scene in your hoop.',
     platforms: 'iPhone, iPad and Android',
+    keywords: [
+      'nonogram',
+      'cross stitch',
+      'embroidery',
+      'picross',
+      'griddlers',
+      'japanese crossword',
+      'logic puzzle',
+      'pixel art puzzle',
+      'puzzle game',
+      'mobile game',
+      'free game',
+      'offline game',
+      'iphone game',
+      'android game',
+    ],
     stores: {},
     theme: {
       scheme: 'light',
@@ -216,8 +237,8 @@ export const games = [
     screenshots: [],
     features: [
       {
-        title: 'Eight scenes to embroider',
-        text: 'A meadow, Stonehenge, a picnic, the solar system, a Japanese garden, a dollhouse, a winter village and the sea floor.',
+        title: 'Scenes to embroider',
+        text: 'A meadow, Stonehenge, a picnic, the solar system, a Japanese garden, a dollhouse, a winter village, the sea floor — and more.',
       },
       {
         title: 'Real embroidery stitches',
@@ -246,7 +267,7 @@ export const games = [
     },
     privacyPolicy: '/stitch-tales/privacy-policy.html',
     pages: [
-      { path: 'privacy-policy.html', title: 'Privacy Policy', content: 'privacy-policy.html' },
+      { path: 'privacy-policy.html', titleKey: 'privacyPolicy', content: 'privacy-policy.html' },
     ],
   },
 ];

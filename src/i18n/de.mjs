@@ -32,6 +32,36 @@ export default {
     moreFrom: 'Mehr von {studio}',
     language: 'Sprache',
     gameTitle: '{name} — {genre} | {studio}',
+    studioEyebrow: 'Unabhängiges Spielestudio',
+    ourGames: 'Unsere Spiele',
+    howWeMake: 'Wie wir sie machen',
+    sayHello: 'Sag Hallo',
+    sayHelloText:
+      'Fragen, Ideen, ein Fehler — oder einfach ein nettes Wort. Schreib an das Spiel, das du spielst: Wir lesen jede Nachricht.',
+    discover: '{name} entdecken',
+    docDescription: '{title} für {name} von {studio}.',
+  },
+  studio: {
+    title: 'PAA Studios — kleine, ruhige Rätselspiele',
+    description:
+      'PAA Studios macht gemütliche Logikrätsel für iPhone, iPad und Android: Pixtangle und Stitch Tales.',
+    headline: 'Kleine, [ruhige]\nRätselspiele.',
+    intro:
+      'Wir machen gemütliche Logikrätsel für iPhone, iPad und Android. Jedes Rätsel endet mit einem kleinen Bild — einem Tier in Pixel-Art, einem gestickten Schmetterling —, und auf dem Weg dorthin drängt dich nichts.',
+    principles: [
+      {
+        title: 'Funktioniert offline',
+        text: 'Keine Verbindung nötig. Rätsle im Flugzeug, in der U-Bahn oder dort, wo es gar keinen Empfang gibt.',
+      },
+      {
+        title: 'Kein Konto',
+        text: 'Spiel öffnen und loslegen. Keine Registrierung, kein Login, keine E-Mail-Adresse, die du hergeben musst.',
+      },
+      {
+        title: 'Dein Fortschritt gehört dir',
+        text: 'Er bleibt auf deinem Gerät und wird in deinem eigenen iCloud- oder Google-Konto gesichert — wir haben keine Server, an die wir ihn schicken könnten.',
+      },
+    ],
   },
   games: {
     pixtangle: {
@@ -138,6 +168,70 @@ export default {
           a: 'Sechs Schwierigkeitsgrade führen dich von kleinen Feldern auf „Leicht“ bis zu großen Feldern auf „Wahnsinn“ voller Fragezeichen, dazu kommen die tägliche Herausforderung, jeden Tag neu, und der Marathon gegen die Uhr.',
         },
       ],
+    },
+    'stitch-tales': {
+      genre: 'Kreuzstich-Nonogramm',
+      tagline: 'Jedes Rätsel ist ein Stich in einem größeren Bild.',
+      summary:
+        'Lies die Zahlen an Zeilen und Spalten, stick die richtigen Felder — und jedes gelöste Nonogramm wird in eine Szene in deinem Stickrahmen gestickt.',
+      platforms: 'iPhone, iPad und Android',
+      keywords: [
+        'Nonogramm',
+        'Nonogram',
+        'Picross',
+        'Griddlers',
+        'Hanjie',
+        'japanisches Rätsel',
+        'Logikbild',
+        'Kreuzstich',
+        'Stickerei',
+        'Logikrätsel',
+        'Pixel-Art-Rätsel',
+        'Spiel',
+        'Handyspiel',
+        'Rätselspiel',
+        'kostenloses Spiel',
+        'Offline-Spiel',
+      ],
+      art: {
+        alt: 'Ein Stickrahmen mit einer gestickten Blumenwiese: ein Schmetterling, eine Sonne, Blumen und ein Fliegenpilz, der noch gestickt werden will',
+      },
+      rules: {
+        steps: [
+          'Die Zahlen neben jeder Zeile und Spalte geben der Reihe nach die Blöcke gefüllter Felder an.',
+          'Sticke die Felder, die gefüllt sein müssen; markiere die, die leer bleiben, mit einem Kreuz.',
+          'Vorsicht — ein falscher Stich kostet ein Leben, eines deiner gestickten Herzen.',
+          'Löse das Gitter, und die Figur wird in die Szene in deinem Stickrahmen gestickt.',
+        ],
+        alt: 'Ein fast gelöstes Nonogramm mit einer Katze: granatrot gestickte Felder, Kreuze in den leeren',
+      },
+      features: [
+        {
+          title: 'Szenen zum Sticken',
+          text: 'Eine Blumenwiese, Stonehenge, ein Obstpicknick, das Sonnensystem, ein japanischer Garten, ein Puppenhaus, ein Winterdorf, der Meeresgrund — und noch mehr.',
+        },
+        {
+          title: 'Echte Stickstiche',
+          text: 'Plattstich, Kettenstich, Fischgrätstich und Knötchenstich — jede Figur wird mit eigenem Garn und eigener Struktur gestickt.',
+        },
+        {
+          title: 'Ein endloses Mustertuch',
+          text: 'Nach deiner ersten Szene öffnet sich ein Mustertuch mit traditionellen Mustern — und seine Muster gehen nie aus.',
+        },
+        {
+          title: 'Hinweise, wenn du feststeckst',
+          text: 'Deck ein einzelnes Feld oder eine ganze Linie auf und stick weiter.',
+        },
+        {
+          title: 'Jeden Tag ein Geschenk',
+          text: 'Komm jeden Tag wieder: Die Tagesbelohnung wächst mit deiner Serie.',
+        },
+        {
+          title: 'Schonend für die Augen',
+          text: 'Sanfte Leinenfarben, leise Stickgeräusche, kein Konto und kein Internet nötig.',
+        },
+      ],
+      supportNote: 'Du erreichst uns auch im Spiel unter Profil → Schreib uns.',
     },
   },
 };

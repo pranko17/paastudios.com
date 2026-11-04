@@ -1,5 +1,6 @@
 // English — the source language of the site. A translation is a file next to
-// this one with the same shape: `ui` for the interface and, under `games`, the
+// this one with the same shape: `ui` for the interface, `studio` for the
+// texts of the home page that override src/studio.mjs and, under `games`, the
 // texts of each game that override the English ones in src/games.mjs.
 // `{name}`-style placeholders are filled in by the templates.
 export default {
@@ -34,6 +35,14 @@ export default {
     moreFrom: 'More from {studio}',
     language: 'Language',
     gameTitle: '{name} — {genre} | {studio}',
+    studioEyebrow: 'Independent game studio',
+    ourGames: 'Our games',
+    howWeMake: 'How we make them',
+    sayHello: 'Say hello',
+    sayHelloText:
+      'Questions, ideas, a bug — or just a kind word. Write to the game you play, we read every message.',
+    discover: 'Discover {name}',
+    docDescription: '{title} of {name} by {studio}.',
   },
   games: {},
 };

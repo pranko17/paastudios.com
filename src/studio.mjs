@@ -1,4 +1,6 @@
 // The studio itself: what the home page says about it and how to reach it.
+// Texts here are English; translations live in src/i18n/<language>.mjs under
+// `studio` and replace title, description, headline, intro and principles.
 export const studio = {
   name: 'PAA Studios',
   url: 'https://paastudios.com',
@@ -9,7 +11,8 @@ export const studio = {
   title: 'PAA Studios — small, calm puzzle games',
   description:
     'PAA Studios makes cozy logic puzzle games for iPhone, iPad and Android: Pixtangle and Stitch Tales.',
-  headline: 'Small, calm puzzle games.',
+  // [brackets] mark the stitched word, \n the line break
+  headline: 'Small, [calm]\npuzzle games.',
   intro:
     'We make cozy logic puzzles for iPhone, iPad and Android. Every puzzle ends with a little picture — a pixel-art animal, an embroidered butterfly — and there is never a rush to get there.',
   principles: [

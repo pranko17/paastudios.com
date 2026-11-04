@@ -32,6 +32,36 @@ export default {
     moreFrom: 'Game lain dari {studio}',
     language: 'Bahasa',
     gameTitle: '{name} — {genre} | {studio}',
+    studioEyebrow: 'Studio game independen',
+    ourGames: 'Game kami',
+    howWeMake: 'Cara kami membuatnya',
+    sayHello: 'Sapa kami',
+    sayHelloText:
+      'Pertanyaan, ide, bug — atau sekadar kata-kata baik. Tulis ke alamat game yang kamu mainkan, kami membaca setiap pesan.',
+    discover: 'Jelajahi {name}',
+    docDescription: '{title} {name}, game dari {studio}.',
+  },
+  studio: {
+    title: 'PAA Studios — game teka-teki kecil yang menenangkan',
+    description:
+      'PAA Studios membuat game teka-teki logika yang nyaman untuk iPhone, iPad, dan Android: Pixtangle dan Stitch Tales.',
+    headline: 'Game teka-teki kecil\nyang [tenang].',
+    intro:
+      'Kami membuat teka-teki logika yang nyaman untuk iPhone, iPad, dan Android. Setiap teka-teki berakhir dengan gambar kecil — hewan pixel art, kupu-kupu sulaman — dan kamu tak pernah perlu terburu-buru untuk sampai ke sana.',
+    principles: [
+      {
+        title: 'Main tanpa internet',
+        text: 'Tidak perlu koneksi. Pecahkan teka-teki di pesawat, di kereta, atau di tempat tanpa sinyal sama sekali.',
+      },
+      {
+        title: 'Tanpa akun',
+        text: 'Buka game dan langsung main. Tanpa daftar, tanpa login, tanpa perlu menyerahkan alamat email.',
+      },
+      {
+        title: 'Progresmu milikmu',
+        text: 'Progres tersimpan di perangkatmu dan dicadangkan ke akun iCloud atau Google milikmu sendiri — kami tidak punya server untuk menampungnya.',
+      },
+    ],
   },
   games: {
     pixtangle: {
@@ -138,6 +168,70 @@ export default {
           a: 'Enam tingkat kesulitan membawamu dari papan Mudah yang kecil hingga papan Gila yang besar dan penuh tanda tanya, ditambah tantangan harian yang baru setiap hari dan Maraton berbatas waktu.',
         },
       ],
+    },
+    'stitch-tales': {
+      genre: 'Nonogram kristik',
+      tagline: 'Setiap teka-teki adalah satu jahitan dalam gambar yang lebih besar.',
+      summary:
+        'Baca angka di sepanjang baris dan kolom, isi kotak yang benar — dan setiap nonogram yang terpecahkan tersulam ke dalam gambar di bingkai sulammu.',
+      platforms: 'iPhone, iPad, dan Android',
+      keywords: [
+        'nonogram',
+        'teka-teki nonogram',
+        'picross',
+        'griddlers',
+        'teka-teki gambar',
+        'kristik',
+        'sulam silang',
+        'sulaman',
+        'teka-teki logika',
+        'puzzle logika',
+        'pixel art',
+        'game',
+        'game mobile',
+        'game puzzle',
+        'game gratis',
+        'game offline',
+      ],
+      art: {
+        alt: 'Bingkai sulam dengan padang bunga tersulam: kupu-kupu, matahari, bunga-bunga, dan jamur yang belum disulam',
+      },
+      rules: {
+        steps: [
+          'Angka di samping setiap baris dan kolom menunjukkan potongan kotak terisi, berurutan.',
+          'Sulam kotak yang harus terisi; tandai kotak yang tetap kosong dengan silang.',
+          'Hati-hati — satu sulaman yang salah mengurangi satu nyawa, salah satu hati sulamanmu.',
+          'Pecahkan kisinya, dan figurnya tersulam ke dalam gambar di bingkai sulammu.',
+        ],
+        alt: 'Nonogram kucing yang hampir terpecahkan: kotak tersulam merah delima, silang di kotak kosong',
+      },
+      features: [
+        {
+          title: 'Adegan untuk disulam',
+          text: 'Padang bunga, Stonehenge, piknik buah, tata surya, taman Jepang, rumah boneka, desa musim dingin, dunia bawah laut, dan masih banyak lagi.',
+        },
+        {
+          title: 'Tusuk sulam sungguhan',
+          text: 'Tusuk satin, tusuk rantai, tusuk tulang ikan, dan simpul Prancis — setiap figur disulam dengan benang dan teksturnya sendiri.',
+        },
+        {
+          title: 'Kain sulam tanpa akhir',
+          text: 'Setelah adegan pertamamu, terbukalah kain sulam bermotif tradisional — dan polanya tak pernah habis.',
+        },
+        {
+          title: 'Petunjuk saat buntu',
+          text: 'Buka satu kotak atau satu garis penuh, lalu lanjutkan menyulam.',
+        },
+        {
+          title: 'Hadiah setiap hari',
+          text: 'Datang setiap hari untuk hadiah yang makin besar seiring rentetanmu.',
+        },
+        {
+          title: 'Nyaman di mata',
+          text: 'Warna linen yang lembut, suara sulaman yang halus, tanpa akun dan tanpa perlu internet.',
+        },
+      ],
+      supportNote: 'Kamu juga bisa menghubungi kami dari dalam game: Profil → Hubungi kami.',
     },
   },
 };

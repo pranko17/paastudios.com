@@ -31,6 +31,36 @@ export default {
     moreFrom: '{studio} imzalı diğer oyunlar',
     language: 'Dil',
     gameTitle: '{name} — {genre} | {studio}',
+    studioEyebrow: 'Bağımsız oyun stüdyosu',
+    ourGames: 'Oyunlarımız',
+    howWeMake: 'Nasıl yapıyoruz',
+    sayHello: 'Merhaba de',
+    sayHelloText:
+      'Bir soru, bir fikir, bir hata — ya da sadece güzel bir söz. Oynadığın oyunun adresine yaz; her mesajı okuyoruz.',
+    discover: '{name} oyununu keşfet',
+    docDescription: '{title} — {studio} imzalı {name}.',
+  },
+  studio: {
+    title: 'PAA Studios — küçük, sakin bulmaca oyunları',
+    description:
+      'PAA Studios; iPhone, iPad ve Android için keyifli mantık bulmacası oyunları yapar: Pixtangle ve Stitch Tales.',
+    headline: 'Küçük, [sakin]\nbulmaca oyunları.',
+    intro:
+      'iPhone, iPad ve Android için keyifli mantık bulmacaları yapıyoruz. Her bulmaca küçük bir resimle biter — piksel sanat bir hayvan, nakışla işlenmiş bir kelebek — ve oraya varmak için hiç acele etmen gerekmez.',
+    principles: [
+      {
+        title: 'Çevrimdışı oynanır',
+        text: 'İnternet gerekmez. Uçakta, metroda ya da hiç çekmeyen bir yerde bulmaca çöz.',
+      },
+      {
+        title: 'Hesap yok',
+        text: 'Oyunu aç ve oyna. Kayıt yok, giriş yok, vermen gereken bir e-posta adresi yok.',
+      },
+      {
+        title: 'İlerlemen sana ait',
+        text: 'Cihazında durur ve kendi iCloud ya da Google hesabına yedeklenir — onu göndereceğimiz bir sunucumuz yok.',
+      },
+    ],
   },
   games: {
     pixtangle: {
@@ -137,6 +167,69 @@ export default {
           a: 'Altı zorluk seni küçük Kolay tahtalardan soru işaretleriyle dolu büyük Çılgın tahtalara götürür; üstüne her gün yenilenen günlük meydan okuma ve zamana karşı Maraton var.',
         },
       ],
+    },
+    'stitch-tales': {
+      genre: 'Nakışlı nonogram bulmacası',
+      tagline: 'Her bulmaca, büyük bir resmin tek bir dikişi.',
+      summary:
+        'Satır ve sütunların yanındaki sayıları oku, doğru kareleri dik — çözdüğün her nonogram kasnağındaki sahneye işlensin.',
+      platforms: 'iPhone, iPad ve Android',
+      keywords: [
+        'nonogram',
+        'nonogram bulmaca',
+        'picross',
+        'japon bulmacası',
+        'resimli bulmaca',
+        'kanaviçe',
+        'nakış',
+        'etamin',
+        'mantık bulmacası',
+        'zeka oyunu',
+        'oyun',
+        'mobil oyun',
+        'bulmaca oyunu',
+        'ücretsiz oyun',
+        'internetsiz oyun',
+      ],
+      art: {
+        alt: 'İçinde nakışlı bir çayır olan kasnak: kelebek, güneş, çiçekler ve henüz işlenmemiş bir mantar',
+      },
+      rules: {
+        steps: [
+          'Her satırın ve sütunun yanındaki sayılar, sırayla yan yana kaç kare dikileceğini gösterir.',
+          'Dolu olması gereken kareleri dik; boş kalacakları çarpıyla işaretle.',
+          'Dikkat: her yanlış dikiş bir can götürür — nakışlı kalplerinden biri kırılır.',
+          'Izgarayı çöz; figür kasnağındaki sahneye işlensin.',
+        ],
+        alt: 'Neredeyse çözülmüş bir kedi nonogramı: nar kırmızısı iplikle dikilmiş kareler, boş olanlarda çarpılar',
+      },
+      features: [
+        {
+          title: 'İşlenecek sahneler',
+          text: 'Çiçekli çayır, Stonehenge, meyve pikniği, Güneş Sistemi, Japon bahçesi, bebek evi, kış köyü, deniz dibi ve daha fazlası.',
+        },
+        {
+          title: 'Gerçek nakış teknikleri',
+          text: 'Saten dolgu, zincir işi, balık kılçığı ve Fransız düğümü — her figür kendi ipliği ve dokusuyla işlenir.',
+        },
+        {
+          title: 'Sonsuz bir etamin',
+          text: 'İlk sahneni bitirince halk motifleriyle bir etamin açılır — ve desenleri hiç bitmez.',
+        },
+        {
+          title: 'Takıldığında ipuçları',
+          text: 'Tek bir kareyi ya da bütün bir satırı veya sütunu aç, dikmeye devam et.',
+        },
+        {
+          title: 'Her gün bir hediye',
+          text: 'Her gün uğra; ödülün serinle birlikte büyüsün.',
+        },
+        {
+          title: 'Göz yormaz',
+          text: 'Yumuşak keten renkleri, hafif dikiş sesleri. Hesap da internet de gerekmez.',
+        },
+      ],
+      supportNote: 'Bize oyunun içinden de ulaşabilirsin: “Profil” → “Bize yazın”.',
     },
   },
 };

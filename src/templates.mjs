@@ -1,6 +1,37 @@
 // Page templates: plain functions from data to HTML strings.
+import { readFileSync } from 'node:fs';
 
 const YEAR = new Date().getFullYear();
+
+// The stylesheet goes into every page rather than a <link>: the page paints
+// without waiting for a second request. Sharing a cached file between pages
+// buys little here — GitHub Pages lets browsers keep files for ten minutes
+const CSS = readFileSync(new URL('../assets/site.css', import.meta.url), 'utf8')
+  .replace(/\/\*[\s\S]*?\*\//g, '')
+  .split('\n')
+  .map((line) => {
+    return line.trim();
+  })
+  .filter(Boolean)
+  .join('\n');
+
+// A picture comes with a smaller copy next to it, <name>-<width>.<ext>
+// (tools/images.py writes them), and the browser picks by the width the page
+// shows it at and the screen density. Widths of the files:
+export const IMAGE_WIDTHS = { screen: [360, 600], icon: [128, 256] };
+
+export function imageVariant(image, width) {
+  return image.replace(/(\.\w+)$/, `-${width}$1`);
+}
+
+function srcset(image, [small, full]) {
+  return `${imageVariant(image, small)} ${small}w, ${image} ${full}w`;
+}
+
+// Widths the screenshots are shown at, after site.css: hero phones take 44% of
+// a box up to 520px, gallery shots clamp(190px, 22vw, 250px) less the bezel
+const HERO_PHONE_SIZES = '(max-width: 560px) 40vw, 210px';
+const SHOT_SIZES = '(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px';
 
 export function esc(value) {
   return String(value)
@@ -152,18 +183,67 @@ ${ogAlternates}<meta property="og:site_name" content="${esc(studio.name)}">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<link rel="stylesheet" href="/assets/site.css">
+<style>
+${CSS}
+</style>
 ${head}</head>
 <body ${bodyAttrs}>
 <a class="skip" href="#main">${esc(locale.ui.skip)}</a>
-${header(studio, locale.ui, languages)}
+${header(studio, locale, languages)}
 <main id="main">
 ${body}
 </main>
-${footer(studio, games, locale.ui)}
+${footer(studio, games, locale)}
 ${languages ? LANG_MENU_SCRIPT : ''}</body>
 </html>
 `;
+}
+
+// URL of the home page in a language: English at the root, the rest in a
+// folder named by the language code
+export function homePath(locale) {
+  return locale.code === 'en' ? '/' : `/${locale.code}/`;
+}
+
+// URL of the game page in a language: English at the game's root, the rest
+// in a folder named by the language code
+export function gamePath(game, locale) {
+  return locale.code === 'en' ? `/${game.slug}/` : `/${game.slug}/${locale.code}/`;
+}
+
+// Link to a game from a page in some language: its page in that language when
+// the game is translated into it, the English one otherwise
+function gameLink(game, locale) {
+  return locale.games?.[game.slug] ? gamePath(game, locale) : gamePath(game, { code: 'en' });
+}
+
+// URL of a game's extra page in a language: a translated page sits in the
+// language folder of the game, like the game page itself
+export function docPath(game, page, locale) {
+  return page.translated && locale.code !== 'en'
+    ? `/${game.slug}/${locale.code}/${page.path}`
+    : `/${game.slug}/${page.path}`;
+}
+
+// hreflang links, og:locale alternates and the language menu of a page that
+// exists in several languages; `pathOf` gives its URL in a language
+function languageVersions(locale, locales, pathOf) {
+  if (locales.length < 2) {
+    return { alternates: [], languages: null };
+  }
+  const alternates = locales.map((other) => {
+    return {
+      code: other.code,
+      hreflang: other.hreflang,
+      ogLocale: other.ogLocale,
+      name: other.name,
+      path: pathOf(other),
+    };
+  });
+  const current = alternates.find((alt) => {
+    return alt.code === locale.code;
+  });
+  return { alternates, languages: { current, list: alternates } };
 }
 
 // Language menu of a page that exists in several languages: a button with the
@@ -186,30 +266,33 @@ function languageMenu(ui, { current, list }) {
   </details>`;
 }
 
-function header(studio, ui, languages) {
+function header(studio, locale, languages) {
+  const { ui } = locale;
+  const home = homePath(locale);
   return `<header class="site-header wrap">
-  <a class="brand" href="/"><img src="/assets/logo.svg" width="34" height="34" alt=""><span>${esc(studio.name)}</span></a>
+  <a class="brand" href="${home}"><img src="/assets/logo.svg" width="34" height="34" alt=""><span>${esc(studio.name)}</span></a>
   <div class="header-actions">
   <nav class="site-nav" aria-label="Main">
-    <a href="/#games">${esc(ui.navGames)}</a>
-    <a href="/#contact">${esc(ui.navContact)}</a>
+    <a href="${home}#games">${esc(ui.navGames)}</a>
+    <a href="${home}#contact">${esc(ui.navContact)}</a>
   </nav>
   ${languages ? languageMenu(ui, languages) : ''}
   </div>
 </header>`;
 }
 
-function footer(studio, games, ui) {
+function footer(studio, games, locale) {
+  const { ui } = locale;
   const links = games
     .map((game) => {
-      return `<a href="/${game.slug}/">${esc(game.name)}</a>`;
+      return `<a href="${gameLink(game, locale)}">${esc(game.name)}</a>`;
     })
     .join('\n      ');
   return `<footer class="site-footer">
   <div class="wrap footer-inner">
     <div class="footer-top">
-      <a class="brand brand-small" href="/"><img src="/assets/logo.svg" width="28" height="28" alt=""><span>${esc(studio.name)}</span></a>
-      <nav class="footer-nav" aria-label="Games">
+      <a class="brand brand-small" href="${homePath(locale)}"><img src="/assets/logo.svg" width="28" height="28" alt=""><span>${esc(studio.name)}</span></a>
+      <nav class="footer-nav" aria-label="${esc(ui.navGames)}">
       ${links}
       </nav>
     </div>
@@ -233,7 +316,7 @@ function storeButtons({ studio, game, ui, campaign }) {
   }
   if (game.stores.googlePlay) {
     badges.push(
-      `<a class="store" href="${esc(storeUrl(studio, 'googlePlay', game.stores.googlePlay, campaign))}"><img src="/assets/badges/google-play.png" width="161" height="48" alt="${esc(fill(ui.googlePlayAlt, { name: game.name }))}"></a>`
+      `<a class="store" href="${esc(storeUrl(studio, 'googlePlay', game.stores.googlePlay, campaign))}"><img src="/assets/badges/google-play.png" srcset="/assets/badges/google-play-322.png 322w, /assets/badges/google-play.png 564w" sizes="(max-width: 480px) 134px, 161px" width="161" height="48" alt="${esc(fill(ui.googlePlayAlt, { name: game.name }))}"></a>`
     );
   } else {
     missing.push(ui.storeGooglePlay);
@@ -249,7 +332,7 @@ function art(game, { eager = false } = {}) {
   if (game.art.phones) {
     const [left, center, right] = game.art.phones;
     const phone = (shot, position) => {
-      return `<figure class="device phone-${position}"><img src="${esc(shot.image)}" width="600" height="1304" alt="${esc(shot.alt)}" loading="${loading}" decoding="async"></figure>`;
+      return `<figure class="device phone-${position}"><img src="${esc(shot.image)}" srcset="${esc(srcset(shot.image, IMAGE_WIDTHS.screen))}" sizes="${HERO_PHONE_SIZES}" width="600" height="1304" alt="${esc(shot.alt)}" loading="${loading}" decoding="async"></figure>`;
     };
     return `<div class="phones">${phone(left, 'left')}${phone(right, 'right')}${phone(center, 'center')}</div>`;
   }
@@ -257,7 +340,7 @@ function art(game, { eager = false } = {}) {
 }
 
 function appIcon(game, size, className = 'app-icon') {
-  return `<img class="${className}" src="${esc(game.icon)}" width="${size}" height="${size}" alt="">`;
+  return `<img class="${className}" src="${esc(game.icon)}" srcset="${esc(srcset(game.icon, IMAGE_WIDTHS.icon))}" sizes="${size}px" width="${size}" height="${size}" alt="">`;
 }
 
 // -------------------------------------------------------------- home page ---
@@ -271,7 +354,10 @@ const PRINCIPLE_ICONS = [
   '<rect x="6.5" y="2.5" width="11" height="19" rx="2.8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 15.2c-2.3-1.5-3.4-2.7-3.4-4a1.8 1.8 0 0 1 3.4-.9 1.8 1.8 0 0 1 3.4.9c0 1.3-1.1 2.5-3.4 4z" fill="currentColor"/>',
 ];
 
-function gameCard({ studio, game, ui }) {
+function gameCard({ studio, game: source, locale }) {
+  const game = localizeGame(source, locale);
+  const { ui } = locale;
+  const link = gameLink(source, locale);
   return `<article ${themeAttrs(game, 'game-card')} id="${game.slug}">
   <div class="game-card-text">
     <div class="game-id">
@@ -283,14 +369,30 @@ function gameCard({ studio, game, ui }) {
     </div>
     <p class="tagline">${esc(game.tagline)}</p>
     <p class="summary">${esc(game.summary)}</p>
-    ${storeButtons({ studio, game, ui, campaign: 'home' })}
-    <a class="more" href="/${game.slug}/">Discover ${esc(game.name)} ${ARROW}</a>
+    ${storeButtons({ studio, game, ui, campaign: `home-${locale.code}` })}
+    <a class="more" href="${link}">${esc(fill(ui.discover, { name: game.name }))} ${ARROW}</a>
   </div>
-  <a class="game-card-art" href="/${game.slug}/" tabindex="-1" aria-hidden="true">${art(game)}</a>
+  <a class="game-card-art" href="${link}" tabindex="-1" aria-hidden="true">${art(game)}</a>
 </article>`;
 }
 
-export function homePage({ studio, games, mosaic, locale }) {
+// The studio in one language: the translation's texts over src/studio.mjs
+export function localizeStudio(studio, locale) {
+  return { ...studio, ...locale.studio };
+}
+
+// The headline marks its stitched word with [brackets] and its line break with
+// a newline, so each language puts both where its own wording needs them
+function headline(text) {
+  return esc(text)
+    .replace(/\[([^\]]+)\]/g, '<span class="stitched">$1</span>')
+    .replace(/\n/g, '<br>');
+}
+
+export function homePage({ studio: source, games, mosaic, locale, locales }) {
+  const studio = localizeStudio(source, locale);
+  const { ui } = locale;
+  const { alternates, languages } = languageVersions(locale, locales, homePath);
   const chips = games
     .map((game) => {
       return `<a class="chip" href="#${game.slug}">${appIcon(game, 36, '')}<span>${esc(game.name)}</span></a>`;
@@ -319,8 +421,8 @@ export function homePage({ studio, games, mosaic, locale }) {
   };
   const body = `<section class="hero wrap">
   <div class="hero-text">
-    <p class="eyebrow">Independent game studio</p>
-    <h1>Small, <span class="stitched">calm</span><br>puzzle games.</h1>
+    <p class="eyebrow">${esc(ui.studioEyebrow)}</p>
+    <h1>${headline(studio.headline)}</h1>
     <p class="lead">${esc(studio.intro)}</p>
     <div class="hero-games">
         ${chips}
@@ -331,18 +433,18 @@ export function homePage({ studio, games, mosaic, locale }) {
 
 <section class="games wrap" id="games" aria-labelledby="games-title">
   <div class="section-head">
-    <h2 id="games-title">Our games</h2>
+    <h2 id="games-title">${esc(ui.ourGames)}</h2>
   </div>
   ${games
     .map((game) => {
-      return gameCard({ studio, game, ui: locale.ui });
+      return gameCard({ studio, game, locale });
     })
     .join('\n  ')}
 </section>
 
 <section class="block wrap" aria-labelledby="principles-title">
   <div class="section-head">
-    <h2 id="principles-title">How we make them</h2>
+    <h2 id="principles-title">${esc(ui.howWeMake)}</h2>
   </div>
   <div class="principles-grid">
       ${principles}
@@ -350,8 +452,8 @@ export function homePage({ studio, games, mosaic, locale }) {
 </section>
 
 <section class="contact wrap" id="contact" aria-labelledby="contact-title">
-  <h2 id="contact-title">Say hello</h2>
-  <p class="lead">Questions, ideas, a bug — or just a kind word. Write to the game you play, we read every message.</p>
+  <h2 id="contact-title">${esc(ui.sayHello)}</h2>
+  <p class="lead">${esc(ui.sayHelloText)}</p>
   <div class="contact-list">
       ${contacts}
   </div>
@@ -362,11 +464,13 @@ export function homePage({ studio, games, mosaic, locale }) {
     locale,
     title: studio.title,
     description: studio.description,
-    path: '/',
+    path: homePath(locale),
     image: '/assets/og.jpg',
     body,
     bodyAttrs: 'class="studio"',
     head: `<script type="application/ld+json">${JSON.stringify(jsonLd)}</script>\n`,
+    alternates,
+    languages,
   });
 }
 
@@ -385,6 +489,12 @@ export function localizeGame(game, locale) {
       return { ...shot, alt: alts?.[index] ?? shot.alt };
     });
   };
+  let art = game.art;
+  if (game.art.phones) {
+    art = { ...game.art, phones: withAlts(game.art.phones, text.art?.alts) };
+  } else if (text.art?.alt) {
+    art = { ...game.art, alt: text.art.alt };
+  }
   return {
     ...game,
     genre: text.genre ?? game.genre,
@@ -392,32 +502,21 @@ export function localizeGame(game, locale) {
     summary: text.summary ?? game.summary,
     platforms: text.platforms ?? game.platforms,
     keywords: text.keywords ?? game.keywords,
-    art: game.art.phones ? { ...game.art, phones: withAlts(game.art.phones, text.art?.alts) } : game.art,
+    art,
     rules: { ...game.rules, ...text.rules },
     screenshots: withAlts(game.screenshots, text.screenshots),
     features: text.features ?? game.features,
     faq: text.faq ?? game.faq,
+    support: { ...game.support, note: text.supportNote ?? game.support.note },
   };
-}
-
-// URL of the game page in a language: English at the game's root, the rest
-// in a folder named by the language code
-export function gamePath(game, locale) {
-  return locale.code === 'en' ? `/${game.slug}/` : `/${game.slug}/${locale.code}/`;
 }
 
 export function gamePage({ studio, games, game: source, locale, locales }) {
   const game = localizeGame(source, locale);
   const { ui } = locale;
   const path = gamePath(game, locale);
-  const alternates = locales.map((other) => {
-    return {
-      code: other.code,
-      hreflang: other.hreflang,
-      ogLocale: other.ogLocale,
-      name: other.name,
-      path: gamePath(game, other),
-    };
+  const { alternates, languages } = languageVersions(locale, locales, (other) => {
+    return gamePath(game, other);
   });
   const list = (items, className) => {
     return items?.length
@@ -471,14 +570,20 @@ export function gamePage({ studio, games, game: source, locale, locales }) {
   <div class="shots" tabindex="0" aria-label="${esc(ui.screenshots)}">
     ${game.screenshots
       .map((shot) => {
-        return `<figure class="device shot"><img src="${esc(shot.image)}" width="600" height="1304" alt="${esc(shot.alt)}" loading="lazy" decoding="async"></figure>`;
+        return `<figure class="device shot"><img src="${esc(shot.image)}" srcset="${esc(srcset(shot.image, IMAGE_WIDTHS.screen))}" sizes="${SHOT_SIZES}" width="600" height="1304" alt="${esc(shot.alt)}" loading="lazy" decoding="async"></figure>`;
       })
       .join('\n    ')}
   </div>
 </section>`
     : '';
+  // The support page in this language when it is one of the game's
+  // translated pages
+  const supportPage = game.pages.find((page) => {
+    return `/${game.slug}/${page.path}` === game.support.url;
+  });
+  const supportUrl = supportPage ? docPath(game, supportPage, locale) : game.support.url;
   const supportLinks = [
-    game.support.url && `<li><a href="${esc(game.support.url)}">${esc(ui.supportPage)} ${ARROW}</a></li>`,
+    supportUrl && `<li><a href="${esc(supportUrl)}">${esc(ui.supportPage)} ${ARROW}</a></li>`,
     `<li><a href="${esc(game.privacyPolicy)}">${esc(ui.privacyPolicy)} ${ARROW}</a></li>`,
   ]
     .filter(Boolean)
@@ -492,7 +597,8 @@ export function gamePage({ studio, games, game: source, locale, locales }) {
   <div class="more-games">
     ${others
       .map((other) => {
-        return `<a ${themeAttrs(other, 'mini-card')} href="/${other.slug}/">${appIcon(other, 72)}<span><strong>${esc(other.name)}</strong><span>${esc(other.tagline)}</span></span>${ARROW}</a>`;
+        const text = localizeGame(other, locale);
+        return `<a ${themeAttrs(other, 'mini-card')} href="${gameLink(other, locale)}">${appIcon(other, 72)}<span><strong>${esc(other.name)}</strong><span>${esc(text.tagline)}</span></span>${ARROW}</a>`;
       })
       .join('\n    ')}
   </div>
@@ -573,7 +679,7 @@ ${faq}
   <div class="support-card">
     <div>
       <h2 id="support-title">${esc(ui.support)}</h2>
-      <p>${esc(ui.supportText)}${game.support.note && locale.code === 'en' ? ` ${esc(game.support.note)}` : ''}</p>
+      <p>${esc(ui.supportText)}${game.support.note ? ` ${esc(game.support.note)}` : ''}</p>
       <a class="button" href="mailto:${esc(game.support.email)}">${esc(game.support.email)}</a>
     </div>
     <ul class="link-list">
@@ -594,37 +700,38 @@ ${moreGames}`;
     body,
     bodyAttrs: themeAttrs(game, 'game-page'),
     head: `${smartBanner}<meta name="theme-color" content="${esc(game.theme.bg)}">\n<script type="application/ld+json">${JSON.stringify(jsonLd)}</script>\n`,
-    alternates: alternates.length > 1 ? alternates : [],
+    alternates,
     keywords: game.keywords ?? [],
-    languages:
-      alternates.length > 1
-        ? {
-            current: alternates.find((alt) => {
-              return alt.code === locale.code;
-            }),
-            list: alternates,
-          }
-        : null,
+    languages,
   });
 }
 
 // --------------------------------------------- document and service pages ---
 
-export function docPage({ studio, games, game, page, content, locale }) {
+// A page from content/: `locales` are the languages it exists in, English
+// alone for a page that is not translated
+export function docPage({ studio, games, game, page, content, locale, locales }) {
+  const { ui } = locale;
+  const title = ui[page.titleKey];
+  const { alternates, languages } = languageVersions(locale, locales, (other) => {
+    return docPath(game, page, other);
+  });
   const body = `<article class="doc">
-<p class="crumbs"><a href="/">${esc(studio.name)}</a> · <a href="/${game.slug}/">${esc(game.name)}</a></p>
+<p class="crumbs"><a href="${homePath(locale)}">${esc(studio.name)}</a> · <a href="${gameLink(game, locale)}">${esc(game.name)}</a></p>
 ${content}
 </article>`;
   return layout({
     studio,
     games,
     locale,
-    title: `${game.name} — ${page.title}`,
-    description: `${page.title} of ${game.name} by ${studio.name}.`,
-    path: `/${game.slug}/${page.path}`,
+    title: `${game.name} — ${title}`,
+    description: fill(ui.docDescription, { title, name: game.name, studio: studio.name }),
+    path: docPath(game, page, locale),
     image: `/${game.slug}/images/og.jpg`,
     body,
     bodyAttrs: themeAttrs(game, 'doc-page'),
+    alternates,
+    languages,
   });
 }
 
@@ -655,23 +762,30 @@ export function notFoundPage({ studio, games, locale }) {
   });
 }
 
-// Language versions of a game page are listed with their alternates, the same
-// set as the hreflang links in the pages: search engines pair them by either
-export function sitemap({ studio, games, localesOf }) {
-  const entries = [{ path: '/', alternates: [] }];
-  for (const game of games) {
-    const locales = localesOf(game);
+// Language versions of a page are listed with their alternates, the same set
+// as the hreflang links in the pages: search engines pair them by either
+export function sitemap({ studio, games, locales, localesOf, docLocalesOf }) {
+  const entries = [];
+  const add = (pageLocales, pathOf) => {
     const alternates =
-      locales.length > 1
-        ? locales.map((locale) => {
-            return { hreflang: locale.hreflang, path: gamePath(game, locale) };
+      pageLocales.length > 1
+        ? pageLocales.map((locale) => {
+            return { hreflang: locale.hreflang, path: pathOf(locale) };
           })
         : [];
-    for (const locale of locales) {
-      entries.push({ path: gamePath(game, locale), alternates });
+    for (const locale of pageLocales) {
+      entries.push({ path: pathOf(locale), alternates });
     }
+  };
+  add(locales, homePath);
+  for (const game of games) {
+    add(localesOf(game), (locale) => {
+      return gamePath(game, locale);
+    });
     for (const page of game.pages) {
-      entries.push({ path: `/${game.slug}/${page.path}`, alternates: [] });
+      add(docLocalesOf(game, page), (locale) => {
+        return docPath(game, page, locale);
+      });
     }
   }
   const urls = entries

@@ -32,6 +32,36 @@ export default {
     moreFrom: 'Altri giochi di {studio}',
     language: 'Lingua',
     gameTitle: '{name} — {genre} | {studio}',
+    studioEyebrow: 'Studio di giochi indipendente',
+    ourGames: 'I nostri giochi',
+    howWeMake: 'Come li facciamo',
+    sayHello: 'Salutaci',
+    sayHelloText:
+      'Domande, idee, un bug — o anche solo una parola gentile. Scrivi al gioco a cui giochi: leggiamo ogni messaggio.',
+    discover: 'Scopri {name}',
+    docDescription: '{title} di {name}, un gioco di {studio}.',
+  },
+  studio: {
+    title: 'PAA Studios — piccoli rompicapi rilassanti',
+    description:
+      'PAA Studios crea rompicapi logici rilassanti per iPhone, iPad e Android: Pixtangle e Stitch Tales.',
+    headline: 'Piccoli rompicapi,\ntanta [calma].',
+    intro:
+      'Creiamo rompicapi logici rilassanti per iPhone, iPad e Android. Ogni rompicapo si conclude con un piccolo disegno — un animale in pixel art, una farfalla ricamata — e non c’è mai fretta di arrivarci.',
+    principles: [
+      {
+        title: 'Si gioca offline',
+        text: 'Non serve la connessione. Gioca in aereo, in metro o dove non c’è proprio campo.',
+      },
+      {
+        title: 'Nessun account',
+        text: 'Apri il gioco e gioca. Niente registrazione, niente login, nessun indirizzo email da lasciare.',
+      },
+      {
+        title: 'I tuoi progressi sono tuoi',
+        text: 'Restano sul tuo dispositivo e vengono salvati nel tuo account iCloud o Google — non abbiamo server a cui inviarli.',
+      },
+    ],
   },
   games: {
     pixtangle: {
@@ -138,6 +168,70 @@ export default {
           a: 'Sei difficoltà ti portano dalle piccole griglie Facile alle grandi griglie Folle piene di punti interrogativi, più una sfida giornaliera nuova ogni giorno e una Maratona a tempo.',
         },
       ],
+    },
+    'stitch-tales': {
+      genre: 'Nonogramma a punto croce',
+      tagline: 'Ogni rompicapo è un punto di un disegno più grande.',
+      summary:
+        'Leggi i numeri lungo righe e colonne, ricama le caselle giuste — e ogni nonogramma risolto viene ricamato in una scena del tuo telaio.',
+      platforms: 'iPhone, iPad e Android',
+      keywords: [
+        'nonogramma',
+        'nonogram',
+        'crucipixel',
+        'picross',
+        'hanjie',
+        'griddlers',
+        'punto croce',
+        'ricamo',
+        'gioco di logica',
+        'rompicapo logico',
+        'pixel art',
+        'gioco',
+        'gioco per cellulare',
+        'gioco rompicapo',
+        'gioco gratis',
+        'gioco offline',
+      ],
+      art: {
+        alt: 'Un telaio da ricamo con un prato fiorito ricamato: una farfalla, un sole, dei fiori e un fungo ancora da ricamare',
+      },
+      rules: {
+        steps: [
+          'I numeri accanto a ogni riga e colonna sono, in ordine, i gruppi di caselle piene.',
+          'Ricama le caselle da riempire; segna con una croce quelle che restano vuote.',
+          'Attenzione: un punto sbagliato ti costa una vita, uno dei tuoi cuori ricamati.',
+          'Risolvi la griglia e la figura verrà ricamata nella scena del tuo telaio.',
+        ],
+        alt: 'Il nonogramma di un gatto quasi risolto: caselle ricamate color granata, croci in quelle vuote',
+      },
+      features: [
+        {
+          title: 'Scene da ricamare',
+          text: 'Un prato fiorito, Stonehenge, un picnic di frutta, il sistema solare, un giardino giapponese, una casa delle bambole, un villaggio d’inverno, il fondale marino… e molte altre.',
+        },
+        {
+          title: 'Veri punti di ricamo',
+          text: 'Punto pieno, catenella, spina di pesce e nodi francesi: ogni figura è cucita con il suo filo e la sua trama.',
+        },
+        {
+          title: 'Un imparaticcio infinito',
+          text: 'Dopo la prima scena si apre un imparaticcio di motivi tradizionali, e i suoi motivi non finiscono mai.',
+        },
+        {
+          title: 'Aiuti quando ti blocchi',
+          text: 'Rivela una sola casella o un’intera linea e continua a ricamare.',
+        },
+        {
+          title: 'Un regalo ogni giorno',
+          text: 'Torna ogni giorno per una ricompensa che cresce con la tua serie.',
+        },
+        {
+          title: 'Riposante per gli occhi',
+          text: 'Morbidi colori del lino, il suono delicato dei punti, nessun account e nessuna connessione necessaria.',
+        },
+      ],
+      supportNote: 'Puoi scriverci anche dal gioco, in Profilo → Scrivici.',
     },
   },
 };
