@@ -288,6 +288,12 @@ p {
   right: 0;
   z-index: 20;
   width: min(440px, calc(100vw - 2 * var(--gutter)));
+  /* 30 языков — 15 строк: на телефоне и низком ноутбуке панель длиннее
+     экрана, поэтому она не выше окна под шапкой и прокручивается сама */
+  max-height: calc(100vh - 96px);
+  max-height: calc(100dvh - 96px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
   padding: 16px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
