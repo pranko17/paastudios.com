@@ -1244,6 +1244,33 @@ p {
   padding: 18px 24px 18px 18px;
 }
 
+/* Phones are ivory patches, not black glass: a dark bezel cut the linen page
+   like a hole. The screen sits in a patch with a running stitch around it, as
+   on the store screenshots. Hero phones are positioned already; the gallery
+   ones get a box for the stitch */
+.game-page.frame-stitch .device {
+  padding: 3.6%;
+  background: var(--surface);
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--line) 80%, transparent),
+    0 1px 2px color-mix(in srgb, var(--text) 8%, transparent),
+    0 26px 40px -24px color-mix(in srgb, var(--text) 50%, transparent);
+}
+
+.game-page.frame-stitch .shot {
+  position: relative;
+  padding: calc(var(--shot-width) * 0.075);
+}
+
+.game-page.frame-stitch .device::after {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 1.5px dashed var(--stitch);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
 /* Step numbers are embroidered badges: garnet with a light stitch inside */
 .game-page.frame-stitch .steps li::before {
   border-radius: 50%;
