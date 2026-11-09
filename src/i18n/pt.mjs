@@ -201,7 +201,7 @@ export default {
         ],
       },
       cardArt: {
-        alt: 'Um bastidor com um campo florido bordado: uma borboleta, um sol, flores e um cogumelo ainda por bordar',
+        alt: 'Bastidores prontos do jogo: na frente, “Gato à janela”; atrás, “Pássaros em vitral” e “Sistema solar”, e uma agulha com linha grená',
       },
       rules: {
         intro:

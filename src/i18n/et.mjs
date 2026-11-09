@@ -204,7 +204,7 @@ export default {
         ],
       },
       cardArt: {
-        alt: 'Tikkimisraam tikitud lilleniiduga: liblikas, päike, lilled ja kärbseseen, mis ootab veel tikkimist',
+        alt: 'Mängus valmis tikitud raamid: ees „Kass akna juures“, selle taga „Vitraažlinnud“ ja „Päikesesüsteem“ ning nõel granaatpunase niidiga',
       },
       rules: {
         intro:

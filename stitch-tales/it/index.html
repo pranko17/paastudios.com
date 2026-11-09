@@ -688,6 +688,10 @@ transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
 .game-hero-art:hover .art-image {
 transform: rotate(-3deg) scale(1.02);
 }
+.game-card.frame-stitch .art-image {
+filter: drop-shadow(0 22px 26px color-mix(in srgb, var(--text) 26%, transparent))
+drop-shadow(0 2px 3px color-mix(in srgb, var(--text) 18%, transparent));
+}
 .principles-grid,
 .feature-grid {
 display: grid;
@@ -1352,7 +1356,7 @@ transition: none !important;
     <div class="stores"><a class="store" href="https://apps.apple.com/app/id6822948115?pt=129254796&amp;ct=stitch-tales-it&amp;mt=8"><img src="/assets/badges/app-store.svg" width="144" height="48" alt="Scarica Stitch Tales su App Store"></a></div><p class="soon">Presto su Google Play</p>
     <p class="platforms">Per iPhone, iPad e Android</p>
   </div>
-  <div class="game-hero-art"><div class="phones"><figure class="device phone-left"><img src="/stitch-tales/images/screen-1.webp" srcset="/stitch-tales/images/screen-1-360.webp 360w, /stitch-tales/images/screen-1.webp 600w" sizes="(max-width: 560px) 40vw, 210px" width="600" height="1304" alt="Un gufo che prende forma su un nonogramma, con croci nelle caselle vuote" loading="eager" decoding="async"></figure><figure class="device phone-right"><img src="/stitch-tales/images/screen-3.webp" srcset="/stitch-tales/images/screen-3-360.webp 360w, /stitch-tales/images/screen-3.webp 600w" sizes="(max-width: 560px) 40vw, 210px" width="600" height="1304" alt="Primo piano della scena «Gatto alla finestra»: rondini, una farfalla, un gatto e un gomitolo" loading="eager" decoding="async"></figure><figure class="device phone-center"><img src="/stitch-tales/images/screen-2.webp" srcset="/stitch-tales/images/screen-2-360.webp 360w, /stitch-tales/images/screen-2.webp 600w" sizes="(max-width: 560px) 40vw, 210px" width="600" height="1304" alt="La scena «Zodiaco» nel telaio, ricamata figura dopo figura" loading="eager" decoding="async"></figure></div></div>
+  <div class="game-hero-art"><div class="phones"><figure class="device phone-left"><img src="/stitch-tales/images/screen-1.webp" srcset="/stitch-tales/images/screen-1-240.webp 240w, /stitch-tales/images/screen-1-360.webp 360w, /stitch-tales/images/screen-1-480.webp 480w, /stitch-tales/images/screen-1.webp 600w" sizes="(max-width: 560px) 34vw, 192px" width="600" height="1304" alt="Un gufo che prende forma su un nonogramma, con croci nelle caselle vuote" loading="eager" decoding="async"></figure><figure class="device phone-right"><img src="/stitch-tales/images/screen-3.webp" srcset="/stitch-tales/images/screen-3-240.webp 240w, /stitch-tales/images/screen-3-360.webp 360w, /stitch-tales/images/screen-3-480.webp 480w, /stitch-tales/images/screen-3.webp 600w" sizes="(max-width: 560px) 34vw, 192px" width="600" height="1304" alt="Primo piano della scena «Gatto alla finestra»: rondini, una farfalla, un gatto e un gomitolo" loading="eager" decoding="async"></figure><figure class="device phone-center"><img src="/stitch-tales/images/screen-2.webp" srcset="/stitch-tales/images/screen-2-240.webp 240w, /stitch-tales/images/screen-2-360.webp 360w, /stitch-tales/images/screen-2-480.webp 480w, /stitch-tales/images/screen-2.webp 600w" sizes="(max-width: 560px) 34vw, 192px" width="600" height="1304" alt="La scena «Zodiaco» nel telaio, ricamata figura dopo figura" loading="eager" fetchpriority="high" decoding="async"></figure></div></div>
 </section>
 
 <section class="block wrap rules" aria-labelledby="rules-title">
@@ -1389,12 +1393,12 @@ transition: none !important;
 <section class="block gallery" aria-labelledby="gallery-title">
   <div class="wrap section-head"><h2 id="gallery-title">Uno sguardo da vicino</h2></div>
   <div class="shots" tabindex="0" aria-label="Screenshot">
-    <figure class="device shot"><img src="/stitch-tales/images/screen-1.webp" srcset="/stitch-tales/images/screen-1-360.webp 360w, /stitch-tales/images/screen-1.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Un gufo che prende forma su un nonogramma, con croci nelle caselle vuote" loading="lazy" decoding="async"></figure>
-    <figure class="device shot"><img src="/stitch-tales/images/screen-2.webp" srcset="/stitch-tales/images/screen-2-360.webp 360w, /stitch-tales/images/screen-2.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="La scena «Zodiaco» nel telaio, ricamata figura dopo figura" loading="lazy" decoding="async"></figure>
-    <figure class="device shot"><img src="/stitch-tales/images/screen-3.webp" srcset="/stitch-tales/images/screen-3-360.webp 360w, /stitch-tales/images/screen-3.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Primo piano della scena «Gatto alla finestra»: rondini, una farfalla, un gatto e un gomitolo" loading="lazy" decoding="async"></figure>
-    <figure class="device shot"><img src="/stitch-tales/images/screen-4.webp" srcset="/stitch-tales/images/screen-4-360.webp 360w, /stitch-tales/images/screen-4.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Il calendario: un piccolo ricamo per ogni giorno e un riccio per tutto il mese" loading="lazy" decoding="async"></figure>
-    <figure class="device shot"><img src="/stitch-tales/images/screen-5.webp" srcset="/stitch-tales/images/screen-5-360.webp 360w, /stitch-tales/images/screen-5.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="L’imparaticcio infinito di motivi popolari colorati" loading="lazy" decoding="async"></figure>
-    <figure class="device shot"><img src="/stitch-tales/images/screen-6.webp" srcset="/stitch-tales/images/screen-6-360.webp 360w, /stitch-tales/images/screen-6.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="La collezione di telai finiti" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-1.webp" srcset="/stitch-tales/images/screen-1-240.webp 240w, /stitch-tales/images/screen-1-360.webp 360w, /stitch-tales/images/screen-1-480.webp 480w, /stitch-tales/images/screen-1.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Un gufo che prende forma su un nonogramma, con croci nelle caselle vuote" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-2.webp" srcset="/stitch-tales/images/screen-2-240.webp 240w, /stitch-tales/images/screen-2-360.webp 360w, /stitch-tales/images/screen-2-480.webp 480w, /stitch-tales/images/screen-2.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="La scena «Zodiaco» nel telaio, ricamata figura dopo figura" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-3.webp" srcset="/stitch-tales/images/screen-3-240.webp 240w, /stitch-tales/images/screen-3-360.webp 360w, /stitch-tales/images/screen-3-480.webp 480w, /stitch-tales/images/screen-3.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Primo piano della scena «Gatto alla finestra»: rondini, una farfalla, un gatto e un gomitolo" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-4.webp" srcset="/stitch-tales/images/screen-4-240.webp 240w, /stitch-tales/images/screen-4-360.webp 360w, /stitch-tales/images/screen-4-480.webp 480w, /stitch-tales/images/screen-4.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Il calendario: un piccolo ricamo per ogni giorno e un riccio per tutto il mese" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-5.webp" srcset="/stitch-tales/images/screen-5-240.webp 240w, /stitch-tales/images/screen-5-360.webp 360w, /stitch-tales/images/screen-5-480.webp 480w, /stitch-tales/images/screen-5.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="L’imparaticcio infinito di motivi popolari colorati" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-6.webp" srcset="/stitch-tales/images/screen-6-240.webp 240w, /stitch-tales/images/screen-6-360.webp 360w, /stitch-tales/images/screen-6-480.webp 480w, /stitch-tales/images/screen-6.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="La collezione di telai finiti" loading="lazy" decoding="async"></figure>
   </div>
 </section>
 
@@ -1438,8 +1442,8 @@ transition: none !important;
     <div class="footer-top">
       <a class="brand brand-small" href="/it/"><img src="/assets/logo.svg" width="28" height="28" alt=""><span>PAA Studios</span></a>
       <nav class="footer-nav" aria-label="Giochi">
-      <a href="/pixtangle/it/">Pixtangle</a>
       <a href="/stitch-tales/it/">Stitch Tales</a>
+      <a href="/pixtangle/it/">Pixtangle</a>
       </nav>
     </div>
     <p class="fine">© 2026 PAA Studios. Questo sito non imposta cookie e non usa tracker.</p>

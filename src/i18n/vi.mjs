@@ -202,7 +202,7 @@ export default {
         ],
       },
       cardArt: {
-        alt: 'Khung thêu với đồng hoa đã thêu: một chú bướm, mặt trời, những bông hoa và một cây nấm còn chờ thêu',
+        alt: 'Những khung thêu đã hoàn thành trong game: phía trước là “Mèo bên cửa sổ”, phía sau là “Chim kính màu” và “Hệ Mặt Trời”, cùng một chiếc kim với sợi chỉ đỏ thẫm',
       },
       rules: {
         intro:

@@ -19,7 +19,7 @@ const CSS = readFileSync(new URL('../assets/site.css', import.meta.url), 'utf8')
 // (tools/images.py writes them), and the browser picks by the width the page
 // shows it at and the screen density. Widths of the files, the last one is
 // the picture itself:
-export const IMAGE_WIDTHS = { screen: [360, 600], icon: [128, 256], banner: [720, 1280, 2240] };
+export const IMAGE_WIDTHS = { screen: [240, 360, 480, 600], icon: [128, 256], banner: [720, 1280, 2240] };
 
 export function imageVariant(image, width) {
   return image.replace(/(\.\w+)$/, `-${width}$1`);
@@ -36,9 +36,12 @@ function srcset(image, widths) {
 }
 
 // Widths the screenshots are shown at, after site.css: hero phones take 44% of
-// a box up to 520px, gallery shots clamp(190px, 22vw, 250px) less the bezel
-const HERO_PHONE_SIZES = '(max-width: 560px) 40vw, 210px';
+// a box up to 520px less the bezel — about 139px on a 412px phone and 191px
+// from tablets up; gallery shots clamp(190px, 22vw, 250px) less the bezel
+const HERO_PHONE_SIZES = '(max-width: 560px) 34vw, 192px';
 const SHOT_SIZES = '(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px';
+// An illustration fills its column of the card or the hero, up to 520px
+const ART_SIZES = '(max-width: 900px) min(86vw, 520px), 470px';
 // The banner fills the content column; on a phone it is cropped to 2 : 1 and
 // drawn wider than the column, as wide as its own proportions need
 const BANNER_SIZES = '(max-width: 600px) 108vw, (max-width: 1184px) 92vw, 1120px';
@@ -350,11 +353,17 @@ function art(picture, { eager = false } = {}) {
   if (picture.phones) {
     const [left, center, right] = picture.phones;
     const phone = (shot, position) => {
-      return `<figure class="device phone-${position}"><img src="${esc(shot.image)}" srcset="${esc(srcset(shot.image, IMAGE_WIDTHS.screen))}" sizes="${HERO_PHONE_SIZES}" width="600" height="1304" alt="${esc(shot.alt)}" loading="${loading}" decoding="async"></figure>`;
+      // The center phone of a page hero is its largest paint: it is fetched first
+      const priority = eager && position === 'center' ? ' fetchpriority="high"' : '';
+      return `<figure class="device phone-${position}"><img src="${esc(shot.image)}" srcset="${esc(srcset(shot.image, IMAGE_WIDTHS.screen))}" sizes="${HERO_PHONE_SIZES}" width="600" height="1304" alt="${esc(shot.alt)}" loading="${loading}"${priority} decoding="async"></figure>`;
     };
     return `<div class="phones">${phone(left, 'left')}${phone(right, 'right')}${phone(center, 'center')}</div>`;
   }
-  return `<img class="art-image" src="${esc(picture.image)}" width="${picture.width}" height="${picture.height}" alt="${esc(picture.alt)}" loading="${loading}" decoding="async">`;
+  // A raster illustration lists its smaller copies in `widths`, largest last
+  const responsive = picture.widths
+    ? ` srcset="${esc(srcset(picture.image, picture.widths))}" sizes="${ART_SIZES}"`
+    : '';
+  return `<img class="art-image" src="${esc(picture.image)}"${responsive} width="${picture.width}" height="${picture.height}" alt="${esc(picture.alt)}" loading="${loading}" decoding="async">`;
 }
 
 function appIcon(game, size, className = 'app-icon') {

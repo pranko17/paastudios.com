@@ -203,7 +203,7 @@ export default {
         ],
       },
       cardArt: {
-        alt: 'En broderiring med en brodert blomstereng: en sommerfugl, en sol, blomster og en fluesopp som ennå ikke er brodert',
+        alt: 'Ferdige broderirammer fra spillet: «Katt i vinduet» foran, bak den «Fugler i glassmaleri» og «Solsystemet», og en nål med granatrød tråd',
       },
       rules: {
         intro:

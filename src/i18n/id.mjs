@@ -202,7 +202,7 @@ export default {
         ],
       },
       cardArt: {
-        alt: 'Bingkai sulam dengan padang bunga tersulam: kupu-kupu, matahari, bunga-bunga, dan jamur yang belum disulam',
+        alt: 'Pemidangan yang sudah jadi dari game: “Kucing di jendela” di depan, “Burung kaca patri” dan “Tata surya” di belakangnya, serta jarum dengan benang merah tua',
       },
       rules: {
         intro:

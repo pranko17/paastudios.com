@@ -688,6 +688,10 @@ transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
 .game-hero-art:hover .art-image {
 transform: rotate(-3deg) scale(1.02);
 }
+.game-card.frame-stitch .art-image {
+filter: drop-shadow(0 22px 26px color-mix(in srgb, var(--text) 26%, transparent))
+drop-shadow(0 2px 3px color-mix(in srgb, var(--text) 18%, transparent));
+}
 .principles-grid,
 .feature-grid {
 display: grid;
@@ -1352,7 +1356,7 @@ transition: none !important;
     <div class="stores"><a class="store" href="https://apps.apple.com/app/id6802114673?pt=129254796&amp;ct=pixtangle-ro&amp;mt=8"><img src="/assets/badges/app-store.svg" width="144" height="48" alt="Descarcă Pixtangle din App Store"></a><a class="store" href="https://play.google.com/store/apps/details?id=com.pixtangle&amp;referrer=utm_source%3Dpaastudios.com%26utm_medium%3Dwebsite%26utm_campaign%3Dpixtangle-ro"><img src="/assets/badges/google-play.png" srcset="/assets/badges/google-play-322.png 322w, /assets/badges/google-play.png 564w" sizes="(max-width: 480px) 134px, 161px" width="161" height="48" alt="Descarcă Pixtangle de pe Google Play"></a></div>
     <p class="platforms">Gratuit pe iPhone, iPad și Android</p>
   </div>
-  <div class="game-hero-art"><div class="phones"><figure class="device phone-left"><img src="/pixtangle/images/screen-1.webp" srcset="/pixtangle/images/screen-1-360.webp 360w, /pixtangle/images/screen-1.webp 600w" sizes="(max-width: 560px) 40vw, 210px" width="600" height="1304" alt="O grilă pe dificultatea Mediu, cu dreptunghiuri în lucru" loading="eager" decoding="async"></figure><figure class="device phone-right"><img src="/pixtangle/images/screen-4.webp" srcset="/pixtangle/images/screen-4-360.webp 360w, /pixtangle/images/screen-4.webp 600w" sizes="(max-width: 560px) 40vw, 210px" width="600" height="1304" alt="Colecția de desene pixel art pe categorii" loading="eager" decoding="async"></figure><figure class="device phone-center"><img src="/pixtangle/images/screen-3.webp" srcset="/pixtangle/images/screen-3-360.webp 360w, /pixtangle/images/screen-3.webp 600w" sizes="(max-width: 560px) 40vw, 210px" width="600" height="1304" alt="Desenul pixel art „Sakura” terminat" loading="eager" decoding="async"></figure></div></div>
+  <div class="game-hero-art"><div class="phones"><figure class="device phone-left"><img src="/pixtangle/images/screen-1.webp" srcset="/pixtangle/images/screen-1-240.webp 240w, /pixtangle/images/screen-1-360.webp 360w, /pixtangle/images/screen-1-480.webp 480w, /pixtangle/images/screen-1.webp 600w" sizes="(max-width: 560px) 34vw, 192px" width="600" height="1304" alt="O grilă pe dificultatea Mediu, cu dreptunghiuri în lucru" loading="eager" decoding="async"></figure><figure class="device phone-right"><img src="/pixtangle/images/screen-4.webp" srcset="/pixtangle/images/screen-4-240.webp 240w, /pixtangle/images/screen-4-360.webp 360w, /pixtangle/images/screen-4-480.webp 480w, /pixtangle/images/screen-4.webp 600w" sizes="(max-width: 560px) 34vw, 192px" width="600" height="1304" alt="Colecția de desene pixel art pe categorii" loading="eager" decoding="async"></figure><figure class="device phone-center"><img src="/pixtangle/images/screen-3.webp" srcset="/pixtangle/images/screen-3-240.webp 240w, /pixtangle/images/screen-3-360.webp 360w, /pixtangle/images/screen-3-480.webp 480w, /pixtangle/images/screen-3.webp 600w" sizes="(max-width: 560px) 34vw, 192px" width="600" height="1304" alt="Desenul pixel art „Sakura” terminat" loading="eager" fetchpriority="high" decoding="async"></figure></div></div>
 </section>
 
 <section class="block wrap rules" aria-labelledby="rules-title">
@@ -1387,13 +1391,13 @@ transition: none !important;
 <section class="block gallery" aria-labelledby="gallery-title">
   <div class="wrap section-head"><h2 id="gallery-title">Mai de aproape</h2></div>
   <div class="shots" tabindex="0" aria-label="Capturi de ecran">
-    <figure class="device shot"><img src="/pixtangle/images/screen-1.webp" srcset="/pixtangle/images/screen-1-360.webp 360w, /pixtangle/images/screen-1.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="O grilă pe dificultatea Mediu, cu dreptunghiuri în lucru" loading="lazy" decoding="async"></figure>
-    <figure class="device shot"><img src="/pixtangle/images/screen-2.webp" srcset="/pixtangle/images/screen-2-360.webp 360w, /pixtangle/images/screen-2.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Grila „Sakura” înainte de primul dreptunghi" loading="lazy" decoding="async"></figure>
-    <figure class="device shot"><img src="/pixtangle/images/screen-3.webp" srcset="/pixtangle/images/screen-3-360.webp 360w, /pixtangle/images/screen-3.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Desenul pixel art „Sakura” terminat" loading="lazy" decoding="async"></figure>
-    <figure class="device shot"><img src="/pixtangle/images/screen-4.webp" srcset="/pixtangle/images/screen-4-360.webp 360w, /pixtangle/images/screen-4.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Colecții de desene pixel art pe categorii" loading="lazy" decoding="async"></figure>
-    <figure class="device shot"><img src="/pixtangle/images/screen-5.webp" srcset="/pixtangle/images/screen-5-360.webp 360w, /pixtangle/images/screen-5.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Calendarul provocării zilei" loading="lazy" decoding="async"></figure>
-    <figure class="device shot"><img src="/pixtangle/images/screen-6.webp" srcset="/pixtangle/images/screen-6-360.webp 360w, /pixtangle/images/screen-6.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="O cursă de Maraton: grilă după grilă, contra cronometru" loading="lazy" decoding="async"></figure>
-    <figure class="device shot"><img src="/pixtangle/images/screen-7.webp" srcset="/pixtangle/images/screen-7-360.webp 360w, /pixtangle/images/screen-7.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Șase dificultăți de niveluri clasice" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/pixtangle/images/screen-1.webp" srcset="/pixtangle/images/screen-1-240.webp 240w, /pixtangle/images/screen-1-360.webp 360w, /pixtangle/images/screen-1-480.webp 480w, /pixtangle/images/screen-1.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="O grilă pe dificultatea Mediu, cu dreptunghiuri în lucru" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/pixtangle/images/screen-2.webp" srcset="/pixtangle/images/screen-2-240.webp 240w, /pixtangle/images/screen-2-360.webp 360w, /pixtangle/images/screen-2-480.webp 480w, /pixtangle/images/screen-2.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Grila „Sakura” înainte de primul dreptunghi" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/pixtangle/images/screen-3.webp" srcset="/pixtangle/images/screen-3-240.webp 240w, /pixtangle/images/screen-3-360.webp 360w, /pixtangle/images/screen-3-480.webp 480w, /pixtangle/images/screen-3.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Desenul pixel art „Sakura” terminat" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/pixtangle/images/screen-4.webp" srcset="/pixtangle/images/screen-4-240.webp 240w, /pixtangle/images/screen-4-360.webp 360w, /pixtangle/images/screen-4-480.webp 480w, /pixtangle/images/screen-4.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Colecții de desene pixel art pe categorii" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/pixtangle/images/screen-5.webp" srcset="/pixtangle/images/screen-5-240.webp 240w, /pixtangle/images/screen-5-360.webp 360w, /pixtangle/images/screen-5-480.webp 480w, /pixtangle/images/screen-5.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Calendarul provocării zilei" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/pixtangle/images/screen-6.webp" srcset="/pixtangle/images/screen-6-240.webp 240w, /pixtangle/images/screen-6-360.webp 360w, /pixtangle/images/screen-6-480.webp 480w, /pixtangle/images/screen-6.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="O cursă de Maraton: grilă după grilă, contra cronometru" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/pixtangle/images/screen-7.webp" srcset="/pixtangle/images/screen-7-240.webp 240w, /pixtangle/images/screen-7-360.webp 360w, /pixtangle/images/screen-7-480.webp 480w, /pixtangle/images/screen-7.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Șase dificultăți de niveluri clasice" loading="lazy" decoding="async"></figure>
   </div>
 </section>
 
@@ -1445,8 +1449,8 @@ transition: none !important;
     <div class="footer-top">
       <a class="brand brand-small" href="/ro/"><img src="/assets/logo.svg" width="28" height="28" alt=""><span>PAA Studios</span></a>
       <nav class="footer-nav" aria-label="Jocuri">
-      <a href="/pixtangle/ro/">Pixtangle</a>
       <a href="/stitch-tales/ro/">Stitch Tales</a>
+      <a href="/pixtangle/ro/">Pixtangle</a>
       </nav>
     </div>
     <p class="fine">© 2026 PAA Studios. Acest site nu folosește cookie-uri și nici instrumente de urmărire.</p>

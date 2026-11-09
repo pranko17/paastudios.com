@@ -688,6 +688,10 @@ transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
 .game-hero-art:hover .art-image {
 transform: rotate(-3deg) scale(1.02);
 }
+.game-card.frame-stitch .art-image {
+filter: drop-shadow(0 22px 26px color-mix(in srgb, var(--text) 26%, transparent))
+drop-shadow(0 2px 3px color-mix(in srgb, var(--text) 18%, transparent));
+}
 .principles-grid,
 .feature-grid {
 display: grid;
@@ -1352,7 +1356,7 @@ transition: none !important;
     <div class="stores"><a class="store" href="https://apps.apple.com/app/id6822948115?pt=129254796&amp;ct=stitch-tales-zh-hant&amp;mt=8"><img src="/assets/badges/app-store.svg" width="144" height="48" alt="在 App Store 下載 Stitch Tales"></a></div><p class="soon">即將在 Google Play 推出</p>
     <p class="platforms">支援 iPhone、iPad 和 Android</p>
   </div>
-  <div class="game-hero-art"><div class="phones"><figure class="device phone-left"><img src="/stitch-tales/images/screen-1.webp" srcset="/stitch-tales/images/screen-1-360.webp 360w, /stitch-tales/images/screen-1.webp 600w" sizes="(max-width: 560px) 40vw, 210px" width="600" height="1304" alt="數織上漸漸成形的貓頭鷹，空格裡標著叉號" loading="eager" decoding="async"></figure><figure class="device phone-right"><img src="/stitch-tales/images/screen-3.webp" srcset="/stitch-tales/images/screen-3-360.webp 360w, /stitch-tales/images/screen-3.webp 600w" sizes="(max-width: 560px) 40vw, 210px" width="600" height="1304" alt="「窗邊的貓」場景特寫：燕子、蝴蝶、貓咪和毛線球" loading="eager" decoding="async"></figure><figure class="device phone-center"><img src="/stitch-tales/images/screen-2.webp" srcset="/stitch-tales/images/screen-2-360.webp 360w, /stitch-tales/images/screen-2.webp 600w" sizes="(max-width: 560px) 40vw, 210px" width="600" height="1304" alt="繡框裡的「十二星座」場景，一個圖案接一個圖案地繡成" loading="eager" decoding="async"></figure></div></div>
+  <div class="game-hero-art"><div class="phones"><figure class="device phone-left"><img src="/stitch-tales/images/screen-1.webp" srcset="/stitch-tales/images/screen-1-240.webp 240w, /stitch-tales/images/screen-1-360.webp 360w, /stitch-tales/images/screen-1-480.webp 480w, /stitch-tales/images/screen-1.webp 600w" sizes="(max-width: 560px) 34vw, 192px" width="600" height="1304" alt="數織上漸漸成形的貓頭鷹，空格裡標著叉號" loading="eager" decoding="async"></figure><figure class="device phone-right"><img src="/stitch-tales/images/screen-3.webp" srcset="/stitch-tales/images/screen-3-240.webp 240w, /stitch-tales/images/screen-3-360.webp 360w, /stitch-tales/images/screen-3-480.webp 480w, /stitch-tales/images/screen-3.webp 600w" sizes="(max-width: 560px) 34vw, 192px" width="600" height="1304" alt="「窗邊的貓」場景特寫：燕子、蝴蝶、貓咪和毛線球" loading="eager" decoding="async"></figure><figure class="device phone-center"><img src="/stitch-tales/images/screen-2.webp" srcset="/stitch-tales/images/screen-2-240.webp 240w, /stitch-tales/images/screen-2-360.webp 360w, /stitch-tales/images/screen-2-480.webp 480w, /stitch-tales/images/screen-2.webp 600w" sizes="(max-width: 560px) 34vw, 192px" width="600" height="1304" alt="繡框裡的「十二星座」場景，一個圖案接一個圖案地繡成" loading="eager" fetchpriority="high" decoding="async"></figure></div></div>
 </section>
 
 <section class="block wrap rules" aria-labelledby="rules-title">
@@ -1389,12 +1393,12 @@ transition: none !important;
 <section class="block gallery" aria-labelledby="gallery-title">
   <div class="wrap section-head"><h2 id="gallery-title">近看細節</h2></div>
   <div class="shots" tabindex="0" aria-label="螢幕截圖">
-    <figure class="device shot"><img src="/stitch-tales/images/screen-1.webp" srcset="/stitch-tales/images/screen-1-360.webp 360w, /stitch-tales/images/screen-1.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="數織上漸漸成形的貓頭鷹，空格裡標著叉號" loading="lazy" decoding="async"></figure>
-    <figure class="device shot"><img src="/stitch-tales/images/screen-2.webp" srcset="/stitch-tales/images/screen-2-360.webp 360w, /stitch-tales/images/screen-2.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="繡框裡的「十二星座」場景，一個圖案接一個圖案地繡成" loading="lazy" decoding="async"></figure>
-    <figure class="device shot"><img src="/stitch-tales/images/screen-3.webp" srcset="/stitch-tales/images/screen-3-360.webp 360w, /stitch-tales/images/screen-3.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="「窗邊的貓」場景特寫：燕子、蝴蝶、貓咪和毛線球" loading="lazy" decoding="async"></figure>
-    <figure class="device shot"><img src="/stitch-tales/images/screen-4.webp" srcset="/stitch-tales/images/screen-4-360.webp 360w, /stitch-tales/images/screen-4.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="日曆：每天一幅小刺繡，整個月的大圖案是一隻刺蝟" loading="lazy" decoding="async"></figure>
-    <figure class="device shot"><img src="/stitch-tales/images/screen-5.webp" srcset="/stitch-tales/images/screen-5-360.webp 360w, /stitch-tales/images/screen-5.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="色彩繽紛的民俗紋樣，繡不完的刺繡樣布" loading="lazy" decoding="async"></figure>
-    <figure class="device shot"><img src="/stitch-tales/images/screen-6.webp" srcset="/stitch-tales/images/screen-6-360.webp 360w, /stitch-tales/images/screen-6.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="繡好的繡框收藏" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-1.webp" srcset="/stitch-tales/images/screen-1-240.webp 240w, /stitch-tales/images/screen-1-360.webp 360w, /stitch-tales/images/screen-1-480.webp 480w, /stitch-tales/images/screen-1.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="數織上漸漸成形的貓頭鷹，空格裡標著叉號" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-2.webp" srcset="/stitch-tales/images/screen-2-240.webp 240w, /stitch-tales/images/screen-2-360.webp 360w, /stitch-tales/images/screen-2-480.webp 480w, /stitch-tales/images/screen-2.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="繡框裡的「十二星座」場景，一個圖案接一個圖案地繡成" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-3.webp" srcset="/stitch-tales/images/screen-3-240.webp 240w, /stitch-tales/images/screen-3-360.webp 360w, /stitch-tales/images/screen-3-480.webp 480w, /stitch-tales/images/screen-3.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="「窗邊的貓」場景特寫：燕子、蝴蝶、貓咪和毛線球" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-4.webp" srcset="/stitch-tales/images/screen-4-240.webp 240w, /stitch-tales/images/screen-4-360.webp 360w, /stitch-tales/images/screen-4-480.webp 480w, /stitch-tales/images/screen-4.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="日曆：每天一幅小刺繡，整個月的大圖案是一隻刺蝟" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-5.webp" srcset="/stitch-tales/images/screen-5-240.webp 240w, /stitch-tales/images/screen-5-360.webp 360w, /stitch-tales/images/screen-5-480.webp 480w, /stitch-tales/images/screen-5.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="色彩繽紛的民俗紋樣，繡不完的刺繡樣布" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-6.webp" srcset="/stitch-tales/images/screen-6-240.webp 240w, /stitch-tales/images/screen-6-360.webp 360w, /stitch-tales/images/screen-6-480.webp 480w, /stitch-tales/images/screen-6.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="繡好的繡框收藏" loading="lazy" decoding="async"></figure>
   </div>
 </section>
 
@@ -1438,8 +1442,8 @@ transition: none !important;
     <div class="footer-top">
       <a class="brand brand-small" href="/zh-hant/"><img src="/assets/logo.svg" width="28" height="28" alt=""><span>PAA Studios</span></a>
       <nav class="footer-nav" aria-label="遊戲">
-      <a href="/pixtangle/zh-hant/">Pixtangle</a>
       <a href="/stitch-tales/zh-hant/">Stitch Tales</a>
+      <a href="/pixtangle/zh-hant/">Pixtangle</a>
       </nav>
     </div>
     <p class="fine">© 2026 PAA Studios. 本網站不設定 Cookie，也不使用任何追蹤器。</p>

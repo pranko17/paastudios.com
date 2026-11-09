@@ -200,7 +200,7 @@ export default {
         ],
       },
       cardArt: {
-        alt: 'İçinde nakışlı bir çayır olan kasnak: kelebek, güneş, çiçekler ve henüz işlenmemiş bir mantar',
+        alt: 'Oyunda tamamlanmış kasnaklar: önde “Penceredeki kedi”, arkasında “Vitray kuşlar” ve “Güneş Sistemi”, yanında bordo iplikli bir iğne',
       },
       rules: {
         intro:

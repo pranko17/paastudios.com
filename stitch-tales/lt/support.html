@@ -687,6 +687,10 @@ transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
 .game-hero-art:hover .art-image {
 transform: rotate(-3deg) scale(1.02);
 }
+.game-card.frame-stitch .art-image {
+filter: drop-shadow(0 22px 26px color-mix(in srgb, var(--text) 26%, transparent))
+drop-shadow(0 2px 3px color-mix(in srgb, var(--text) 18%, transparent));
+}
 .principles-grid,
 .feature-grid {
 display: grid;
@@ -1464,8 +1468,8 @@ transition: none !important;
     <div class="footer-top">
       <a class="brand brand-small" href="/lt/"><img src="/assets/logo.svg" width="28" height="28" alt=""><span>PAA Studios</span></a>
       <nav class="footer-nav" aria-label="Žaidimai">
-      <a href="/pixtangle/lt/">Pixtangle</a>
       <a href="/stitch-tales/lt/">Stitch Tales</a>
+      <a href="/pixtangle/lt/">Pixtangle</a>
       </nav>
     </div>
     <p class="fine">© 2026 PAA Studios. Ši svetainė nenaudoja slapukų ir sekimo priemonių.</p>

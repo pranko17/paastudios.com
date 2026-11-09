@@ -203,7 +203,7 @@ export default {
         ],
       },
       cardArt: {
-        alt: 'Siuvinėjimo lankelis su išsiuvinėta gėlių pieva: drugelis, saulė, gėlės ir musmirė, kurią dar reikia išsiuvinėti',
+        alt: 'Žaidime užbaigti siuvinėjimo lankeliai: priekyje „Katė prie lango“, už jos „Vitražo paukščiai“ ir „Saulės sistema“, šalia adata su granato spalvos siūlu',
       },
       rules: {
         intro:

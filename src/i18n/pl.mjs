@@ -200,7 +200,7 @@ export default {
         ],
       },
       cardArt: {
-        alt: 'Tamborek z wyhaftowaną łąką: motyl, słońce, kwiaty i muchomor, który dopiero czeka na wyhaftowanie',
+        alt: 'Ukończone tamborki z gry: z przodu „Kot przy oknie”, za nim „Witrażowe ptaki” i „Układ Słoneczny”, a obok igła z bordową nitką',
       },
       rules: {
         intro:

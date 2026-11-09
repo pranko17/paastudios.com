@@ -730,6 +730,13 @@ p {
   transform: rotate(-3deg) scale(1.02);
 }
 
+/* The hoop of Stitch Tales is a photo of the game cut out round: its shadow
+   follows the rim, as a hoop lying on linen */
+.game-card.frame-stitch .art-image {
+  filter: drop-shadow(0 22px 26px color-mix(in srgb, var(--text) 26%, transparent))
+    drop-shadow(0 2px 3px color-mix(in srgb, var(--text) 18%, transparent));
+}
+
 /* ------------------------------------------------------------ principles -- */
 
 .principles-grid,

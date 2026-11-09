@@ -203,7 +203,7 @@ export default {
         ],
       },
       cardArt: {
-        alt: 'Un gherghef cu o pajiște brodată: un fluture, un soare, flori și o ciupercă ce urmează să fie brodată',
+        alt: 'Gherghefuri terminate din joc: în față „Pisica la fereastră”, în spate „Păsări de vitraliu” și „Sistemul solar”, plus un ac cu ață grena',
       },
       rules: {
         intro:

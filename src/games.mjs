@@ -1,4 +1,5 @@
-// The catalog: one entry per game, in the order they appear on the home page.
+// The catalog: one entry per game, in the order they appear on the home page
+// (the newest game first).
 // Adding a game is a new entry here plus its images in <slug>/images/ — the
 // home page card, the game page and the sitemap come from this data.
 //
@@ -22,7 +23,8 @@
 //   art           hero picture: { phones: [three screenshots] } or
 //                 { image, alt, width, height } for an illustration
 //   cardArt       optional picture for the home page card instead of `art`,
-//                 { image, alt, width, height }
+//                 { image, alt, width, height }, and `widths` of its smaller
+//                 copies for a raster one (largest last, as in IMAGE_WIDTHS)
 //   banner        optional wide picture under the hero, { image, alt, width,
 //                 height } (tools/images.py --banner makes it and its copies)
 //   rules         how to play: intro, steps, notes, tips for solving (all but
@@ -44,6 +46,158 @@
 // `games.<slug>` and replace them on the game page in that language (the
 // support note — as `supportNote`).
 export const games = [
+  {
+    slug: 'stitch-tales',
+    name: 'Stitch Tales',
+    genre: 'Cross-stitch nonogram',
+    tagline: 'Every puzzle is a stitch in a bigger picture.',
+    summary:
+      'Read the numbers along the rows and columns, fill the right cells — and each solved nonogram is embroidered into a scene in your hoop.',
+    platforms: 'iPhone, iPad and Android',
+    mentionFree: false,
+    keywords: [
+      'nonogram',
+      'cross stitch',
+      'embroidery',
+      'picross',
+      'griddlers',
+      'japanese crossword',
+      'logic puzzle',
+      'pixel art puzzle',
+      'puzzle game',
+      'mobile game',
+      'free game',
+      'offline game',
+      'iphone game',
+      'android game',
+    ],
+    stores: {
+      appStore: { url: 'https://apps.apple.com/app/id6822948115', id: '6822948115' },
+    },
+    theme: {
+      scheme: 'light',
+      bg: '#F2ECE0',
+      surface: '#FBF8F2',
+      surface2: '#E7DFCF',
+      line: '#D3C6AE',
+      text: '#2A231C',
+      muted: '#5F5444',
+      accent: '#B3263A',
+      accentText: '#FFFFFF',
+      glow: 'rgba(179, 38, 58, 0.12)',
+      glow2: 'rgba(46, 122, 82, 0.12)',
+      frame: 'stitch',
+      stitch: '#E7B7BE',
+      threads: ['#B3263A', '#2E7A52', '#C9A06A'],
+    },
+    icon: '/stitch-tales/images/icon.webp',
+    art: {
+      phones: [
+        {
+          image: '/stitch-tales/images/screen-1.webp',
+          alt: 'An owl taking shape on a nonogram, with crosses in the empty cells',
+        },
+        {
+          image: '/stitch-tales/images/screen-2.webp',
+          alt: 'The Zodiac scene in the hoop, stitched figure by figure',
+        },
+        {
+          image: '/stitch-tales/images/screen-3.webp',
+          alt: 'A close-up of the Cat by the window scene: swallows, a butterfly, a cat and a ball of yarn',
+        },
+      ],
+    },
+    cardArt: {
+      image: '/stitch-tales/images/hoop-photo.webp',
+      widths: [520, 1040],
+      alt: 'Finished hoops from the game: “Cat by the window” in front, “Stained-glass birds” and “Solar system” behind it, and a needle with garnet thread',
+      width: 600,
+      height: 620,
+    },
+    rules: {
+      intro:
+        'Stitch Tales is built on nonograms, picture logic puzzles also known as griddlers, hanjie or Japanese crosswords. The numbers beside the rows and above the columns tell you which cells to fill; fill the right ones, and a hidden picture appears — here, a figure embroidered into the scene in your hoop.',
+      steps: [
+        'The numbers beside a row or above a column tell you how many cells in a row to stitch, and in what order.',
+        'Between two runs there is always at least one empty cell — mark it with a cross.',
+        'Swipe your finger, and the thread follows it across the cells.',
+        'A wrong stitch costs one of your three lives, so take your time.',
+        'Solve the grid, and the figure is embroidered into the scene in your hoop.',
+      ],
+      notes: [
+        'Read the numbers above a column from top to bottom, and those beside a row from left to right.',
+        'In the sampler every number has its own thread color: runs of different colors may touch, while runs of the same color need an empty cell between them.',
+        'Your first figure walks you through every rule.',
+      ],
+      tips: [
+        'Start with the fullest lines: add up the runs with one empty cell between each. If the total equals the length of the line, the whole line is solved; if it falls short by just a cell or two, the longer runs already have cells you can be sure of.',
+        'Slide a run as far as it goes to one end, then to the other: the cells it covers both times are always stitched. A 7 in a line of 10 always fills its middle four.',
+        'A stitch right at the edge of the board is the start of the first run: stitch the whole run from there and put a cross after it.',
+        'Once a line is solved, its empty cells get crosses — and every cross tells the lines across it where a run cannot go.',
+        'Don’t guess: a wrong stitch costs a life. If nothing in a line is certain yet, come back to it after the lines that cross it.',
+      ],
+      image: '/stitch-tales/images/nonogram.svg',
+      alt: 'A nonogram of a cat, almost solved: garnet stitched cells, crosses in the empty ones',
+      width: 474,
+      height: 410,
+    },
+    screenshots: [
+      {
+        image: '/stitch-tales/images/screen-1.webp',
+        alt: 'An owl taking shape on a nonogram, with crosses in the empty cells',
+      },
+      {
+        image: '/stitch-tales/images/screen-2.webp',
+        alt: 'The Zodiac scene in the hoop, stitched figure by figure',
+      },
+      {
+        image: '/stitch-tales/images/screen-3.webp',
+        alt: 'A close-up of the Cat by the window scene: swallows, a butterfly, a cat and a ball of yarn',
+      },
+      {
+        image: '/stitch-tales/images/screen-4.webp',
+        alt: 'The calendar: a small embroidery for every day and a hedgehog for the whole month',
+      },
+      { image: '/stitch-tales/images/screen-5.webp', alt: 'The endless sampler of colored folk patterns' },
+      { image: '/stitch-tales/images/screen-6.webp', alt: 'The collection of finished hoops' },
+    ],
+    features: [
+      {
+        title: 'Hoop after hoop',
+        text: 'A cat by the window, stained-glass birds, a winter village, the halls of Asgard, the Wild West and many more. Every finished hoop joins your collection.',
+      },
+      {
+        title: 'Embroidery that feels real',
+        text: 'Every figure has its own threads and stitches, soft shadows on linen and the gentle sounds of needle and hoop.',
+      },
+      {
+        title: 'A calendar of daily stitches',
+        text: 'A small piece of embroidery waits every day. Stitch the whole month, and its big figure opens — missed days will wait for you.',
+      },
+      {
+        title: 'An endless sampler',
+        text: 'After your first finished scene, a sampler of folk patterns opens: colored nonograms in two or three threads that never run out.',
+      },
+      {
+        title: 'Hints for the tricky moments',
+        text: 'Reveal a cell, a whole line or 10 random cells — and a thimble saves you from your next mistake.',
+      },
+      {
+        title: 'No timer, no rush',
+        text: 'A gift every day, Game Center achievements and leaderboards on iPhone and iPad, and no internet needed to play.',
+      },
+    ],
+    support: {
+      email: 'stitchtales.support@paastudios.com',
+      url: '/stitch-tales/support.html',
+      note: 'You can also reach us from the game under Profile → Contact us.',
+    },
+    privacyPolicy: '/stitch-tales/privacy-policy.html',
+    pages: [
+      { path: 'privacy-policy.html', titleKey: 'privacyPolicy', content: 'privacy-policy.html' },
+      { path: 'support.html', titleKey: 'support', content: 'support.html', translated: true },
+    ],
+  },
   {
     slug: 'pixtangle',
     name: 'Pixtangle',
@@ -180,157 +334,6 @@ export const games = [
       url: '/pixtangle/support.html',
     },
     privacyPolicy: '/pixtangle/privacy-policy.html',
-    pages: [
-      { path: 'privacy-policy.html', titleKey: 'privacyPolicy', content: 'privacy-policy.html' },
-      { path: 'support.html', titleKey: 'support', content: 'support.html', translated: true },
-    ],
-  },
-  {
-    slug: 'stitch-tales',
-    name: 'Stitch Tales',
-    genre: 'Cross-stitch nonogram',
-    tagline: 'Every puzzle is a stitch in a bigger picture.',
-    summary:
-      'Read the numbers along the rows and columns, fill the right cells — and each solved nonogram is embroidered into a scene in your hoop.',
-    platforms: 'iPhone, iPad and Android',
-    mentionFree: false,
-    keywords: [
-      'nonogram',
-      'cross stitch',
-      'embroidery',
-      'picross',
-      'griddlers',
-      'japanese crossword',
-      'logic puzzle',
-      'pixel art puzzle',
-      'puzzle game',
-      'mobile game',
-      'free game',
-      'offline game',
-      'iphone game',
-      'android game',
-    ],
-    stores: {
-      appStore: { url: 'https://apps.apple.com/app/id6822948115', id: '6822948115' },
-    },
-    theme: {
-      scheme: 'light',
-      bg: '#F2ECE0',
-      surface: '#FBF8F2',
-      surface2: '#E7DFCF',
-      line: '#D3C6AE',
-      text: '#2A231C',
-      muted: '#5F5444',
-      accent: '#B3263A',
-      accentText: '#FFFFFF',
-      glow: 'rgba(179, 38, 58, 0.12)',
-      glow2: 'rgba(46, 122, 82, 0.12)',
-      frame: 'stitch',
-      stitch: '#E7B7BE',
-      threads: ['#B3263A', '#2E7A52', '#C9A06A'],
-    },
-    icon: '/stitch-tales/images/icon.webp',
-    art: {
-      phones: [
-        {
-          image: '/stitch-tales/images/screen-1.webp',
-          alt: 'An owl taking shape on a nonogram, with crosses in the empty cells',
-        },
-        {
-          image: '/stitch-tales/images/screen-2.webp',
-          alt: 'The Zodiac scene in the hoop, stitched figure by figure',
-        },
-        {
-          image: '/stitch-tales/images/screen-3.webp',
-          alt: 'A close-up of the Cat by the window scene: swallows, a butterfly, a cat and a ball of yarn',
-        },
-      ],
-    },
-    cardArt: {
-      image: '/stitch-tales/images/hoop.svg',
-      alt: 'An embroidery hoop with a stitched meadow: a butterfly, a sun, flowers and a mushroom still to be stitched',
-      width: 600,
-      height: 620,
-    },
-    rules: {
-      intro:
-        'Stitch Tales is built on nonograms, picture logic puzzles also known as griddlers, hanjie or Japanese crosswords. The numbers beside the rows and above the columns tell you which cells to fill; fill the right ones, and a hidden picture appears — here, a figure embroidered into the scene in your hoop.',
-      steps: [
-        'The numbers beside a row or above a column tell you how many cells in a row to stitch, and in what order.',
-        'Between two runs there is always at least one empty cell — mark it with a cross.',
-        'Swipe your finger, and the thread follows it across the cells.',
-        'A wrong stitch costs one of your three lives, so take your time.',
-        'Solve the grid, and the figure is embroidered into the scene in your hoop.',
-      ],
-      notes: [
-        'Read the numbers above a column from top to bottom, and those beside a row from left to right.',
-        'In the sampler every number has its own thread color: runs of different colors may touch, while runs of the same color need an empty cell between them.',
-        'Your first figure walks you through every rule.',
-      ],
-      tips: [
-        'Start with the fullest lines: add up the runs with one empty cell between each. If the total equals the length of the line, the whole line is solved; if it falls short by just a cell or two, the longer runs already have cells you can be sure of.',
-        'Slide a run as far as it goes to one end, then to the other: the cells it covers both times are always stitched. A 7 in a line of 10 always fills its middle four.',
-        'A stitch right at the edge of the board is the start of the first run: stitch the whole run from there and put a cross after it.',
-        'Once a line is solved, its empty cells get crosses — and every cross tells the lines across it where a run cannot go.',
-        'Don’t guess: a wrong stitch costs a life. If nothing in a line is certain yet, come back to it after the lines that cross it.',
-      ],
-      image: '/stitch-tales/images/nonogram.svg',
-      alt: 'A nonogram of a cat, almost solved: garnet stitched cells, crosses in the empty ones',
-      width: 474,
-      height: 410,
-    },
-    screenshots: [
-      {
-        image: '/stitch-tales/images/screen-1.webp',
-        alt: 'An owl taking shape on a nonogram, with crosses in the empty cells',
-      },
-      {
-        image: '/stitch-tales/images/screen-2.webp',
-        alt: 'The Zodiac scene in the hoop, stitched figure by figure',
-      },
-      {
-        image: '/stitch-tales/images/screen-3.webp',
-        alt: 'A close-up of the Cat by the window scene: swallows, a butterfly, a cat and a ball of yarn',
-      },
-      {
-        image: '/stitch-tales/images/screen-4.webp',
-        alt: 'The calendar: a small embroidery for every day and a hedgehog for the whole month',
-      },
-      { image: '/stitch-tales/images/screen-5.webp', alt: 'The endless sampler of colored folk patterns' },
-      { image: '/stitch-tales/images/screen-6.webp', alt: 'The collection of finished hoops' },
-    ],
-    features: [
-      {
-        title: 'Hoop after hoop',
-        text: 'A cat by the window, stained-glass birds, a winter village, the halls of Asgard, the Wild West and many more. Every finished hoop joins your collection.',
-      },
-      {
-        title: 'Embroidery that feels real',
-        text: 'Every figure has its own threads and stitches, soft shadows on linen and the gentle sounds of needle and hoop.',
-      },
-      {
-        title: 'A calendar of daily stitches',
-        text: 'A small piece of embroidery waits every day. Stitch the whole month, and its big figure opens — missed days will wait for you.',
-      },
-      {
-        title: 'An endless sampler',
-        text: 'After your first finished scene, a sampler of folk patterns opens: colored nonograms in two or three threads that never run out.',
-      },
-      {
-        title: 'Hints for the tricky moments',
-        text: 'Reveal a cell, a whole line or 10 random cells — and a thimble saves you from your next mistake.',
-      },
-      {
-        title: 'No timer, no rush',
-        text: 'A gift every day, Game Center achievements and leaderboards on iPhone and iPad, and no internet needed to play.',
-      },
-    ],
-    support: {
-      email: 'stitchtales.support@paastudios.com',
-      url: '/stitch-tales/support.html',
-      note: 'You can also reach us from the game under Profile → Contact us.',
-    },
-    privacyPolicy: '/stitch-tales/privacy-policy.html',
     pages: [
       { path: 'privacy-policy.html', titleKey: 'privacyPolicy', content: 'privacy-policy.html' },
       { path: 'support.html', titleKey: 'support', content: 'support.html', translated: true },

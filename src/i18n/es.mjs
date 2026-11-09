@@ -201,7 +201,7 @@ export default {
         ],
       },
       cardArt: {
-        alt: 'Un bastidor con un prado florido bordado: una mariposa, un sol, flores y una seta aún por bordar',
+        alt: 'Bastidores terminados del juego: delante, «Gato junto a la ventana»; detrás, «Pájaros de vitral» y «Sistema solar», y una aguja con hilo granate',
       },
       rules: {
         intro:

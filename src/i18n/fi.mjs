@@ -203,7 +203,7 @@ export default {
         ],
       },
       cardArt: {
-        alt: 'Kirjontakehys, johon on kirjottu kukkaniitty: perhonen, aurinko, kukkia ja kärpässieni, joka odottaa vielä kirjomista',
+        alt: 'Valmiita kirjontakehiä pelistä: edessä ”Kissa ikkunalla”, sen takana ”Lasimaalauslinnut” ja ”Aurinkokunta” sekä neula ja granaatinpunainen lanka',
       },
       rules: {
         intro:

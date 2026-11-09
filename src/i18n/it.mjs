@@ -202,7 +202,7 @@ export default {
         ],
       },
       cardArt: {
-        alt: 'Un telaio da ricamo con un prato fiorito ricamato: una farfalla, un sole, dei fiori e un fungo ancora da ricamare',
+        alt: 'Telai da ricamo finiti del gioco: davanti «Gatto alla finestra», dietro «Uccelli in vetrata» e «Sistema solare», con un ago e un filo granata',
       },
       rules: {
         intro:

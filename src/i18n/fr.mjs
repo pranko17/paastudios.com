@@ -200,7 +200,7 @@ export default {
         ],
       },
       cardArt: {
-        alt: 'Un tambour de broderie avec une prairie fleurie brodée : un papillon, un soleil, des fleurs et un champignon encore à broder',
+        alt: 'Tambours à broder terminés du jeu : « Chat à la fenêtre » au premier plan, « Oiseaux en vitrail » et « Système solaire » derrière, avec une aiguille et un fil grenat',
       },
       rules: {
         intro:

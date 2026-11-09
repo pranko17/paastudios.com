@@ -201,7 +201,7 @@ export default {
         ],
       },
       cardArt: {
-        alt: 'En broderibåge med en broderad blomsteräng: en fjäril, en sol, blommor och en flugsvamp som ännu inte är broderad',
+        alt: 'Färdiga broderibågar från spelet: ”Katt i fönstret” längst fram, bakom den ”Fåglar i blyglas” och ”Solsystemet”, och en nål med granatröd tråd',
       },
       rules: {
         intro:

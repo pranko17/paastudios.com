@@ -627,6 +627,10 @@ transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
 .game-hero-art:hover .art-image {
 transform: rotate(-3deg) scale(1.02);
 }
+.game-card.frame-stitch .art-image {
+filter: drop-shadow(0 22px 26px color-mix(in srgb, var(--text) 26%, transparent))
+drop-shadow(0 2px 3px color-mix(in srgb, var(--text) 18%, transparent));
+}
 .principles-grid,
 .feature-grid {
 display: grid;
@@ -1247,8 +1251,8 @@ transition: none !important;
   <h1>This piece is missing.</h1>
   <p class="lead">The page you were looking for isn’t on the board. Try one of our games instead.</p>
   <div class="hero-games">
-    <a class="chip" href="/pixtangle/"><img class="" src="/pixtangle/images/icon.webp" srcset="/pixtangle/images/icon-128.webp 128w, /pixtangle/images/icon.webp 256w" sizes="36px" width="36" height="36" alt=""><span>Pixtangle</span></a>
     <a class="chip" href="/stitch-tales/"><img class="" src="/stitch-tales/images/icon.webp" srcset="/stitch-tales/images/icon-128.webp 128w, /stitch-tales/images/icon.webp 256w" sizes="36px" width="36" height="36" alt=""><span>Stitch Tales</span></a>
+    <a class="chip" href="/pixtangle/"><img class="" src="/pixtangle/images/icon.webp" srcset="/pixtangle/images/icon-128.webp 128w, /pixtangle/images/icon.webp 256w" sizes="36px" width="36" height="36" alt=""><span>Pixtangle</span></a>
   </div>
 </section>
 </main>
@@ -1257,8 +1261,8 @@ transition: none !important;
     <div class="footer-top">
       <a class="brand brand-small" href="/"><img src="/assets/logo.svg" width="28" height="28" alt=""><span>PAA Studios</span></a>
       <nav class="footer-nav" aria-label="Games">
-      <a href="/pixtangle/">Pixtangle</a>
       <a href="/stitch-tales/">Stitch Tales</a>
+      <a href="/pixtangle/">Pixtangle</a>
       </nav>
     </div>
     <p class="fine">© 2026 PAA Studios. This site sets no cookies and uses no trackers.</p>

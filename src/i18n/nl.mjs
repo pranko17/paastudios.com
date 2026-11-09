@@ -202,7 +202,7 @@ export default {
         ],
       },
       cardArt: {
-        alt: 'Een borduurring met een geborduurde bloemenweide: een vlinder, een zon, bloemen en een vliegenzwam die nog geborduurd moet worden',
+        alt: 'Voltooide borduurringen uit het spel: vooraan ‘Kat bij het raam’, daarachter ‘Glas-in-loodvogels’ en ‘Zonnestelsel’, en een naald met granaatrode draad',
       },
       rules: {
         intro:

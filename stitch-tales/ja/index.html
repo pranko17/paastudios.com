@@ -688,6 +688,10 @@ transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
 .game-hero-art:hover .art-image {
 transform: rotate(-3deg) scale(1.02);
 }
+.game-card.frame-stitch .art-image {
+filter: drop-shadow(0 22px 26px color-mix(in srgb, var(--text) 26%, transparent))
+drop-shadow(0 2px 3px color-mix(in srgb, var(--text) 18%, transparent));
+}
 .principles-grid,
 .feature-grid {
 display: grid;
@@ -1352,7 +1356,7 @@ transition: none !important;
     <div class="stores"><a class="store" href="https://apps.apple.com/app/id6822948115?pt=129254796&amp;ct=stitch-tales-ja&amp;mt=8"><img src="/assets/badges/app-store.svg" width="144" height="48" alt="Stitch TalesをApp Storeでダウンロード"></a></div><p class="soon">Google Playで近日配信予定</p>
     <p class="platforms">iPhone、iPad、Android対応</p>
   </div>
-  <div class="game-hero-art"><div class="phones"><figure class="device phone-left"><img src="/stitch-tales/images/screen-1.webp" srcset="/stitch-tales/images/screen-1-360.webp 360w, /stitch-tales/images/screen-1.webp 600w" sizes="(max-width: 560px) 40vw, 210px" width="600" height="1304" alt="イラストロジックに浮かび上がるフクロウと、空きマスのバツ" loading="eager" decoding="async"></figure><figure class="device phone-right"><img src="/stitch-tales/images/screen-3.webp" srcset="/stitch-tales/images/screen-3-360.webp 360w, /stitch-tales/images/screen-3.webp 600w" sizes="(max-width: 560px) 40vw, 210px" width="600" height="1304" alt="「窓辺の猫」の拡大：ツバメ、チョウ、ネコ、毛糸玉" loading="eager" decoding="async"></figure><figure class="device phone-center"><img src="/stitch-tales/images/screen-2.webp" srcset="/stitch-tales/images/screen-2-360.webp 360w, /stitch-tales/images/screen-2.webp 600w" sizes="(max-width: 560px) 40vw, 210px" width="600" height="1304" alt="図柄をひとつずつ刺繍していく、刺繍枠の「十二星座」" loading="eager" decoding="async"></figure></div></div>
+  <div class="game-hero-art"><div class="phones"><figure class="device phone-left"><img src="/stitch-tales/images/screen-1.webp" srcset="/stitch-tales/images/screen-1-240.webp 240w, /stitch-tales/images/screen-1-360.webp 360w, /stitch-tales/images/screen-1-480.webp 480w, /stitch-tales/images/screen-1.webp 600w" sizes="(max-width: 560px) 34vw, 192px" width="600" height="1304" alt="イラストロジックに浮かび上がるフクロウと、空きマスのバツ" loading="eager" decoding="async"></figure><figure class="device phone-right"><img src="/stitch-tales/images/screen-3.webp" srcset="/stitch-tales/images/screen-3-240.webp 240w, /stitch-tales/images/screen-3-360.webp 360w, /stitch-tales/images/screen-3-480.webp 480w, /stitch-tales/images/screen-3.webp 600w" sizes="(max-width: 560px) 34vw, 192px" width="600" height="1304" alt="「窓辺の猫」の拡大：ツバメ、チョウ、ネコ、毛糸玉" loading="eager" decoding="async"></figure><figure class="device phone-center"><img src="/stitch-tales/images/screen-2.webp" srcset="/stitch-tales/images/screen-2-240.webp 240w, /stitch-tales/images/screen-2-360.webp 360w, /stitch-tales/images/screen-2-480.webp 480w, /stitch-tales/images/screen-2.webp 600w" sizes="(max-width: 560px) 34vw, 192px" width="600" height="1304" alt="図柄をひとつずつ刺繍していく、刺繍枠の「十二星座」" loading="eager" fetchpriority="high" decoding="async"></figure></div></div>
 </section>
 
 <section class="block wrap rules" aria-labelledby="rules-title">
@@ -1389,12 +1393,12 @@ transition: none !important;
 <section class="block gallery" aria-labelledby="gallery-title">
   <div class="wrap section-head"><h2 id="gallery-title">もっと詳しく</h2></div>
   <div class="shots" tabindex="0" aria-label="スクリーンショット">
-    <figure class="device shot"><img src="/stitch-tales/images/screen-1.webp" srcset="/stitch-tales/images/screen-1-360.webp 360w, /stitch-tales/images/screen-1.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="イラストロジックに浮かび上がるフクロウと、空きマスのバツ" loading="lazy" decoding="async"></figure>
-    <figure class="device shot"><img src="/stitch-tales/images/screen-2.webp" srcset="/stitch-tales/images/screen-2-360.webp 360w, /stitch-tales/images/screen-2.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="図柄をひとつずつ刺繍していく、刺繍枠の「十二星座」" loading="lazy" decoding="async"></figure>
-    <figure class="device shot"><img src="/stitch-tales/images/screen-3.webp" srcset="/stitch-tales/images/screen-3-360.webp 360w, /stitch-tales/images/screen-3.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="「窓辺の猫」の拡大：ツバメ、チョウ、ネコ、毛糸玉" loading="lazy" decoding="async"></figure>
-    <figure class="device shot"><img src="/stitch-tales/images/screen-4.webp" srcset="/stitch-tales/images/screen-4-360.webp 360w, /stitch-tales/images/screen-4.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="カレンダー：毎日の小さな刺繍と、月の図柄のハリネズミ" loading="lazy" decoding="async"></figure>
-    <figure class="device shot"><img src="/stitch-tales/images/screen-5.webp" srcset="/stitch-tales/images/screen-5-360.webp 360w, /stitch-tales/images/screen-5.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="色とりどりの伝統模様が続く、終わりのないサンプラー" loading="lazy" decoding="async"></figure>
-    <figure class="device shot"><img src="/stitch-tales/images/screen-6.webp" srcset="/stitch-tales/images/screen-6-360.webp 360w, /stitch-tales/images/screen-6.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="仕上がった刺繍枠のコレクション" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-1.webp" srcset="/stitch-tales/images/screen-1-240.webp 240w, /stitch-tales/images/screen-1-360.webp 360w, /stitch-tales/images/screen-1-480.webp 480w, /stitch-tales/images/screen-1.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="イラストロジックに浮かび上がるフクロウと、空きマスのバツ" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-2.webp" srcset="/stitch-tales/images/screen-2-240.webp 240w, /stitch-tales/images/screen-2-360.webp 360w, /stitch-tales/images/screen-2-480.webp 480w, /stitch-tales/images/screen-2.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="図柄をひとつずつ刺繍していく、刺繍枠の「十二星座」" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-3.webp" srcset="/stitch-tales/images/screen-3-240.webp 240w, /stitch-tales/images/screen-3-360.webp 360w, /stitch-tales/images/screen-3-480.webp 480w, /stitch-tales/images/screen-3.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="「窓辺の猫」の拡大：ツバメ、チョウ、ネコ、毛糸玉" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-4.webp" srcset="/stitch-tales/images/screen-4-240.webp 240w, /stitch-tales/images/screen-4-360.webp 360w, /stitch-tales/images/screen-4-480.webp 480w, /stitch-tales/images/screen-4.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="カレンダー：毎日の小さな刺繍と、月の図柄のハリネズミ" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-5.webp" srcset="/stitch-tales/images/screen-5-240.webp 240w, /stitch-tales/images/screen-5-360.webp 360w, /stitch-tales/images/screen-5-480.webp 480w, /stitch-tales/images/screen-5.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="色とりどりの伝統模様が続く、終わりのないサンプラー" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-6.webp" srcset="/stitch-tales/images/screen-6-240.webp 240w, /stitch-tales/images/screen-6-360.webp 360w, /stitch-tales/images/screen-6-480.webp 480w, /stitch-tales/images/screen-6.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="仕上がった刺繍枠のコレクション" loading="lazy" decoding="async"></figure>
   </div>
 </section>
 
@@ -1438,8 +1442,8 @@ transition: none !important;
     <div class="footer-top">
       <a class="brand brand-small" href="/ja/"><img src="/assets/logo.svg" width="28" height="28" alt=""><span>PAA Studios</span></a>
       <nav class="footer-nav" aria-label="ゲーム">
-      <a href="/pixtangle/ja/">Pixtangle</a>
       <a href="/stitch-tales/ja/">Stitch Tales</a>
+      <a href="/pixtangle/ja/">Pixtangle</a>
       </nav>
     </div>
     <p class="fine">© 2026 PAA Studios. このサイトはCookieを使用せず、トラッカーも使っていません。</p>

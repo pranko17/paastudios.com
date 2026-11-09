@@ -204,7 +204,7 @@ export default {
         ],
       },
       cardArt: {
-        alt: 'Hímzőkeret kihímzett réttel: pillangó, nap, virágok és egy légyölő galóca, amelyet még ki kell hímezni',
+        alt: 'Kész hímzőkeretek a játékból: elöl „Macska az ablakban”, mögötte „Ólomüveg madarak” és „Naprendszer”, mellettük egy tű gránátvörös cérnával',
       },
       rules: {
         intro:

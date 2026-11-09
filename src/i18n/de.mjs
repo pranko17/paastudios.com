@@ -202,7 +202,7 @@ export default {
         ],
       },
       cardArt: {
-        alt: 'Ein Stickrahmen mit einer gestickten Blumenwiese: ein Schmetterling, eine Sonne, Blumen und ein Fliegenpilz, der noch gestickt werden will',
+        alt: 'Fertige Stickrahmen aus dem Spiel: vorne „Katze am Fenster“, dahinter „Vögel aus Buntglas“ und „Sonnensystem“, dazu eine Nadel mit granatrotem Faden',
       },
       rules: {
         intro:

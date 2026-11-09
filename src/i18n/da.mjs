@@ -202,7 +202,7 @@ export default {
         ],
       },
       cardArt: {
-        alt: 'En broderiring med en broderet blomstereng: en sommerfugl, en sol, blomster og en fluesvamp, der endnu ikke er broderet',
+        alt: 'Færdige broderirammer fra spillet: »Kat i vinduet« forrest, bag den »Fugle i glasmosaik« og »Solsystemet«, og en nål med granatrød tråd',
       },
       rules: {
         intro:

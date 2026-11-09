@@ -201,7 +201,7 @@ export default {
         ],
       },
       cardArt: {
-        alt: 'Vyšívací rámeček s vyšitou loukou: motýl, slunce, květiny a muchomůrka, kterou ještě zbývá vyšít',
+        alt: 'Hotové vyšívací kruhy ze hry: vpředu „Kočka u okna“, za ní „Vitrážoví ptáci“ a „Sluneční soustava“ a vedle jehla s granátově červenou nití',
       },
       rules: {
         intro:

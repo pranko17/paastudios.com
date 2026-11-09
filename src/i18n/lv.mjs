@@ -203,7 +203,7 @@ export default {
         ],
       },
       cardArt: {
-        alt: 'Izšūšanas riņķis ar izšūtu ziedu pļavu: tauriņš, saule, ziedi un mušmire, kas vēl jāizšuj',
+        alt: 'Spēlē pabeigtas izšūšanas stīpas: priekšā “Kaķis pie loga”, aiz tā “Vitrāžu putni” un “Saules sistēma”, blakus adata ar granātsarkanu diegu',
       },
       rules: {
         intro:
