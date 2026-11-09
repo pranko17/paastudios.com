@@ -18,6 +18,7 @@ export default {
     storeGooglePlay: 'Google Play',
     and: 'dan',
     freeOn: 'Gratis di {platforms}',
+    madeFor: 'Untuk {platforms}',
     howToPlay: 'Cara bermain',
     tips: 'Tips menyelesaikan',
     faq: 'Tanya jawab',
@@ -194,41 +195,74 @@ export default {
         'game offline',
       ],
       art: {
+        alts: [
+          'Burung hantu yang mulai terbentuk di nonogram, dengan silang di kotak kosong',
+          'Adegan “Zodiak” di bingkai sulam, disulam figur demi figur',
+          'Adegan “Kucing di jendela” dari dekat: burung layang-layang, kupu-kupu, kucing, dan gulungan benang',
+        ],
+      },
+      cardArt: {
         alt: 'Bingkai sulam dengan padang bunga tersulam: kupu-kupu, matahari, bunga-bunga, dan jamur yang belum disulam',
       },
+      banner: {
+        alt: 'Kolase nonogram yang berubah menjadi sulaman: gurita dengan ikan badut, burung tukan, gerbang torii, burung layang-layang, rubah, pohon Natal, dan lainnya',
+      },
       rules: {
+        intro:
+          'Stitch Tales dibuat berdasarkan nonogram, teka-teki logika bergambar yang juga dikenal sebagai griddlers, hanjie, atau teka-teki silang Jepang. Angka di samping baris dan di atas kolom memberi tahu kotak mana yang perlu diisi; isi kotak yang benar, dan gambar tersembunyi pun muncul — di sini, sebuah figur yang tersulam ke dalam adegan di bingkai sulammu.',
         steps: [
-          'Angka di samping setiap baris dan kolom menunjukkan potongan kotak terisi, berurutan.',
-          'Sulam kotak yang harus terisi; tandai kotak yang tetap kosong dengan silang.',
-          'Hati-hati — satu sulaman yang salah mengurangi satu nyawa, salah satu hati sulamanmu.',
-          'Pecahkan kisinya, dan figurnya tersulam ke dalam gambar di bingkai sulammu.',
+          'Angka di samping baris atau di atas kolom memberi tahu berapa kotak berturut-turut yang perlu disulam, dan dalam urutan apa.',
+          'Di antara dua kelompok selalu ada setidaknya satu kotak kosong — tandai dengan silang.',
+          'Usap jarimu, dan benang akan mengikutinya melintasi kotak-kotak.',
+          'Tusukan yang salah mengurangi satu dari tiga nyawamu, jadi pelan-pelan saja.',
+          'Pecahkan kisinya, dan figurnya tersulam ke dalam adegan di bingkai sulammu.',
+        ],
+        notes: [
+          'Angka di atas kolom dibaca dari atas ke bawah, angka di samping baris dari kiri ke kanan.',
+          'Di kain sulam, setiap angka punya warna benangnya sendiri: kelompok yang berbeda warna boleh bersentuhan, sedangkan kelompok yang sewarna harus dipisah satu kotak kosong.',
+          'Figur pertamamu akan menuntunmu melewati setiap aturan.',
+        ],
+        tips: [
+          'Mulailah dari garis yang paling penuh: jumlahkan kelompok-kelompoknya beserta satu kotak kosong di antara setiap dua kelompok. Jika totalnya sama dengan panjang garis, seluruh garis sudah terpecahkan; jika hanya kurang satu atau dua kotak, kelompok yang lebih panjang sudah punya kotak yang pasti.',
+          'Geser sebuah kelompok sejauh mungkin ke satu ujung, lalu ke ujung lainnya: kotak yang tertutup di kedua posisi itu pasti disulam. Angka 7 di garis sepanjang 10 kotak selalu mengisi empat kotak di tengahnya.',
+          'Tusukan tepat di tepi papan adalah awal kelompok pertama: sulam seluruh kelompok dari situ, lalu beri silang tepat sesudahnya.',
+          'Begitu sebuah garis terpecahkan, kotak kosongnya diberi silang — dan setiap silang memberi tahu garis yang memotongnya di mana kelompok tidak mungkin berada.',
+          'Jangan menebak: tusukan yang salah mengurangi satu nyawa. Jika belum ada yang pasti di sebuah garis, kembalilah ke sana setelah mengerjakan garis-garis yang memotongnya.',
         ],
         alt: 'Nonogram kucing yang hampir terpecahkan: kotak tersulam merah delima, silang di kotak kosong',
       },
+      screenshots: [
+        'Burung hantu yang mulai terbentuk di nonogram, dengan silang di kotak kosong',
+        'Adegan “Zodiak” di bingkai sulam, disulam figur demi figur',
+        'Adegan “Kucing di jendela” dari dekat: burung layang-layang, kupu-kupu, kucing, dan gulungan benang',
+        'Kalender: sulaman kecil untuk setiap hari dan landak untuk sebulan penuh',
+        'Kain sulam tanpa akhir dengan motif tradisional warna-warni',
+        'Koleksi bingkai sulam yang sudah selesai',
+      ],
       features: [
         {
-          title: 'Adegan untuk disulam',
-          text: 'Padang bunga, Stonehenge, piknik buah, tata surya, taman Jepang, rumah boneka, desa musim dingin, dunia bawah laut, dan masih banyak lagi.',
+          title: 'Bingkai demi bingkai',
+          text: 'Kucing di jendela, burung kaca patri, desa musim dingin, aula Asgard, Wild West, dan masih banyak lagi. Setiap bingkai yang selesai masuk ke koleksimu.',
         },
         {
-          title: 'Tusuk sulam sungguhan',
-          text: 'Tusuk satin, tusuk rantai, tusuk tulang ikan, dan simpul Prancis — setiap figur disulam dengan benang dan teksturnya sendiri.',
+          title: 'Sulaman yang terasa nyata',
+          text: 'Setiap figur punya benang dan tusukannya sendiri, bayangan lembut di atas linen, serta suara jarum dan bingkai yang menenangkan.',
+        },
+        {
+          title: 'Kalender sulaman harian',
+          text: 'Setiap hari, sulaman kecil baru menantimu. Sulam sebulan penuh, dan figur besar bulan itu akan terbuka — hari yang terlewat tetap menunggumu.',
         },
         {
           title: 'Kain sulam tanpa akhir',
-          text: 'Setelah adegan pertamamu, terbukalah kain sulam bermotif tradisional — dan polanya tak pernah habis.',
+          text: 'Setelah adegan pertamamu selesai, terbukalah kain sulam bermotif tradisional: nonogram berwarna dengan dua atau tiga benang yang tak pernah habis.',
         },
         {
-          title: 'Petunjuk saat buntu',
-          text: 'Buka satu kotak atau satu garis penuh, lalu lanjutkan menyulam.',
+          title: 'Petunjuk untuk saat-saat sulit',
+          text: 'Buka satu kotak, satu garis penuh, atau 10 kotak acak — dan bidal melindungimu dari kesalahan berikutnya.',
         },
         {
-          title: 'Hadiah setiap hari',
-          text: 'Datang setiap hari untuk hadiah yang makin besar seiring rentetanmu.',
-        },
-        {
-          title: 'Nyaman di mata',
-          text: 'Warna linen yang lembut, suara sulaman yang halus, tanpa akun dan tanpa perlu internet.',
+          title: 'Tanpa timer, tanpa buru-buru',
+          text: 'Hadiah setiap hari, pencapaian dan papan peringkat Game Center di iPhone dan iPad, dan bisa dimainkan tanpa internet.',
         },
       ],
       supportNote: 'Kamu juga bisa menghubungi kami dari dalam game: Profil → Hubungi kami.',

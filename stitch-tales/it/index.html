@@ -582,7 +582,8 @@ width: auto;
 height: 48px;
 }
 .soon {
-display: inline-flex;
+display: flex;
+width: fit-content;
 align-items: center;
 gap: 10px;
 margin: 28px 0 0;
@@ -970,14 +971,6 @@ box-shadow:
 14px 0 0 color-mix(in srgb, var(--accent) 60%, transparent),
 28px 0 0 color-mix(in srgb, var(--accent) 30%, transparent);
 }
-.frame-stitch .feature::before {
-width: 46px;
-height: 3px;
-margin-block: 4px 23px;
-border-radius: 2px;
-background: repeating-linear-gradient(90deg, var(--accent) 0 8px, transparent 8px 13px);
-box-shadow: none;
-}
 .support-card {
 position: relative;
 display: grid;
@@ -993,7 +986,7 @@ background: var(--surface);
 content: "";
 position: absolute;
 inset: 10px;
-border: 2px dashed color-mix(in srgb, var(--accent) 30%, transparent);
+border: 2px dashed var(--stitch, color-mix(in srgb, var(--accent) 30%, transparent));
 border-radius: calc(var(--radius-lg) - 10px);
 pointer-events: none;
 }
@@ -1081,6 +1074,75 @@ color: var(--accent);
 inset: 7px;
 border-radius: calc(var(--radius) - 7px);
 }
+.banner {
+margin-block: 0;
+}
+.banner img {
+width: 100%;
+border-radius: var(--radius);
+}
+.game-page.frame-stitch,
+.doc-page.frame-stitch {
+background:
+radial-gradient(1100px 620px at 88% -8%, var(--glow), transparent 62%),
+radial-gradient(900px 560px at -12% 18%, var(--glow2), transparent 60%),
+repeating-linear-gradient(0deg, color-mix(in srgb, var(--muted) 7%, transparent) 0 1px, transparent 1px 4px),
+repeating-linear-gradient(90deg, color-mix(in srgb, var(--muted) 5%, transparent) 0 1px, transparent 1px 3px),
+var(--bg);
+background-repeat: no-repeat, no-repeat, repeat, repeat;
+}
+.game-page.frame-stitch :is(.feature, .steps li, .tips li, .support-card, .banner) {
+position: relative;
+border-color: transparent;
+background: var(--surface);
+box-shadow:
+0 1px 2px color-mix(in srgb, var(--text) 8%, transparent),
+0 14px 28px -20px color-mix(in srgb, var(--text) 50%, transparent);
+}
+.game-page.frame-stitch :is(.feature, .steps li, .tips li, .banner)::after {
+content: "";
+position: absolute;
+inset: 7px;
+border: 2px dashed var(--stitch);
+border-radius: calc(var(--radius) - 7px);
+pointer-events: none;
+}
+.game-page.frame-stitch .steps li {
+padding: 18px 24px 18px 18px;
+}
+.game-page.frame-stitch .steps li::before {
+border-radius: 50%;
+outline: 1.5px dashed color-mix(in srgb, var(--accent-text) 70%, transparent);
+outline-offset: -5px;
+}
+.game-page.frame-stitch .tips li::before {
+border-radius: 50%;
+}
+.game-page.frame-stitch :is(.section-head h2, .rules h2, .support-card h2, .feature)::before {
+content: "";
+display: block;
+width: 54px;
+height: 14px;
+margin-bottom: 14px;
+border-radius: 0;
+box-shadow: none;
+background: linear-gradient(90deg, var(--thread-1) 0 33.4%, var(--thread-2) 33.4% 66.6%, var(--thread-3) 66.6%);
+-webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 16'%3E%3Cpath d='M3 3l10 10M13 3 3 13M25 3l10 10M35 3 25 13M47 3l10 10M57 3 47 13' stroke='%23000' stroke-width='2.8' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
+mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 16'%3E%3Cpath d='M3 3l10 10M13 3 3 13M25 3l10 10M35 3 25 13M47 3l10 10M57 3 47 13' stroke='%23000' stroke-width='2.8' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.game-page.frame-stitch .feature::before {
+margin-bottom: 18px;
+}
+.game-page.frame-stitch .banner {
+padding: 14px;
+border-radius: var(--radius-lg);
+}
+.game-page.frame-stitch .banner::after {
+border-radius: calc(var(--radius-lg) - 7px);
+}
+.game-page.frame-stitch .banner img {
+border-radius: calc(var(--radius-lg) - 14px);
+}
 .doc {
 max-width: 760px;
 margin-inline: auto;
@@ -1147,6 +1209,19 @@ font-size: 16px;
 .feature-grid {
 grid-template-columns: 1fr;
 }
+.banner img {
+aspect-ratio: 2 / 1;
+object-fit: cover;
+}
+.game-page.frame-stitch .banner {
+padding: 10px;
+}
+.game-page.frame-stitch .banner::after {
+inset: 5px;
+}
+.game-page.frame-stitch .banner img {
+border-radius: calc(var(--radius-lg) - 10px);
+}
 .site-nav a {
 padding: 8px 10px;
 }
@@ -1193,10 +1268,11 @@ transition: none !important;
 }
 }
 </style>
+<meta name="apple-itunes-app" content="app-id=6822948115">
 <meta name="theme-color" content="#F2ECE0">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"MobileApplication","name":"Stitch Tales","description":"Leggi i numeri lungo righe e colonne, ricama le caselle giuste — e ogni nonogramma risolto viene ricamato in una scena del tuo telaio.","url":"https://paastudios.com/stitch-tales/it/","image":"https://paastudios.com/stitch-tales/images/icon.webp","inLanguage":"it","applicationCategory":"GameApplication","applicationSubCategory":"Nonogramma a punto croce","operatingSystem":"iOS, Android","author":{"@type":"Organization","name":"PAA Studios","url":"https://paastudios.com"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"keywords":"nonogramma, nonogram, crucipixel, picross, hanjie, griddlers, punto croce, ricamo, gioco di logica, rompicapo logico, pixel art, gioco, gioco per cellulare, gioco rompicapo, gioco gratis, gioco offline"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"MobileApplication","name":"Stitch Tales","description":"Leggi i numeri lungo righe e colonne, ricama le caselle giuste — e ogni nonogramma risolto viene ricamato in una scena del tuo telaio.","url":"https://paastudios.com/stitch-tales/it/","image":"https://paastudios.com/stitch-tales/images/icon.webp","inLanguage":"it","applicationCategory":"GameApplication","applicationSubCategory":"Nonogramma a punto croce","operatingSystem":"iOS, Android","author":{"@type":"Organization","name":"PAA Studios","url":"https://paastudios.com"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"keywords":"nonogramma, nonogram, crucipixel, picross, hanjie, griddlers, punto croce, ricamo, gioco di logica, rompicapo logico, pixel art, gioco, gioco per cellulare, gioco rompicapo, gioco gratis, gioco offline","screenshot":["https://paastudios.com/stitch-tales/images/screen-1.webp","https://paastudios.com/stitch-tales/images/screen-2.webp","https://paastudios.com/stitch-tales/images/screen-3.webp","https://paastudios.com/stitch-tales/images/screen-4.webp","https://paastudios.com/stitch-tales/images/screen-5.webp","https://paastudios.com/stitch-tales/images/screen-6.webp"],"sameAs":["https://apps.apple.com/app/id6822948115"]}</script>
 </head>
-<body class="game-page frame-stitch" data-scheme="light" style="--bg:#F2ECE0;--surface:#FBF8F2;--surface2:#E7DFCF;--line:#D3C6AE;--text:#2A231C;--muted:#5F5444;--accent:#B3263A;--accent-text:#FFFFFF;--glow:rgba(179, 38, 58, 0.12);--glow2:rgba(46, 122, 82, 0.12)">
+<body class="game-page frame-stitch" data-scheme="light" style="--bg:#F2ECE0;--surface:#FBF8F2;--surface2:#E7DFCF;--line:#D3C6AE;--text:#2A231C;--muted:#5F5444;--accent:#B3263A;--accent-text:#FFFFFF;--glow:rgba(179, 38, 58, 0.12);--glow2:rgba(46, 122, 82, 0.12);--stitch:#E7B7BE;--thread-1:#B3263A;--thread-2:#2E7A52;--thread-3:#C9A06A">
 <a class="skip" href="#main">Vai al contenuto</a>
 <header class="site-header wrap">
   <a class="brand" href="/it/"><img src="/assets/logo.svg" width="34" height="34" alt=""><span>PAA Studios</span></a>
@@ -1253,40 +1329,66 @@ transition: none !important;
     <h1>Stitch Tales</h1>
     <p class="tagline">Ogni rompicapo è un punto di un disegno più grande.</p>
     <p class="lead">Leggi i numeri lungo righe e colonne, ricama le caselle giuste — e ogni nonogramma risolto viene ricamato in una scena del tuo telaio.</p>
-    <p class="soon">Presto su App Store e Google Play</p>
-    <p class="platforms">Gratis su iPhone, iPad e Android</p>
+    <div class="stores"><a class="store" href="https://apps.apple.com/app/id6822948115?pt=129254796&amp;ct=stitch-tales-it&amp;mt=8"><img src="/assets/badges/app-store.svg" width="144" height="48" alt="Scarica Stitch Tales su App Store"></a></div><p class="soon">Presto su Google Play</p>
+    <p class="platforms">Per iPhone, iPad e Android</p>
   </div>
-  <div class="game-hero-art"><img class="art-image" src="/stitch-tales/images/hoop.svg" width="600" height="620" alt="Un telaio da ricamo con un prato fiorito ricamato: una farfalla, un sole, dei fiori e un fungo ancora da ricamare" loading="eager" decoding="async"></div>
+  <div class="game-hero-art"><div class="phones"><figure class="device phone-left"><img src="/stitch-tales/images/screen-1.webp" srcset="/stitch-tales/images/screen-1-360.webp 360w, /stitch-tales/images/screen-1.webp 600w" sizes="(max-width: 560px) 40vw, 210px" width="600" height="1304" alt="Un gufo che prende forma su un nonogramma, con croci nelle caselle vuote" loading="eager" decoding="async"></figure><figure class="device phone-right"><img src="/stitch-tales/images/screen-3.webp" srcset="/stitch-tales/images/screen-3-360.webp 360w, /stitch-tales/images/screen-3.webp 600w" sizes="(max-width: 560px) 40vw, 210px" width="600" height="1304" alt="Primo piano della scena «Gatto alla finestra»: rondini, una farfalla, un gatto e un gomitolo" loading="eager" decoding="async"></figure><figure class="device phone-center"><img src="/stitch-tales/images/screen-2.webp" srcset="/stitch-tales/images/screen-2-360.webp 360w, /stitch-tales/images/screen-2.webp 600w" sizes="(max-width: 560px) 40vw, 210px" width="600" height="1304" alt="La scena «Zodiaco» nel telaio, ricamata figura dopo figura" loading="eager" decoding="async"></figure></div></div>
 </section>
+
+<figure class="banner wrap"><img src="/stitch-tales/images/banner.webp" srcset="/stitch-tales/images/banner-720.webp 720w, /stitch-tales/images/banner-1280.webp 1280w, /stitch-tales/images/banner.webp 2240w" sizes="(max-width: 600px) 108vw, (max-width: 1184px) 92vw, 1120px" width="2240" height="960" alt="Un patchwork di nonogrammi che diventano ricamo: un polpo con pesci pagliaccio, un tucano, un portale torii, rondini, una volpe, un albero di Natale e molto altro" loading="lazy" decoding="async"></figure>
 
 <section class="block wrap rules" aria-labelledby="rules-title">
   <div>
     <h2 id="rules-title">Come si gioca</h2>
-    
+    <p class="rules-intro">Stitch Tales si basa sui nonogrammi, rompicapi logici a immagini noti anche come crucipixel, griddlers o hanjie. I numeri accanto alle righe e sopra le colonne ti dicono quali caselle riempire; riempi quelle giuste e apparirà un’immagine nascosta — qui, una figura ricamata nella scena del tuo telaio.</p>
     <ol class="steps">
-      <li>I numeri accanto a ogni riga e colonna sono, in ordine, i gruppi di caselle piene.</li>
-      <li>Ricama le caselle da riempire; segna con una croce quelle che restano vuote.</li>
-      <li>Attenzione: un punto sbagliato ti costa una vita, uno dei tuoi cuori ricamati.</li>
+      <li>I numeri accanto a una riga o sopra una colonna dicono quante caselle di fila ricamare, e in quale ordine.</li>
+      <li>Tra due pezzi c’è sempre almeno una casella vuota: mettici una croce.</li>
+      <li>Fai scorrere il dito, e il filo lo segue sulle caselle.</li>
+      <li>Un punto sbagliato costa una delle tue tre vite, quindi prenditi il tuo tempo.</li>
       <li>Risolvi la griglia e la figura verrà ricamata nella scena del tuo telaio.</li>
     </ol>
-    
+    <ul class="rule-notes">
+      <li>I numeri sopra una colonna si leggono dall’alto in basso, quelli accanto a una riga da sinistra a destra.</li>
+      <li>Nell’imparaticcio ogni numero ha il suo colore di filo: pezzi di colori diversi possono toccarsi, mentre quelli dello stesso colore sono sempre separati da una casella vuota.</li>
+      <li>La prima figura ti accompagna attraverso tutte le regole.</li>
+    </ul>
   </div>
   <figure class="rules-art"><img src="/stitch-tales/images/nonogram.svg" width="474" height="410" alt="Il nonogramma di un gatto quasi risolto: caselle ricamate color granata, croci in quelle vuote" loading="lazy" decoding="async"></figure>
 </section>
 
+<section class="block wrap" aria-labelledby="tips-title">
+  <div class="section-head"><h2 id="tips-title">Consigli per risolvere</h2></div>
+  <ol class="tips">
+    <li>Comincia dalle linee più piene: somma i pezzi con una casella vuota tra l’uno e l’altro. Se il totale è pari alla lunghezza della linea, l’intera linea è risolta; se manca solo una casella o due, i pezzi più lunghi hanno già caselle sicure.</li>
+    <li>Spingi un pezzo il più possibile verso un’estremità, poi verso l’altra: le caselle che copre entrambe le volte sono sempre ricamate. Un 7 in una linea di 10 riempie sempre le quattro caselle centrali.</li>
+    <li>Un punto proprio sul bordo della griglia è l’inizio del primo pezzo: ricama da lì l’intero pezzo e metti una croce subito dopo.</li>
+    <li>Quando una linea è risolta, le sue caselle vuote ricevono una croce — e ogni croce dice alle linee che la attraversano dove un pezzo non può andare.</li>
+    <li>Non ricamare a caso: un punto sbagliato costa una vita. Se in una linea non c’è ancora nulla di sicuro, tornaci dopo aver lavorato sulle linee che la incrociano.</li>
+  </ol>
+</section>
 
-
-
+<section class="block gallery" aria-labelledby="gallery-title">
+  <div class="wrap section-head"><h2 id="gallery-title">Uno sguardo da vicino</h2></div>
+  <div class="shots" tabindex="0" aria-label="Screenshot">
+    <figure class="device shot"><img src="/stitch-tales/images/screen-1.webp" srcset="/stitch-tales/images/screen-1-360.webp 360w, /stitch-tales/images/screen-1.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Un gufo che prende forma su un nonogramma, con croci nelle caselle vuote" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-2.webp" srcset="/stitch-tales/images/screen-2-360.webp 360w, /stitch-tales/images/screen-2.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="La scena «Zodiaco» nel telaio, ricamata figura dopo figura" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-3.webp" srcset="/stitch-tales/images/screen-3-360.webp 360w, /stitch-tales/images/screen-3.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Primo piano della scena «Gatto alla finestra»: rondini, una farfalla, un gatto e un gomitolo" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-4.webp" srcset="/stitch-tales/images/screen-4-360.webp 360w, /stitch-tales/images/screen-4.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Il calendario: un piccolo ricamo per ogni giorno e un riccio per tutto il mese" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-5.webp" srcset="/stitch-tales/images/screen-5-360.webp 360w, /stitch-tales/images/screen-5.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="L’imparaticcio infinito di motivi popolari colorati" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-6.webp" srcset="/stitch-tales/images/screen-6-360.webp 360w, /stitch-tales/images/screen-6.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="La collezione di telai finiti" loading="lazy" decoding="async"></figure>
+  </div>
+</section>
 
 <section class="block wrap" aria-labelledby="features-title">
   <div class="section-head"><h2 id="features-title">Cosa trovi</h2></div>
   <div class="feature-grid">
-    <div class="feature"><h3>Scene da ricamare</h3><p>Un prato fiorito, Stonehenge, un picnic di frutta, il sistema solare, un giardino giapponese, una casa delle bambole, un villaggio d’inverno, il fondale marino… e molte altre.</p></div>
-    <div class="feature"><h3>Veri punti di ricamo</h3><p>Punto pieno, catenella, spina di pesce e nodi francesi: ogni figura è cucita con il suo filo e la sua trama.</p></div>
-    <div class="feature"><h3>Un imparaticcio infinito</h3><p>Dopo la prima scena si apre un imparaticcio di motivi tradizionali, e i suoi motivi non finiscono mai.</p></div>
-    <div class="feature"><h3>Aiuti quando ti blocchi</h3><p>Rivela una sola casella o un’intera linea e continua a ricamare.</p></div>
-    <div class="feature"><h3>Un regalo ogni giorno</h3><p>Torna ogni giorno per una ricompensa che cresce con la tua serie.</p></div>
-    <div class="feature"><h3>Riposante per gli occhi</h3><p>Morbidi colori del lino, il suono delicato dei punti, nessun account e nessuna connessione necessaria.</p></div>
+    <div class="feature"><h3>Telaio dopo telaio</h3><p>Un gatto alla finestra, uccelli in vetrata, un villaggio d’inverno, le sale di Asgard, il Selvaggio West e molto altro. Ogni telaio finito entra nella tua collezione.</p></div>
+    <div class="feature"><h3>Un ricamo che sembra vero</h3><p>Ogni figura ha i suoi fili e i suoi punti, ombre morbide sul lino e i suoni delicati dell’ago e del telaio.</p></div>
+    <div class="feature"><h3>Un calendario di ricami del giorno</h3><p>Ogni giorno ti aspetta un piccolo ricamo. Ricama tutto il mese e si apre la sua grande figura — i giorni persi ti aspetteranno.</p></div>
+    <div class="feature"><h3>Un imparaticcio infinito</h3><p>Dopo la prima scena completata si apre un imparaticcio di motivi popolari: nonogrammi a colori con due o tre fili, che non finiscono mai.</p></div>
+    <div class="feature"><h3>Aiuti per i momenti difficili</h3><p>Rivela una casella, un’intera linea o 10 caselle a caso — e il ditale ti salva dal prossimo errore.</p></div>
+    <div class="feature"><h3>Senza timer e senza fretta</h3><p>Un regalo ogni giorno, obiettivi e classifiche di Game Center su iPhone e iPad, e per giocare non serve internet.</p></div>
   </div>
 </section>
 

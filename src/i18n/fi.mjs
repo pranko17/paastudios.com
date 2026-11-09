@@ -18,6 +18,7 @@ export default {
     storeGooglePlay: 'Google Playhin',
     and: 'ja',
     freeOn: 'Ilmainen {platforms}',
+    madeFor: 'Peli {platforms}',
     howToPlay: 'Näin pelaat',
     tips: 'Vinkkejä ratkaisemiseen',
     faq: 'Kysymyksiä ja vastauksia',
@@ -195,41 +196,74 @@ export default {
         'peli ilman nettiä',
       ],
       art: {
+        alts: [
+          'Pöllö muotoutuu nonogrammiin, tyhjissä ruuduissa ristit',
+          'Kuva ”Eläinrata” kirjontakehyksessä, kirjottu kuvio kuviolta',
+          'Lähikuva kuvasta ”Kissa ikkunalla”: pääskyset, perhonen, kissa ja lankakerä',
+        ],
+      },
+      cardArt: {
         alt: 'Kirjontakehys, johon on kirjottu kukkaniitty: perhonen, aurinko, kukkia ja kärpässieni, joka odottaa vielä kirjomista',
       },
+      banner: {
+        alt: 'Tilkkutyö nonogrammeista, jotka muuttuvat kirjonnaksi: mustekala ja vuokkokaloja, tukaani, torii-portti, pääskysiä, kettu, joulukuusi ja paljon muuta',
+      },
       rules: {
+        intro:
+          'Stitch Tales perustuu nonogrammeihin eli kuvan paljastaviin logiikkapulmiin, jotka tunnetaan myös japanilaisina ristikoina sekä nimillä griddlers ja hanjie. Rivien vieressä ja sarakkeiden yläpuolella olevat numerot kertovat, mitkä ruudut täytetään. Täytä oikeat, niin esiin tulee piilokuva — täällä kuvio, joka kirjotaan kirjontakehyksesi kuvaan.',
         steps: [
-          'Rivin tai sarakkeen vieressä olevat numerot kertovat järjestyksessä, kuinka pitkiä täytettyjen ruutujen jonoja siinä on.',
-          'Kirjo ruudut, jotka on täytettävä; merkitse tyhjiksi jäävät ruudut ristillä.',
-          'Varovasti — väärä pisto vie yhden kirjotuista sydämistäsi.',
-          'Ratkaise ruudukko, niin kuvio kirjotaan kuvaan kirjontakehyksessäsi.',
+          'Rivin vieressä tai sarakkeen yläpuolella olevat numerot kertovat, montako ruutua peräkkäin kirjot ja missä järjestyksessä.',
+          'Kahden pätkän välissä on aina vähintään yksi tyhjä ruutu — merkitse se ristillä.',
+          'Pyyhkäise sormella, niin lanka seuraa sitä ruutujen yli.',
+          'Väärä pisto vie yhden kolmesta elämästäsi, joten ota rauhassa.',
+          'Ratkaise ruudukko, niin kuvio kirjotaan kirjontakehyksesi kuvaan.',
+        ],
+        notes: [
+          'Sarakkeen yläpuolella olevat numerot luetaan ylhäältä alas, rivin vieressä olevat vasemmalta oikealle.',
+          'Merkkausliinassa jokaisella numerolla on oma lankavärinsä: eriväriset pätkät saavat koskettaa toisiaan, mutta samanväristen pätkien väliin tarvitaan tyhjä ruutu.',
+          'Ensimmäinen kuviosi käy kanssasi läpi kaikki säännöt.',
+        ],
+        tips: [
+          'Aloita täysimmistä linjoista: laske pätkät yhteen niin, että niiden väliin tulee aina yksi tyhjä ruutu. Jos summa on sama kuin linjan pituus, koko linja on ratkaistu; jos siitä puuttuu vain ruutu tai kaksi, pidemmissä pätkissä on jo ruutuja, joista voit olla varma.',
+          'Siirrä pätkä niin pitkälle kuin se pääsee linjan yhteen päähän ja sitten toiseen: ruudut, jotka se peittää kummallakin kerralla, kirjotaan aina. Kymmenen ruudun linjassa 7 täyttää aina sen neljä keskimmäistä ruutua.',
+          'Pisto aivan ruudukon reunassa on ensimmäisen pätkän alku: kirjo koko pätkä siitä eteenpäin ja laita sen perään risti.',
+          'Kun linja on ratkaistu, sen tyhjät ruudut saavat ristit — ja jokainen risti kertoo poikittaisille linjoille, minne pätkä ei voi mennä.',
+          'Älä arvaa: väärä pisto vie elämän. Jos linjassa ei ole vielä mitään varmaa, palaa siihen vasta sitä risteävien linjojen jälkeen.',
         ],
         alt: 'Lähes ratkaistu nonogrammi, jossa on kissa: granaatinpunaisella langalla kirjotut ruudut, tyhjissä ruuduissa ristit',
       },
+      screenshots: [
+        'Pöllö muotoutuu nonogrammiin, tyhjissä ruuduissa ristit',
+        'Kuva ”Eläinrata” kirjontakehyksessä, kirjottu kuvio kuviolta',
+        'Lähikuva kuvasta ”Kissa ikkunalla”: pääskyset, perhonen, kissa ja lankakerä',
+        'Kalenteri: pieni kirjonta joka päivälle ja siili koko kuukaudelle',
+        'Loputon merkkausliina värillisin kansanperinteen kuvioin',
+        'Kokoelma valmiita kirjontakehyksiä',
+      ],
       features: [
         {
-          title: 'Kirjottavia kuvia',
-          text: 'Kukkaniitty, Stonehenge, hedelmäpiknik, aurinkokunta, japanilainen puutarha, nukkekoti, talvikylä, merenpohja — ja paljon muuta.',
+          title: 'Kirjontakehys toisensa perään',
+          text: 'Kissa ikkunalla, lasimaalauslinnut, talvikylä, Asgardin salit, Villi länsi ja paljon muuta. Jokainen valmis kirjontakehys saa paikkansa kokoelmassasi.',
         },
         {
-          title: 'Oikeita kirjontapistoja',
-          text: 'Laakapisto, ketjupisto, kalanruotopisto ja ranskalaiset solmut — jokainen kuvio kirjotaan omalla langallaan ja omalla pintarakenteellaan.',
+          title: 'Kirjontaa, joka näyttää aidolta',
+          text: 'Jokaisella kuviolla on omat lankansa ja pistonsa, pehmeät varjot pellavalla sekä neulan ja kirjontakehyksen hiljaiset äänet.',
+        },
+        {
+          title: 'Kalenteri täynnä päivän pistoja',
+          text: 'Joka päivä odottaa pieni kirjonta. Kirjo koko kuukausi, niin sen suuri kuvio aukeaa — väliin jääneet päivät odottavat sinua.',
         },
         {
           title: 'Loputon merkkausliina',
-          text: 'Ensimmäisen kuvan jälkeen avautuu kansanomaisten kuvioiden merkkausliina — eivätkä sen kuviot lopu koskaan.',
+          text: 'Ensimmäisen valmiin kuvan jälkeen avautuu merkkausliina kansanperinteen kuvioin: värillisiä nonogrammeja kahdella tai kolmella langalla, eivätkä ne lopu koskaan.',
         },
         {
-          title: 'Vihjeitä, kun jäät jumiin',
-          text: 'Paljasta yksi ruutu tai kokonainen linja ja jatka kirjomista.',
+          title: 'Vihjeitä visaisiin hetkiin',
+          text: 'Paljasta ruutu, kokonainen linja tai 10 satunnaista ruutua — ja sormustin suojaa seuraavalta virheeltäsi.',
         },
         {
-          title: 'Lahja joka päivä',
-          text: 'Palaa joka päivä hakemaan palkinto, joka kasvaa putkesi mukana.',
-        },
-        {
-          title: 'Silmäystävällinen',
-          text: 'Pehmeät pellavan sävyt ja hiljaiset pistojen äänet. Tiliä tai internetiä ei tarvita.',
+          title: 'Ei ajastinta, ei kiirettä',
+          text: 'Lahja joka päivä, Game Center -saavutukset ja tulostaulukot iPhonella ja iPadilla, eikä pelaamiseen tarvita verkkoyhteyttä.',
         },
       ],
       supportNote: 'Voit ottaa meihin yhteyttä myös pelissä: Profiili → Ota yhteyttä.',

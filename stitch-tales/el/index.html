@@ -582,7 +582,8 @@ width: auto;
 height: 48px;
 }
 .soon {
-display: inline-flex;
+display: flex;
+width: fit-content;
 align-items: center;
 gap: 10px;
 margin: 28px 0 0;
@@ -970,14 +971,6 @@ box-shadow:
 14px 0 0 color-mix(in srgb, var(--accent) 60%, transparent),
 28px 0 0 color-mix(in srgb, var(--accent) 30%, transparent);
 }
-.frame-stitch .feature::before {
-width: 46px;
-height: 3px;
-margin-block: 4px 23px;
-border-radius: 2px;
-background: repeating-linear-gradient(90deg, var(--accent) 0 8px, transparent 8px 13px);
-box-shadow: none;
-}
 .support-card {
 position: relative;
 display: grid;
@@ -993,7 +986,7 @@ background: var(--surface);
 content: "";
 position: absolute;
 inset: 10px;
-border: 2px dashed color-mix(in srgb, var(--accent) 30%, transparent);
+border: 2px dashed var(--stitch, color-mix(in srgb, var(--accent) 30%, transparent));
 border-radius: calc(var(--radius-lg) - 10px);
 pointer-events: none;
 }
@@ -1081,6 +1074,75 @@ color: var(--accent);
 inset: 7px;
 border-radius: calc(var(--radius) - 7px);
 }
+.banner {
+margin-block: 0;
+}
+.banner img {
+width: 100%;
+border-radius: var(--radius);
+}
+.game-page.frame-stitch,
+.doc-page.frame-stitch {
+background:
+radial-gradient(1100px 620px at 88% -8%, var(--glow), transparent 62%),
+radial-gradient(900px 560px at -12% 18%, var(--glow2), transparent 60%),
+repeating-linear-gradient(0deg, color-mix(in srgb, var(--muted) 7%, transparent) 0 1px, transparent 1px 4px),
+repeating-linear-gradient(90deg, color-mix(in srgb, var(--muted) 5%, transparent) 0 1px, transparent 1px 3px),
+var(--bg);
+background-repeat: no-repeat, no-repeat, repeat, repeat;
+}
+.game-page.frame-stitch :is(.feature, .steps li, .tips li, .support-card, .banner) {
+position: relative;
+border-color: transparent;
+background: var(--surface);
+box-shadow:
+0 1px 2px color-mix(in srgb, var(--text) 8%, transparent),
+0 14px 28px -20px color-mix(in srgb, var(--text) 50%, transparent);
+}
+.game-page.frame-stitch :is(.feature, .steps li, .tips li, .banner)::after {
+content: "";
+position: absolute;
+inset: 7px;
+border: 2px dashed var(--stitch);
+border-radius: calc(var(--radius) - 7px);
+pointer-events: none;
+}
+.game-page.frame-stitch .steps li {
+padding: 18px 24px 18px 18px;
+}
+.game-page.frame-stitch .steps li::before {
+border-radius: 50%;
+outline: 1.5px dashed color-mix(in srgb, var(--accent-text) 70%, transparent);
+outline-offset: -5px;
+}
+.game-page.frame-stitch .tips li::before {
+border-radius: 50%;
+}
+.game-page.frame-stitch :is(.section-head h2, .rules h2, .support-card h2, .feature)::before {
+content: "";
+display: block;
+width: 54px;
+height: 14px;
+margin-bottom: 14px;
+border-radius: 0;
+box-shadow: none;
+background: linear-gradient(90deg, var(--thread-1) 0 33.4%, var(--thread-2) 33.4% 66.6%, var(--thread-3) 66.6%);
+-webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 16'%3E%3Cpath d='M3 3l10 10M13 3 3 13M25 3l10 10M35 3 25 13M47 3l10 10M57 3 47 13' stroke='%23000' stroke-width='2.8' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
+mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 16'%3E%3Cpath d='M3 3l10 10M13 3 3 13M25 3l10 10M35 3 25 13M47 3l10 10M57 3 47 13' stroke='%23000' stroke-width='2.8' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.game-page.frame-stitch .feature::before {
+margin-bottom: 18px;
+}
+.game-page.frame-stitch .banner {
+padding: 14px;
+border-radius: var(--radius-lg);
+}
+.game-page.frame-stitch .banner::after {
+border-radius: calc(var(--radius-lg) - 7px);
+}
+.game-page.frame-stitch .banner img {
+border-radius: calc(var(--radius-lg) - 14px);
+}
 .doc {
 max-width: 760px;
 margin-inline: auto;
@@ -1147,6 +1209,19 @@ font-size: 16px;
 .feature-grid {
 grid-template-columns: 1fr;
 }
+.banner img {
+aspect-ratio: 2 / 1;
+object-fit: cover;
+}
+.game-page.frame-stitch .banner {
+padding: 10px;
+}
+.game-page.frame-stitch .banner::after {
+inset: 5px;
+}
+.game-page.frame-stitch .banner img {
+border-radius: calc(var(--radius-lg) - 10px);
+}
 .site-nav a {
 padding: 8px 10px;
 }
@@ -1193,10 +1268,11 @@ transition: none !important;
 }
 }
 </style>
+<meta name="apple-itunes-app" content="app-id=6822948115">
 <meta name="theme-color" content="#F2ECE0">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"MobileApplication","name":"Stitch Tales","description":"Διάβασε τους αριθμούς δίπλα στις σειρές και τις στήλες, κέντησε τα σωστά κελιά — και κάθε λυμένο nonogram κεντιέται σε μια σκηνή στο τελάρο σου.","url":"https://paastudios.com/stitch-tales/el/","image":"https://paastudios.com/stitch-tales/images/icon.webp","inLanguage":"el","applicationCategory":"GameApplication","applicationSubCategory":"Nonogram με σταυροβελονιά","operatingSystem":"iOS, Android","author":{"@type":"Organization","name":"PAA Studios","url":"https://paastudios.com"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"keywords":"nonogram, picross, griddlers, ιαπωνικό σταυρόλεξο, γρίφος με εικόνα, σταυροβελονιά, κέντημα, παιχνίδι λογικής, γρίφος λογικής, γρίφος με αριθμούς, pixel art, παιχνίδι, παιχνίδι για κινητό, παιχνίδι γρίφων, δωρεάν παιχνίδι, παιχνίδι χωρίς ίντερνετ"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"MobileApplication","name":"Stitch Tales","description":"Διάβασε τους αριθμούς δίπλα στις σειρές και τις στήλες, κέντησε τα σωστά κελιά — και κάθε λυμένο nonogram κεντιέται σε μια σκηνή στο τελάρο σου.","url":"https://paastudios.com/stitch-tales/el/","image":"https://paastudios.com/stitch-tales/images/icon.webp","inLanguage":"el","applicationCategory":"GameApplication","applicationSubCategory":"Nonogram με σταυροβελονιά","operatingSystem":"iOS, Android","author":{"@type":"Organization","name":"PAA Studios","url":"https://paastudios.com"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"keywords":"nonogram, picross, griddlers, ιαπωνικό σταυρόλεξο, γρίφος με εικόνα, σταυροβελονιά, κέντημα, παιχνίδι λογικής, γρίφος λογικής, γρίφος με αριθμούς, pixel art, παιχνίδι, παιχνίδι για κινητό, παιχνίδι γρίφων, δωρεάν παιχνίδι, παιχνίδι χωρίς ίντερνετ","screenshot":["https://paastudios.com/stitch-tales/images/screen-1.webp","https://paastudios.com/stitch-tales/images/screen-2.webp","https://paastudios.com/stitch-tales/images/screen-3.webp","https://paastudios.com/stitch-tales/images/screen-4.webp","https://paastudios.com/stitch-tales/images/screen-5.webp","https://paastudios.com/stitch-tales/images/screen-6.webp"],"sameAs":["https://apps.apple.com/app/id6822948115"]}</script>
 </head>
-<body class="game-page frame-stitch" data-scheme="light" style="--bg:#F2ECE0;--surface:#FBF8F2;--surface2:#E7DFCF;--line:#D3C6AE;--text:#2A231C;--muted:#5F5444;--accent:#B3263A;--accent-text:#FFFFFF;--glow:rgba(179, 38, 58, 0.12);--glow2:rgba(46, 122, 82, 0.12)">
+<body class="game-page frame-stitch" data-scheme="light" style="--bg:#F2ECE0;--surface:#FBF8F2;--surface2:#E7DFCF;--line:#D3C6AE;--text:#2A231C;--muted:#5F5444;--accent:#B3263A;--accent-text:#FFFFFF;--glow:rgba(179, 38, 58, 0.12);--glow2:rgba(46, 122, 82, 0.12);--stitch:#E7B7BE;--thread-1:#B3263A;--thread-2:#2E7A52;--thread-3:#C9A06A">
 <a class="skip" href="#main">Μετάβαση στο περιεχόμενο</a>
 <header class="site-header wrap">
   <a class="brand" href="/el/"><img src="/assets/logo.svg" width="34" height="34" alt=""><span>PAA Studios</span></a>
@@ -1253,40 +1329,66 @@ transition: none !important;
     <h1>Stitch Tales</h1>
     <p class="tagline">Κάθε γρίφος είναι μια βελονιά σε μια μεγαλύτερη εικόνα.</p>
     <p class="lead">Διάβασε τους αριθμούς δίπλα στις σειρές και τις στήλες, κέντησε τα σωστά κελιά — και κάθε λυμένο nonogram κεντιέται σε μια σκηνή στο τελάρο σου.</p>
-    <p class="soon">Σύντομα στο App Store και στο Google Play</p>
-    <p class="platforms">Δωρεάν για iPhone, iPad και Android</p>
+    <div class="stores"><a class="store" href="https://apps.apple.com/app/id6822948115?pt=129254796&amp;ct=stitch-tales-el&amp;mt=8"><img src="/assets/badges/app-store.svg" width="144" height="48" alt="Κατέβασε το Stitch Tales από το App Store"></a></div><p class="soon">Σύντομα στο Google Play</p>
+    <p class="platforms">Για iPhone, iPad και Android</p>
   </div>
-  <div class="game-hero-art"><img class="art-image" src="/stitch-tales/images/hoop.svg" width="600" height="620" alt="Ένα τελάρο με κεντημένο λιβάδι: μια πεταλούδα, ένας ήλιος, λουλούδια και ένα μανιτάρι που μένει ακόμη να κεντηθεί" loading="eager" decoding="async"></div>
+  <div class="game-hero-art"><div class="phones"><figure class="device phone-left"><img src="/stitch-tales/images/screen-1.webp" srcset="/stitch-tales/images/screen-1-360.webp 360w, /stitch-tales/images/screen-1.webp 600w" sizes="(max-width: 560px) 40vw, 210px" width="600" height="1304" alt="Μια κουκουβάγια παίρνει μορφή σε ένα nonogram, με σταυρούς στα άδεια κελιά" loading="eager" decoding="async"></figure><figure class="device phone-right"><img src="/stitch-tales/images/screen-3.webp" srcset="/stitch-tales/images/screen-3-360.webp 360w, /stitch-tales/images/screen-3.webp 600w" sizes="(max-width: 560px) 40vw, 210px" width="600" height="1304" alt="Η σκηνή «Γάτα στο παράθυρο» από κοντά: χελιδόνια, μια πεταλούδα, μια γάτα και ένα κουβάρι" loading="eager" decoding="async"></figure><figure class="device phone-center"><img src="/stitch-tales/images/screen-2.webp" srcset="/stitch-tales/images/screen-2-360.webp 360w, /stitch-tales/images/screen-2.webp 600w" sizes="(max-width: 560px) 40vw, 210px" width="600" height="1304" alt="Η σκηνή «Ζωδιακός κύκλος» στο τελάρο, κεντημένη φιγούρα φιγούρα" loading="eager" decoding="async"></figure></div></div>
 </section>
+
+<figure class="banner wrap"><img src="/stitch-tales/images/banner.webp" srcset="/stitch-tales/images/banner-720.webp 720w, /stitch-tales/images/banner-1280.webp 1280w, /stitch-tales/images/banner.webp 2240w" sizes="(max-width: 600px) 108vw, (max-width: 1184px) 92vw, 1120px" width="2240" height="960" alt="Πάτσγουορκ από nonogram που γίνονται κέντημα: ένα χταπόδι με ψάρια κλόουν, ένα τουκάν, μια πύλη τόριι, χελιδόνια, μια αλεπού, ένα χριστουγεννιάτικο δέντρο και άλλα" loading="lazy" decoding="async"></figure>
 
 <section class="block wrap rules" aria-labelledby="rules-title">
   <div>
     <h2 id="rules-title">Πώς παίζεται</h2>
-    
+    <p class="rules-intro">Το Stitch Tales βασίζεται στα nonogram, γρίφους λογικής με εικόνα, γνωστούς και ως griddlers, hanjie ή ιαπωνικά σταυρόλεξα. Οι αριθμοί δίπλα στις σειρές και πάνω από τις στήλες σού δείχνουν ποια κελιά να γεμίσεις· γέμισε τα σωστά και εμφανίζεται μια κρυμμένη εικόνα — εδώ, μια φιγούρα που κεντιέται στη σκηνή του τελάρου σου.</p>
     <ol class="steps">
-      <li>Οι αριθμοί δίπλα σε κάθε σειρά και στήλη δείχνουν, με τη σειρά, τις ομάδες από συνεχόμενα γεμάτα κελιά.</li>
-      <li>Κέντησε τα κελιά που πρέπει να γεμίσουν· όσα μένουν άδεια σημάδεψέ τα με έναν σταυρό.</li>
-      <li>Προσοχή — μια λάθος βελονιά σού κοστίζει μια ζωή, μία από τις κεντημένες καρδιές.</li>
-      <li>Λύσε το πλέγμα και η φιγούρα θα κεντηθεί στη σκηνή στο τελάρο σου.</li>
+      <li>Οι αριθμοί δίπλα σε μια σειρά ή πάνω από μια στήλη δείχνουν πόσα συνεχόμενα κελιά θα κεντήσεις και με ποια διαδοχή.</li>
+      <li>Ανάμεσα σε δύο κομμάτια υπάρχει πάντα τουλάχιστον ένα άδειο κελί — σημείωσέ το με σταυρό.</li>
+      <li>Σύρε το δάχτυλο και η κλωστή το ακολουθεί πάνω στα κελιά.</li>
+      <li>Μια λάθος βελονιά κοστίζει μία από τις τρεις ζωές σου, οπότε μη βιάζεσαι.</li>
+      <li>Λύσε το πλέγμα και η φιγούρα θα κεντηθεί στη σκηνή του τελάρου σου.</li>
     </ol>
-    
+    <ul class="rule-notes">
+      <li>Πάνω από μια στήλη οι αριθμοί διαβάζονται από πάνω προς τα κάτω, δίπλα σε μια σειρά από αριστερά προς τα δεξιά.</li>
+      <li>Στο δειγματολόγιο κάθε αριθμός έχει το δικό του χρώμα κλωστής: κομμάτια σε διαφορετικά χρώματα μπορούν να ακουμπούν, ενώ κομμάτια στο ίδιο χρώμα χρειάζονται ένα άδειο κελί ανάμεσά τους.</li>
+      <li>Η πρώτη σου φιγούρα σε ξεναγεί σε όλους τους κανόνες.</li>
+    </ul>
   </div>
   <figure class="rules-art"><img src="/stitch-tales/images/nonogram.svg" width="474" height="410" alt="Ένα σχεδόν λυμένο nonogram με μια γάτα: κελιά κεντημένα με βυσσινί κλωστή, σταυροί στα άδεια" loading="lazy" decoding="async"></figure>
 </section>
 
+<section class="block wrap" aria-labelledby="tips-title">
+  <div class="section-head"><h2 id="tips-title">Συμβουλές για τη λύση</h2></div>
+  <ol class="tips">
+    <li>Ξεκίνα από τις πιο γεμάτες γραμμές: πρόσθεσε τα κομμάτια μαζί με ένα άδειο κελί ανάμεσα σε κάθε δύο. Αν το σύνολο ισούται με το μήκος της γραμμής, η γραμμή λύνεται ολόκληρη· αν υπολείπεται μόνο κατά ένα-δυο κελιά, τα μεγαλύτερα κομμάτια έχουν ήδη κελιά για τα οποία μπορείς να είσαι σίγουρος.</li>
+    <li>Σπρώξε ένα κομμάτι όσο πάει προς τη μία άκρη και μετά προς την άλλη: τα κελιά που καλύπτει και τις δύο φορές θα κεντηθούν σίγουρα. Ένα 7 σε γραμμή 10 κελιών γεμίζει πάντα τα τέσσερα μεσαία της.</li>
+    <li>Μια βελονιά ακριβώς στην άκρη του ταμπλό είναι η αρχή του πρώτου κομματιού: κέντησε όλο το κομμάτι από εκεί και βάλε έναν σταυρό αμέσως μετά.</li>
+    <li>Μόλις λυθεί μια γραμμή, τα άδεια κελιά της παίρνουν σταυρούς — και κάθε σταυρός δείχνει στις γραμμές που τη διασχίζουν πού δεν μπορεί να μπει κομμάτι.</li>
+    <li>Μη μαντεύεις: μια λάθος βελονιά κοστίζει μια ζωή. Αν σε μια γραμμή δεν είναι ακόμα τίποτα σίγουρο, γύρνα σε αυτήν αφού ασχοληθείς με τις γραμμές που τη διασχίζουν.</li>
+  </ol>
+</section>
 
-
-
+<section class="block gallery" aria-labelledby="gallery-title">
+  <div class="wrap section-head"><h2 id="gallery-title">Από κοντά</h2></div>
+  <div class="shots" tabindex="0" aria-label="Στιγμιότυπα οθόνης">
+    <figure class="device shot"><img src="/stitch-tales/images/screen-1.webp" srcset="/stitch-tales/images/screen-1-360.webp 360w, /stitch-tales/images/screen-1.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Μια κουκουβάγια παίρνει μορφή σε ένα nonogram, με σταυρούς στα άδεια κελιά" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-2.webp" srcset="/stitch-tales/images/screen-2-360.webp 360w, /stitch-tales/images/screen-2.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Η σκηνή «Ζωδιακός κύκλος» στο τελάρο, κεντημένη φιγούρα φιγούρα" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-3.webp" srcset="/stitch-tales/images/screen-3-360.webp 360w, /stitch-tales/images/screen-3.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Η σκηνή «Γάτα στο παράθυρο» από κοντά: χελιδόνια, μια πεταλούδα, μια γάτα και ένα κουβάρι" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-4.webp" srcset="/stitch-tales/images/screen-4-360.webp 360w, /stitch-tales/images/screen-4.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Το ημερολόγιο: ένα μικρό κέντημα για κάθε μέρα κι ένας σκαντζόχοιρος για όλο τον μήνα" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-5.webp" srcset="/stitch-tales/images/screen-5-360.webp 360w, /stitch-tales/images/screen-5.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Το ατελείωτο δειγματολόγιο με χρωματιστά λαϊκά μοτίβα" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-6.webp" srcset="/stitch-tales/images/screen-6-360.webp 360w, /stitch-tales/images/screen-6.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Η συλλογή με τα τελειωμένα τελάρα" loading="lazy" decoding="async"></figure>
+  </div>
+</section>
 
 <section class="block wrap" aria-labelledby="features-title">
   <div class="section-head"><h2 id="features-title">Τι θα βρεις</h2></div>
   <div class="feature-grid">
-    <div class="feature"><h3>Σκηνές για κέντημα</h3><p>Ένα ανθισμένο λιβάδι, το Στόουνχεντζ, ένα πικνίκ με φρούτα, το ηλιακό σύστημα, ένας ιαπωνικός κήπος, ένα κουκλόσπιτο, ένα χειμωνιάτικο χωριό, ο βυθός της θάλασσας — και άλλα.</p></div>
-    <div class="feature"><h3>Αληθινές βελονιές κεντήματος</h3><p>Γεμιστή βελονιά, αλυσίδα, ψαροκόκαλο και γαλλικοί κόμποι — κάθε φιγούρα κεντιέται με τη δική της κλωστή και υφή.</p></div>
-    <div class="feature"><h3>Ένα δειγματολόγιο χωρίς τέλος</h3><p>Μετά την πρώτη σου σκηνή ανοίγει ένα δειγματολόγιο με παραδοσιακά μοτίβα — και τα μοτίβα του δεν τελειώνουν ποτέ.</p></div>
-    <div class="feature"><h3>Υποδείξεις όταν κολλάς</h3><p>Αποκάλυψε ένα κελί ή μια ολόκληρη γραμμή και συνέχισε το κέντημα.</p></div>
-    <div class="feature"><h3>Ένα δώρο κάθε μέρα</h3><p>Έλα κάθε μέρα για μια ανταμοιβή που μεγαλώνει μαζί με το σερί σου.</p></div>
-    <div class="feature"><h3>Ξεκούραστο για τα μάτια</h3><p>Απαλά λινά χρώματα, ήσυχοι ήχοι βελονιάς, χωρίς λογαριασμό και χωρίς ίντερνετ.</p></div>
+    <div class="feature"><h3>Τελάρο με τελάρο</h3><p>Μια γάτα στο παράθυρο, πουλιά σε βιτρό, ένα χειμωνιάτικο χωριό, οι αίθουσες του Άσγκαρντ, η Άγρια Δύση και πολλά ακόμα. Κάθε τελάρο που ολοκληρώνεις μπαίνει στη συλλογή σου.</p></div>
+    <div class="feature"><h3>Κέντημα σαν αληθινό</h3><p>Κάθε φιγούρα έχει τις δικές της κλωστές και βελονιές, απαλές σκιές στο λινό και τους διακριτικούς ήχους της βελόνας και του τελάρου.</p></div>
+    <div class="feature"><h3>Ημερολόγιο με κεντήματα της μέρας</h3><p>Κάθε μέρα σε περιμένει ένα μικρό κέντημα. Κέντησε όλο τον μήνα και ανοίγει η μεγάλη του φιγούρα — οι μέρες που έχασες θα σε περιμένουν.</p></div>
+    <div class="feature"><h3>Ένα ατελείωτο δειγματολόγιο</h3><p>Μετά την πρώτη σκηνή που ολοκληρώνεις ανοίγει ένα δειγματολόγιο με λαϊκά μοτίβα: χρωματιστά nonogram με δύο ή τρεις κλωστές, που δεν τελειώνουν ποτέ.</p></div>
+    <div class="feature"><h3>Υποδείξεις για τις δύσκολες στιγμές</h3><p>Αποκάλυψε ένα κελί, μια ολόκληρη γραμμή ή 10 τυχαία κελιά — και η δαχτυλήθρα σε γλιτώνει από το επόμενο λάθος.</p></div>
+    <div class="feature"><h3>Χωρίς χρονόμετρο, χωρίς βιασύνη</h3><p>Ένα δώρο κάθε μέρα, επιτεύγματα και πίνακες κατάταξης Game Center σε iPhone και iPad, και παίζεις χωρίς ίντερνετ.</p></div>
   </div>
 </section>
 

@@ -18,6 +18,7 @@ export default {
     storeGooglePlay: 'a Google Playen',
     and: 'és',
     freeOn: 'Ingyenes {platforms} eszközökre',
+    madeFor: '{platforms} eszközökre',
     howToPlay: 'Így játssz',
     tips: 'Tanácsok a megoldáshoz',
     faq: 'Kérdések és válaszok',
@@ -196,41 +197,74 @@ export default {
         'offline játék',
       ],
       art: {
+        alts: [
+          'Kirajzolódó bagoly egy nonogramon, az üres cellákban keresztekkel',
+          'Az „Állatöv” jelenet a hímzőkeretben, figuráról figurára kihímezve',
+          'Közeli kép a „Macska az ablakban” jelenetről: fecskék, pillangó, macska és gombolyag',
+        ],
+      },
+      cardArt: {
         alt: 'Hímzőkeret kihímzett réttel: pillangó, nap, virágok és egy légyölő galóca, amelyet még ki kell hímezni',
       },
+      banner: {
+        alt: 'Nonogramokból varrt foltmozaik, amely hímzéssé alakul: polip bohóchalakkal, tukán, torii-kapu, fecskék, róka, karácsonyfa és még sok más',
+      },
       rules: {
+        intro:
+          'A Stitch Tales alapja a nonogram – képet rejtő logikai fejtörő, más néven japán rejtvény, griddlers vagy hanjie. A sorok melletti és az oszlopok fölötti számok megmutatják, mely cellákat kell kitölteni; töltsd ki a helyeseket, és előtűnik egy rejtett kép – itt egy figura, amely belehímződik a hímzőkereted jelenetébe.',
         steps: [
-          'Az egyes sorok és oszlopok melletti számok sorrendben a kitöltött cellák egybefüggő szakaszait adják meg.',
-          'Hímezd ki a kitöltendő cellákat, az üresen maradókat pedig jelöld kereszttel.',
-          'Vigyázz – egy rossz öltésért elveszítesz egy életet, az egyik kihímzett szívet.',
-          'Oldd meg a rácsot, és a figura belehímződik a jelenetbe a hímzőkereteden.',
+          'A sor melletti vagy az oszlop fölötti számok megmutatják, hány cellát kell egymás után kihímezni, és milyen sorrendben.',
+          'Két szakasz között mindig van legalább egy üres cella – jelöld kereszttel.',
+          'Húzd végig az ujjad, és a fonal követi a cellákon át.',
+          'Egy hibás öltés a három életed egyikébe kerül, úgyhogy ne siess.',
+          'Oldd meg a rácsot, és a figura belehímződik a hímzőkereted jelenetébe.',
+        ],
+        notes: [
+          'Az oszlop fölötti számokat fentről lefelé, a sor mellettieket balról jobbra olvasd.',
+          'A mintakendőn minden számnak saját fonalszíne van: a különböző színű szakaszok érintkezhetnek, az azonos színűek között viszont mindig van egy üres cella.',
+          'Az első figura minden szabályon végigvezet.',
+        ],
+        tips: [
+          'Kezdd a legtelítettebb vonalakkal: add össze a szakaszokat, és számolj közéjük egy-egy üres cellát. Ha az összeg megegyezik a vonal hosszával, az egész vonal megoldott; ha csak egy-két cellával kevesebb, a hosszabb szakaszoknak már vannak biztos cellái.',
+          'Told el a szakaszt, ameddig csak lehet, a vonal egyik végébe, aztán a másikba: azokat a cellákat, amelyeket mindkét helyzetben lefed, mindig ki kell hímezni. Egy 10 cellás vonalban a 7-es mindig kitölti a középső négy cellát.',
+          'A tábla legszélén álló öltés az első szakasz kezdete: hímezd ki onnan az egész szakaszt, és tegyél utána keresztet.',
+          'Ha egy vonal megoldódott, az üres cellái keresztet kapnak – és minden kereszt megmutatja a rajta áthaladó vonalaknak, hová nem kerülhet szakasz.',
+          'Ne találgass: egy hibás öltés egy életbe kerül. Ha egy vonalban még semmi sem biztos, térj vissza rá, miután a keresztező vonalakkal foglalkoztál.',
         ],
         alt: 'Majdnem megoldott nonogram egy macskával: gránátpiros öltésekkel kihímzett cellák, az üresekben keresztek',
       },
+      screenshots: [
+        'Kirajzolódó bagoly egy nonogramon, az üres cellákban keresztekkel',
+        'Az „Állatöv” jelenet a hímzőkeretben, figuráról figurára kihímezve',
+        'Közeli kép a „Macska az ablakban” jelenetről: fecskék, pillangó, macska és gombolyag',
+        'A naptár: minden napra egy kis hímzés, az egész hónapra pedig egy sün',
+        'A végtelen mintakendő színes népi mintákkal',
+        'A kész hímzőkeretek gyűjteménye',
+      ],
       features: [
         {
-          title: 'Kihímezhető jelenetek',
-          text: 'Virágos rét, Stonehenge, gyümölcspiknik, a Naprendszer, japánkert, babaház, téli falu, a tenger mélye – és még sok más.',
+          title: 'Keretről keretre',
+          text: 'Macska az ablakban, ólomüveg madarak, téli falu, Asgard csarnokai, a Vadnyugat és még sok más. Minden kész hímzőkeret helyet kap a gyűjteményedben.',
         },
         {
-          title: 'Igazi hímzőöltések',
-          text: 'Laposöltés, láncöltés, halszálkaöltés és francia csomó – minden figura saját fonallal és saját textúrával készül.',
+          title: 'Élethű hímzés',
+          text: 'Minden figura saját fonalakkal és öltésekkel készül, puha árnyékot vet a lenvásznon, a tű és a hímzőkeret pedig halkan szól.',
+        },
+        {
+          title: 'Naptár napi hímzésekkel',
+          text: 'Minden nap egy kis hímzés vár rád. Hímezd ki az egész hónapot, és megnyílik a nagy figurája – a kihagyott napok megvárnak.',
         },
         {
           title: 'Végtelen mintakendő',
-          text: 'Az első jeleneted után megnyílik egy népi mintákkal teli mintakendő – és a mintái sosem fogynak el.',
+          text: 'Az első kész jeleneted után megnyílik a népi mintás mintakendő: színes nonogramok két vagy három fonallal, amelyek sosem fogynak el.',
         },
         {
-          title: 'Tippek, ha elakadsz',
-          text: 'Fedj fel egyetlen cellát vagy egy egész vonalat, és hímezz tovább.',
+          title: 'Tippek a nehéz pillanatokra',
+          text: 'Fedj fel egy cellát, egy egész vonalat vagy 10 véletlen cellát – a gyűszű pedig megóv a következő hibától.',
         },
         {
-          title: 'Ajándék minden nap',
-          text: 'Gyere vissza minden nap egy jutalomért, amely a sorozatoddal együtt nő.',
-        },
-        {
-          title: 'Kíméli a szemet',
-          text: 'Lágy lenvászon színek, halk öltéshangok, nem kell hozzá se fiók, se internet.',
+          title: 'Nincs időmérő, nincs sietség',
+          text: 'Ajándék minden nap, Game Center-teljesítmények és ranglisták iPhone-on és iPaden, a játékhoz pedig nem kell internet.',
         },
       ],
       supportNote: 'A játékból is elérsz minket: Profil → Írj nekünk.',

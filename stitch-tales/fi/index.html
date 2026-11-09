@@ -582,7 +582,8 @@ width: auto;
 height: 48px;
 }
 .soon {
-display: inline-flex;
+display: flex;
+width: fit-content;
 align-items: center;
 gap: 10px;
 margin: 28px 0 0;
@@ -970,14 +971,6 @@ box-shadow:
 14px 0 0 color-mix(in srgb, var(--accent) 60%, transparent),
 28px 0 0 color-mix(in srgb, var(--accent) 30%, transparent);
 }
-.frame-stitch .feature::before {
-width: 46px;
-height: 3px;
-margin-block: 4px 23px;
-border-radius: 2px;
-background: repeating-linear-gradient(90deg, var(--accent) 0 8px, transparent 8px 13px);
-box-shadow: none;
-}
 .support-card {
 position: relative;
 display: grid;
@@ -993,7 +986,7 @@ background: var(--surface);
 content: "";
 position: absolute;
 inset: 10px;
-border: 2px dashed color-mix(in srgb, var(--accent) 30%, transparent);
+border: 2px dashed var(--stitch, color-mix(in srgb, var(--accent) 30%, transparent));
 border-radius: calc(var(--radius-lg) - 10px);
 pointer-events: none;
 }
@@ -1081,6 +1074,75 @@ color: var(--accent);
 inset: 7px;
 border-radius: calc(var(--radius) - 7px);
 }
+.banner {
+margin-block: 0;
+}
+.banner img {
+width: 100%;
+border-radius: var(--radius);
+}
+.game-page.frame-stitch,
+.doc-page.frame-stitch {
+background:
+radial-gradient(1100px 620px at 88% -8%, var(--glow), transparent 62%),
+radial-gradient(900px 560px at -12% 18%, var(--glow2), transparent 60%),
+repeating-linear-gradient(0deg, color-mix(in srgb, var(--muted) 7%, transparent) 0 1px, transparent 1px 4px),
+repeating-linear-gradient(90deg, color-mix(in srgb, var(--muted) 5%, transparent) 0 1px, transparent 1px 3px),
+var(--bg);
+background-repeat: no-repeat, no-repeat, repeat, repeat;
+}
+.game-page.frame-stitch :is(.feature, .steps li, .tips li, .support-card, .banner) {
+position: relative;
+border-color: transparent;
+background: var(--surface);
+box-shadow:
+0 1px 2px color-mix(in srgb, var(--text) 8%, transparent),
+0 14px 28px -20px color-mix(in srgb, var(--text) 50%, transparent);
+}
+.game-page.frame-stitch :is(.feature, .steps li, .tips li, .banner)::after {
+content: "";
+position: absolute;
+inset: 7px;
+border: 2px dashed var(--stitch);
+border-radius: calc(var(--radius) - 7px);
+pointer-events: none;
+}
+.game-page.frame-stitch .steps li {
+padding: 18px 24px 18px 18px;
+}
+.game-page.frame-stitch .steps li::before {
+border-radius: 50%;
+outline: 1.5px dashed color-mix(in srgb, var(--accent-text) 70%, transparent);
+outline-offset: -5px;
+}
+.game-page.frame-stitch .tips li::before {
+border-radius: 50%;
+}
+.game-page.frame-stitch :is(.section-head h2, .rules h2, .support-card h2, .feature)::before {
+content: "";
+display: block;
+width: 54px;
+height: 14px;
+margin-bottom: 14px;
+border-radius: 0;
+box-shadow: none;
+background: linear-gradient(90deg, var(--thread-1) 0 33.4%, var(--thread-2) 33.4% 66.6%, var(--thread-3) 66.6%);
+-webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 16'%3E%3Cpath d='M3 3l10 10M13 3 3 13M25 3l10 10M35 3 25 13M47 3l10 10M57 3 47 13' stroke='%23000' stroke-width='2.8' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
+mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 16'%3E%3Cpath d='M3 3l10 10M13 3 3 13M25 3l10 10M35 3 25 13M47 3l10 10M57 3 47 13' stroke='%23000' stroke-width='2.8' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.game-page.frame-stitch .feature::before {
+margin-bottom: 18px;
+}
+.game-page.frame-stitch .banner {
+padding: 14px;
+border-radius: var(--radius-lg);
+}
+.game-page.frame-stitch .banner::after {
+border-radius: calc(var(--radius-lg) - 7px);
+}
+.game-page.frame-stitch .banner img {
+border-radius: calc(var(--radius-lg) - 14px);
+}
 .doc {
 max-width: 760px;
 margin-inline: auto;
@@ -1147,6 +1209,19 @@ font-size: 16px;
 .feature-grid {
 grid-template-columns: 1fr;
 }
+.banner img {
+aspect-ratio: 2 / 1;
+object-fit: cover;
+}
+.game-page.frame-stitch .banner {
+padding: 10px;
+}
+.game-page.frame-stitch .banner::after {
+inset: 5px;
+}
+.game-page.frame-stitch .banner img {
+border-radius: calc(var(--radius-lg) - 10px);
+}
 .site-nav a {
 padding: 8px 10px;
 }
@@ -1193,10 +1268,11 @@ transition: none !important;
 }
 }
 </style>
+<meta name="apple-itunes-app" content="app-id=6822948115">
 <meta name="theme-color" content="#F2ECE0">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"MobileApplication","name":"Stitch Tales","description":"Lue rivien ja sarakkeiden numerot, kirjo oikeat ruudut — ja jokainen ratkaistu nonogrammi kirjotaan kuvaan kirjontakehyksessäsi.","url":"https://paastudios.com/stitch-tales/fi/","image":"https://paastudios.com/stitch-tales/images/icon.webp","inLanguage":"fi","applicationCategory":"GameApplication","applicationSubCategory":"Ristipistoin kirjottu nonogrammi","operatingSystem":"iOS, Android","author":{"@type":"Organization","name":"PAA Studios","url":"https://paastudios.com"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"keywords":"nonogrammi, nonogrammit, japanilainen ristikko, picross, griddlers, ristipisto, kirjonta, logiikkapulma, logiikkapeli, numeropulma, pikselitaide, peli, mobiilipeli, pulmapeli, ilmainen peli, peli ilman nettiä"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"MobileApplication","name":"Stitch Tales","description":"Lue rivien ja sarakkeiden numerot, kirjo oikeat ruudut — ja jokainen ratkaistu nonogrammi kirjotaan kuvaan kirjontakehyksessäsi.","url":"https://paastudios.com/stitch-tales/fi/","image":"https://paastudios.com/stitch-tales/images/icon.webp","inLanguage":"fi","applicationCategory":"GameApplication","applicationSubCategory":"Ristipistoin kirjottu nonogrammi","operatingSystem":"iOS, Android","author":{"@type":"Organization","name":"PAA Studios","url":"https://paastudios.com"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"keywords":"nonogrammi, nonogrammit, japanilainen ristikko, picross, griddlers, ristipisto, kirjonta, logiikkapulma, logiikkapeli, numeropulma, pikselitaide, peli, mobiilipeli, pulmapeli, ilmainen peli, peli ilman nettiä","screenshot":["https://paastudios.com/stitch-tales/images/screen-1.webp","https://paastudios.com/stitch-tales/images/screen-2.webp","https://paastudios.com/stitch-tales/images/screen-3.webp","https://paastudios.com/stitch-tales/images/screen-4.webp","https://paastudios.com/stitch-tales/images/screen-5.webp","https://paastudios.com/stitch-tales/images/screen-6.webp"],"sameAs":["https://apps.apple.com/app/id6822948115"]}</script>
 </head>
-<body class="game-page frame-stitch" data-scheme="light" style="--bg:#F2ECE0;--surface:#FBF8F2;--surface2:#E7DFCF;--line:#D3C6AE;--text:#2A231C;--muted:#5F5444;--accent:#B3263A;--accent-text:#FFFFFF;--glow:rgba(179, 38, 58, 0.12);--glow2:rgba(46, 122, 82, 0.12)">
+<body class="game-page frame-stitch" data-scheme="light" style="--bg:#F2ECE0;--surface:#FBF8F2;--surface2:#E7DFCF;--line:#D3C6AE;--text:#2A231C;--muted:#5F5444;--accent:#B3263A;--accent-text:#FFFFFF;--glow:rgba(179, 38, 58, 0.12);--glow2:rgba(46, 122, 82, 0.12);--stitch:#E7B7BE;--thread-1:#B3263A;--thread-2:#2E7A52;--thread-3:#C9A06A">
 <a class="skip" href="#main">Siirry sisältöön</a>
 <header class="site-header wrap">
   <a class="brand" href="/fi/"><img src="/assets/logo.svg" width="34" height="34" alt=""><span>PAA Studios</span></a>
@@ -1253,40 +1329,66 @@ transition: none !important;
     <h1>Stitch Tales</h1>
     <p class="tagline">Jokainen pulma on pisto suuremmassa kuvassa.</p>
     <p class="lead">Lue rivien ja sarakkeiden numerot, kirjo oikeat ruudut — ja jokainen ratkaistu nonogrammi kirjotaan kuvaan kirjontakehyksessäsi.</p>
-    <p class="soon">Tulossa pian App Storeen ja Google Playhin</p>
-    <p class="platforms">Ilmainen iPhonelle, iPadille ja Androidille</p>
+    <div class="stores"><a class="store" href="https://apps.apple.com/app/id6822948115?pt=129254796&amp;ct=stitch-tales-fi&amp;mt=8"><img src="/assets/badges/app-store.svg" width="144" height="48" alt="Lataa Stitch Tales App Storesta"></a></div><p class="soon">Tulossa pian Google Playhin</p>
+    <p class="platforms">Peli iPhonelle, iPadille ja Androidille</p>
   </div>
-  <div class="game-hero-art"><img class="art-image" src="/stitch-tales/images/hoop.svg" width="600" height="620" alt="Kirjontakehys, johon on kirjottu kukkaniitty: perhonen, aurinko, kukkia ja kärpässieni, joka odottaa vielä kirjomista" loading="eager" decoding="async"></div>
+  <div class="game-hero-art"><div class="phones"><figure class="device phone-left"><img src="/stitch-tales/images/screen-1.webp" srcset="/stitch-tales/images/screen-1-360.webp 360w, /stitch-tales/images/screen-1.webp 600w" sizes="(max-width: 560px) 40vw, 210px" width="600" height="1304" alt="Pöllö muotoutuu nonogrammiin, tyhjissä ruuduissa ristit" loading="eager" decoding="async"></figure><figure class="device phone-right"><img src="/stitch-tales/images/screen-3.webp" srcset="/stitch-tales/images/screen-3-360.webp 360w, /stitch-tales/images/screen-3.webp 600w" sizes="(max-width: 560px) 40vw, 210px" width="600" height="1304" alt="Lähikuva kuvasta ”Kissa ikkunalla”: pääskyset, perhonen, kissa ja lankakerä" loading="eager" decoding="async"></figure><figure class="device phone-center"><img src="/stitch-tales/images/screen-2.webp" srcset="/stitch-tales/images/screen-2-360.webp 360w, /stitch-tales/images/screen-2.webp 600w" sizes="(max-width: 560px) 40vw, 210px" width="600" height="1304" alt="Kuva ”Eläinrata” kirjontakehyksessä, kirjottu kuvio kuviolta" loading="eager" decoding="async"></figure></div></div>
 </section>
+
+<figure class="banner wrap"><img src="/stitch-tales/images/banner.webp" srcset="/stitch-tales/images/banner-720.webp 720w, /stitch-tales/images/banner-1280.webp 1280w, /stitch-tales/images/banner.webp 2240w" sizes="(max-width: 600px) 108vw, (max-width: 1184px) 92vw, 1120px" width="2240" height="960" alt="Tilkkutyö nonogrammeista, jotka muuttuvat kirjonnaksi: mustekala ja vuokkokaloja, tukaani, torii-portti, pääskysiä, kettu, joulukuusi ja paljon muuta" loading="lazy" decoding="async"></figure>
 
 <section class="block wrap rules" aria-labelledby="rules-title">
   <div>
     <h2 id="rules-title">Näin pelaat</h2>
-    
+    <p class="rules-intro">Stitch Tales perustuu nonogrammeihin eli kuvan paljastaviin logiikkapulmiin, jotka tunnetaan myös japanilaisina ristikoina sekä nimillä griddlers ja hanjie. Rivien vieressä ja sarakkeiden yläpuolella olevat numerot kertovat, mitkä ruudut täytetään. Täytä oikeat, niin esiin tulee piilokuva — täällä kuvio, joka kirjotaan kirjontakehyksesi kuvaan.</p>
     <ol class="steps">
-      <li>Rivin tai sarakkeen vieressä olevat numerot kertovat järjestyksessä, kuinka pitkiä täytettyjen ruutujen jonoja siinä on.</li>
-      <li>Kirjo ruudut, jotka on täytettävä; merkitse tyhjiksi jäävät ruudut ristillä.</li>
-      <li>Varovasti — väärä pisto vie yhden kirjotuista sydämistäsi.</li>
-      <li>Ratkaise ruudukko, niin kuvio kirjotaan kuvaan kirjontakehyksessäsi.</li>
+      <li>Rivin vieressä tai sarakkeen yläpuolella olevat numerot kertovat, montako ruutua peräkkäin kirjot ja missä järjestyksessä.</li>
+      <li>Kahden pätkän välissä on aina vähintään yksi tyhjä ruutu — merkitse se ristillä.</li>
+      <li>Pyyhkäise sormella, niin lanka seuraa sitä ruutujen yli.</li>
+      <li>Väärä pisto vie yhden kolmesta elämästäsi, joten ota rauhassa.</li>
+      <li>Ratkaise ruudukko, niin kuvio kirjotaan kirjontakehyksesi kuvaan.</li>
     </ol>
-    
+    <ul class="rule-notes">
+      <li>Sarakkeen yläpuolella olevat numerot luetaan ylhäältä alas, rivin vieressä olevat vasemmalta oikealle.</li>
+      <li>Merkkausliinassa jokaisella numerolla on oma lankavärinsä: eriväriset pätkät saavat koskettaa toisiaan, mutta samanväristen pätkien väliin tarvitaan tyhjä ruutu.</li>
+      <li>Ensimmäinen kuviosi käy kanssasi läpi kaikki säännöt.</li>
+    </ul>
   </div>
   <figure class="rules-art"><img src="/stitch-tales/images/nonogram.svg" width="474" height="410" alt="Lähes ratkaistu nonogrammi, jossa on kissa: granaatinpunaisella langalla kirjotut ruudut, tyhjissä ruuduissa ristit" loading="lazy" decoding="async"></figure>
 </section>
 
+<section class="block wrap" aria-labelledby="tips-title">
+  <div class="section-head"><h2 id="tips-title">Vinkkejä ratkaisemiseen</h2></div>
+  <ol class="tips">
+    <li>Aloita täysimmistä linjoista: laske pätkät yhteen niin, että niiden väliin tulee aina yksi tyhjä ruutu. Jos summa on sama kuin linjan pituus, koko linja on ratkaistu; jos siitä puuttuu vain ruutu tai kaksi, pidemmissä pätkissä on jo ruutuja, joista voit olla varma.</li>
+    <li>Siirrä pätkä niin pitkälle kuin se pääsee linjan yhteen päähän ja sitten toiseen: ruudut, jotka se peittää kummallakin kerralla, kirjotaan aina. Kymmenen ruudun linjassa 7 täyttää aina sen neljä keskimmäistä ruutua.</li>
+    <li>Pisto aivan ruudukon reunassa on ensimmäisen pätkän alku: kirjo koko pätkä siitä eteenpäin ja laita sen perään risti.</li>
+    <li>Kun linja on ratkaistu, sen tyhjät ruudut saavat ristit — ja jokainen risti kertoo poikittaisille linjoille, minne pätkä ei voi mennä.</li>
+    <li>Älä arvaa: väärä pisto vie elämän. Jos linjassa ei ole vielä mitään varmaa, palaa siihen vasta sitä risteävien linjojen jälkeen.</li>
+  </ol>
+</section>
 
-
-
+<section class="block gallery" aria-labelledby="gallery-title">
+  <div class="wrap section-head"><h2 id="gallery-title">Lähempää katsottuna</h2></div>
+  <div class="shots" tabindex="0" aria-label="Kuvakaappaukset">
+    <figure class="device shot"><img src="/stitch-tales/images/screen-1.webp" srcset="/stitch-tales/images/screen-1-360.webp 360w, /stitch-tales/images/screen-1.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Pöllö muotoutuu nonogrammiin, tyhjissä ruuduissa ristit" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-2.webp" srcset="/stitch-tales/images/screen-2-360.webp 360w, /stitch-tales/images/screen-2.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Kuva ”Eläinrata” kirjontakehyksessä, kirjottu kuvio kuviolta" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-3.webp" srcset="/stitch-tales/images/screen-3-360.webp 360w, /stitch-tales/images/screen-3.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Lähikuva kuvasta ”Kissa ikkunalla”: pääskyset, perhonen, kissa ja lankakerä" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-4.webp" srcset="/stitch-tales/images/screen-4-360.webp 360w, /stitch-tales/images/screen-4.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Kalenteri: pieni kirjonta joka päivälle ja siili koko kuukaudelle" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-5.webp" srcset="/stitch-tales/images/screen-5-360.webp 360w, /stitch-tales/images/screen-5.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Loputon merkkausliina värillisin kansanperinteen kuvioin" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-6.webp" srcset="/stitch-tales/images/screen-6-360.webp 360w, /stitch-tales/images/screen-6.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Kokoelma valmiita kirjontakehyksiä" loading="lazy" decoding="async"></figure>
+  </div>
+</section>
 
 <section class="block wrap" aria-labelledby="features-title">
   <div class="section-head"><h2 id="features-title">Mitä pelissä on</h2></div>
   <div class="feature-grid">
-    <div class="feature"><h3>Kirjottavia kuvia</h3><p>Kukkaniitty, Stonehenge, hedelmäpiknik, aurinkokunta, japanilainen puutarha, nukkekoti, talvikylä, merenpohja — ja paljon muuta.</p></div>
-    <div class="feature"><h3>Oikeita kirjontapistoja</h3><p>Laakapisto, ketjupisto, kalanruotopisto ja ranskalaiset solmut — jokainen kuvio kirjotaan omalla langallaan ja omalla pintarakenteellaan.</p></div>
-    <div class="feature"><h3>Loputon merkkausliina</h3><p>Ensimmäisen kuvan jälkeen avautuu kansanomaisten kuvioiden merkkausliina — eivätkä sen kuviot lopu koskaan.</p></div>
-    <div class="feature"><h3>Vihjeitä, kun jäät jumiin</h3><p>Paljasta yksi ruutu tai kokonainen linja ja jatka kirjomista.</p></div>
-    <div class="feature"><h3>Lahja joka päivä</h3><p>Palaa joka päivä hakemaan palkinto, joka kasvaa putkesi mukana.</p></div>
-    <div class="feature"><h3>Silmäystävällinen</h3><p>Pehmeät pellavan sävyt ja hiljaiset pistojen äänet. Tiliä tai internetiä ei tarvita.</p></div>
+    <div class="feature"><h3>Kirjontakehys toisensa perään</h3><p>Kissa ikkunalla, lasimaalauslinnut, talvikylä, Asgardin salit, Villi länsi ja paljon muuta. Jokainen valmis kirjontakehys saa paikkansa kokoelmassasi.</p></div>
+    <div class="feature"><h3>Kirjontaa, joka näyttää aidolta</h3><p>Jokaisella kuviolla on omat lankansa ja pistonsa, pehmeät varjot pellavalla sekä neulan ja kirjontakehyksen hiljaiset äänet.</p></div>
+    <div class="feature"><h3>Kalenteri täynnä päivän pistoja</h3><p>Joka päivä odottaa pieni kirjonta. Kirjo koko kuukausi, niin sen suuri kuvio aukeaa — väliin jääneet päivät odottavat sinua.</p></div>
+    <div class="feature"><h3>Loputon merkkausliina</h3><p>Ensimmäisen valmiin kuvan jälkeen avautuu merkkausliina kansanperinteen kuvioin: värillisiä nonogrammeja kahdella tai kolmella langalla, eivätkä ne lopu koskaan.</p></div>
+    <div class="feature"><h3>Vihjeitä visaisiin hetkiin</h3><p>Paljasta ruutu, kokonainen linja tai 10 satunnaista ruutua — ja sormustin suojaa seuraavalta virheeltäsi.</p></div>
+    <div class="feature"><h3>Ei ajastinta, ei kiirettä</h3><p>Lahja joka päivä, Game Center -saavutukset ja tulostaulukot iPhonella ja iPadilla, eikä pelaamiseen tarvita verkkoyhteyttä.</p></div>
   </div>
 </section>
 

@@ -582,7 +582,8 @@ width: auto;
 height: 48px;
 }
 .soon {
-display: inline-flex;
+display: flex;
+width: fit-content;
 align-items: center;
 gap: 10px;
 margin: 28px 0 0;
@@ -970,14 +971,6 @@ box-shadow:
 14px 0 0 color-mix(in srgb, var(--accent) 60%, transparent),
 28px 0 0 color-mix(in srgb, var(--accent) 30%, transparent);
 }
-.frame-stitch .feature::before {
-width: 46px;
-height: 3px;
-margin-block: 4px 23px;
-border-radius: 2px;
-background: repeating-linear-gradient(90deg, var(--accent) 0 8px, transparent 8px 13px);
-box-shadow: none;
-}
 .support-card {
 position: relative;
 display: grid;
@@ -993,7 +986,7 @@ background: var(--surface);
 content: "";
 position: absolute;
 inset: 10px;
-border: 2px dashed color-mix(in srgb, var(--accent) 30%, transparent);
+border: 2px dashed var(--stitch, color-mix(in srgb, var(--accent) 30%, transparent));
 border-radius: calc(var(--radius-lg) - 10px);
 pointer-events: none;
 }
@@ -1081,6 +1074,75 @@ color: var(--accent);
 inset: 7px;
 border-radius: calc(var(--radius) - 7px);
 }
+.banner {
+margin-block: 0;
+}
+.banner img {
+width: 100%;
+border-radius: var(--radius);
+}
+.game-page.frame-stitch,
+.doc-page.frame-stitch {
+background:
+radial-gradient(1100px 620px at 88% -8%, var(--glow), transparent 62%),
+radial-gradient(900px 560px at -12% 18%, var(--glow2), transparent 60%),
+repeating-linear-gradient(0deg, color-mix(in srgb, var(--muted) 7%, transparent) 0 1px, transparent 1px 4px),
+repeating-linear-gradient(90deg, color-mix(in srgb, var(--muted) 5%, transparent) 0 1px, transparent 1px 3px),
+var(--bg);
+background-repeat: no-repeat, no-repeat, repeat, repeat;
+}
+.game-page.frame-stitch :is(.feature, .steps li, .tips li, .support-card, .banner) {
+position: relative;
+border-color: transparent;
+background: var(--surface);
+box-shadow:
+0 1px 2px color-mix(in srgb, var(--text) 8%, transparent),
+0 14px 28px -20px color-mix(in srgb, var(--text) 50%, transparent);
+}
+.game-page.frame-stitch :is(.feature, .steps li, .tips li, .banner)::after {
+content: "";
+position: absolute;
+inset: 7px;
+border: 2px dashed var(--stitch);
+border-radius: calc(var(--radius) - 7px);
+pointer-events: none;
+}
+.game-page.frame-stitch .steps li {
+padding: 18px 24px 18px 18px;
+}
+.game-page.frame-stitch .steps li::before {
+border-radius: 50%;
+outline: 1.5px dashed color-mix(in srgb, var(--accent-text) 70%, transparent);
+outline-offset: -5px;
+}
+.game-page.frame-stitch .tips li::before {
+border-radius: 50%;
+}
+.game-page.frame-stitch :is(.section-head h2, .rules h2, .support-card h2, .feature)::before {
+content: "";
+display: block;
+width: 54px;
+height: 14px;
+margin-bottom: 14px;
+border-radius: 0;
+box-shadow: none;
+background: linear-gradient(90deg, var(--thread-1) 0 33.4%, var(--thread-2) 33.4% 66.6%, var(--thread-3) 66.6%);
+-webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 16'%3E%3Cpath d='M3 3l10 10M13 3 3 13M25 3l10 10M35 3 25 13M47 3l10 10M57 3 47 13' stroke='%23000' stroke-width='2.8' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
+mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 16'%3E%3Cpath d='M3 3l10 10M13 3 3 13M25 3l10 10M35 3 25 13M47 3l10 10M57 3 47 13' stroke='%23000' stroke-width='2.8' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.game-page.frame-stitch .feature::before {
+margin-bottom: 18px;
+}
+.game-page.frame-stitch .banner {
+padding: 14px;
+border-radius: var(--radius-lg);
+}
+.game-page.frame-stitch .banner::after {
+border-radius: calc(var(--radius-lg) - 7px);
+}
+.game-page.frame-stitch .banner img {
+border-radius: calc(var(--radius-lg) - 14px);
+}
 .doc {
 max-width: 760px;
 margin-inline: auto;
@@ -1147,6 +1209,19 @@ font-size: 16px;
 .feature-grid {
 grid-template-columns: 1fr;
 }
+.banner img {
+aspect-ratio: 2 / 1;
+object-fit: cover;
+}
+.game-page.frame-stitch .banner {
+padding: 10px;
+}
+.game-page.frame-stitch .banner::after {
+inset: 5px;
+}
+.game-page.frame-stitch .banner img {
+border-radius: calc(var(--radius-lg) - 10px);
+}
 .site-nav a {
 padding: 8px 10px;
 }
@@ -1193,10 +1268,11 @@ transition: none !important;
 }
 }
 </style>
+<meta name="apple-itunes-app" content="app-id=6822948115">
 <meta name="theme-color" content="#F2ECE0">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"MobileApplication","name":"Stitch Tales","description":"Citește numerele de lângă rânduri și coloane, brodează celulele potrivite — și fiecare nonogramă rezolvată se brodează într-o scenă din ghergheful tău.","url":"https://paastudios.com/stitch-tales/ro/","image":"https://paastudios.com/stitch-tales/images/icon.webp","inLanguage":"ro","applicationCategory":"GameApplication","applicationSubCategory":"Nonograme brodate","operatingSystem":"iOS, Android","author":{"@type":"Organization","name":"PAA Studios","url":"https://paastudios.com"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"keywords":"nonogramă, nonograme, nonogram, picross, griddlers, puzzle japonez, cusătură în cruce, goblen, broderie, joc logic, puzzle logic, puzzle cu numere, pixel art, joc, joc pe mobil, joc de puzzle, joc gratuit, joc fără internet"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"MobileApplication","name":"Stitch Tales","description":"Citește numerele de lângă rânduri și coloane, brodează celulele potrivite — și fiecare nonogramă rezolvată se brodează într-o scenă din ghergheful tău.","url":"https://paastudios.com/stitch-tales/ro/","image":"https://paastudios.com/stitch-tales/images/icon.webp","inLanguage":"ro","applicationCategory":"GameApplication","applicationSubCategory":"Nonograme brodate","operatingSystem":"iOS, Android","author":{"@type":"Organization","name":"PAA Studios","url":"https://paastudios.com"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"keywords":"nonogramă, nonograme, nonogram, picross, griddlers, puzzle japonez, cusătură în cruce, goblen, broderie, joc logic, puzzle logic, puzzle cu numere, pixel art, joc, joc pe mobil, joc de puzzle, joc gratuit, joc fără internet","screenshot":["https://paastudios.com/stitch-tales/images/screen-1.webp","https://paastudios.com/stitch-tales/images/screen-2.webp","https://paastudios.com/stitch-tales/images/screen-3.webp","https://paastudios.com/stitch-tales/images/screen-4.webp","https://paastudios.com/stitch-tales/images/screen-5.webp","https://paastudios.com/stitch-tales/images/screen-6.webp"],"sameAs":["https://apps.apple.com/app/id6822948115"]}</script>
 </head>
-<body class="game-page frame-stitch" data-scheme="light" style="--bg:#F2ECE0;--surface:#FBF8F2;--surface2:#E7DFCF;--line:#D3C6AE;--text:#2A231C;--muted:#5F5444;--accent:#B3263A;--accent-text:#FFFFFF;--glow:rgba(179, 38, 58, 0.12);--glow2:rgba(46, 122, 82, 0.12)">
+<body class="game-page frame-stitch" data-scheme="light" style="--bg:#F2ECE0;--surface:#FBF8F2;--surface2:#E7DFCF;--line:#D3C6AE;--text:#2A231C;--muted:#5F5444;--accent:#B3263A;--accent-text:#FFFFFF;--glow:rgba(179, 38, 58, 0.12);--glow2:rgba(46, 122, 82, 0.12);--stitch:#E7B7BE;--thread-1:#B3263A;--thread-2:#2E7A52;--thread-3:#C9A06A">
 <a class="skip" href="#main">Sari la conținut</a>
 <header class="site-header wrap">
   <a class="brand" href="/ro/"><img src="/assets/logo.svg" width="34" height="34" alt=""><span>PAA Studios</span></a>
@@ -1253,40 +1329,66 @@ transition: none !important;
     <h1>Stitch Tales</h1>
     <p class="tagline">Fiecare puzzle e o cusătură dintr-o imagine mai mare.</p>
     <p class="lead">Citește numerele de lângă rânduri și coloane, brodează celulele potrivite — și fiecare nonogramă rezolvată se brodează într-o scenă din ghergheful tău.</p>
-    <p class="soon">În curând în App Store și pe Google Play</p>
-    <p class="platforms">Gratuit pe iPhone, iPad și Android</p>
+    <div class="stores"><a class="store" href="https://apps.apple.com/app/id6822948115?pt=129254796&amp;ct=stitch-tales-ro&amp;mt=8"><img src="/assets/badges/app-store.svg" width="144" height="48" alt="Descarcă Stitch Tales din App Store"></a></div><p class="soon">În curând pe Google Play</p>
+    <p class="platforms">Pentru iPhone, iPad și Android</p>
   </div>
-  <div class="game-hero-art"><img class="art-image" src="/stitch-tales/images/hoop.svg" width="600" height="620" alt="Un gherghef cu o pajiște brodată: un fluture, un soare, flori și o ciupercă ce urmează să fie brodată" loading="eager" decoding="async"></div>
+  <div class="game-hero-art"><div class="phones"><figure class="device phone-left"><img src="/stitch-tales/images/screen-1.webp" srcset="/stitch-tales/images/screen-1-360.webp 360w, /stitch-tales/images/screen-1.webp 600w" sizes="(max-width: 560px) 40vw, 210px" width="600" height="1304" alt="O bufniță care prinde contur într-o nonogramă, cu cruci în celulele goale" loading="eager" decoding="async"></figure><figure class="device phone-right"><img src="/stitch-tales/images/screen-3.webp" srcset="/stitch-tales/images/screen-3-360.webp 360w, /stitch-tales/images/screen-3.webp 600w" sizes="(max-width: 560px) 40vw, 210px" width="600" height="1304" alt="Prim-plan cu scena „Pisica la fereastră”: rândunele, un fluture, o pisică și un ghem de lână" loading="eager" decoding="async"></figure><figure class="device phone-center"><img src="/stitch-tales/images/screen-2.webp" srcset="/stitch-tales/images/screen-2-360.webp 360w, /stitch-tales/images/screen-2.webp 600w" sizes="(max-width: 560px) 40vw, 210px" width="600" height="1304" alt="Scena „Zodiac” în gherghef, brodată figură cu figură" loading="eager" decoding="async"></figure></div></div>
 </section>
+
+<figure class="banner wrap"><img src="/stitch-tales/images/banner.webp" srcset="/stitch-tales/images/banner-720.webp 720w, /stitch-tales/images/banner-1280.webp 1280w, /stitch-tales/images/banner.webp 2240w" sizes="(max-width: 600px) 108vw, (max-width: 1184px) 92vw, 1120px" width="2240" height="960" alt="Un patchwork de nonograme care se transformă în broderie: o caracatiță cu pești-clovn, un tucan, o poartă torii, rândunele, o vulpe, un brad de Crăciun și multe altele" loading="lazy" decoding="async"></figure>
 
 <section class="block wrap rules" aria-labelledby="rules-title">
   <div>
     <h2 id="rules-title">Cum se joacă</h2>
-    
+    <p class="rules-intro">Stitch Tales se bazează pe nonograme, puzzle-uri logice cu imagini, cunoscute și ca griddlers, hanjie sau cuvinte încrucișate japoneze. Numerele de lângă rânduri și de deasupra coloanelor îți spun ce celule să umpli; umple-le pe cele potrivite și apare o imagine ascunsă — aici, o figură brodată în scena din ghergheful tău.</p>
     <ol class="steps">
-      <li>Numerele de lângă fiecare rând și coloană arată, în ordine, grupurile de celule pline consecutive.</li>
-      <li>Brodează celulele care trebuie umplute, iar pe cele care rămân goale marchează-le cu o cruce.</li>
-      <li>Atenție — o cusătură greșită te costă o viață, una dintre inimile brodate.</li>
+      <li>Numerele de lângă un rând sau de deasupra unei coloane arată câte celule la rând trebuie brodate și în ce ordine.</li>
+      <li>Între două bucăți există mereu cel puțin o celulă goală — marcheaz-o cu o cruce.</li>
+      <li>Glisează cu degetul, iar firul îl urmează peste celule.</li>
+      <li>O cusătură greșită costă una dintre cele trei vieți, așa că nu te grăbi.</li>
       <li>Rezolvă grila, iar figura se brodează în scena din ghergheful tău.</li>
     </ol>
-    
+    <ul class="rule-notes">
+      <li>Numerele de deasupra unei coloane se citesc de sus în jos, iar cele de lângă un rând, de la stânga la dreapta.</li>
+      <li>Pe ștergar, fiecare număr are culoarea firului său: bucățile de culori diferite se pot atinge, iar cele de aceeași culoare sunt mereu despărțite de o celulă goală.</li>
+      <li>Prima figură te poartă prin toate regulile.</li>
+    </ul>
   </div>
   <figure class="rules-art"><img src="/stitch-tales/images/nonogram.svg" width="474" height="410" alt="O nonogramă aproape rezolvată, cu o pisică: celule brodate cu fir grena, cruci în cele goale" loading="lazy" decoding="async"></figure>
 </section>
 
+<section class="block wrap" aria-labelledby="tips-title">
+  <div class="section-head"><h2 id="tips-title">Sfaturi de rezolvare</h2></div>
+  <ol class="tips">
+    <li>Începe cu liniile cele mai pline: adună bucățile, cu câte o celulă goală între ele. Dacă totalul e egal cu lungimea liniei, toată linia e rezolvată; dacă lipsesc doar una sau două celule, bucățile mai lungi au deja celule sigure.</li>
+    <li>Împinge o bucată cât se poate de mult spre un capăt, apoi spre celălalt: celulele pe care le acoperă de ambele dăți sunt mereu brodate. Un 7 într-o linie de 10 umple întotdeauna cele patru celule din mijloc.</li>
+    <li>O cusătură chiar la marginea grilei e începutul primei bucăți: brodează de acolo toată bucata și pune o cruce imediat după ea.</li>
+    <li>Când o linie e rezolvată, celulele ei goale primesc cruci — și fiecare cruce le arată liniilor care o traversează unde nu poate sta o bucată.</li>
+    <li>Nu broda la noroc: o cusătură greșită costă o viață. Dacă într-o linie nu e încă nimic sigur, revino la ea după ce avansezi pe liniile care o intersectează.</li>
+  </ol>
+</section>
 
-
-
+<section class="block gallery" aria-labelledby="gallery-title">
+  <div class="wrap section-head"><h2 id="gallery-title">Mai de aproape</h2></div>
+  <div class="shots" tabindex="0" aria-label="Capturi de ecran">
+    <figure class="device shot"><img src="/stitch-tales/images/screen-1.webp" srcset="/stitch-tales/images/screen-1-360.webp 360w, /stitch-tales/images/screen-1.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="O bufniță care prinde contur într-o nonogramă, cu cruci în celulele goale" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-2.webp" srcset="/stitch-tales/images/screen-2-360.webp 360w, /stitch-tales/images/screen-2.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Scena „Zodiac” în gherghef, brodată figură cu figură" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-3.webp" srcset="/stitch-tales/images/screen-3-360.webp 360w, /stitch-tales/images/screen-3.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Prim-plan cu scena „Pisica la fereastră”: rândunele, un fluture, o pisică și un ghem de lână" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-4.webp" srcset="/stitch-tales/images/screen-4-360.webp 360w, /stitch-tales/images/screen-4.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Calendarul: o mică broderie pentru fiecare zi și un arici pentru toată luna" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-5.webp" srcset="/stitch-tales/images/screen-5-360.webp 360w, /stitch-tales/images/screen-5.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Ștergarul fără sfârșit cu motive populare colorate" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-6.webp" srcset="/stitch-tales/images/screen-6-360.webp 360w, /stitch-tales/images/screen-6.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Colecția de gherghefuri terminate" loading="lazy" decoding="async"></figure>
+  </div>
+</section>
 
 <section class="block wrap" aria-labelledby="features-title">
   <div class="section-head"><h2 id="features-title">Ce găsești în joc</h2></div>
   <div class="feature-grid">
-    <div class="feature"><h3>Scene de brodat</h3><p>O pajiște înflorită, Stonehenge, un picnic cu fructe, sistemul solar, o grădină japoneză, o casă de păpuși, un sat de iarnă, fundul mării — și altele.</p></div>
-    <div class="feature"><h3>Cusături de broderie adevărate</h3><p>Punct plin, lănțișor, os de pește și noduri franțuzești — fiecare figură e cusută cu firul și textura ei.</p></div>
-    <div class="feature"><h3>Un ștergar fără sfârșit</h3><p>După prima scenă se deschide un ștergar cu motive populare — iar modelele lui nu se termină niciodată.</p></div>
-    <div class="feature"><h3>Indicii când te blochezi</h3><p>Dezvăluie o singură celulă sau o linie întreagă și brodează mai departe.</p></div>
-    <div class="feature"><h3>Un cadou în fiecare zi</h3><p>Revino zilnic pentru o recompensă care crește odată cu seria ta.</p></div>
-    <div class="feature"><h3>Blând cu ochii</h3><p>Culori moi de in, sunete discrete de cusut, fără cont și fără internet.</p></div>
+    <div class="feature"><h3>Gherghef după gherghef</h3><p>O pisică la fereastră, păsări de vitraliu, un sat de iarnă, sălile Asgardului, Vestul Sălbatic și multe altele. Fiecare gherghef terminat intră în colecția ta.</p></div>
+    <div class="feature"><h3>O broderie ca adevărată</h3><p>Fiecare figură are firele și cusăturile ei, umbre moi pe pânza de in și sunetele blânde ale acului și ale gherghefului.</p></div>
+    <div class="feature"><h3>Un calendar cu broderia zilei</h3><p>În fiecare zi te așteaptă o mică broderie. Brodează toată luna și se deschide figura ei cea mare — zilele ratate te vor aștepta.</p></div>
+    <div class="feature"><h3>Un ștergar fără sfârșit</h3><p>După prima scenă terminată se deschide un ștergar cu motive populare: nonograme colorate în două sau trei fire, care nu se termină niciodată.</p></div>
+    <div class="feature"><h3>Indicii pentru momentele grele</h3><p>Dezvăluie o celulă, o linie întreagă sau 10 celule la întâmplare — iar degetarul te ferește de următoarea greșeală.</p></div>
+    <div class="feature"><h3>Fără cronometru, fără grabă</h3><p>Un cadou în fiecare zi, realizări și clasamente Game Center pe iPhone și iPad, iar ca să joci nu ai nevoie de internet.</p></div>
   </div>
 </section>
 

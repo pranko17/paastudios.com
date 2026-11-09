@@ -18,6 +18,7 @@ export default {
     storeGooglePlay: 'Google Play',
     and: 'un',
     freeOn: 'Bez maksas {platforms}',
+    madeFor: 'Spēle {platforms}',
     howToPlay: 'Kā spēlēt',
     tips: 'Risināšanas knifi',
     faq: 'Jautājumi un atbildes',
@@ -195,41 +196,74 @@ export default {
         'spēle bez interneta',
       ],
       art: {
+        alts: [
+          'Pūce, kas veidojas nonogrammā, tukšajās rūtiņās — krustiņi',
+          'Aina „Zodiaks” riņķī, izšūta figūru pēc figūras',
+          'Ainas „Kaķis pie loga” tuvplāns: bezdelīgas, tauriņš, kaķis un dziju kamols',
+        ],
+      },
+      cardArt: {
         alt: 'Izšūšanas riņķis ar izšūtu ziedu pļavu: tauriņš, saule, ziedi un mušmire, kas vēl jāizšuj',
       },
+      banner: {
+        alt: 'Nonogrammu ielāpu sega, kas pārtop izšuvumā: astoņkājis ar klaunzivīm, tukāns, torii vārti, bezdelīgas, lapsa, Ziemassvētku egle un vēl daudz kas',
+      },
       rules: {
+        intro:
+          'Stitch Tales pamatā ir nonogrammas — loģikas mīklas, kas atklāj attēlu. Tās ir pazīstamas arī kā japāņu krustvārdu mīklas, griddlers vai hanjie. Skaitļi pie rindām un virs kolonnām norāda, kuras rūtiņas jāaizpilda; aizpildi pareizās, un parādīsies slēpts attēls — šeit tā ir figūra, kas tiek iešūta ainā tavā riņķī.',
         steps: [
-          'Skaitļi pie katras rindas un kolonnas ir aizpildīto rūtiņu grupas pēc kārtas.',
-          'Izšuj rūtiņas, kurām jābūt aizpildītām; tās, kas paliek tukšas, atzīmē ar krustiņu.',
-          'Uzmanīgi — nepareizs dūriens atņem vienu no tavām izšūtajām sirdīm.',
+          'Skaitļi pie rindas vai virs kolonnas norāda, cik rūtiņas pēc kārtas jāizšuj un kādā secībā.',
+          'Starp divām grupām vienmēr ir vismaz viena tukša rūtiņa — atzīmē to ar krustiņu.',
+          'Velc ar pirkstu, un diegs sekos tam pa rūtiņām.',
+          'Nepareizs dūriens atņem vienu no tavām trim dzīvībām, tāpēc nesteidzies.',
           'Atrisini režģi, un figūra tiks iešūta ainā tavā riņķī.',
+        ],
+        notes: [
+          'Skaitļus virs kolonnas lasi no augšas uz leju, bet pie rindas — no kreisās uz labo.',
+          'Rakstu dvielī katram skaitlim ir sava diega krāsa: dažādu krāsu grupas drīkst saskarties, bet vienas krāsas grupas vienmēr šķir tukša rūtiņa.',
+          'Pirmā figūra tevi iepazīstinās ar visiem noteikumiem.',
+        ],
+        tips: [
+          'Sāc ar pilnākajām līnijām: saskaiti grupas un pieskaiti pa vienai tukšai rūtiņai starp katrām divām. Ja summa ir vienāda ar līnijas garumu, visa līnija ir atrisināta; ja pietrūkst tikai vienas vai divu rūtiņu, garākajās grupās jau ir droši zināmas rūtiņas.',
+          'Pabīdi grupu, cik tālu var, uz vienu līnijas galu un tad uz otru: rūtiņas, ko tā nosedz abas reizes, vienmēr jāizšuj. 10 rūtiņu līnijā 7 vienmēr aizpilda četras vidējās rūtiņas.',
+          'Dūriens pašā režģa malā ir pirmās grupas sākums: izšuj no tā visu grupu un aiz tās ieliec krustiņu.',
+          'Kad līnija atrisināta, tās tukšās rūtiņas saņem krustiņus — un katrs krustiņš parāda līnijām, kas to šķērso, kur grupa nevar atrasties.',
+          'Nemini uz labu laimi: nepareizs dūriens atņem dzīvību. Ja līnijā vēl nekas nav skaidrs, atgriezies pie tās pēc līnijām, kas to šķērso.',
         ],
         alt: 'Gandrīz atrisināta nonogramma ar kaķi: granātsarkanā diegā izšūtas rūtiņas, tukšajās — krustiņi',
       },
+      screenshots: [
+        'Pūce, kas veidojas nonogrammā, tukšajās rūtiņās — krustiņi',
+        'Aina „Zodiaks” riņķī, izšūta figūru pēc figūras',
+        'Ainas „Kaķis pie loga” tuvplāns: bezdelīgas, tauriņš, kaķis un dziju kamols',
+        'Kalendārs: mazs izšuvums katrai dienai un ezis visam mēnesim',
+        'Bezgalīgais rakstu dvielis ar krāsainiem tautas rakstiem',
+        'Pabeigto riņķu kolekcija',
+      ],
       features: [
         {
-          title: 'Ainas izšūšanai',
-          text: 'Ziedu pļava, Stounhendža, augļu pikniks, Saules sistēma, japāņu dārzs, leļļu māja, ziemas ciems, jūras dibens — un vēl daudz kas.',
+          title: 'Riņķis pēc riņķa',
+          text: 'Kaķis pie loga, vitrāžu putni, ziemas ciems, Asgarda zāles, Mežonīgie Rietumi un vēl daudz kas. Katrs pabeigtais riņķis nonāk tavā kolekcijā.',
         },
         {
-          title: 'Īsti izšūšanas dūrieni',
-          text: 'Gludums, ķēdīšu dūriens, zivs asaku dūriens un franču mezgliņi — katra figūra izšūta ar savu diegu un savā faktūrā.',
+          title: 'Gluži kā īsts izšuvums',
+          text: 'Katrai figūrai ir savi diegi un dūrieni, uz lina krīt maigas ēnas, un klusi skan adata un riņķis.',
+        },
+        {
+          title: 'Ikdienas dūrienu kalendārs',
+          text: 'Katru dienu gaida mazs izšuvums. Izšuj visas mēneša dienas, un atvērsies tā lielā figūra — izlaistās dienas tevi pagaidīs.',
         },
         {
           title: 'Bezgalīgs rakstu dvielis',
-          text: 'Pēc pirmās ainas atveras rakstu dvielis ar tautas rakstiem — un tā raksti nekad nebeidzas.',
+          text: 'Pēc pirmās pabeigtās ainas atveras rakstu dvielis ar tautas rakstiem: krāsainas nonogrammas ar diviem vai trim diegiem, kas nekad nebeidzas.',
         },
         {
-          title: 'Padomi, kad netiec tālāk',
-          text: 'Atklāj vienu rūtiņu vai veselu līniju — un izšuj tālāk.',
+          title: 'Padomi grūtiem brīžiem',
+          text: 'Atklāj rūtiņu, veselu līniju vai 10 nejaušas rūtiņas — un uzpirkstenis pasargās no nākamās kļūdas.',
         },
         {
-          title: 'Dāvana katru dienu',
-          text: 'Nāc katru dienu pēc balvas, kas aug līdz ar tavu sēriju.',
-        },
-        {
-          title: 'Saudzīgi acīm',
-          text: 'Maigas lina krāsas, klusas dūrienu skaņas, nav vajadzīgs ne konts, ne internets.',
+          title: 'Bez taimera, bez steigas',
+          text: 'Dāvana katru dienu, Game Center sasniegumi un līderu saraksti iPhone un iPad ierīcēs, un spēlēšanai nav vajadzīgs internets.',
         },
       ],
       supportNote: 'Mums var rakstīt arī no spēles: Profils → Sazināties ar mums.',

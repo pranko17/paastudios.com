@@ -18,6 +18,7 @@ export default {
     storeGooglePlay: 'Google Play',
     and: 'i',
     freeOn: 'Za darmo na {platforms}',
+    madeFor: 'Na {platforms}',
     howToPlay: 'Jak grać',
     tips: 'Wskazówki do rozwiązywania',
     faq: 'Pytania i odpowiedzi',
@@ -192,41 +193,74 @@ export default {
         'gra offline',
       ],
       art: {
+        alts: [
+          'Sowa wyłaniająca się z obrazka logicznego, krzyżyki w pustych polach',
+          'Scena „Zodiak” w tamborku, haftowana figura po figurze',
+          'Zbliżenie sceny „Kot przy oknie”: jaskółki, motyl, kot i kłębek włóczki',
+        ],
+      },
+      cardArt: {
         alt: 'Tamborek z wyhaftowaną łąką: motyl, słońce, kwiaty i muchomor, który dopiero czeka na wyhaftowanie',
       },
+      banner: {
+        alt: 'Patchwork z obrazków logicznych, które zamieniają się w haft: ośmiornica z błazenkami, tukan, brama torii, jaskółki, lis, choinka i wiele więcej',
+      },
       rules: {
+        intro:
+          'Stitch Tales opiera się na nonogramach — obrazkach logicznych, znanych też jako japońskie krzyżówki, griddlers czy hanjie. Liczby przy wierszach i nad kolumnami mówią, które pola wypełnić; wypełnij właściwe, a pojawi się ukryty obrazek. Tutaj jest nim figura wyhaftowana w scenie na twoim tamborku.',
         steps: [
-          'Liczby przy każdym wierszu i kolumnie mówią, ile pól pod rząd wyhaftować w kolejnych odcinkach.',
-          'Haftuj pola, które muszą być wypełnione, a te, które zostają puste, oznaczaj krzyżykiem.',
-          'Uważaj — błędny ścieg kosztuje życie, jedno z wyhaftowanych serc.',
+          'Liczby przy wierszu lub nad kolumną mówią, ile pól pod rząd wyhaftować i w jakiej kolejności.',
+          'Między dwoma odcinkami zawsze jest co najmniej jedno puste pole — oznacz je krzyżykiem.',
+          'Przesuń palcem, a nić pobiegnie za nim po polach.',
+          'Błędny ścieg kosztuje jedno z trzech żyć, więc nie spiesz się.',
           'Rozwiąż planszę, a figura zostanie wyhaftowana w scenie na twoim tamborku.',
+        ],
+        notes: [
+          'Liczby nad kolumną czytaj z góry na dół, a te przy wierszu — od lewej do prawej.',
+          'We wzorniku każda liczba ma własny kolor nici: odcinki w różnych kolorach mogą się stykać, a odcinki w tym samym kolorze zawsze dzieli puste pole.',
+          'Pierwsza figura sama przeprowadzi cię przez wszystkie zasady.',
+        ],
+        tips: [
+          'Zacznij od najgęstszych linii: zsumuj odcinki i dodaj po jednym pustym polu między sąsiednimi. Jeśli wynik równa się długości linii, cała linia jest rozwiązana; jeśli brakuje tylko pola czy dwóch, dłuższe odcinki mają już pola, co do których nie ma wątpliwości.',
+          'Przesuń odcinek jak najdalej do jednego końca, potem do drugiego: pola, które zakrywa w obu położeniach, zawsze są wyhaftowane. Odcinek długości 7 w linii z 10 pól zawsze wypełnia cztery środkowe.',
+          'Ścieg tuż przy krawędzi planszy to początek pierwszego odcinka: wyhaftuj od niego cały odcinek i postaw krzyżyk zaraz za nim.',
+          'Gdy linia jest rozwiązana, jej puste pola dostają krzyżyki — a każdy krzyżyk podpowiada liniom, które ją przecinają, gdzie odcinek nie może leżeć.',
+          'Nie zgaduj: błędny ścieg kosztuje życie. Jeśli w linii nic jeszcze nie jest pewne, wróć do niej po liniach, które ją przecinają.',
         ],
         alt: 'Prawie rozwiązany obrazek logiczny z kotem: pola wyhaftowane bordową nicią, krzyżyki w pustych',
       },
+      screenshots: [
+        'Sowa wyłaniająca się z obrazka logicznego, krzyżyki w pustych polach',
+        'Scena „Zodiak” w tamborku, haftowana figura po figurze',
+        'Zbliżenie sceny „Kot przy oknie”: jaskółki, motyl, kot i kłębek włóczki',
+        'Kalendarz: mały haft na każdy dzień i jeż za cały miesiąc',
+        'Niekończący się wzornik z kolorowymi motywami ludowymi',
+        'Kolekcja gotowych tamborków',
+      ],
       features: [
         {
-          title: 'Sceny do wyhaftowania',
-          text: 'Kwitnąca łąka, Stonehenge, owocowy piknik, Układ Słoneczny, ogród japoński, domek dla lalek, zimowa wioska, dno morskie… i nie tylko.',
+          title: 'Tamborek za tamborkiem',
+          text: 'Kot przy oknie, witrażowe ptaki, zimowa wioska, sale Asgardu, Dziki Zachód i wiele innych. Każdy ukończony tamborek trafia do twojej kolekcji.',
         },
         {
-          title: 'Prawdziwe ściegi hafciarskie',
-          text: 'Ścieg atłaskowy, łańcuszkowy, rybia ość i supełki francuskie — każda figura jest wyszyta własną nicią i ma własną fakturę.',
+          title: 'Haft jak prawdziwy',
+          text: 'Każda figura ma własne nici i ściegi, miękkie cienie na lnie i ciche odgłosy igły i tamborka.',
         },
         {
-          title: 'Nieskończony wzornik',
-          text: 'Po pierwszej scenie otwiera się wzornik z ludowymi motywami — a jego wzory nigdy się nie kończą.',
+          title: 'Kalendarz haftów dnia',
+          text: 'Każdego dnia czeka na ciebie mały haft. Wyhaftuj cały miesiąc, a odsłoni się jego wielka figura — opuszczone dni poczekają.',
         },
         {
-          title: 'Podpowiedzi, gdy utkniesz',
-          text: 'Odkryj jedno pole albo całą linię i haftuj dalej.',
+          title: 'Niekończący się wzornik',
+          text: 'Po pierwszej ukończonej scenie otwiera się wzornik ludowych motywów: kolorowe obrazki logiczne w dwóch lub trzech niciach, których nigdy nie zabraknie.',
         },
         {
-          title: 'Prezent każdego dnia',
-          text: 'Wracaj codziennie po nagrodę, która rośnie razem z serią.',
+          title: 'Podpowiedzi na trudne chwile',
+          text: 'Odkryj pole, całą linię albo 10 losowych pól — a naparstek uchroni cię przed kolejnym błędem.',
         },
         {
-          title: 'Przyjazna dla oczu',
-          text: 'Łagodne lniane barwy, ciche dźwięki haftowania. Bez konta i bez internetu.',
+          title: 'Bez zegara i bez pośpiechu',
+          text: 'Prezent każdego dnia, osiągnięcia i rankingi Game Center na iPhonie i iPadzie, a do gry nie potrzeba internetu.',
         },
       ],
       supportNote: 'Możesz też napisać do nas z gry: „Profil” → „Napisz do nas”.',

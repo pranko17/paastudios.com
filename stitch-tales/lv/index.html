@@ -582,7 +582,8 @@ width: auto;
 height: 48px;
 }
 .soon {
-display: inline-flex;
+display: flex;
+width: fit-content;
 align-items: center;
 gap: 10px;
 margin: 28px 0 0;
@@ -970,14 +971,6 @@ box-shadow:
 14px 0 0 color-mix(in srgb, var(--accent) 60%, transparent),
 28px 0 0 color-mix(in srgb, var(--accent) 30%, transparent);
 }
-.frame-stitch .feature::before {
-width: 46px;
-height: 3px;
-margin-block: 4px 23px;
-border-radius: 2px;
-background: repeating-linear-gradient(90deg, var(--accent) 0 8px, transparent 8px 13px);
-box-shadow: none;
-}
 .support-card {
 position: relative;
 display: grid;
@@ -993,7 +986,7 @@ background: var(--surface);
 content: "";
 position: absolute;
 inset: 10px;
-border: 2px dashed color-mix(in srgb, var(--accent) 30%, transparent);
+border: 2px dashed var(--stitch, color-mix(in srgb, var(--accent) 30%, transparent));
 border-radius: calc(var(--radius-lg) - 10px);
 pointer-events: none;
 }
@@ -1081,6 +1074,75 @@ color: var(--accent);
 inset: 7px;
 border-radius: calc(var(--radius) - 7px);
 }
+.banner {
+margin-block: 0;
+}
+.banner img {
+width: 100%;
+border-radius: var(--radius);
+}
+.game-page.frame-stitch,
+.doc-page.frame-stitch {
+background:
+radial-gradient(1100px 620px at 88% -8%, var(--glow), transparent 62%),
+radial-gradient(900px 560px at -12% 18%, var(--glow2), transparent 60%),
+repeating-linear-gradient(0deg, color-mix(in srgb, var(--muted) 7%, transparent) 0 1px, transparent 1px 4px),
+repeating-linear-gradient(90deg, color-mix(in srgb, var(--muted) 5%, transparent) 0 1px, transparent 1px 3px),
+var(--bg);
+background-repeat: no-repeat, no-repeat, repeat, repeat;
+}
+.game-page.frame-stitch :is(.feature, .steps li, .tips li, .support-card, .banner) {
+position: relative;
+border-color: transparent;
+background: var(--surface);
+box-shadow:
+0 1px 2px color-mix(in srgb, var(--text) 8%, transparent),
+0 14px 28px -20px color-mix(in srgb, var(--text) 50%, transparent);
+}
+.game-page.frame-stitch :is(.feature, .steps li, .tips li, .banner)::after {
+content: "";
+position: absolute;
+inset: 7px;
+border: 2px dashed var(--stitch);
+border-radius: calc(var(--radius) - 7px);
+pointer-events: none;
+}
+.game-page.frame-stitch .steps li {
+padding: 18px 24px 18px 18px;
+}
+.game-page.frame-stitch .steps li::before {
+border-radius: 50%;
+outline: 1.5px dashed color-mix(in srgb, var(--accent-text) 70%, transparent);
+outline-offset: -5px;
+}
+.game-page.frame-stitch .tips li::before {
+border-radius: 50%;
+}
+.game-page.frame-stitch :is(.section-head h2, .rules h2, .support-card h2, .feature)::before {
+content: "";
+display: block;
+width: 54px;
+height: 14px;
+margin-bottom: 14px;
+border-radius: 0;
+box-shadow: none;
+background: linear-gradient(90deg, var(--thread-1) 0 33.4%, var(--thread-2) 33.4% 66.6%, var(--thread-3) 66.6%);
+-webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 16'%3E%3Cpath d='M3 3l10 10M13 3 3 13M25 3l10 10M35 3 25 13M47 3l10 10M57 3 47 13' stroke='%23000' stroke-width='2.8' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
+mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 16'%3E%3Cpath d='M3 3l10 10M13 3 3 13M25 3l10 10M35 3 25 13M47 3l10 10M57 3 47 13' stroke='%23000' stroke-width='2.8' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.game-page.frame-stitch .feature::before {
+margin-bottom: 18px;
+}
+.game-page.frame-stitch .banner {
+padding: 14px;
+border-radius: var(--radius-lg);
+}
+.game-page.frame-stitch .banner::after {
+border-radius: calc(var(--radius-lg) - 7px);
+}
+.game-page.frame-stitch .banner img {
+border-radius: calc(var(--radius-lg) - 14px);
+}
 .doc {
 max-width: 760px;
 margin-inline: auto;
@@ -1147,6 +1209,19 @@ font-size: 16px;
 .feature-grid {
 grid-template-columns: 1fr;
 }
+.banner img {
+aspect-ratio: 2 / 1;
+object-fit: cover;
+}
+.game-page.frame-stitch .banner {
+padding: 10px;
+}
+.game-page.frame-stitch .banner::after {
+inset: 5px;
+}
+.game-page.frame-stitch .banner img {
+border-radius: calc(var(--radius-lg) - 10px);
+}
 .site-nav a {
 padding: 8px 10px;
 }
@@ -1193,10 +1268,11 @@ transition: none !important;
 }
 }
 </style>
+<meta name="apple-itunes-app" content="app-id=6822948115">
 <meta name="theme-color" content="#F2ECE0">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"MobileApplication","name":"Stitch Tales","description":"Lasi skaitļus pie rindām un kolonnām, izšuj pareizās rūtiņas — un katra atrisinātā nonogramma tiks iešūta ainā tavā riņķī.","url":"https://paastudios.com/stitch-tales/lv/","image":"https://paastudios.com/stitch-tales/images/icon.webp","inLanguage":"lv","applicationCategory":"GameApplication","applicationSubCategory":"Nonogramma krustdūrienā","operatingSystem":"iOS, Android","author":{"@type":"Organization","name":"PAA Studios","url":"https://paastudios.com"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"keywords":"nonogramma, nonogrammas, japāņu krustvārdu mīkla, picross, griddlers, krustdūriens, izšūšana, izšuvums, loģikas mīkla, loģikas spēle, skaitļu mīkla, pikseļu māksla, spēle, mobilā spēle, mīklu spēle, bezmaksas spēle, spēle bez interneta"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"MobileApplication","name":"Stitch Tales","description":"Lasi skaitļus pie rindām un kolonnām, izšuj pareizās rūtiņas — un katra atrisinātā nonogramma tiks iešūta ainā tavā riņķī.","url":"https://paastudios.com/stitch-tales/lv/","image":"https://paastudios.com/stitch-tales/images/icon.webp","inLanguage":"lv","applicationCategory":"GameApplication","applicationSubCategory":"Nonogramma krustdūrienā","operatingSystem":"iOS, Android","author":{"@type":"Organization","name":"PAA Studios","url":"https://paastudios.com"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"keywords":"nonogramma, nonogrammas, japāņu krustvārdu mīkla, picross, griddlers, krustdūriens, izšūšana, izšuvums, loģikas mīkla, loģikas spēle, skaitļu mīkla, pikseļu māksla, spēle, mobilā spēle, mīklu spēle, bezmaksas spēle, spēle bez interneta","screenshot":["https://paastudios.com/stitch-tales/images/screen-1.webp","https://paastudios.com/stitch-tales/images/screen-2.webp","https://paastudios.com/stitch-tales/images/screen-3.webp","https://paastudios.com/stitch-tales/images/screen-4.webp","https://paastudios.com/stitch-tales/images/screen-5.webp","https://paastudios.com/stitch-tales/images/screen-6.webp"],"sameAs":["https://apps.apple.com/app/id6822948115"]}</script>
 </head>
-<body class="game-page frame-stitch" data-scheme="light" style="--bg:#F2ECE0;--surface:#FBF8F2;--surface2:#E7DFCF;--line:#D3C6AE;--text:#2A231C;--muted:#5F5444;--accent:#B3263A;--accent-text:#FFFFFF;--glow:rgba(179, 38, 58, 0.12);--glow2:rgba(46, 122, 82, 0.12)">
+<body class="game-page frame-stitch" data-scheme="light" style="--bg:#F2ECE0;--surface:#FBF8F2;--surface2:#E7DFCF;--line:#D3C6AE;--text:#2A231C;--muted:#5F5444;--accent:#B3263A;--accent-text:#FFFFFF;--glow:rgba(179, 38, 58, 0.12);--glow2:rgba(46, 122, 82, 0.12);--stitch:#E7B7BE;--thread-1:#B3263A;--thread-2:#2E7A52;--thread-3:#C9A06A">
 <a class="skip" href="#main">Pāriet uz saturu</a>
 <header class="site-header wrap">
   <a class="brand" href="/lv/"><img src="/assets/logo.svg" width="34" height="34" alt=""><span>PAA Studios</span></a>
@@ -1253,40 +1329,66 @@ transition: none !important;
     <h1>Stitch Tales</h1>
     <p class="tagline">Katra mīkla ir dūriens lielākā attēlā.</p>
     <p class="lead">Lasi skaitļus pie rindām un kolonnām, izšuj pareizās rūtiņas — un katra atrisinātā nonogramma tiks iešūta ainā tavā riņķī.</p>
-    <p class="soon">Drīzumā: App Store un Google Play</p>
-    <p class="platforms">Bez maksas iPhone, iPad un Android ierīcēm</p>
+    <div class="stores"><a class="store" href="https://apps.apple.com/app/id6822948115?pt=129254796&amp;ct=stitch-tales-lv&amp;mt=8"><img src="/assets/badges/app-store.svg" width="144" height="48" alt="Lejupielādēt Stitch Tales no App Store"></a></div><p class="soon">Drīzumā: Google Play</p>
+    <p class="platforms">Spēle iPhone, iPad un Android ierīcēm</p>
   </div>
-  <div class="game-hero-art"><img class="art-image" src="/stitch-tales/images/hoop.svg" width="600" height="620" alt="Izšūšanas riņķis ar izšūtu ziedu pļavu: tauriņš, saule, ziedi un mušmire, kas vēl jāizšuj" loading="eager" decoding="async"></div>
+  <div class="game-hero-art"><div class="phones"><figure class="device phone-left"><img src="/stitch-tales/images/screen-1.webp" srcset="/stitch-tales/images/screen-1-360.webp 360w, /stitch-tales/images/screen-1.webp 600w" sizes="(max-width: 560px) 40vw, 210px" width="600" height="1304" alt="Pūce, kas veidojas nonogrammā, tukšajās rūtiņās — krustiņi" loading="eager" decoding="async"></figure><figure class="device phone-right"><img src="/stitch-tales/images/screen-3.webp" srcset="/stitch-tales/images/screen-3-360.webp 360w, /stitch-tales/images/screen-3.webp 600w" sizes="(max-width: 560px) 40vw, 210px" width="600" height="1304" alt="Ainas „Kaķis pie loga” tuvplāns: bezdelīgas, tauriņš, kaķis un dziju kamols" loading="eager" decoding="async"></figure><figure class="device phone-center"><img src="/stitch-tales/images/screen-2.webp" srcset="/stitch-tales/images/screen-2-360.webp 360w, /stitch-tales/images/screen-2.webp 600w" sizes="(max-width: 560px) 40vw, 210px" width="600" height="1304" alt="Aina „Zodiaks” riņķī, izšūta figūru pēc figūras" loading="eager" decoding="async"></figure></div></div>
 </section>
+
+<figure class="banner wrap"><img src="/stitch-tales/images/banner.webp" srcset="/stitch-tales/images/banner-720.webp 720w, /stitch-tales/images/banner-1280.webp 1280w, /stitch-tales/images/banner.webp 2240w" sizes="(max-width: 600px) 108vw, (max-width: 1184px) 92vw, 1120px" width="2240" height="960" alt="Nonogrammu ielāpu sega, kas pārtop izšuvumā: astoņkājis ar klaunzivīm, tukāns, torii vārti, bezdelīgas, lapsa, Ziemassvētku egle un vēl daudz kas" loading="lazy" decoding="async"></figure>
 
 <section class="block wrap rules" aria-labelledby="rules-title">
   <div>
     <h2 id="rules-title">Kā spēlēt</h2>
-    
+    <p class="rules-intro">Stitch Tales pamatā ir nonogrammas — loģikas mīklas, kas atklāj attēlu. Tās ir pazīstamas arī kā japāņu krustvārdu mīklas, griddlers vai hanjie. Skaitļi pie rindām un virs kolonnām norāda, kuras rūtiņas jāaizpilda; aizpildi pareizās, un parādīsies slēpts attēls — šeit tā ir figūra, kas tiek iešūta ainā tavā riņķī.</p>
     <ol class="steps">
-      <li>Skaitļi pie katras rindas un kolonnas ir aizpildīto rūtiņu grupas pēc kārtas.</li>
-      <li>Izšuj rūtiņas, kurām jābūt aizpildītām; tās, kas paliek tukšas, atzīmē ar krustiņu.</li>
-      <li>Uzmanīgi — nepareizs dūriens atņem vienu no tavām izšūtajām sirdīm.</li>
+      <li>Skaitļi pie rindas vai virs kolonnas norāda, cik rūtiņas pēc kārtas jāizšuj un kādā secībā.</li>
+      <li>Starp divām grupām vienmēr ir vismaz viena tukša rūtiņa — atzīmē to ar krustiņu.</li>
+      <li>Velc ar pirkstu, un diegs sekos tam pa rūtiņām.</li>
+      <li>Nepareizs dūriens atņem vienu no tavām trim dzīvībām, tāpēc nesteidzies.</li>
       <li>Atrisini režģi, un figūra tiks iešūta ainā tavā riņķī.</li>
     </ol>
-    
+    <ul class="rule-notes">
+      <li>Skaitļus virs kolonnas lasi no augšas uz leju, bet pie rindas — no kreisās uz labo.</li>
+      <li>Rakstu dvielī katram skaitlim ir sava diega krāsa: dažādu krāsu grupas drīkst saskarties, bet vienas krāsas grupas vienmēr šķir tukša rūtiņa.</li>
+      <li>Pirmā figūra tevi iepazīstinās ar visiem noteikumiem.</li>
+    </ul>
   </div>
   <figure class="rules-art"><img src="/stitch-tales/images/nonogram.svg" width="474" height="410" alt="Gandrīz atrisināta nonogramma ar kaķi: granātsarkanā diegā izšūtas rūtiņas, tukšajās — krustiņi" loading="lazy" decoding="async"></figure>
 </section>
 
+<section class="block wrap" aria-labelledby="tips-title">
+  <div class="section-head"><h2 id="tips-title">Risināšanas knifi</h2></div>
+  <ol class="tips">
+    <li>Sāc ar pilnākajām līnijām: saskaiti grupas un pieskaiti pa vienai tukšai rūtiņai starp katrām divām. Ja summa ir vienāda ar līnijas garumu, visa līnija ir atrisināta; ja pietrūkst tikai vienas vai divu rūtiņu, garākajās grupās jau ir droši zināmas rūtiņas.</li>
+    <li>Pabīdi grupu, cik tālu var, uz vienu līnijas galu un tad uz otru: rūtiņas, ko tā nosedz abas reizes, vienmēr jāizšuj. 10 rūtiņu līnijā 7 vienmēr aizpilda četras vidējās rūtiņas.</li>
+    <li>Dūriens pašā režģa malā ir pirmās grupas sākums: izšuj no tā visu grupu un aiz tās ieliec krustiņu.</li>
+    <li>Kad līnija atrisināta, tās tukšās rūtiņas saņem krustiņus — un katrs krustiņš parāda līnijām, kas to šķērso, kur grupa nevar atrasties.</li>
+    <li>Nemini uz labu laimi: nepareizs dūriens atņem dzīvību. Ja līnijā vēl nekas nav skaidrs, atgriezies pie tās pēc līnijām, kas to šķērso.</li>
+  </ol>
+</section>
 
-
-
+<section class="block gallery" aria-labelledby="gallery-title">
+  <div class="wrap section-head"><h2 id="gallery-title">Tuvplānā</h2></div>
+  <div class="shots" tabindex="0" aria-label="Ekrānuzņēmumi">
+    <figure class="device shot"><img src="/stitch-tales/images/screen-1.webp" srcset="/stitch-tales/images/screen-1-360.webp 360w, /stitch-tales/images/screen-1.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Pūce, kas veidojas nonogrammā, tukšajās rūtiņās — krustiņi" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-2.webp" srcset="/stitch-tales/images/screen-2-360.webp 360w, /stitch-tales/images/screen-2.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Aina „Zodiaks” riņķī, izšūta figūru pēc figūras" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-3.webp" srcset="/stitch-tales/images/screen-3-360.webp 360w, /stitch-tales/images/screen-3.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Ainas „Kaķis pie loga” tuvplāns: bezdelīgas, tauriņš, kaķis un dziju kamols" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-4.webp" srcset="/stitch-tales/images/screen-4-360.webp 360w, /stitch-tales/images/screen-4.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Kalendārs: mazs izšuvums katrai dienai un ezis visam mēnesim" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-5.webp" srcset="/stitch-tales/images/screen-5-360.webp 360w, /stitch-tales/images/screen-5.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Bezgalīgais rakstu dvielis ar krāsainiem tautas rakstiem" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-6.webp" srcset="/stitch-tales/images/screen-6-360.webp 360w, /stitch-tales/images/screen-6.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Pabeigto riņķu kolekcija" loading="lazy" decoding="async"></figure>
+  </div>
+</section>
 
 <section class="block wrap" aria-labelledby="features-title">
   <div class="section-head"><h2 id="features-title">Kas tevi gaida</h2></div>
   <div class="feature-grid">
-    <div class="feature"><h3>Ainas izšūšanai</h3><p>Ziedu pļava, Stounhendža, augļu pikniks, Saules sistēma, japāņu dārzs, leļļu māja, ziemas ciems, jūras dibens — un vēl daudz kas.</p></div>
-    <div class="feature"><h3>Īsti izšūšanas dūrieni</h3><p>Gludums, ķēdīšu dūriens, zivs asaku dūriens un franču mezgliņi — katra figūra izšūta ar savu diegu un savā faktūrā.</p></div>
-    <div class="feature"><h3>Bezgalīgs rakstu dvielis</h3><p>Pēc pirmās ainas atveras rakstu dvielis ar tautas rakstiem — un tā raksti nekad nebeidzas.</p></div>
-    <div class="feature"><h3>Padomi, kad netiec tālāk</h3><p>Atklāj vienu rūtiņu vai veselu līniju — un izšuj tālāk.</p></div>
-    <div class="feature"><h3>Dāvana katru dienu</h3><p>Nāc katru dienu pēc balvas, kas aug līdz ar tavu sēriju.</p></div>
-    <div class="feature"><h3>Saudzīgi acīm</h3><p>Maigas lina krāsas, klusas dūrienu skaņas, nav vajadzīgs ne konts, ne internets.</p></div>
+    <div class="feature"><h3>Riņķis pēc riņķa</h3><p>Kaķis pie loga, vitrāžu putni, ziemas ciems, Asgarda zāles, Mežonīgie Rietumi un vēl daudz kas. Katrs pabeigtais riņķis nonāk tavā kolekcijā.</p></div>
+    <div class="feature"><h3>Gluži kā īsts izšuvums</h3><p>Katrai figūrai ir savi diegi un dūrieni, uz lina krīt maigas ēnas, un klusi skan adata un riņķis.</p></div>
+    <div class="feature"><h3>Ikdienas dūrienu kalendārs</h3><p>Katru dienu gaida mazs izšuvums. Izšuj visas mēneša dienas, un atvērsies tā lielā figūra — izlaistās dienas tevi pagaidīs.</p></div>
+    <div class="feature"><h3>Bezgalīgs rakstu dvielis</h3><p>Pēc pirmās pabeigtās ainas atveras rakstu dvielis ar tautas rakstiem: krāsainas nonogrammas ar diviem vai trim diegiem, kas nekad nebeidzas.</p></div>
+    <div class="feature"><h3>Padomi grūtiem brīžiem</h3><p>Atklāj rūtiņu, veselu līniju vai 10 nejaušas rūtiņas — un uzpirkstenis pasargās no nākamās kļūdas.</p></div>
+    <div class="feature"><h3>Bez taimera, bez steigas</h3><p>Dāvana katru dienu, Game Center sasniegumi un līderu saraksti iPhone un iPad ierīcēs, un spēlēšanai nav vajadzīgs internets.</p></div>
   </div>
 </section>
 

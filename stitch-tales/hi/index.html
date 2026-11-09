@@ -582,7 +582,8 @@ width: auto;
 height: 48px;
 }
 .soon {
-display: inline-flex;
+display: flex;
+width: fit-content;
 align-items: center;
 gap: 10px;
 margin: 28px 0 0;
@@ -970,14 +971,6 @@ box-shadow:
 14px 0 0 color-mix(in srgb, var(--accent) 60%, transparent),
 28px 0 0 color-mix(in srgb, var(--accent) 30%, transparent);
 }
-.frame-stitch .feature::before {
-width: 46px;
-height: 3px;
-margin-block: 4px 23px;
-border-radius: 2px;
-background: repeating-linear-gradient(90deg, var(--accent) 0 8px, transparent 8px 13px);
-box-shadow: none;
-}
 .support-card {
 position: relative;
 display: grid;
@@ -993,7 +986,7 @@ background: var(--surface);
 content: "";
 position: absolute;
 inset: 10px;
-border: 2px dashed color-mix(in srgb, var(--accent) 30%, transparent);
+border: 2px dashed var(--stitch, color-mix(in srgb, var(--accent) 30%, transparent));
 border-radius: calc(var(--radius-lg) - 10px);
 pointer-events: none;
 }
@@ -1081,6 +1074,75 @@ color: var(--accent);
 inset: 7px;
 border-radius: calc(var(--radius) - 7px);
 }
+.banner {
+margin-block: 0;
+}
+.banner img {
+width: 100%;
+border-radius: var(--radius);
+}
+.game-page.frame-stitch,
+.doc-page.frame-stitch {
+background:
+radial-gradient(1100px 620px at 88% -8%, var(--glow), transparent 62%),
+radial-gradient(900px 560px at -12% 18%, var(--glow2), transparent 60%),
+repeating-linear-gradient(0deg, color-mix(in srgb, var(--muted) 7%, transparent) 0 1px, transparent 1px 4px),
+repeating-linear-gradient(90deg, color-mix(in srgb, var(--muted) 5%, transparent) 0 1px, transparent 1px 3px),
+var(--bg);
+background-repeat: no-repeat, no-repeat, repeat, repeat;
+}
+.game-page.frame-stitch :is(.feature, .steps li, .tips li, .support-card, .banner) {
+position: relative;
+border-color: transparent;
+background: var(--surface);
+box-shadow:
+0 1px 2px color-mix(in srgb, var(--text) 8%, transparent),
+0 14px 28px -20px color-mix(in srgb, var(--text) 50%, transparent);
+}
+.game-page.frame-stitch :is(.feature, .steps li, .tips li, .banner)::after {
+content: "";
+position: absolute;
+inset: 7px;
+border: 2px dashed var(--stitch);
+border-radius: calc(var(--radius) - 7px);
+pointer-events: none;
+}
+.game-page.frame-stitch .steps li {
+padding: 18px 24px 18px 18px;
+}
+.game-page.frame-stitch .steps li::before {
+border-radius: 50%;
+outline: 1.5px dashed color-mix(in srgb, var(--accent-text) 70%, transparent);
+outline-offset: -5px;
+}
+.game-page.frame-stitch .tips li::before {
+border-radius: 50%;
+}
+.game-page.frame-stitch :is(.section-head h2, .rules h2, .support-card h2, .feature)::before {
+content: "";
+display: block;
+width: 54px;
+height: 14px;
+margin-bottom: 14px;
+border-radius: 0;
+box-shadow: none;
+background: linear-gradient(90deg, var(--thread-1) 0 33.4%, var(--thread-2) 33.4% 66.6%, var(--thread-3) 66.6%);
+-webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 16'%3E%3Cpath d='M3 3l10 10M13 3 3 13M25 3l10 10M35 3 25 13M47 3l10 10M57 3 47 13' stroke='%23000' stroke-width='2.8' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
+mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 16'%3E%3Cpath d='M3 3l10 10M13 3 3 13M25 3l10 10M35 3 25 13M47 3l10 10M57 3 47 13' stroke='%23000' stroke-width='2.8' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.game-page.frame-stitch .feature::before {
+margin-bottom: 18px;
+}
+.game-page.frame-stitch .banner {
+padding: 14px;
+border-radius: var(--radius-lg);
+}
+.game-page.frame-stitch .banner::after {
+border-radius: calc(var(--radius-lg) - 7px);
+}
+.game-page.frame-stitch .banner img {
+border-radius: calc(var(--radius-lg) - 14px);
+}
 .doc {
 max-width: 760px;
 margin-inline: auto;
@@ -1147,6 +1209,19 @@ font-size: 16px;
 .feature-grid {
 grid-template-columns: 1fr;
 }
+.banner img {
+aspect-ratio: 2 / 1;
+object-fit: cover;
+}
+.game-page.frame-stitch .banner {
+padding: 10px;
+}
+.game-page.frame-stitch .banner::after {
+inset: 5px;
+}
+.game-page.frame-stitch .banner img {
+border-radius: calc(var(--radius-lg) - 10px);
+}
 .site-nav a {
 padding: 8px 10px;
 }
@@ -1193,10 +1268,11 @@ transition: none !important;
 }
 }
 </style>
+<meta name="apple-itunes-app" content="app-id=6822948115">
 <meta name="theme-color" content="#F2ECE0">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"MobileApplication","name":"Stitch Tales","description":"पंक्तियों और स्तंभों के किनारे लिखी संख्याएँ पढ़िए, सही खाने भरिए — और हर हल हुई नॉनोग्राम पहेली आपके घेरे के दृश्य में कढ़ जाती है।","url":"https://paastudios.com/stitch-tales/hi/","image":"https://paastudios.com/stitch-tales/images/icon.webp","inLanguage":"hi","applicationCategory":"GameApplication","applicationSubCategory":"क्रॉस-स्टिच नॉनोग्राम पहेली","operatingSystem":"iOS, Android","author":{"@type":"Organization","name":"PAA Studios","url":"https://paastudios.com"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"keywords":"नॉनोग्राम, nonogram, नॉनोग्राम पहेली, picross, griddlers, जापानी क्रॉसवर्ड, क्रॉस स्टिच, कढ़ाई, तर्क पहेली, लॉजिक पज़ल, पिक्सल आर्ट, गेम, मोबाइल गेम, पज़ल गेम, फ्री गेम, ऑफलाइन गेम"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"MobileApplication","name":"Stitch Tales","description":"पंक्तियों और स्तंभों के किनारे लिखी संख्याएँ पढ़िए, सही खाने भरिए — और हर हल हुई नॉनोग्राम पहेली आपके घेरे के दृश्य में कढ़ जाती है।","url":"https://paastudios.com/stitch-tales/hi/","image":"https://paastudios.com/stitch-tales/images/icon.webp","inLanguage":"hi","applicationCategory":"GameApplication","applicationSubCategory":"क्रॉस-स्टिच नॉनोग्राम पहेली","operatingSystem":"iOS, Android","author":{"@type":"Organization","name":"PAA Studios","url":"https://paastudios.com"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"keywords":"नॉनोग्राम, nonogram, नॉनोग्राम पहेली, picross, griddlers, जापानी क्रॉसवर्ड, क्रॉस स्टिच, कढ़ाई, तर्क पहेली, लॉजिक पज़ल, पिक्सल आर्ट, गेम, मोबाइल गेम, पज़ल गेम, फ्री गेम, ऑफलाइन गेम","screenshot":["https://paastudios.com/stitch-tales/images/screen-1.webp","https://paastudios.com/stitch-tales/images/screen-2.webp","https://paastudios.com/stitch-tales/images/screen-3.webp","https://paastudios.com/stitch-tales/images/screen-4.webp","https://paastudios.com/stitch-tales/images/screen-5.webp","https://paastudios.com/stitch-tales/images/screen-6.webp"],"sameAs":["https://apps.apple.com/app/id6822948115"]}</script>
 </head>
-<body class="game-page frame-stitch" data-scheme="light" style="--bg:#F2ECE0;--surface:#FBF8F2;--surface2:#E7DFCF;--line:#D3C6AE;--text:#2A231C;--muted:#5F5444;--accent:#B3263A;--accent-text:#FFFFFF;--glow:rgba(179, 38, 58, 0.12);--glow2:rgba(46, 122, 82, 0.12)">
+<body class="game-page frame-stitch" data-scheme="light" style="--bg:#F2ECE0;--surface:#FBF8F2;--surface2:#E7DFCF;--line:#D3C6AE;--text:#2A231C;--muted:#5F5444;--accent:#B3263A;--accent-text:#FFFFFF;--glow:rgba(179, 38, 58, 0.12);--glow2:rgba(46, 122, 82, 0.12);--stitch:#E7B7BE;--thread-1:#B3263A;--thread-2:#2E7A52;--thread-3:#C9A06A">
 <a class="skip" href="#main">मुख्य सामग्री पर जाएँ</a>
 <header class="site-header wrap">
   <a class="brand" href="/hi/"><img src="/assets/logo.svg" width="34" height="34" alt=""><span>PAA Studios</span></a>
@@ -1253,40 +1329,66 @@ transition: none !important;
     <h1>Stitch Tales</h1>
     <p class="tagline">हर पहेली एक बड़ी तस्वीर का एक टाँका है।</p>
     <p class="lead">पंक्तियों और स्तंभों के किनारे लिखी संख्याएँ पढ़िए, सही खाने भरिए — और हर हल हुई नॉनोग्राम पहेली आपके घेरे के दृश्य में कढ़ जाती है।</p>
-    <p class="soon">जल्द ही App Store और Google Play पर</p>
-    <p class="platforms">iPhone, iPad और Android पर मुफ़्त</p>
+    <div class="stores"><a class="store" href="https://apps.apple.com/app/id6822948115?pt=129254796&amp;ct=stitch-tales-hi&amp;mt=8"><img src="/assets/badges/app-store.svg" width="144" height="48" alt="Stitch Tales को App Store से डाउनलोड करें"></a></div><p class="soon">जल्द ही Google Play पर</p>
+    <p class="platforms">iPhone, iPad और Android के लिए</p>
   </div>
-  <div class="game-hero-art"><img class="art-image" src="/stitch-tales/images/hoop.svg" width="600" height="620" alt="कढ़ाई का घेरा, जिसमें फूलों का मैदान कढ़ा है: तितली, सूरज, फूल और एक कुकुरमुत्ता, जिसकी कढ़ाई अभी बाकी है" loading="eager" decoding="async"></div>
+  <div class="game-hero-art"><div class="phones"><figure class="device phone-left"><img src="/stitch-tales/images/screen-1.webp" srcset="/stitch-tales/images/screen-1-360.webp 360w, /stitch-tales/images/screen-1.webp 600w" sizes="(max-width: 560px) 40vw, 210px" width="600" height="1304" alt="नॉनोग्राम पर उभरता उल्लू, खाली खानों में क्रॉस" loading="eager" decoding="async"></figure><figure class="device phone-right"><img src="/stitch-tales/images/screen-3.webp" srcset="/stitch-tales/images/screen-3-360.webp 360w, /stitch-tales/images/screen-3.webp 600w" sizes="(max-width: 560px) 40vw, 210px" width="600" height="1304" alt="“खिड़की पर बिल्ली” दृश्य क़रीब से: अबाबीलें, तितली, बिल्ली और ऊन का गोला" loading="eager" decoding="async"></figure><figure class="device phone-center"><img src="/stitch-tales/images/screen-2.webp" srcset="/stitch-tales/images/screen-2-360.webp 360w, /stitch-tales/images/screen-2.webp 600w" sizes="(max-width: 560px) 40vw, 210px" width="600" height="1304" alt="घेरे में आकृति-दर-आकृति कढ़ता “राशिचक्र” दृश्य" loading="eager" decoding="async"></figure></div></div>
 </section>
+
+<figure class="banner wrap"><img src="/stitch-tales/images/banner.webp" srcset="/stitch-tales/images/banner-720.webp 720w, /stitch-tales/images/banner-1280.webp 1280w, /stitch-tales/images/banner.webp 2240w" sizes="(max-width: 600px) 108vw, (max-width: 1184px) 92vw, 1120px" width="2240" height="960" alt="कढ़ाई में बदलते नॉनोग्राम का पैचवर्क: क्लाउनफ़िश के साथ ऑक्टोपस, टूकेन, तोरी द्वार, अबाबीलें, लोमड़ी, क्रिसमस ट्री और भी बहुत कुछ" loading="lazy" decoding="async"></figure>
 
 <section class="block wrap rules" aria-labelledby="rules-title">
   <div>
     <h2 id="rules-title">कैसे खेलें</h2>
-    
+    <p class="rules-intro">Stitch Tales नॉनोग्राम पर आधारित है — चित्र वाली तर्क पहेलियाँ, जिन्हें ग्रिडलर्स, हांजी या जापानी क्रॉसवर्ड भी कहा जाता है। पंक्तियों के पास और स्तंभों के ऊपर लिखी संख्याएँ बताती हैं कि कौन-से खाने भरने हैं; सही खाने भरिए, और एक छिपी हुई तस्वीर उभर आती है — यहाँ, आपके घेरे के दृश्य में कढ़ी एक आकृति।</p>
     <ol class="steps">
-      <li>हर पंक्ति और स्तंभ के पास लिखी संख्याएँ बताती हैं कि उसमें भरे खानों के टुकड़े कितने लंबे हैं, क्रम से।</li>
-      <li>जिन खानों को भरना ही है, उन्हें काढ़िए; जो खाली रहेंगे, उन पर क्रॉस लगाइए।</li>
-      <li>सावधान — गलत टाँका आपकी एक जान ले लेता है, यानी एक कढ़ा हुआ दिल।</li>
+      <li>पंक्ति के पास या स्तंभ के ऊपर लिखी संख्याएँ बताती हैं कि लगातार कितने खाने काढ़ने हैं, और किस क्रम में।</li>
+      <li>दो समूहों के बीच हमेशा कम से कम एक खाली खाना होता है — उस पर क्रॉस लगाइए।</li>
+      <li>उँगली फिराइए, और धागा उसके पीछे-पीछे खानों पर चल पड़ेगा।</li>
+      <li>एक गलत टाँका आपकी तीन जानों में से एक ले लेता है, इसलिए जल्दबाज़ी न कीजिए।</li>
       <li>ग्रिड हल कीजिए, और आकृति आपके घेरे के दृश्य में कढ़ जाएगी।</li>
     </ol>
-    
+    <ul class="rule-notes">
+      <li>स्तंभ के ऊपर की संख्याएँ ऊपर से नीचे पढ़िए, और पंक्ति के पास की संख्याएँ बाएँ से दाएँ।</li>
+      <li>कढ़ाई नमूने में हर संख्या के धागे का अपना रंग होता है: अलग-अलग रंगों के समूह सटे हो सकते हैं, पर एक ही रंग के समूहों के बीच एक खाली खाना ज़रूरी है।</li>
+      <li>पहली आकृति आपको खुद हर नियम से परिचित करा देगी।</li>
+    </ul>
   </div>
   <figure class="rules-art"><img src="/stitch-tales/images/nonogram.svg" width="474" height="410" alt="बिल्ली की लगभग हल हुई नॉनोग्राम पहेली: गहरे लाल टाँकों वाले खाने, खाली खानों में क्रॉस" loading="lazy" decoding="async"></figure>
 </section>
 
+<section class="block wrap" aria-labelledby="tips-title">
+  <div class="section-head"><h2 id="tips-title">हल करने के सुझाव</h2></div>
+  <ol class="tips">
+    <li>सबसे भरी रेखाओं से शुरू कीजिए: समूहों को जोड़िए, और हर दो समूहों के बीच एक खाली खाना भी गिनिए। अगर योग रेखा की लंबाई के बराबर है, तो पूरी रेखा हल हो गई; अगर बस एक-दो खाने कम पड़ते हैं, तो लंबे समूहों के कुछ खाने पहले से पक्के हैं।</li>
+    <li>किसी समूह को जितना हो सके एक छोर तक खिसकाइए, फिर दूसरे छोर तक: जो खाने दोनों बार ढके रहते हैं, वे हमेशा काढ़े जाते हैं। 10 खानों की रेखा में 7 हमेशा बीच के चार खाने भरता है।</li>
+    <li>बोर्ड के ठीक किनारे पर लगा टाँका पहले समूह की शुरुआत है: वहीं से पूरा समूह काढ़िए और उसके ठीक बाद एक क्रॉस लगाइए।</li>
+    <li>जब कोई रेखा हल हो जाती है, उसके खाली खानों पर क्रॉस लग जाते हैं — और हर क्रॉस उस रेखा को काटने वाली रेखाओं को बताता है कि कोई समूह कहाँ नहीं आ सकता।</li>
+    <li>अंदाज़ा मत लगाइए: गलत टाँका एक जान ले लेता है। अगर किसी रेखा में अभी कुछ भी पक्का नहीं है, तो उसे काटने वाली रेखाओं के बाद उस पर लौटिए।</li>
+  </ol>
+</section>
 
-
-
+<section class="block gallery" aria-labelledby="gallery-title">
+  <div class="wrap section-head"><h2 id="gallery-title">क़रीब से देखें</h2></div>
+  <div class="shots" tabindex="0" aria-label="स्क्रीनशॉट">
+    <figure class="device shot"><img src="/stitch-tales/images/screen-1.webp" srcset="/stitch-tales/images/screen-1-360.webp 360w, /stitch-tales/images/screen-1.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="नॉनोग्राम पर उभरता उल्लू, खाली खानों में क्रॉस" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-2.webp" srcset="/stitch-tales/images/screen-2-360.webp 360w, /stitch-tales/images/screen-2.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="घेरे में आकृति-दर-आकृति कढ़ता “राशिचक्र” दृश्य" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-3.webp" srcset="/stitch-tales/images/screen-3-360.webp 360w, /stitch-tales/images/screen-3.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="“खिड़की पर बिल्ली” दृश्य क़रीब से: अबाबीलें, तितली, बिल्ली और ऊन का गोला" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-4.webp" srcset="/stitch-tales/images/screen-4-360.webp 360w, /stitch-tales/images/screen-4.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="कैलेंडर: हर दिन के लिए छोटी-सी कढ़ाई और पूरे महीने के लिए एक हेजहॉग" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-5.webp" srcset="/stitch-tales/images/screen-5-360.webp 360w, /stitch-tales/images/screen-5.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="रंग-बिरंगे लोक पैटर्न वाला अंतहीन कढ़ाई नमूना" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-6.webp" srcset="/stitch-tales/images/screen-6-360.webp 360w, /stitch-tales/images/screen-6.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="पूरे हुए घेरों का संग्रह" loading="lazy" decoding="async"></figure>
+  </div>
+</section>
 
 <section class="block wrap" aria-labelledby="features-title">
   <div class="section-head"><h2 id="features-title">गेम में क्या है</h2></div>
   <div class="feature-grid">
-    <div class="feature"><h3>कढ़ाई के लिए दृश्य</h3><p>फूलों का मैदान, स्टोनहेंज, फलों की पिकनिक, सौरमंडल, जापानी बाग़, गुड़ियाघर, सर्दियों का गाँव, समुद्र के नीचे की दुनिया — और भी बहुत कुछ।</p></div>
-    <div class="feature"><h3>कढ़ाई के असली टाँके</h3><p>साटन टाँका, चेन टाँका, फ़िशबोन टाँका और फ़्रेंच नॉट — हर आकृति अपने धागे और अपनी बनावट में काढ़ी गई है।</p></div>
-    <div class="feature"><h3>कभी न खत्म होने वाला कढ़ाई नमूना</h3><p>पहला दृश्य पूरा होते ही लोक पैटर्न वाला कढ़ाई नमूना खुल जाता है — और उसके पैटर्न कभी खत्म नहीं होते।</p></div>
-    <div class="feature"><h3>अटकें तो संकेत</h3><p>एक खाना या पूरी रेखा खोलिए, और कढ़ाई जारी रखिए।</p></div>
-    <div class="feature"><h3>हर दिन एक तोहफ़ा</h3><p>रोज़ लौटिए और ऐसा इनाम पाइए, जो आपके सिलसिले के साथ बढ़ता जाता है।</p></div>
-    <div class="feature"><h3>आँखों को सुकून</h3><p>लिनन के हल्के रंग, कढ़ाई की मधुर आवाज़ें, न अकाउंट की ज़रूरत, न इंटरनेट की।</p></div>
+    <div class="feature"><h3>एक के बाद एक घेरे</h3><p>खिड़की पर बिल्ली, रंगीन काँच के पक्षी, सर्दियों का गाँव, असगार्ड के महल, वाइल्ड वेस्ट और भी बहुत कुछ। हर पूरा घेरा आपके संग्रह में अपनी जगह पाता है।</p></div>
+    <div class="feature"><h3>बिल्कुल असली जैसी कढ़ाई</h3><p>हर आकृति के अपने धागे और टाँके, लिनन पर मुलायम छायाएँ, और सुई व घेरे की धीमी आवाज़ें।</p></div>
+    <div class="feature"><h3>रोज़ की कढ़ाई का कैलेंडर</h3><p>हर दिन कढ़ाई का एक छोटा-सा टुकड़ा आपका इंतज़ार करता है। पूरा महीना काढ़िए, और उसकी बड़ी आकृति खुल जाएगी — छूटे हुए दिन भी आपका इंतज़ार करेंगे।</p></div>
+    <div class="feature"><h3>अंतहीन कढ़ाई नमूना</h3><p>पहला दृश्य पूरा होते ही लोक पैटर्न वाला कढ़ाई नमूना खुल जाता है: दो या तीन धागों में रंगीन नॉनोग्राम, जो कभी खत्म नहीं होते।</p></div>
+    <div class="feature"><h3>मुश्किल पलों के लिए संकेत</h3><p>एक खाना, पूरी रेखा या 10 बेतरतीब खाने खोलिए — और अंगुश्ताना आपको अगली गलती से बचा लेगा।</p></div>
+    <div class="feature"><h3>न टाइमर, न जल्दबाज़ी</h3><p>हर दिन एक तोहफ़ा, iPhone और iPad पर Game Center उपलब्धियाँ और लीडरबोर्ड, और खेलने के लिए इंटरनेट की ज़रूरत नहीं।</p></div>
   </div>
 </section>
 

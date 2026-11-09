@@ -582,7 +582,8 @@ width: auto;
 height: 48px;
 }
 .soon {
-display: inline-flex;
+display: flex;
+width: fit-content;
 align-items: center;
 gap: 10px;
 margin: 28px 0 0;
@@ -970,14 +971,6 @@ box-shadow:
 14px 0 0 color-mix(in srgb, var(--accent) 60%, transparent),
 28px 0 0 color-mix(in srgb, var(--accent) 30%, transparent);
 }
-.frame-stitch .feature::before {
-width: 46px;
-height: 3px;
-margin-block: 4px 23px;
-border-radius: 2px;
-background: repeating-linear-gradient(90deg, var(--accent) 0 8px, transparent 8px 13px);
-box-shadow: none;
-}
 .support-card {
 position: relative;
 display: grid;
@@ -993,7 +986,7 @@ background: var(--surface);
 content: "";
 position: absolute;
 inset: 10px;
-border: 2px dashed color-mix(in srgb, var(--accent) 30%, transparent);
+border: 2px dashed var(--stitch, color-mix(in srgb, var(--accent) 30%, transparent));
 border-radius: calc(var(--radius-lg) - 10px);
 pointer-events: none;
 }
@@ -1081,6 +1074,75 @@ color: var(--accent);
 inset: 7px;
 border-radius: calc(var(--radius) - 7px);
 }
+.banner {
+margin-block: 0;
+}
+.banner img {
+width: 100%;
+border-radius: var(--radius);
+}
+.game-page.frame-stitch,
+.doc-page.frame-stitch {
+background:
+radial-gradient(1100px 620px at 88% -8%, var(--glow), transparent 62%),
+radial-gradient(900px 560px at -12% 18%, var(--glow2), transparent 60%),
+repeating-linear-gradient(0deg, color-mix(in srgb, var(--muted) 7%, transparent) 0 1px, transparent 1px 4px),
+repeating-linear-gradient(90deg, color-mix(in srgb, var(--muted) 5%, transparent) 0 1px, transparent 1px 3px),
+var(--bg);
+background-repeat: no-repeat, no-repeat, repeat, repeat;
+}
+.game-page.frame-stitch :is(.feature, .steps li, .tips li, .support-card, .banner) {
+position: relative;
+border-color: transparent;
+background: var(--surface);
+box-shadow:
+0 1px 2px color-mix(in srgb, var(--text) 8%, transparent),
+0 14px 28px -20px color-mix(in srgb, var(--text) 50%, transparent);
+}
+.game-page.frame-stitch :is(.feature, .steps li, .tips li, .banner)::after {
+content: "";
+position: absolute;
+inset: 7px;
+border: 2px dashed var(--stitch);
+border-radius: calc(var(--radius) - 7px);
+pointer-events: none;
+}
+.game-page.frame-stitch .steps li {
+padding: 18px 24px 18px 18px;
+}
+.game-page.frame-stitch .steps li::before {
+border-radius: 50%;
+outline: 1.5px dashed color-mix(in srgb, var(--accent-text) 70%, transparent);
+outline-offset: -5px;
+}
+.game-page.frame-stitch .tips li::before {
+border-radius: 50%;
+}
+.game-page.frame-stitch :is(.section-head h2, .rules h2, .support-card h2, .feature)::before {
+content: "";
+display: block;
+width: 54px;
+height: 14px;
+margin-bottom: 14px;
+border-radius: 0;
+box-shadow: none;
+background: linear-gradient(90deg, var(--thread-1) 0 33.4%, var(--thread-2) 33.4% 66.6%, var(--thread-3) 66.6%);
+-webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 16'%3E%3Cpath d='M3 3l10 10M13 3 3 13M25 3l10 10M35 3 25 13M47 3l10 10M57 3 47 13' stroke='%23000' stroke-width='2.8' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
+mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 16'%3E%3Cpath d='M3 3l10 10M13 3 3 13M25 3l10 10M35 3 25 13M47 3l10 10M57 3 47 13' stroke='%23000' stroke-width='2.8' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.game-page.frame-stitch .feature::before {
+margin-bottom: 18px;
+}
+.game-page.frame-stitch .banner {
+padding: 14px;
+border-radius: var(--radius-lg);
+}
+.game-page.frame-stitch .banner::after {
+border-radius: calc(var(--radius-lg) - 7px);
+}
+.game-page.frame-stitch .banner img {
+border-radius: calc(var(--radius-lg) - 14px);
+}
 .doc {
 max-width: 760px;
 margin-inline: auto;
@@ -1147,6 +1209,19 @@ font-size: 16px;
 .feature-grid {
 grid-template-columns: 1fr;
 }
+.banner img {
+aspect-ratio: 2 / 1;
+object-fit: cover;
+}
+.game-page.frame-stitch .banner {
+padding: 10px;
+}
+.game-page.frame-stitch .banner::after {
+inset: 5px;
+}
+.game-page.frame-stitch .banner img {
+border-radius: calc(var(--radius-lg) - 10px);
+}
 .site-nav a {
 padding: 8px 10px;
 }
@@ -1193,10 +1268,11 @@ transition: none !important;
 }
 }
 </style>
+<meta name="apple-itunes-app" content="app-id=6822948115">
 <meta name="theme-color" content="#F2ECE0">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"MobileApplication","name":"Stitch Tales","description":"Olvasd le a számokat a sorok és oszlopok mellett, hímezd ki a megfelelő cellákat – és minden megoldott nonogram belehímződik egy jelenetbe a hímzőkereteden.","url":"https://paastudios.com/stitch-tales/hu/","image":"https://paastudios.com/stitch-tales/images/icon.webp","inLanguage":"hu","applicationCategory":"GameApplication","applicationSubCategory":"Keresztszemes nonogram","operatingSystem":"iOS, Android","author":{"@type":"Organization","name":"PAA Studios","url":"https://paastudios.com"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"keywords":"nonogram, japán rejtvény, japán keresztrejtvény, képrejtvény, picross, griddlers, keresztszemes hímzés, hímzés, logikai játék, logikai rejtvény, számrejtvény, pixelkép, játék, mobiljáték, fejtörő játék, ingyenes játék, offline játék"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"MobileApplication","name":"Stitch Tales","description":"Olvasd le a számokat a sorok és oszlopok mellett, hímezd ki a megfelelő cellákat – és minden megoldott nonogram belehímződik egy jelenetbe a hímzőkereteden.","url":"https://paastudios.com/stitch-tales/hu/","image":"https://paastudios.com/stitch-tales/images/icon.webp","inLanguage":"hu","applicationCategory":"GameApplication","applicationSubCategory":"Keresztszemes nonogram","operatingSystem":"iOS, Android","author":{"@type":"Organization","name":"PAA Studios","url":"https://paastudios.com"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"keywords":"nonogram, japán rejtvény, japán keresztrejtvény, képrejtvény, picross, griddlers, keresztszemes hímzés, hímzés, logikai játék, logikai rejtvény, számrejtvény, pixelkép, játék, mobiljáték, fejtörő játék, ingyenes játék, offline játék","screenshot":["https://paastudios.com/stitch-tales/images/screen-1.webp","https://paastudios.com/stitch-tales/images/screen-2.webp","https://paastudios.com/stitch-tales/images/screen-3.webp","https://paastudios.com/stitch-tales/images/screen-4.webp","https://paastudios.com/stitch-tales/images/screen-5.webp","https://paastudios.com/stitch-tales/images/screen-6.webp"],"sameAs":["https://apps.apple.com/app/id6822948115"]}</script>
 </head>
-<body class="game-page frame-stitch" data-scheme="light" style="--bg:#F2ECE0;--surface:#FBF8F2;--surface2:#E7DFCF;--line:#D3C6AE;--text:#2A231C;--muted:#5F5444;--accent:#B3263A;--accent-text:#FFFFFF;--glow:rgba(179, 38, 58, 0.12);--glow2:rgba(46, 122, 82, 0.12)">
+<body class="game-page frame-stitch" data-scheme="light" style="--bg:#F2ECE0;--surface:#FBF8F2;--surface2:#E7DFCF;--line:#D3C6AE;--text:#2A231C;--muted:#5F5444;--accent:#B3263A;--accent-text:#FFFFFF;--glow:rgba(179, 38, 58, 0.12);--glow2:rgba(46, 122, 82, 0.12);--stitch:#E7B7BE;--thread-1:#B3263A;--thread-2:#2E7A52;--thread-3:#C9A06A">
 <a class="skip" href="#main">Ugrás a tartalomra</a>
 <header class="site-header wrap">
   <a class="brand" href="/hu/"><img src="/assets/logo.svg" width="34" height="34" alt=""><span>PAA Studios</span></a>
@@ -1253,40 +1329,66 @@ transition: none !important;
     <h1>Stitch Tales</h1>
     <p class="tagline">Minden fejtörő egy öltés egy nagyobb képen.</p>
     <p class="lead">Olvasd le a számokat a sorok és oszlopok mellett, hímezd ki a megfelelő cellákat – és minden megoldott nonogram belehímződik egy jelenetbe a hímzőkereteden.</p>
-    <p class="soon">Hamarosan az App Store-ban és a Google Playen</p>
-    <p class="platforms">Ingyenes iPhone, iPad és Android eszközökre</p>
+    <div class="stores"><a class="store" href="https://apps.apple.com/app/id6822948115?pt=129254796&amp;ct=stitch-tales-hu&amp;mt=8"><img src="/assets/badges/app-store.svg" width="144" height="48" alt="Stitch Tales letöltése az App Store-ból"></a></div><p class="soon">Hamarosan a Google Playen</p>
+    <p class="platforms">iPhone, iPad és Android eszközökre</p>
   </div>
-  <div class="game-hero-art"><img class="art-image" src="/stitch-tales/images/hoop.svg" width="600" height="620" alt="Hímzőkeret kihímzett réttel: pillangó, nap, virágok és egy légyölő galóca, amelyet még ki kell hímezni" loading="eager" decoding="async"></div>
+  <div class="game-hero-art"><div class="phones"><figure class="device phone-left"><img src="/stitch-tales/images/screen-1.webp" srcset="/stitch-tales/images/screen-1-360.webp 360w, /stitch-tales/images/screen-1.webp 600w" sizes="(max-width: 560px) 40vw, 210px" width="600" height="1304" alt="Kirajzolódó bagoly egy nonogramon, az üres cellákban keresztekkel" loading="eager" decoding="async"></figure><figure class="device phone-right"><img src="/stitch-tales/images/screen-3.webp" srcset="/stitch-tales/images/screen-3-360.webp 360w, /stitch-tales/images/screen-3.webp 600w" sizes="(max-width: 560px) 40vw, 210px" width="600" height="1304" alt="Közeli kép a „Macska az ablakban” jelenetről: fecskék, pillangó, macska és gombolyag" loading="eager" decoding="async"></figure><figure class="device phone-center"><img src="/stitch-tales/images/screen-2.webp" srcset="/stitch-tales/images/screen-2-360.webp 360w, /stitch-tales/images/screen-2.webp 600w" sizes="(max-width: 560px) 40vw, 210px" width="600" height="1304" alt="Az „Állatöv” jelenet a hímzőkeretben, figuráról figurára kihímezve" loading="eager" decoding="async"></figure></div></div>
 </section>
+
+<figure class="banner wrap"><img src="/stitch-tales/images/banner.webp" srcset="/stitch-tales/images/banner-720.webp 720w, /stitch-tales/images/banner-1280.webp 1280w, /stitch-tales/images/banner.webp 2240w" sizes="(max-width: 600px) 108vw, (max-width: 1184px) 92vw, 1120px" width="2240" height="960" alt="Nonogramokból varrt foltmozaik, amely hímzéssé alakul: polip bohóchalakkal, tukán, torii-kapu, fecskék, róka, karácsonyfa és még sok más" loading="lazy" decoding="async"></figure>
 
 <section class="block wrap rules" aria-labelledby="rules-title">
   <div>
     <h2 id="rules-title">Így játssz</h2>
-    
+    <p class="rules-intro">A Stitch Tales alapja a nonogram – képet rejtő logikai fejtörő, más néven japán rejtvény, griddlers vagy hanjie. A sorok melletti és az oszlopok fölötti számok megmutatják, mely cellákat kell kitölteni; töltsd ki a helyeseket, és előtűnik egy rejtett kép – itt egy figura, amely belehímződik a hímzőkereted jelenetébe.</p>
     <ol class="steps">
-      <li>Az egyes sorok és oszlopok melletti számok sorrendben a kitöltött cellák egybefüggő szakaszait adják meg.</li>
-      <li>Hímezd ki a kitöltendő cellákat, az üresen maradókat pedig jelöld kereszttel.</li>
-      <li>Vigyázz – egy rossz öltésért elveszítesz egy életet, az egyik kihímzett szívet.</li>
-      <li>Oldd meg a rácsot, és a figura belehímződik a jelenetbe a hímzőkereteden.</li>
+      <li>A sor melletti vagy az oszlop fölötti számok megmutatják, hány cellát kell egymás után kihímezni, és milyen sorrendben.</li>
+      <li>Két szakasz között mindig van legalább egy üres cella – jelöld kereszttel.</li>
+      <li>Húzd végig az ujjad, és a fonal követi a cellákon át.</li>
+      <li>Egy hibás öltés a három életed egyikébe kerül, úgyhogy ne siess.</li>
+      <li>Oldd meg a rácsot, és a figura belehímződik a hímzőkereted jelenetébe.</li>
     </ol>
-    
+    <ul class="rule-notes">
+      <li>Az oszlop fölötti számokat fentről lefelé, a sor mellettieket balról jobbra olvasd.</li>
+      <li>A mintakendőn minden számnak saját fonalszíne van: a különböző színű szakaszok érintkezhetnek, az azonos színűek között viszont mindig van egy üres cella.</li>
+      <li>Az első figura minden szabályon végigvezet.</li>
+    </ul>
   </div>
   <figure class="rules-art"><img src="/stitch-tales/images/nonogram.svg" width="474" height="410" alt="Majdnem megoldott nonogram egy macskával: gránátpiros öltésekkel kihímzett cellák, az üresekben keresztek" loading="lazy" decoding="async"></figure>
 </section>
 
+<section class="block wrap" aria-labelledby="tips-title">
+  <div class="section-head"><h2 id="tips-title">Tanácsok a megoldáshoz</h2></div>
+  <ol class="tips">
+    <li>Kezdd a legtelítettebb vonalakkal: add össze a szakaszokat, és számolj közéjük egy-egy üres cellát. Ha az összeg megegyezik a vonal hosszával, az egész vonal megoldott; ha csak egy-két cellával kevesebb, a hosszabb szakaszoknak már vannak biztos cellái.</li>
+    <li>Told el a szakaszt, ameddig csak lehet, a vonal egyik végébe, aztán a másikba: azokat a cellákat, amelyeket mindkét helyzetben lefed, mindig ki kell hímezni. Egy 10 cellás vonalban a 7-es mindig kitölti a középső négy cellát.</li>
+    <li>A tábla legszélén álló öltés az első szakasz kezdete: hímezd ki onnan az egész szakaszt, és tegyél utána keresztet.</li>
+    <li>Ha egy vonal megoldódott, az üres cellái keresztet kapnak – és minden kereszt megmutatja a rajta áthaladó vonalaknak, hová nem kerülhet szakasz.</li>
+    <li>Ne találgass: egy hibás öltés egy életbe kerül. Ha egy vonalban még semmi sem biztos, térj vissza rá, miután a keresztező vonalakkal foglalkoztál.</li>
+  </ol>
+</section>
 
-
-
+<section class="block gallery" aria-labelledby="gallery-title">
+  <div class="wrap section-head"><h2 id="gallery-title">Közelebbről</h2></div>
+  <div class="shots" tabindex="0" aria-label="Képernyőképek">
+    <figure class="device shot"><img src="/stitch-tales/images/screen-1.webp" srcset="/stitch-tales/images/screen-1-360.webp 360w, /stitch-tales/images/screen-1.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Kirajzolódó bagoly egy nonogramon, az üres cellákban keresztekkel" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-2.webp" srcset="/stitch-tales/images/screen-2-360.webp 360w, /stitch-tales/images/screen-2.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Az „Állatöv” jelenet a hímzőkeretben, figuráról figurára kihímezve" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-3.webp" srcset="/stitch-tales/images/screen-3-360.webp 360w, /stitch-tales/images/screen-3.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Közeli kép a „Macska az ablakban” jelenetről: fecskék, pillangó, macska és gombolyag" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-4.webp" srcset="/stitch-tales/images/screen-4-360.webp 360w, /stitch-tales/images/screen-4.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="A naptár: minden napra egy kis hímzés, az egész hónapra pedig egy sün" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-5.webp" srcset="/stitch-tales/images/screen-5-360.webp 360w, /stitch-tales/images/screen-5.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="A végtelen mintakendő színes népi mintákkal" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-6.webp" srcset="/stitch-tales/images/screen-6-360.webp 360w, /stitch-tales/images/screen-6.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="A kész hímzőkeretek gyűjteménye" loading="lazy" decoding="async"></figure>
+  </div>
+</section>
 
 <section class="block wrap" aria-labelledby="features-title">
   <div class="section-head"><h2 id="features-title">Mi vár rád</h2></div>
   <div class="feature-grid">
-    <div class="feature"><h3>Kihímezhető jelenetek</h3><p>Virágos rét, Stonehenge, gyümölcspiknik, a Naprendszer, japánkert, babaház, téli falu, a tenger mélye – és még sok más.</p></div>
-    <div class="feature"><h3>Igazi hímzőöltések</h3><p>Laposöltés, láncöltés, halszálkaöltés és francia csomó – minden figura saját fonallal és saját textúrával készül.</p></div>
-    <div class="feature"><h3>Végtelen mintakendő</h3><p>Az első jeleneted után megnyílik egy népi mintákkal teli mintakendő – és a mintái sosem fogynak el.</p></div>
-    <div class="feature"><h3>Tippek, ha elakadsz</h3><p>Fedj fel egyetlen cellát vagy egy egész vonalat, és hímezz tovább.</p></div>
-    <div class="feature"><h3>Ajándék minden nap</h3><p>Gyere vissza minden nap egy jutalomért, amely a sorozatoddal együtt nő.</p></div>
-    <div class="feature"><h3>Kíméli a szemet</h3><p>Lágy lenvászon színek, halk öltéshangok, nem kell hozzá se fiók, se internet.</p></div>
+    <div class="feature"><h3>Keretről keretre</h3><p>Macska az ablakban, ólomüveg madarak, téli falu, Asgard csarnokai, a Vadnyugat és még sok más. Minden kész hímzőkeret helyet kap a gyűjteményedben.</p></div>
+    <div class="feature"><h3>Élethű hímzés</h3><p>Minden figura saját fonalakkal és öltésekkel készül, puha árnyékot vet a lenvásznon, a tű és a hímzőkeret pedig halkan szól.</p></div>
+    <div class="feature"><h3>Naptár napi hímzésekkel</h3><p>Minden nap egy kis hímzés vár rád. Hímezd ki az egész hónapot, és megnyílik a nagy figurája – a kihagyott napok megvárnak.</p></div>
+    <div class="feature"><h3>Végtelen mintakendő</h3><p>Az első kész jeleneted után megnyílik a népi mintás mintakendő: színes nonogramok két vagy három fonallal, amelyek sosem fogynak el.</p></div>
+    <div class="feature"><h3>Tippek a nehéz pillanatokra</h3><p>Fedj fel egy cellát, egy egész vonalat vagy 10 véletlen cellát – a gyűszű pedig megóv a következő hibától.</p></div>
+    <div class="feature"><h3>Nincs időmérő, nincs sietség</h3><p>Ajándék minden nap, Game Center-teljesítmények és ranglisták iPhone-on és iPaden, a játékhoz pedig nem kell internet.</p></div>
   </div>
 </section>
 

@@ -2,6 +2,7 @@
 """Prepare a game's images for the site: icon and screenshots in WebP.
 
     python3 tools/images.py <slug> --icon icon-1024.png --screens 01.png 02.png ...
+    python3 tools/images.py <slug> --banner header.png
     python3 tools/images.py <slug>      # only the smaller copies, from the files there
 
 --island draws the camera cutout on the screenshots: the simulator leaves it in
@@ -11,7 +12,9 @@ Writes <slug>/images/icon.webp (256 px, shown at up to 112 px) and
 <slug>/images/screen-<n>.webp (600 px wide, shown at up to 230 px), numbered in
 the order given, and next to each a smaller copy — icon-128.webp and
 screen-<n>-360.webp — for screens of low density (srcset in src/templates.mjs,
-IMAGE_WIDTHS). Needs Pillow with WebP support.
+IMAGE_WIDTHS). --banner writes <slug>/images/banner.webp (2240 px wide, shown
+across the content column) and its copies banner-720.webp and banner-1280.webp.
+Needs Pillow with WebP support.
 """
 import argparse
 import glob
@@ -25,6 +28,8 @@ SCREEN_WIDTH = 600
 # Widths of the smaller copies, as in IMAGE_WIDTHS of src/templates.mjs
 ICON_SMALL = 128
 SCREEN_SMALL = 360
+BANNER_WIDTH = 2240
+BANNER_SMALL = (720, 1280)
 # The cutout as measured on a 1320 x 2868 frame of the 6.9" iPhone
 ISLAND_BOX = (518 / 1320, 42 / 1320, 802 / 1320, 152 / 1320)
 
@@ -49,6 +54,7 @@ def main():
     parser.add_argument('--icon')
     parser.add_argument('--screens', nargs='*', default=[])
     parser.add_argument('--island', action='store_true')
+    parser.add_argument('--banner')
     args = parser.parse_args()
     folder = os.path.join(ROOT, args.slug, 'images')
 
@@ -65,12 +71,25 @@ def main():
         screen = screen.resize((SCREEN_WIDTH, height), Image.LANCZOS)
         save_webp(screen, os.path.join(folder, f'screen-{index}.webp'), 82)
 
+    # The banner is a wide picture of fine thread texture: a notch below the
+    # quality of the screenshots keeps its full size near 600 KB, and the
+    # difference does not show in the threads
+    if args.banner:
+        banner = Image.open(args.banner).convert('RGB')
+        height = round(banner.height * BANNER_WIDTH / banner.width)
+        banner = banner.resize((BANNER_WIDTH, height), Image.LANCZOS)
+        save_webp(banner, os.path.join(folder, 'banner.webp'), 75)
+
     icon_path = os.path.join(folder, 'icon.webp')
     if os.path.exists(icon_path):
         save_small(icon_path, ICON_SMALL, 90)
     for path in sorted(glob.glob(os.path.join(folder, 'screen-*.webp'))):
         if not path.endswith(f'-{SCREEN_SMALL}.webp'):
             save_small(path, SCREEN_SMALL, 82)
+    banner_path = os.path.join(folder, 'banner.webp')
+    if os.path.exists(banner_path):
+        for width in BANNER_SMALL:
+            save_small(banner_path, width, 75)
 
 
 if __name__ == '__main__':

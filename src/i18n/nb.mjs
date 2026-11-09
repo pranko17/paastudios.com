@@ -19,6 +19,7 @@ export default {
     storeGooglePlay: 'på Google Play',
     and: 'og',
     freeOn: 'Gratis for {platforms}',
+    madeFor: 'For {platforms}',
     howToPlay: 'Slik spiller du',
     tips: 'Tips for å løse',
     faq: 'Spørsmål og svar',
@@ -195,41 +196,74 @@ export default {
         'spill uten internett',
       ],
       art: {
+        alts: [
+          'En ugle tar form på et nonogram, med kryss i de tomme rutene',
+          'Scenen «Dyrekretsen» i broderiringen, brodert figur for figur',
+          'Scenen «Katt i vinduet» på nært hold: svaler, en sommerfugl, en katt og et garnnøste',
+        ],
+      },
+      cardArt: {
         alt: 'En broderiring med en brodert blomstereng: en sommerfugl, en sol, blomster og en fluesopp som ennå ikke er brodert',
       },
+      banner: {
+        alt: 'Et lappeteppe av nonogrammer som blir til broderi: en blekksprut med klovnefisk, en tukan, en torii-port, svaler, en rev, et juletre og mer til',
+      },
       rules: {
+        intro:
+          'Stitch Tales bygger på nonogrammer, logiske bildeoppgaver som også er kjent som japanske kryssord, griddlers eller hanjie. Tallene ved radene og over kolonnene viser hvilke ruter du skal fylle; fyller du de riktige, kommer et skjult bilde fram – her en figur som blir brodert inn i scenen i broderiringen din.',
         steps: [
-          'Tallene ved hver rad og kolonne viser gruppene av fylte ruter, i rekkefølge.',
-          'Broder rutene som skal fylles; merk dem som skal stå tomme, med et kryss.',
-          'Forsiktig – et feil sting koster et liv, ett av de broderte hjertene dine.',
+          'Tallene ved en rad eller over en kolonne viser hvor mange ruter på rad som skal broderes, og i hvilken rekkefølge.',
+          'Mellom to stykker er det alltid minst én tom rute – merk den med et kryss.',
+          'Sveip med fingeren, så følger tråden etter over rutene.',
+          'Et feil sting koster ett av de tre livene dine, så ta deg god tid.',
           'Løs rutenettet, så blir figuren brodert inn i scenen i broderiringen din.',
+        ],
+        notes: [
+          'Tallene over en kolonne leses ovenfra og ned, tallene ved en rad fra venstre mot høyre.',
+          'På mønsterduken har hvert tall sin egen garnfarge: Stykker i ulike farger kan ligge inntil hverandre, mens stykker i samme farge trenger en tom rute imellom.',
+          'Den første figuren din tar deg gjennom alle reglene.',
+        ],
+        tips: [
+          'Begynn med de fulleste linjene: Legg sammen stykkene med én tom rute mellom hvert. Blir summen like lang som linjen, er hele linjen løst; mangler det bare en rute eller to, har de lengre stykkene allerede ruter du kan være sikker på.',
+          'Skyv et stykke så langt det går mot den ene enden og så mot den andre: Rutene det dekker begge gangene, er alltid brodert. En 7-er i en linje på 10 fyller alltid de fire midterste.',
+          'Et sting helt ute ved kanten av rutenettet er starten på det første stykket: Broder hele stykket derfra og sett et kryss etter det.',
+          'Når en linje er løst, får de tomme rutene kryss – og hvert kryss viser de tverrgående linjene hvor et stykke ikke kan ligge.',
+          'Ikke gjett: Et feil sting koster et liv. Er ingenting i en linje sikkert ennå, kan du komme tilbake til den etter linjene som krysser den.',
         ],
         alt: 'Et nesten løst nonogram med en katt: granatrøde broderte ruter, kryss i de tomme',
       },
+      screenshots: [
+        'En ugle tar form på et nonogram, med kryss i de tomme rutene',
+        'Scenen «Dyrekretsen» i broderiringen, brodert figur for figur',
+        'Scenen «Katt i vinduet» på nært hold: svaler, en sommerfugl, en katt og et garnnøste',
+        'Kalenderen: et lite broderi for hver dag og et pinnsvin for hele måneden',
+        'Den endeløse mønsterduken med fargerike folkemønstre',
+        'Samlingen av ferdige broderiringer',
+      ],
       features: [
         {
-          title: 'Scener å brodere',
-          text: 'En blomstereng, Stonehenge, en fruktpiknik, solsystemet, en japansk hage, et dukkehus, en vinterlandsby, havbunnen – og mer til.',
+          title: 'Broderiring etter broderiring',
+          text: 'En katt i vinduet, fugler i glassmaleri, en vinterlandsby, hallene i Åsgard, det ville vesten og mye mer. Hver ferdig broderiring får henge i samlingen din.',
         },
         {
-          title: 'Ekte broderisting',
-          text: 'Plattsøm, kjedesøm, fiskebeinsøm og franske knuter – hver figur er sydd med sitt eget garn og sin egen struktur.',
+          title: 'Broderi som ser ekte ut',
+          text: 'Hver figur har sitt eget garn og sine egne sting, myke skygger på linet og stille lyder av nål og broderiring.',
+        },
+        {
+          title: 'En kalender med dagens sting',
+          text: 'Et lite broderi venter hver dag. Broder hele måneden, så låses månedens store figur opp – dager du går glipp av, venter på deg.',
         },
         {
           title: 'En endeløs mønsterduk',
-          text: 'Etter den første scenen åpner det seg en mønsterduk med tradisjonelle mønstre – og mønstrene på den tar aldri slutt.',
+          text: 'Etter den første ferdige scenen din åpner det seg en mønsterduk med motiver fra folkekunsten: fargede nonogrammer i to eller tre garn som aldri tar slutt.',
         },
         {
-          title: 'Hint når du står fast',
-          text: 'Avslør en enkelt rute eller en hel linje, og broder videre.',
+          title: 'Hint for de vanskelige øyeblikkene',
+          text: 'Avslør en rute, en hel linje eller 10 tilfeldige ruter – og et fingerbøl redder deg fra neste feil.',
         },
         {
-          title: 'En gave hver dag',
-          text: 'Kom tilbake hver dag for en belønning som vokser med rekken din.',
-        },
-        {
-          title: 'Skånsomt for øynene',
-          text: 'Myke linfarger, stille broderilyder, ingen konto og ikke noe internett nødvendig.',
+          title: 'Uten tidtaking, uten hast',
+          text: 'En gave hver dag, Game Center-prestasjoner og topplister på iPhone og iPad, og du trenger ikke nett for å spille.',
         },
       ],
       supportNote: 'Du kan også nå oss fra spillet under Profil → Kontakt oss.',

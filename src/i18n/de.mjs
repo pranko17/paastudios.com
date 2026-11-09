@@ -18,6 +18,7 @@ export default {
     storeGooglePlay: 'bei Google Play',
     and: 'und',
     freeOn: 'Kostenlos für {platforms}',
+    madeFor: 'Für {platforms}',
     howToPlay: 'So wird gespielt',
     tips: 'Tipps zum Lösen',
     faq: 'Fragen und Antworten',
@@ -194,41 +195,74 @@ export default {
         'Offline-Spiel',
       ],
       art: {
+        alts: [
+          'Eine Eule entsteht auf einem Nonogramm, mit Kreuzen in den leeren Feldern',
+          'Die Szene „Tierkreis“ im Stickrahmen, Figur für Figur gestickt',
+          'Die Szene „Katze am Fenster“ aus der Nähe: Schwalben, ein Schmetterling, eine Katze und ein Wollknäuel',
+        ],
+      },
+      cardArt: {
         alt: 'Ein Stickrahmen mit einer gestickten Blumenwiese: ein Schmetterling, eine Sonne, Blumen und ein Fliegenpilz, der noch gestickt werden will',
       },
+      banner: {
+        alt: 'Ein Patchwork aus Nonogrammen, die zu Stickereien werden: ein Krake mit Clownfischen, ein Tukan, ein Torii-Tor, Schwalben, ein Fuchs, ein Weihnachtsbaum und mehr',
+      },
       rules: {
+        intro:
+          'Stitch Tales basiert auf Nonogrammen, Logikrätseln mit Bild, die auch Griddlers, Hanjie oder japanische Rätsel heißen. Die Zahlen neben den Zeilen und über den Spalten verraten dir, welche Felder du füllen musst; füllst du die richtigen, erscheint ein verborgenes Bild — hier eine Figur, die in die Szene in deinem Stickrahmen gestickt wird.',
         steps: [
-          'Die Zahlen neben jeder Zeile und Spalte geben der Reihe nach die Blöcke gefüllter Felder an.',
-          'Sticke die Felder, die gefüllt sein müssen; markiere die, die leer bleiben, mit einem Kreuz.',
-          'Vorsicht — ein falscher Stich kostet ein Leben, eines deiner gestickten Herzen.',
+          'Die Zahlen neben einer Zeile oder über einer Spalte sagen dir, wie viele Felder am Stück du stickst — und in welcher Reihenfolge.',
+          'Zwischen zwei Blöcken liegt immer mindestens ein leeres Feld — markiere es mit einem Kreuz.',
+          'Wisch mit dem Finger, und der Faden folgt ihm über die Felder.',
+          'Ein falscher Stich kostet eines deiner drei Leben — lass dir also Zeit.',
           'Löse das Gitter, und die Figur wird in die Szene in deinem Stickrahmen gestickt.',
+        ],
+        notes: [
+          'Die Zahlen über einer Spalte liest du von oben nach unten, die neben einer Zeile von links nach rechts.',
+          'Auf dem Mustertuch hat jede Zahl ihre eigene Garnfarbe: Blöcke verschiedener Farben dürfen sich berühren, zwischen Blöcken derselben Farbe liegt immer ein leeres Feld.',
+          'Deine erste Figur führt dich durch alle Regeln.',
+        ],
+        tips: [
+          'Beginne mit den vollsten Linien: Zähl die Blöcke zusammen, mit je einem leeren Feld dazwischen. Ergibt das die Länge der Linie, ist sie ganz gelöst; fehlen nur ein oder zwei Felder, haben die längeren Blöcke schon Felder, die sicher feststehen.',
+          'Schieb einen Block so weit wie möglich an ein Ende, dann ans andere: Die Felder, die er beide Male bedeckt, sind immer gestickt. Eine 7 in einer Linie aus 10 Feldern füllt immer die mittleren vier.',
+          'Ein Stich direkt am Rand des Gitters ist der Anfang des ersten Blocks: Sticke von dort den ganzen Block und setz dahinter ein Kreuz.',
+          'Ist eine Linie gelöst, bekommen ihre leeren Felder Kreuze — und jedes Kreuz verrät den Linien quer dazu, wo kein Block liegen kann.',
+          'Rate nicht: Ein falscher Stich kostet ein Leben. Steht in einer Linie noch nichts fest, nimm sie dir nach den Linien vor, die sie kreuzen.',
         ],
         alt: 'Ein fast gelöstes Nonogramm mit einer Katze: granatrot gestickte Felder, Kreuze in den leeren',
       },
+      screenshots: [
+        'Eine Eule entsteht auf einem Nonogramm, mit Kreuzen in den leeren Feldern',
+        'Die Szene „Tierkreis“ im Stickrahmen, Figur für Figur gestickt',
+        'Die Szene „Katze am Fenster“ aus der Nähe: Schwalben, ein Schmetterling, eine Katze und ein Wollknäuel',
+        'Der Kalender: eine kleine Stickerei für jeden Tag und ein Igel für den ganzen Monat',
+        'Das endlose Mustertuch mit bunten Volksmustern',
+        'Die Sammlung fertiger Stickrahmen',
+      ],
       features: [
         {
-          title: 'Szenen zum Sticken',
-          text: 'Eine Blumenwiese, Stonehenge, ein Obstpicknick, das Sonnensystem, ein japanischer Garten, ein Puppenhaus, ein Winterdorf, der Meeresgrund — und noch mehr.',
+          title: 'Stickrahmen um Stickrahmen',
+          text: 'Eine Katze am Fenster, Vögel aus Buntglas, ein Winterdorf, die Hallen von Asgard, der Wilde Westen und vieles mehr. Jeder fertige Stickrahmen bekommt seinen Platz in deiner Sammlung.',
         },
         {
-          title: 'Echte Stickstiche',
-          text: 'Plattstich, Kettenstich, Fischgrätstich und Knötchenstich — jede Figur wird mit eigenem Garn und eigener Struktur gestickt.',
+          title: 'Stickerei wie echt',
+          text: 'Jede Figur hat ihre eigenen Garne und Stiche, dazu weiche Schatten auf dem Leinen und die leisen Klänge von Nadel und Stickrahmen.',
+        },
+        {
+          title: 'Ein Kalender voller Tagesstiche',
+          text: 'Jeden Tag wartet eine kleine Stickerei. Sticke den ganzen Monat, und die große Figur des Monats öffnet sich — verpasste Tage warten auf dich.',
         },
         {
           title: 'Ein endloses Mustertuch',
-          text: 'Nach deiner ersten Szene öffnet sich ein Mustertuch mit traditionellen Mustern — und seine Muster gehen nie aus.',
+          text: 'Nach deiner ersten fertigen Szene öffnet sich ein Mustertuch mit Motiven aus der Volkskunst: farbige Nonogramme in zwei oder drei Garnen, die nie ausgehen.',
         },
         {
-          title: 'Hinweise, wenn du feststeckst',
-          text: 'Deck ein einzelnes Feld oder eine ganze Linie auf und stick weiter.',
+          title: 'Hinweise für knifflige Momente',
+          text: 'Deck ein Feld, eine ganze Linie oder 10 zufällige Felder auf — und ein Fingerhut bewahrt dich vor deinem nächsten Fehler.',
         },
         {
-          title: 'Jeden Tag ein Geschenk',
-          text: 'Komm jeden Tag wieder: Die Tagesbelohnung wächst mit deiner Serie.',
-        },
-        {
-          title: 'Schonend für die Augen',
-          text: 'Sanfte Leinenfarben, leise Stickgeräusche, kein Konto und kein Internet nötig.',
+          title: 'Ohne Timer, ohne Eile',
+          text: 'Jeden Tag ein Geschenk, Game-Center-Erfolge und Bestenlisten auf iPhone und iPad, und zum Spielen brauchst du kein Internet.',
         },
       ],
       supportNote: 'Du erreichst uns auch im Spiel unter Profil → Schreib uns.',

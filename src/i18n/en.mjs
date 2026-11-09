@@ -22,6 +22,7 @@ export default {
     storeGooglePlay: 'Google Play',
     and: 'and',
     freeOn: 'Free on {platforms}',
+    madeFor: 'For {platforms}',
     howToPlay: 'How to play',
     tips: 'Tips for solving',
     faq: 'Questions and answers',

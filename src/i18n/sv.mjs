@@ -18,6 +18,7 @@ export default {
     storeGooglePlay: 'på Google Play',
     and: 'och',
     freeOn: 'Gratis för {platforms}',
+    madeFor: 'För {platforms}',
     howToPlay: 'Så spelar du',
     tips: 'Tips för att lösa',
     faq: 'Frågor och svar',
@@ -193,41 +194,74 @@ export default {
         'spel utan internet',
       ],
       art: {
+        alts: [
+          'En uggla tar form på ett nonogram, med kryss i de tomma rutorna',
+          'Scenen ”Djurkretsen” i broderibågen, broderad figur för figur',
+          'Scenen ”Katt i fönstret” på nära håll: svalor, en fjäril, en katt och ett garnnystan',
+        ],
+      },
+      cardArt: {
         alt: 'En broderibåge med en broderad blomsteräng: en fjäril, en sol, blommor och en flugsvamp som ännu inte är broderad',
       },
+      banner: {
+        alt: 'Ett lapptäcke av nonogram som blir broderi: en bläckfisk med clownfiskar, en tukan, en toriiport, svalor, en räv, en julgran och mer',
+      },
       rules: {
+        intro:
+          'Stitch Tales bygger på nonogram, logiska bildpussel som även kallas japanska korsord, griddlers eller hanjie. Talen vid raderna och ovanför kolumnerna visar vilka rutor du ska fylla; fyller du de rätta dyker en dold bild fram – här en figur som broderas in i scenen i din broderibåge.',
         steps: [
-          'Talen bredvid varje rad och kolumn anger i tur och ordning grupperna av fyllda rutor.',
-          'Brodera rutorna som ska vara fyllda; markera dem som ska förbli tomma med ett kryss.',
-          'Se upp – ett fel stygn kostar ett liv, ett av dina broderade hjärtan.',
-          'Lös rutnätet så broderas figuren in i scenen i din broderibåge.',
+          'Talen vid en rad eller ovanför en kolumn visar hur många rutor i rad du ska brodera, och i vilken ordning.',
+          'Mellan två bitar finns alltid minst en tom ruta – markera den med ett kryss.',
+          'Dra med fingret, så följer tråden efter över rutorna.',
+          'Ett felaktigt stygn kostar ett av dina tre liv, så ta god tid på dig.',
+          'Lös rutnätet, så broderas figuren in i scenen i din broderibåge.',
+        ],
+        notes: [
+          'Talen ovanför en kolumn läses uppifrån och ned, talen vid en rad från vänster till höger.',
+          'På märkduken har varje tal sin egen trådfärg: bitar i olika färger får ligga intill varandra, medan bitar i samma färg behöver en tom ruta emellan.',
+          'Din första figur guidar dig genom alla regler.',
+        ],
+        tips: [
+          'Börja med de fullaste linjerna: lägg ihop bitarna med en tom ruta mellan varje. Blir summan lika med linjens längd, är hela linjen löst; fattas det bara en ruta eller två, har de längre bitarna redan rutor som är säkra.',
+          'Skjut en bit så långt det går mot ena änden och sedan mot den andra: rutorna den täcker båda gångerna är alltid broderade. Talet 7 i en linje på 10 fyller alltid de fyra mittersta rutorna.',
+          'Ett stygn ända ute vid kanten av rutnätet är början på den första biten: brodera hela biten därifrån och sätt ett kryss efter den.',
+          'När en linje är löst får dess tomma rutor kryss – och varje kryss visar de tvärgående linjerna var ingen bit kan ligga.',
+          'Gissa inte: ett felaktigt stygn kostar ett liv. Är inget i en linje säkert än, så kom tillbaka till den efter linjerna som korsar den.',
         ],
         alt: 'Ett nästan löst nonogram med en katt: granatröda broderade rutor, kryss i de tomma',
       },
+      screenshots: [
+        'En uggla tar form på ett nonogram, med kryss i de tomma rutorna',
+        'Scenen ”Djurkretsen” i broderibågen, broderad figur för figur',
+        'Scenen ”Katt i fönstret” på nära håll: svalor, en fjäril, en katt och ett garnnystan',
+        'Kalendern: ett litet broderi för varje dag och en igelkott för hela månaden',
+        'Den oändliga märkduken med färgglada folkmönster',
+        'Samlingen av färdiga broderibågar',
+      ],
       features: [
         {
-          title: 'Scener att brodera',
-          text: 'En blomsteräng, Stonehenge, en fruktpicknick, solsystemet, en japansk trädgård, ett dockskåp, en vinterby, havsbotten – och mer därtill.',
+          title: 'Broderibåge efter broderibåge',
+          text: 'En katt i fönstret, fåglar i blyglas, en vinterby, Asgårds salar, Vilda västern och mycket mer. Varje färdig broderibåge får hänga i din samling.',
         },
         {
-          title: 'Riktiga broderistygn',
-          text: 'Plattsöm, kedjesöm, fiskbenssöm och franska knutar – varje figur sys med sin egen tråd och struktur.',
+          title: 'Broderi som känns äkta',
+          text: 'Varje figur har sina egna trådar och stygn, mjuka skuggor på linnet och stilla ljud av nål och broderibåge.',
+        },
+        {
+          title: 'En kalender med dagens stygn',
+          text: 'Ett litet broderi väntar varje dag. Brodera hela månaden, så låses månadens stora figur upp – missade dagar väntar på dig.',
         },
         {
           title: 'En oändlig märkduk',
-          text: 'Efter din första scen öppnas en märkduk med traditionella mönster – och dess mönster tar aldrig slut.',
+          text: 'Efter din första färdiga scen öppnas en märkduk med folkliga motiv: färgade nonogram i två eller tre trådar som aldrig tar slut.',
         },
         {
-          title: 'Ledtrådar när du kör fast',
-          text: 'Visa en enda ruta eller en hel linje, och fortsätt brodera.',
+          title: 'Ledtrådar för kluriga stunder',
+          text: 'Visa en ruta, en hel linje eller 10 slumpvisa rutor – och en fingerborg skyddar dig mot ditt nästa misstag.',
         },
         {
-          title: 'En gåva varje dag',
-          text: 'Kom tillbaka varje dag för en belöning som växer med din svit.',
-        },
-        {
-          title: 'Skonsamt för ögonen',
-          text: 'Mjuka linnefärger, stilla broderiljud, inget konto och inget internet behövs.',
+          title: 'Utan tidtagning, utan brådska',
+          text: 'En present varje dag, Game Center-prestationer och topplistor på iPhone och iPad, och du behöver inget internet för att spela.',
         },
       ],
       supportNote: 'Du når oss också från spelet under Profil → Kontakta oss.',

@@ -582,7 +582,8 @@ width: auto;
 height: 48px;
 }
 .soon {
-display: inline-flex;
+display: flex;
+width: fit-content;
 align-items: center;
 gap: 10px;
 margin: 28px 0 0;
@@ -970,14 +971,6 @@ box-shadow:
 14px 0 0 color-mix(in srgb, var(--accent) 60%, transparent),
 28px 0 0 color-mix(in srgb, var(--accent) 30%, transparent);
 }
-.frame-stitch .feature::before {
-width: 46px;
-height: 3px;
-margin-block: 4px 23px;
-border-radius: 2px;
-background: repeating-linear-gradient(90deg, var(--accent) 0 8px, transparent 8px 13px);
-box-shadow: none;
-}
 .support-card {
 position: relative;
 display: grid;
@@ -993,7 +986,7 @@ background: var(--surface);
 content: "";
 position: absolute;
 inset: 10px;
-border: 2px dashed color-mix(in srgb, var(--accent) 30%, transparent);
+border: 2px dashed var(--stitch, color-mix(in srgb, var(--accent) 30%, transparent));
 border-radius: calc(var(--radius-lg) - 10px);
 pointer-events: none;
 }
@@ -1081,6 +1074,75 @@ color: var(--accent);
 inset: 7px;
 border-radius: calc(var(--radius) - 7px);
 }
+.banner {
+margin-block: 0;
+}
+.banner img {
+width: 100%;
+border-radius: var(--radius);
+}
+.game-page.frame-stitch,
+.doc-page.frame-stitch {
+background:
+radial-gradient(1100px 620px at 88% -8%, var(--glow), transparent 62%),
+radial-gradient(900px 560px at -12% 18%, var(--glow2), transparent 60%),
+repeating-linear-gradient(0deg, color-mix(in srgb, var(--muted) 7%, transparent) 0 1px, transparent 1px 4px),
+repeating-linear-gradient(90deg, color-mix(in srgb, var(--muted) 5%, transparent) 0 1px, transparent 1px 3px),
+var(--bg);
+background-repeat: no-repeat, no-repeat, repeat, repeat;
+}
+.game-page.frame-stitch :is(.feature, .steps li, .tips li, .support-card, .banner) {
+position: relative;
+border-color: transparent;
+background: var(--surface);
+box-shadow:
+0 1px 2px color-mix(in srgb, var(--text) 8%, transparent),
+0 14px 28px -20px color-mix(in srgb, var(--text) 50%, transparent);
+}
+.game-page.frame-stitch :is(.feature, .steps li, .tips li, .banner)::after {
+content: "";
+position: absolute;
+inset: 7px;
+border: 2px dashed var(--stitch);
+border-radius: calc(var(--radius) - 7px);
+pointer-events: none;
+}
+.game-page.frame-stitch .steps li {
+padding: 18px 24px 18px 18px;
+}
+.game-page.frame-stitch .steps li::before {
+border-radius: 50%;
+outline: 1.5px dashed color-mix(in srgb, var(--accent-text) 70%, transparent);
+outline-offset: -5px;
+}
+.game-page.frame-stitch .tips li::before {
+border-radius: 50%;
+}
+.game-page.frame-stitch :is(.section-head h2, .rules h2, .support-card h2, .feature)::before {
+content: "";
+display: block;
+width: 54px;
+height: 14px;
+margin-bottom: 14px;
+border-radius: 0;
+box-shadow: none;
+background: linear-gradient(90deg, var(--thread-1) 0 33.4%, var(--thread-2) 33.4% 66.6%, var(--thread-3) 66.6%);
+-webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 16'%3E%3Cpath d='M3 3l10 10M13 3 3 13M25 3l10 10M35 3 25 13M47 3l10 10M57 3 47 13' stroke='%23000' stroke-width='2.8' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
+mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 16'%3E%3Cpath d='M3 3l10 10M13 3 3 13M25 3l10 10M35 3 25 13M47 3l10 10M57 3 47 13' stroke='%23000' stroke-width='2.8' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.game-page.frame-stitch .feature::before {
+margin-bottom: 18px;
+}
+.game-page.frame-stitch .banner {
+padding: 14px;
+border-radius: var(--radius-lg);
+}
+.game-page.frame-stitch .banner::after {
+border-radius: calc(var(--radius-lg) - 7px);
+}
+.game-page.frame-stitch .banner img {
+border-radius: calc(var(--radius-lg) - 14px);
+}
 .doc {
 max-width: 760px;
 margin-inline: auto;
@@ -1147,6 +1209,19 @@ font-size: 16px;
 .feature-grid {
 grid-template-columns: 1fr;
 }
+.banner img {
+aspect-ratio: 2 / 1;
+object-fit: cover;
+}
+.game-page.frame-stitch .banner {
+padding: 10px;
+}
+.game-page.frame-stitch .banner::after {
+inset: 5px;
+}
+.game-page.frame-stitch .banner img {
+border-radius: calc(var(--radius-lg) - 10px);
+}
 .site-nav a {
 padding: 8px 10px;
 }
@@ -1193,10 +1268,11 @@ transition: none !important;
 }
 }
 </style>
+<meta name="apple-itunes-app" content="app-id=6822948115">
 <meta name="theme-color" content="#F2ECE0">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"MobileApplication","name":"Stitch Tales","description":"Loe arve ridade ja veergude kõrval, tiki õiged ruudud — ja iga lahendatud nonogramm tikitakse stseeni sinu raamis.","url":"https://paastudios.com/stitch-tales/et/","image":"https://paastudios.com/stitch-tales/images/icon.webp","inLanguage":"et","applicationCategory":"GameApplication","applicationSubCategory":"Ristpistes tikitud nonogramm","operatingSystem":"iOS, Android","author":{"@type":"Organization","name":"PAA Studios","url":"https://paastudios.com"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"keywords":"nonogramm, nonogrammid, jaapani ristsõna, picross, griddlers, ristpiste, tikand, tikkimine, loogikamõistatus, loogikamäng, numbrimõistatus, pikslikunst, mäng, mobiilimäng, mõistatusmäng, tasuta mäng, mäng ilma internetita"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"MobileApplication","name":"Stitch Tales","description":"Loe arve ridade ja veergude kõrval, tiki õiged ruudud — ja iga lahendatud nonogramm tikitakse stseeni sinu raamis.","url":"https://paastudios.com/stitch-tales/et/","image":"https://paastudios.com/stitch-tales/images/icon.webp","inLanguage":"et","applicationCategory":"GameApplication","applicationSubCategory":"Ristpistes tikitud nonogramm","operatingSystem":"iOS, Android","author":{"@type":"Organization","name":"PAA Studios","url":"https://paastudios.com"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"keywords":"nonogramm, nonogrammid, jaapani ristsõna, picross, griddlers, ristpiste, tikand, tikkimine, loogikamõistatus, loogikamäng, numbrimõistatus, pikslikunst, mäng, mobiilimäng, mõistatusmäng, tasuta mäng, mäng ilma internetita","screenshot":["https://paastudios.com/stitch-tales/images/screen-1.webp","https://paastudios.com/stitch-tales/images/screen-2.webp","https://paastudios.com/stitch-tales/images/screen-3.webp","https://paastudios.com/stitch-tales/images/screen-4.webp","https://paastudios.com/stitch-tales/images/screen-5.webp","https://paastudios.com/stitch-tales/images/screen-6.webp"],"sameAs":["https://apps.apple.com/app/id6822948115"]}</script>
 </head>
-<body class="game-page frame-stitch" data-scheme="light" style="--bg:#F2ECE0;--surface:#FBF8F2;--surface2:#E7DFCF;--line:#D3C6AE;--text:#2A231C;--muted:#5F5444;--accent:#B3263A;--accent-text:#FFFFFF;--glow:rgba(179, 38, 58, 0.12);--glow2:rgba(46, 122, 82, 0.12)">
+<body class="game-page frame-stitch" data-scheme="light" style="--bg:#F2ECE0;--surface:#FBF8F2;--surface2:#E7DFCF;--line:#D3C6AE;--text:#2A231C;--muted:#5F5444;--accent:#B3263A;--accent-text:#FFFFFF;--glow:rgba(179, 38, 58, 0.12);--glow2:rgba(46, 122, 82, 0.12);--stitch:#E7B7BE;--thread-1:#B3263A;--thread-2:#2E7A52;--thread-3:#C9A06A">
 <a class="skip" href="#main">Mine sisu juurde</a>
 <header class="site-header wrap">
   <a class="brand" href="/et/"><img src="/assets/logo.svg" width="34" height="34" alt=""><span>PAA Studios</span></a>
@@ -1253,40 +1329,66 @@ transition: none !important;
     <h1>Stitch Tales</h1>
     <p class="tagline">Iga mõistatus on piste suuremas pildis.</p>
     <p class="lead">Loe arve ridade ja veergude kõrval, tiki õiged ruudud — ja iga lahendatud nonogramm tikitakse stseeni sinu raamis.</p>
-    <p class="soon">Varsti saadaval App Store'is ja Google Play's</p>
-    <p class="platforms">Tasuta iPhone'ile, iPadile ja Androidile</p>
+    <div class="stores"><a class="store" href="https://apps.apple.com/app/id6822948115?pt=129254796&amp;ct=stitch-tales-et&amp;mt=8"><img src="/assets/badges/app-store.svg" width="144" height="48" alt="Laadi Stitch Tales alla App Store'ist"></a></div><p class="soon">Varsti saadaval Google Play's</p>
+    <p class="platforms">Mäng iPhone'ile, iPadile ja Androidile</p>
   </div>
-  <div class="game-hero-art"><img class="art-image" src="/stitch-tales/images/hoop.svg" width="600" height="620" alt="Tikkimisraam tikitud lilleniiduga: liblikas, päike, lilled ja kärbseseen, mis ootab veel tikkimist" loading="eager" decoding="async"></div>
+  <div class="game-hero-art"><div class="phones"><figure class="device phone-left"><img src="/stitch-tales/images/screen-1.webp" srcset="/stitch-tales/images/screen-1-360.webp 360w, /stitch-tales/images/screen-1.webp 600w" sizes="(max-width: 560px) 40vw, 210px" width="600" height="1304" alt="Nonogrammil võtab kuju öökull, tühjades ruutudes ristid" loading="eager" decoding="async"></figure><figure class="device phone-right"><img src="/stitch-tales/images/screen-3.webp" srcset="/stitch-tales/images/screen-3-360.webp 360w, /stitch-tales/images/screen-3.webp 600w" sizes="(max-width: 560px) 40vw, 210px" width="600" height="1304" alt="Lähivaade stseenist „Kass akna juures“: pääsukesed, liblikas, kass ja lõngakera" loading="eager" decoding="async"></figure><figure class="device phone-center"><img src="/stitch-tales/images/screen-2.webp" srcset="/stitch-tales/images/screen-2-360.webp 360w, /stitch-tales/images/screen-2.webp 600w" sizes="(max-width: 560px) 40vw, 210px" width="600" height="1304" alt="Stseen „Sodiaak“ raamis, tikitud kujund kujundi haaval" loading="eager" decoding="async"></figure></div></div>
 </section>
+
+<figure class="banner wrap"><img src="/stitch-tales/images/banner.webp" srcset="/stitch-tales/images/banner-720.webp 720w, /stitch-tales/images/banner-1280.webp 1280w, /stitch-tales/images/banner.webp 2240w" sizes="(max-width: 600px) 108vw, (max-width: 1184px) 92vw, 1120px" width="2240" height="960" alt="Tikandiks muutuvate nonogrammide lapitöö: kaheksajalg klounkaladega, tuukan, torii värav, pääsukesed, rebane, jõulukuusk ja palju muud" loading="lazy" decoding="async"></figure>
 
 <section class="block wrap rules" aria-labelledby="rules-title">
   <div>
     <h2 id="rules-title">Kuidas mängida</h2>
-    
+    <p class="rules-intro">Stitch Tales põhineb nonogrammidel — loogikamõistatustel, millest sünnib pilt. Neid tuntakse ka jaapani ristsõnadena ning nimede griddlers ja hanjie all. Ridade kõrval ja veergude kohal olevad arvud näitavad, millised ruudud täita; täida õiged ruudud ja nähtavale tuleb peidetud pilt — siin kujund, mis tikitakse stseeni sinu raamis.</p>
     <ol class="steps">
-      <li>Arvud iga rea ja veeru kõrval näitavad järjest täidetud ruutude plokke.</li>
-      <li>Tiki ruudud, mis peavad olema täidetud; märgi tühjaks jäävad ruudud ristiga.</li>
-      <li>Ettevaatust — vale piste maksab ühe sinu tikitud südametest.</li>
+      <li>Arvud rea kõrval või veeru kohal näitavad, mitu ruutu järjest tuleb tikkida ja mis järjekorras.</li>
+      <li>Kahe ploki vahel on alati vähemalt üks tühi ruut — märgi see ristiga.</li>
+      <li>Libista sõrmega üle ruutude ja niit järgneb sellele.</li>
+      <li>Vale piste maksab ühe sinu kolmest elust, nii et ära kiirusta.</li>
       <li>Lahenda ruudustik ja kujund tikitakse stseeni sinu raamis.</li>
     </ol>
-    
+    <ul class="rule-notes">
+      <li>Veeru kohal olevaid arve loe ülevalt alla ja rea kõrval olevaid vasakult paremale.</li>
+      <li>Mustrirätikul on igal arvul oma niidivärv: eri värvi plokid võivad üksteist puudutada, sama värvi plokkide vahel peab aga olema tühi ruut.</li>
+      <li>Esimene kujund viib sind samm-sammult läbi kõigi reeglite.</li>
+    </ul>
   </div>
   <figure class="rules-art"><img src="/stitch-tales/images/nonogram.svg" width="474" height="410" alt="Peaaegu lahendatud kassiga nonogramm: granaatpunase niidiga tikitud ruudud, tühjades ristid" loading="lazy" decoding="async"></figure>
 </section>
 
+<section class="block wrap" aria-labelledby="tips-title">
+  <div class="section-head"><h2 id="tips-title">Lahendamise nipid</h2></div>
+  <ol class="tips">
+    <li>Alusta kõige tihedamatest joontest: liida plokid kokku, lisades iga kahe ploki vahele ühe tühja ruudu. Kui summa võrdub joone pikkusega, on terve joon lahendatud; kui puudu jääb vaid ruut või kaks, on pikemates plokkides juba ruute, milles võid kindel olla.</li>
+    <li>Nihuta plokk nii kaugele kui võimalik joone ühte otsa, seejärel teise: ruudud, mida see mõlemal korral katab, tuleb alati tikkida. 10 ruudu pikkuses joones täidab 7 alati neli keskmist ruutu.</li>
+    <li>Piste päris ruudustiku serval on esimese ploki algus: tiki sealt terve plokk ja märgi selle järel olev ruut ristiga.</li>
+    <li>Kui joon on lahendatud, märgitakse selle tühjad ruudud ristiga — ja iga rist näitab ristuvatele joontele, kuhu plokk minna ei saa.</li>
+    <li>Ära paku huupi: vale piste maksab elu. Kui joonel pole veel midagi kindlat, tule selle juurde tagasi, kui oled ristuvad jooned läbi vaadanud.</li>
+  </ol>
+</section>
 
-
-
+<section class="block gallery" aria-labelledby="gallery-title">
+  <div class="wrap section-head"><h2 id="gallery-title">Lähemalt</h2></div>
+  <div class="shots" tabindex="0" aria-label="Ekraanipildid">
+    <figure class="device shot"><img src="/stitch-tales/images/screen-1.webp" srcset="/stitch-tales/images/screen-1-360.webp 360w, /stitch-tales/images/screen-1.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Nonogrammil võtab kuju öökull, tühjades ruutudes ristid" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-2.webp" srcset="/stitch-tales/images/screen-2-360.webp 360w, /stitch-tales/images/screen-2.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Stseen „Sodiaak“ raamis, tikitud kujund kujundi haaval" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-3.webp" srcset="/stitch-tales/images/screen-3-360.webp 360w, /stitch-tales/images/screen-3.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Lähivaade stseenist „Kass akna juures“: pääsukesed, liblikas, kass ja lõngakera" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-4.webp" srcset="/stitch-tales/images/screen-4-360.webp 360w, /stitch-tales/images/screen-4.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Kalender: väike tikand igaks päevaks ja siil terveks kuuks" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-5.webp" srcset="/stitch-tales/images/screen-5-360.webp 360w, /stitch-tales/images/screen-5.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Lõputu mustrirätik värviliste rahvamustritega" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-6.webp" srcset="/stitch-tales/images/screen-6-360.webp 360w, /stitch-tales/images/screen-6.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Valmis raamide kogu" loading="lazy" decoding="async"></figure>
+  </div>
+</section>
 
 <section class="block wrap" aria-labelledby="features-title">
   <div class="section-head"><h2 id="features-title">Mida mäng pakub</h2></div>
   <div class="feature-grid">
-    <div class="feature"><h3>Stseenid tikkimiseks</h3><p>Lilleniit, Stonehenge, puuviljapiknik, Päikesesüsteem, Jaapani aed, nukumaja, talvine küla, merepõhi — ja palju muud.</p></div>
-    <div class="feature"><h3>Päris tikandipisted</h3><p>Laduspiste, ahelpiste, kalaluupiste ja prantsuse sõlmed — iga kujund on tikitud oma niidi ja oma tekstuuriga.</p></div>
-    <div class="feature"><h3>Lõputu mustrirätik</h3><p>Pärast esimest stseeni avaneb rahvamustritega mustrirätik — ja selle mustrid ei saa kunagi otsa.</p></div>
-    <div class="feature"><h3>Vihjed, kui jääd kinni</h3><p>Ava üks ruut või terve joon ja tiki edasi.</p></div>
-    <div class="feature"><h3>Kingitus iga päev</h3><p>Tule iga päev tagasi auhinna järele, mis kasvab koos sinu seeriaga.</p></div>
-    <div class="feature"><h3>Silmasõbralik</h3><p>Pehmed linased toonid, vaiksed pistehääled, pole vaja kontot ega internetti.</p></div>
+    <div class="feature"><h3>Raam raami järel</h3><p>Kass akna juures, vitraažlinnud, talvine küla, Asgardi saalid, Metsik Lääs ja palju muud. Iga valmis raam saab oma koha sinu kogus.</p></div>
+    <div class="feature"><h3>Tikand nagu päris</h3><p>Igal kujundil on oma niidid ja pisted, linasel kangal pehmed varjud ning nõela ja raami vaiksed helid.</p></div>
+    <div class="feature"><h3>Igapäevaste pistete kalender</h3><p>Iga päev ootab väike tikand. Tiki kuu kõik päevad ja avaneb kuu suur kujund — vahele jäänud päevad ootavad sind.</p></div>
+    <div class="feature"><h3>Lõputu mustrirätik</h3><p>Pärast esimest valmis stseeni avaneb rahvamustritega mustrirätik: värvilised nonogrammid kahe või kolme niidiga, mis ei saa kunagi otsa.</p></div>
+    <div class="feature"><h3>Vihjed keerulisteks hetkedeks</h3><p>Ava üks ruut, terve joon või 10 juhuslikku ruutu — ja sõrmkübar kaitseb sind järgmise vea eest.</p></div>
+    <div class="feature"><h3>Ei taimerit, ei kiirustamist</h3><p>Kingitus iga päev, Game Center iPhone'is ja iPadis saavutuste ja edetabelitega ning mängimiseks pole internetti vaja.</p></div>
   </div>
 </section>
 

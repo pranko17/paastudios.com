@@ -18,6 +18,7 @@ export default {
     storeGooglePlay: 'Google Play',
     and: 'e',
     freeOn: 'Gratis su {platforms}',
+    madeFor: 'Per {platforms}',
     howToPlay: 'Come si gioca',
     tips: 'Consigli per risolvere',
     faq: 'Domande e risposte',
@@ -194,41 +195,74 @@ export default {
         'gioco offline',
       ],
       art: {
+        alts: [
+          'Un gufo che prende forma su un nonogramma, con croci nelle caselle vuote',
+          'La scena «Zodiaco» nel telaio, ricamata figura dopo figura',
+          'Primo piano della scena «Gatto alla finestra»: rondini, una farfalla, un gatto e un gomitolo',
+        ],
+      },
+      cardArt: {
         alt: 'Un telaio da ricamo con un prato fiorito ricamato: una farfalla, un sole, dei fiori e un fungo ancora da ricamare',
       },
+      banner: {
+        alt: 'Un patchwork di nonogrammi che diventano ricamo: un polpo con pesci pagliaccio, un tucano, un portale torii, rondini, una volpe, un albero di Natale e molto altro',
+      },
       rules: {
+        intro:
+          'Stitch Tales si basa sui nonogrammi, rompicapi logici a immagini noti anche come crucipixel, griddlers o hanjie. I numeri accanto alle righe e sopra le colonne ti dicono quali caselle riempire; riempi quelle giuste e apparirà un’immagine nascosta — qui, una figura ricamata nella scena del tuo telaio.',
         steps: [
-          'I numeri accanto a ogni riga e colonna sono, in ordine, i gruppi di caselle piene.',
-          'Ricama le caselle da riempire; segna con una croce quelle che restano vuote.',
-          'Attenzione: un punto sbagliato ti costa una vita, uno dei tuoi cuori ricamati.',
+          'I numeri accanto a una riga o sopra una colonna dicono quante caselle di fila ricamare, e in quale ordine.',
+          'Tra due pezzi c’è sempre almeno una casella vuota: mettici una croce.',
+          'Fai scorrere il dito, e il filo lo segue sulle caselle.',
+          'Un punto sbagliato costa una delle tue tre vite, quindi prenditi il tuo tempo.',
           'Risolvi la griglia e la figura verrà ricamata nella scena del tuo telaio.',
+        ],
+        notes: [
+          'I numeri sopra una colonna si leggono dall’alto in basso, quelli accanto a una riga da sinistra a destra.',
+          'Nell’imparaticcio ogni numero ha il suo colore di filo: pezzi di colori diversi possono toccarsi, mentre quelli dello stesso colore sono sempre separati da una casella vuota.',
+          'La prima figura ti accompagna attraverso tutte le regole.',
+        ],
+        tips: [
+          'Comincia dalle linee più piene: somma i pezzi con una casella vuota tra l’uno e l’altro. Se il totale è pari alla lunghezza della linea, l’intera linea è risolta; se manca solo una casella o due, i pezzi più lunghi hanno già caselle sicure.',
+          'Spingi un pezzo il più possibile verso un’estremità, poi verso l’altra: le caselle che copre entrambe le volte sono sempre ricamate. Un 7 in una linea di 10 riempie sempre le quattro caselle centrali.',
+          'Un punto proprio sul bordo della griglia è l’inizio del primo pezzo: ricama da lì l’intero pezzo e metti una croce subito dopo.',
+          'Quando una linea è risolta, le sue caselle vuote ricevono una croce — e ogni croce dice alle linee che la attraversano dove un pezzo non può andare.',
+          'Non ricamare a caso: un punto sbagliato costa una vita. Se in una linea non c’è ancora nulla di sicuro, tornaci dopo aver lavorato sulle linee che la incrociano.',
         ],
         alt: 'Il nonogramma di un gatto quasi risolto: caselle ricamate color granata, croci in quelle vuote',
       },
+      screenshots: [
+        'Un gufo che prende forma su un nonogramma, con croci nelle caselle vuote',
+        'La scena «Zodiaco» nel telaio, ricamata figura dopo figura',
+        'Primo piano della scena «Gatto alla finestra»: rondini, una farfalla, un gatto e un gomitolo',
+        'Il calendario: un piccolo ricamo per ogni giorno e un riccio per tutto il mese',
+        'L’imparaticcio infinito di motivi popolari colorati',
+        'La collezione di telai finiti',
+      ],
       features: [
         {
-          title: 'Scene da ricamare',
-          text: 'Un prato fiorito, Stonehenge, un picnic di frutta, il sistema solare, un giardino giapponese, una casa delle bambole, un villaggio d’inverno, il fondale marino… e molte altre.',
+          title: 'Telaio dopo telaio',
+          text: 'Un gatto alla finestra, uccelli in vetrata, un villaggio d’inverno, le sale di Asgard, il Selvaggio West e molto altro. Ogni telaio finito entra nella tua collezione.',
         },
         {
-          title: 'Veri punti di ricamo',
-          text: 'Punto pieno, catenella, spina di pesce e nodi francesi: ogni figura è cucita con il suo filo e la sua trama.',
+          title: 'Un ricamo che sembra vero',
+          text: 'Ogni figura ha i suoi fili e i suoi punti, ombre morbide sul lino e i suoni delicati dell’ago e del telaio.',
+        },
+        {
+          title: 'Un calendario di ricami del giorno',
+          text: 'Ogni giorno ti aspetta un piccolo ricamo. Ricama tutto il mese e si apre la sua grande figura — i giorni persi ti aspetteranno.',
         },
         {
           title: 'Un imparaticcio infinito',
-          text: 'Dopo la prima scena si apre un imparaticcio di motivi tradizionali, e i suoi motivi non finiscono mai.',
+          text: 'Dopo la prima scena completata si apre un imparaticcio di motivi popolari: nonogrammi a colori con due o tre fili, che non finiscono mai.',
         },
         {
-          title: 'Aiuti quando ti blocchi',
-          text: 'Rivela una sola casella o un’intera linea e continua a ricamare.',
+          title: 'Aiuti per i momenti difficili',
+          text: 'Rivela una casella, un’intera linea o 10 caselle a caso — e il ditale ti salva dal prossimo errore.',
         },
         {
-          title: 'Un regalo ogni giorno',
-          text: 'Torna ogni giorno per una ricompensa che cresce con la tua serie.',
-        },
-        {
-          title: 'Riposante per gli occhi',
-          text: 'Morbidi colori del lino, il suono delicato dei punti, nessun account e nessuna connessione necessaria.',
+          title: 'Senza timer e senza fretta',
+          text: 'Un regalo ogni giorno, obiettivi e classifiche di Game Center su iPhone e iPad, e per giocare non serve internet.',
         },
       ],
       supportNote: 'Puoi scriverci anche dal gioco, in Profilo → Scrivici.',

@@ -18,6 +18,7 @@ export default {
     storeGooglePlay: 'op Google Play',
     and: 'en',
     freeOn: 'Gratis voor {platforms}',
+    madeFor: 'Voor {platforms}',
     howToPlay: 'Zo speel je',
     tips: 'Tips om op te lossen',
     faq: 'Vragen en antwoorden',
@@ -194,41 +195,74 @@ export default {
         'spel zonder internet',
       ],
       art: {
+        alts: [
+          'Een uil krijgt vorm op een nonogram, met kruisjes in de lege vakjes',
+          'De scène “Dierenriem” in de borduurring, figuur voor figuur geborduurd',
+          'De scène “Kat bij het raam” van dichtbij: zwaluwen, een vlinder, een kat en een bolletje wol',
+        ],
+      },
+      cardArt: {
         alt: 'Een borduurring met een geborduurde bloemenweide: een vlinder, een zon, bloemen en een vliegenzwam die nog geborduurd moet worden',
       },
+      banner: {
+        alt: 'Een lappendeken van nonogrammen die borduurwerk worden: een octopus met clownvissen, een toekan, een toriipoort, zwaluwen, een vos, een kerstboom en meer',
+      },
       rules: {
+        intro:
+          'Stitch Tales is gebaseerd op nonogrammen: logicapuzzels met een plaatje, ook bekend als Japanse puzzels, griddlers of hanjie. De getallen naast de rijen en boven de kolommen vertellen welke vakjes je moet vullen; vul je de juiste, dan verschijnt er een verborgen plaatje — hier een figuur die in de scène in je borduurring wordt geborduurd.',
         steps: [
-          'De getallen naast elke rij en kolom geven op volgorde de groepjes gevulde vakjes aan.',
-          'Borduur de vakjes die gevuld moeten zijn; markeer de vakjes die leeg blijven met een kruisje.',
-          'Let op — een verkeerde steek kost een leven, een van je geborduurde hartjes.',
+          'De getallen naast een rij of boven een kolom vertellen hoeveel vakjes op een rij je borduurt, en in welke volgorde.',
+          'Tussen twee stukken zit altijd minstens één leeg vakje — zet daar een kruisje.',
+          'Veeg met je vinger, en de draad volgt hem over de vakjes.',
+          'Een verkeerde steek kost een van je drie levens, dus neem de tijd.',
           'Los het raster op, en de figuur wordt geborduurd in de scène in je borduurring.',
+        ],
+        notes: [
+          'De getallen boven een kolom lees je van boven naar beneden, die naast een rij van links naar rechts.',
+          'Op de merklap heeft elk getal zijn eigen garenkleur: stukken van verschillende kleuren mogen elkaar raken, maar tussen stukken van dezelfde kleur zit altijd een leeg vakje.',
+          'Je eerste figuur neemt je mee langs alle regels.',
+        ],
+        tips: [
+          'Begin met de volste lijnen: tel de stukken op, met telkens één leeg vakje ertussen. Is het totaal gelijk aan de lengte van de lijn, dan is de hele lijn opgelost; scheelt het maar een vakje of twee, dan hebben de langere stukken al vakjes die vaststaan.',
+          'Schuif een stuk zo ver mogelijk naar het ene uiteinde en daarna naar het andere: de vakjes die het beide keren bedekt, zijn altijd geborduurd. Een 7 in een lijn van 10 vult altijd de middelste vier.',
+          'Een steek helemaal aan de rand van het raster is het begin van het eerste stuk: borduur vanaf daar het hele stuk en zet er een kruisje achter.',
+          'Is een lijn opgelost, dan krijgen de lege vakjes kruisjes — en elk kruisje vertelt de lijnen die er dwars overheen lopen waar geen stuk kan liggen.',
+          'Gok niet: een verkeerde steek kost een leven. Staat er in een lijn nog niets vast, kom er dan op terug na de lijnen die hem kruisen.',
         ],
         alt: 'Een bijna opgelost nonogram van een kat: granaatrood geborduurde vakjes, kruisjes in de lege',
       },
+      screenshots: [
+        'Een uil krijgt vorm op een nonogram, met kruisjes in de lege vakjes',
+        'De scène “Dierenriem” in de borduurring, figuur voor figuur geborduurd',
+        'De scène “Kat bij het raam” van dichtbij: zwaluwen, een vlinder, een kat en een bolletje wol',
+        'De kalender: een klein borduurwerkje voor elke dag en een egel voor de hele maand',
+        'De eindeloze merklap met kleurrijke volkspatronen',
+        'De collectie voltooide borduurringen',
+      ],
       features: [
         {
-          title: 'Scènes om te borduren',
-          text: 'Een bloemenweide, Stonehenge, een fruitpicknick, het zonnestelsel, een Japanse tuin, een poppenhuis, een winterdorp, de zeebodem — en nog meer.',
+          title: 'Borduurring na borduurring',
+          text: 'Een kat bij het raam, glas-in-loodvogels, een winterdorp, de zalen van Asgard, het Wilde Westen en nog veel meer. Elke voltooide borduurring krijgt een plaats in je collectie.',
         },
         {
-          title: 'Echte borduursteken',
-          text: 'Platsteek, kettingsteek, visgraatsteek en Franse knoopjes — elke figuur wordt geborduurd met zijn eigen garen en textuur.',
+          title: 'Borduurwerk dat echt lijkt',
+          text: 'Elke figuur heeft zijn eigen garens en steken, zachte schaduwen op linnen en de rustige geluiden van naald en borduurring.',
+        },
+        {
+          title: 'Een kalender vol dagelijkse steken',
+          text: 'Elke dag wacht er een klein borduurwerkje op je. Borduur de hele maand, en de grote figuur van de maand komt vrij — gemiste dagen wachten op je.',
         },
         {
           title: 'Een eindeloze merklap',
-          text: 'Na je eerste scène gaat er een merklap met traditionele patronen open — en de patronen raken nooit op.',
+          text: 'Na je eerste voltooide scène gaat er een merklap met volksmotieven open: gekleurde nonogrammen in twee of drie garens die nooit opraken.',
         },
         {
-          title: 'Hints als je vastzit',
-          text: 'Onthul één vakje of een hele lijn, en borduur verder.',
+          title: 'Hints voor lastige momenten',
+          text: 'Onthul een vakje, een hele lijn of 10 willekeurige vakjes — en een vingerhoed behoedt je voor je volgende fout.',
         },
         {
-          title: 'Elke dag een cadeautje',
-          text: 'Kom elke dag terug voor een beloning die groeit met je reeks.',
-        },
-        {
-          title: 'Rustig voor je ogen',
-          text: 'Zachte linnenkleuren, stille borduurgeluiden, geen account en geen internet nodig.',
+          title: 'Zonder timer, zonder haast',
+          text: 'Elke dag een cadeau, Game Center-prestaties en ranglijsten op iPhone en iPad, en je hebt geen internet nodig om te spelen.',
         },
       ],
       supportNote: 'Je kunt ons ook bereiken vanuit het spel via Profiel → Contact.',

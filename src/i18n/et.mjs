@@ -18,6 +18,7 @@ export default {
     storeGooglePlay: "Google Play's",
     and: 'ja',
     freeOn: 'Tasuta {platforms}',
+    madeFor: 'Mäng {platforms}',
     howToPlay: 'Kuidas mängida',
     tips: 'Lahendamise nipid',
     faq: 'Küsimused ja vastused',
@@ -196,41 +197,74 @@ export default {
         'mäng ilma internetita',
       ],
       art: {
+        alts: [
+          'Nonogrammil võtab kuju öökull, tühjades ruutudes ristid',
+          'Stseen „Sodiaak“ raamis, tikitud kujund kujundi haaval',
+          'Lähivaade stseenist „Kass akna juures“: pääsukesed, liblikas, kass ja lõngakera',
+        ],
+      },
+      cardArt: {
         alt: 'Tikkimisraam tikitud lilleniiduga: liblikas, päike, lilled ja kärbseseen, mis ootab veel tikkimist',
       },
+      banner: {
+        alt: 'Tikandiks muutuvate nonogrammide lapitöö: kaheksajalg klounkaladega, tuukan, torii värav, pääsukesed, rebane, jõulukuusk ja palju muud',
+      },
       rules: {
+        intro:
+          'Stitch Tales põhineb nonogrammidel — loogikamõistatustel, millest sünnib pilt. Neid tuntakse ka jaapani ristsõnadena ning nimede griddlers ja hanjie all. Ridade kõrval ja veergude kohal olevad arvud näitavad, millised ruudud täita; täida õiged ruudud ja nähtavale tuleb peidetud pilt — siin kujund, mis tikitakse stseeni sinu raamis.',
         steps: [
-          'Arvud iga rea ja veeru kõrval näitavad järjest täidetud ruutude plokke.',
-          'Tiki ruudud, mis peavad olema täidetud; märgi tühjaks jäävad ruudud ristiga.',
-          'Ettevaatust — vale piste maksab ühe sinu tikitud südametest.',
+          'Arvud rea kõrval või veeru kohal näitavad, mitu ruutu järjest tuleb tikkida ja mis järjekorras.',
+          'Kahe ploki vahel on alati vähemalt üks tühi ruut — märgi see ristiga.',
+          'Libista sõrmega üle ruutude ja niit järgneb sellele.',
+          'Vale piste maksab ühe sinu kolmest elust, nii et ära kiirusta.',
           'Lahenda ruudustik ja kujund tikitakse stseeni sinu raamis.',
+        ],
+        notes: [
+          'Veeru kohal olevaid arve loe ülevalt alla ja rea kõrval olevaid vasakult paremale.',
+          'Mustrirätikul on igal arvul oma niidivärv: eri värvi plokid võivad üksteist puudutada, sama värvi plokkide vahel peab aga olema tühi ruut.',
+          'Esimene kujund viib sind samm-sammult läbi kõigi reeglite.',
+        ],
+        tips: [
+          'Alusta kõige tihedamatest joontest: liida plokid kokku, lisades iga kahe ploki vahele ühe tühja ruudu. Kui summa võrdub joone pikkusega, on terve joon lahendatud; kui puudu jääb vaid ruut või kaks, on pikemates plokkides juba ruute, milles võid kindel olla.',
+          'Nihuta plokk nii kaugele kui võimalik joone ühte otsa, seejärel teise: ruudud, mida see mõlemal korral katab, tuleb alati tikkida. 10 ruudu pikkuses joones täidab 7 alati neli keskmist ruutu.',
+          'Piste päris ruudustiku serval on esimese ploki algus: tiki sealt terve plokk ja märgi selle järel olev ruut ristiga.',
+          'Kui joon on lahendatud, märgitakse selle tühjad ruudud ristiga — ja iga rist näitab ristuvatele joontele, kuhu plokk minna ei saa.',
+          'Ära paku huupi: vale piste maksab elu. Kui joonel pole veel midagi kindlat, tule selle juurde tagasi, kui oled ristuvad jooned läbi vaadanud.',
         ],
         alt: 'Peaaegu lahendatud kassiga nonogramm: granaatpunase niidiga tikitud ruudud, tühjades ristid',
       },
+      screenshots: [
+        'Nonogrammil võtab kuju öökull, tühjades ruutudes ristid',
+        'Stseen „Sodiaak“ raamis, tikitud kujund kujundi haaval',
+        'Lähivaade stseenist „Kass akna juures“: pääsukesed, liblikas, kass ja lõngakera',
+        'Kalender: väike tikand igaks päevaks ja siil terveks kuuks',
+        'Lõputu mustrirätik värviliste rahvamustritega',
+        'Valmis raamide kogu',
+      ],
       features: [
         {
-          title: 'Stseenid tikkimiseks',
-          text: 'Lilleniit, Stonehenge, puuviljapiknik, Päikesesüsteem, Jaapani aed, nukumaja, talvine küla, merepõhi — ja palju muud.',
+          title: 'Raam raami järel',
+          text: 'Kass akna juures, vitraažlinnud, talvine küla, Asgardi saalid, Metsik Lääs ja palju muud. Iga valmis raam saab oma koha sinu kogus.',
         },
         {
-          title: 'Päris tikandipisted',
-          text: 'Laduspiste, ahelpiste, kalaluupiste ja prantsuse sõlmed — iga kujund on tikitud oma niidi ja oma tekstuuriga.',
+          title: 'Tikand nagu päris',
+          text: 'Igal kujundil on oma niidid ja pisted, linasel kangal pehmed varjud ning nõela ja raami vaiksed helid.',
+        },
+        {
+          title: 'Igapäevaste pistete kalender',
+          text: 'Iga päev ootab väike tikand. Tiki kuu kõik päevad ja avaneb kuu suur kujund — vahele jäänud päevad ootavad sind.',
         },
         {
           title: 'Lõputu mustrirätik',
-          text: 'Pärast esimest stseeni avaneb rahvamustritega mustrirätik — ja selle mustrid ei saa kunagi otsa.',
+          text: 'Pärast esimest valmis stseeni avaneb rahvamustritega mustrirätik: värvilised nonogrammid kahe või kolme niidiga, mis ei saa kunagi otsa.',
         },
         {
-          title: 'Vihjed, kui jääd kinni',
-          text: 'Ava üks ruut või terve joon ja tiki edasi.',
+          title: 'Vihjed keerulisteks hetkedeks',
+          text: 'Ava üks ruut, terve joon või 10 juhuslikku ruutu — ja sõrmkübar kaitseb sind järgmise vea eest.',
         },
         {
-          title: 'Kingitus iga päev',
-          text: 'Tule iga päev tagasi auhinna järele, mis kasvab koos sinu seeriaga.',
-        },
-        {
-          title: 'Silmasõbralik',
-          text: 'Pehmed linased toonid, vaiksed pistehääled, pole vaja kontot ega internetti.',
+          title: 'Ei taimerit, ei kiirustamist',
+          text: "Kingitus iga päev, Game Center iPhone'is ja iPadis saavutuste ja edetabelitega ning mängimiseks pole internetti vaja.",
         },
       ],
       supportNote: 'Meiega saab ühendust ka mängus: Profiil → Kirjuta meile.',

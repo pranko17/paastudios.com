@@ -18,6 +18,7 @@ export default {
     storeGooglePlay: 'pe Google Play',
     and: 'și',
     freeOn: 'Gratuit pe {platforms}',
+    madeFor: 'Pentru {platforms}',
     howToPlay: 'Cum se joacă',
     tips: 'Sfaturi de rezolvare',
     faq: 'Întrebări și răspunsuri',
@@ -195,41 +196,74 @@ export default {
         'joc fără internet',
       ],
       art: {
+        alts: [
+          'O bufniță care prinde contur într-o nonogramă, cu cruci în celulele goale',
+          'Scena „Zodiac” în gherghef, brodată figură cu figură',
+          'Prim-plan cu scena „Pisica la fereastră”: rândunele, un fluture, o pisică și un ghem de lână',
+        ],
+      },
+      cardArt: {
         alt: 'Un gherghef cu o pajiște brodată: un fluture, un soare, flori și o ciupercă ce urmează să fie brodată',
       },
+      banner: {
+        alt: 'Un patchwork de nonograme care se transformă în broderie: o caracatiță cu pești-clovn, un tucan, o poartă torii, rândunele, o vulpe, un brad de Crăciun și multe altele',
+      },
       rules: {
+        intro:
+          'Stitch Tales se bazează pe nonograme, puzzle-uri logice cu imagini, cunoscute și ca griddlers, hanjie sau cuvinte încrucișate japoneze. Numerele de lângă rânduri și de deasupra coloanelor îți spun ce celule să umpli; umple-le pe cele potrivite și apare o imagine ascunsă — aici, o figură brodată în scena din ghergheful tău.',
         steps: [
-          'Numerele de lângă fiecare rând și coloană arată, în ordine, grupurile de celule pline consecutive.',
-          'Brodează celulele care trebuie umplute, iar pe cele care rămân goale marchează-le cu o cruce.',
-          'Atenție — o cusătură greșită te costă o viață, una dintre inimile brodate.',
+          'Numerele de lângă un rând sau de deasupra unei coloane arată câte celule la rând trebuie brodate și în ce ordine.',
+          'Între două bucăți există mereu cel puțin o celulă goală — marcheaz-o cu o cruce.',
+          'Glisează cu degetul, iar firul îl urmează peste celule.',
+          'O cusătură greșită costă una dintre cele trei vieți, așa că nu te grăbi.',
           'Rezolvă grila, iar figura se brodează în scena din ghergheful tău.',
+        ],
+        notes: [
+          'Numerele de deasupra unei coloane se citesc de sus în jos, iar cele de lângă un rând, de la stânga la dreapta.',
+          'Pe ștergar, fiecare număr are culoarea firului său: bucățile de culori diferite se pot atinge, iar cele de aceeași culoare sunt mereu despărțite de o celulă goală.',
+          'Prima figură te poartă prin toate regulile.',
+        ],
+        tips: [
+          'Începe cu liniile cele mai pline: adună bucățile, cu câte o celulă goală între ele. Dacă totalul e egal cu lungimea liniei, toată linia e rezolvată; dacă lipsesc doar una sau două celule, bucățile mai lungi au deja celule sigure.',
+          'Împinge o bucată cât se poate de mult spre un capăt, apoi spre celălalt: celulele pe care le acoperă de ambele dăți sunt mereu brodate. Un 7 într-o linie de 10 umple întotdeauna cele patru celule din mijloc.',
+          'O cusătură chiar la marginea grilei e începutul primei bucăți: brodează de acolo toată bucata și pune o cruce imediat după ea.',
+          'Când o linie e rezolvată, celulele ei goale primesc cruci — și fiecare cruce le arată liniilor care o traversează unde nu poate sta o bucată.',
+          'Nu broda la noroc: o cusătură greșită costă o viață. Dacă într-o linie nu e încă nimic sigur, revino la ea după ce avansezi pe liniile care o intersectează.',
         ],
         alt: 'O nonogramă aproape rezolvată, cu o pisică: celule brodate cu fir grena, cruci în cele goale',
       },
+      screenshots: [
+        'O bufniță care prinde contur într-o nonogramă, cu cruci în celulele goale',
+        'Scena „Zodiac” în gherghef, brodată figură cu figură',
+        'Prim-plan cu scena „Pisica la fereastră”: rândunele, un fluture, o pisică și un ghem de lână',
+        'Calendarul: o mică broderie pentru fiecare zi și un arici pentru toată luna',
+        'Ștergarul fără sfârșit cu motive populare colorate',
+        'Colecția de gherghefuri terminate',
+      ],
       features: [
         {
-          title: 'Scene de brodat',
-          text: 'O pajiște înflorită, Stonehenge, un picnic cu fructe, sistemul solar, o grădină japoneză, o casă de păpuși, un sat de iarnă, fundul mării — și altele.',
+          title: 'Gherghef după gherghef',
+          text: 'O pisică la fereastră, păsări de vitraliu, un sat de iarnă, sălile Asgardului, Vestul Sălbatic și multe altele. Fiecare gherghef terminat intră în colecția ta.',
         },
         {
-          title: 'Cusături de broderie adevărate',
-          text: 'Punct plin, lănțișor, os de pește și noduri franțuzești — fiecare figură e cusută cu firul și textura ei.',
+          title: 'O broderie ca adevărată',
+          text: 'Fiecare figură are firele și cusăturile ei, umbre moi pe pânza de in și sunetele blânde ale acului și ale gherghefului.',
+        },
+        {
+          title: 'Un calendar cu broderia zilei',
+          text: 'În fiecare zi te așteaptă o mică broderie. Brodează toată luna și se deschide figura ei cea mare — zilele ratate te vor aștepta.',
         },
         {
           title: 'Un ștergar fără sfârșit',
-          text: 'După prima scenă se deschide un ștergar cu motive populare — iar modelele lui nu se termină niciodată.',
+          text: 'După prima scenă terminată se deschide un ștergar cu motive populare: nonograme colorate în două sau trei fire, care nu se termină niciodată.',
         },
         {
-          title: 'Indicii când te blochezi',
-          text: 'Dezvăluie o singură celulă sau o linie întreagă și brodează mai departe.',
+          title: 'Indicii pentru momentele grele',
+          text: 'Dezvăluie o celulă, o linie întreagă sau 10 celule la întâmplare — iar degetarul te ferește de următoarea greșeală.',
         },
         {
-          title: 'Un cadou în fiecare zi',
-          text: 'Revino zilnic pentru o recompensă care crește odată cu seria ta.',
-        },
-        {
-          title: 'Blând cu ochii',
-          text: 'Culori moi de in, sunete discrete de cusut, fără cont și fără internet.',
+          title: 'Fără cronometru, fără grabă',
+          text: 'Un cadou în fiecare zi, realizări și clasamente Game Center pe iPhone și iPad, iar ca să joci nu ai nevoie de internet.',
         },
       ],
       supportNote: 'Ne poți scrie și din joc: Profil → Contactează-ne.',

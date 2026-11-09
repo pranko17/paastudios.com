@@ -582,7 +582,8 @@ width: auto;
 height: 48px;
 }
 .soon {
-display: inline-flex;
+display: flex;
+width: fit-content;
 align-items: center;
 gap: 10px;
 margin: 28px 0 0;
@@ -970,14 +971,6 @@ box-shadow:
 14px 0 0 color-mix(in srgb, var(--accent) 60%, transparent),
 28px 0 0 color-mix(in srgb, var(--accent) 30%, transparent);
 }
-.frame-stitch .feature::before {
-width: 46px;
-height: 3px;
-margin-block: 4px 23px;
-border-radius: 2px;
-background: repeating-linear-gradient(90deg, var(--accent) 0 8px, transparent 8px 13px);
-box-shadow: none;
-}
 .support-card {
 position: relative;
 display: grid;
@@ -993,7 +986,7 @@ background: var(--surface);
 content: "";
 position: absolute;
 inset: 10px;
-border: 2px dashed color-mix(in srgb, var(--accent) 30%, transparent);
+border: 2px dashed var(--stitch, color-mix(in srgb, var(--accent) 30%, transparent));
 border-radius: calc(var(--radius-lg) - 10px);
 pointer-events: none;
 }
@@ -1081,6 +1074,75 @@ color: var(--accent);
 inset: 7px;
 border-radius: calc(var(--radius) - 7px);
 }
+.banner {
+margin-block: 0;
+}
+.banner img {
+width: 100%;
+border-radius: var(--radius);
+}
+.game-page.frame-stitch,
+.doc-page.frame-stitch {
+background:
+radial-gradient(1100px 620px at 88% -8%, var(--glow), transparent 62%),
+radial-gradient(900px 560px at -12% 18%, var(--glow2), transparent 60%),
+repeating-linear-gradient(0deg, color-mix(in srgb, var(--muted) 7%, transparent) 0 1px, transparent 1px 4px),
+repeating-linear-gradient(90deg, color-mix(in srgb, var(--muted) 5%, transparent) 0 1px, transparent 1px 3px),
+var(--bg);
+background-repeat: no-repeat, no-repeat, repeat, repeat;
+}
+.game-page.frame-stitch :is(.feature, .steps li, .tips li, .support-card, .banner) {
+position: relative;
+border-color: transparent;
+background: var(--surface);
+box-shadow:
+0 1px 2px color-mix(in srgb, var(--text) 8%, transparent),
+0 14px 28px -20px color-mix(in srgb, var(--text) 50%, transparent);
+}
+.game-page.frame-stitch :is(.feature, .steps li, .tips li, .banner)::after {
+content: "";
+position: absolute;
+inset: 7px;
+border: 2px dashed var(--stitch);
+border-radius: calc(var(--radius) - 7px);
+pointer-events: none;
+}
+.game-page.frame-stitch .steps li {
+padding: 18px 24px 18px 18px;
+}
+.game-page.frame-stitch .steps li::before {
+border-radius: 50%;
+outline: 1.5px dashed color-mix(in srgb, var(--accent-text) 70%, transparent);
+outline-offset: -5px;
+}
+.game-page.frame-stitch .tips li::before {
+border-radius: 50%;
+}
+.game-page.frame-stitch :is(.section-head h2, .rules h2, .support-card h2, .feature)::before {
+content: "";
+display: block;
+width: 54px;
+height: 14px;
+margin-bottom: 14px;
+border-radius: 0;
+box-shadow: none;
+background: linear-gradient(90deg, var(--thread-1) 0 33.4%, var(--thread-2) 33.4% 66.6%, var(--thread-3) 66.6%);
+-webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 16'%3E%3Cpath d='M3 3l10 10M13 3 3 13M25 3l10 10M35 3 25 13M47 3l10 10M57 3 47 13' stroke='%23000' stroke-width='2.8' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
+mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 16'%3E%3Cpath d='M3 3l10 10M13 3 3 13M25 3l10 10M35 3 25 13M47 3l10 10M57 3 47 13' stroke='%23000' stroke-width='2.8' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.game-page.frame-stitch .feature::before {
+margin-bottom: 18px;
+}
+.game-page.frame-stitch .banner {
+padding: 14px;
+border-radius: var(--radius-lg);
+}
+.game-page.frame-stitch .banner::after {
+border-radius: calc(var(--radius-lg) - 7px);
+}
+.game-page.frame-stitch .banner img {
+border-radius: calc(var(--radius-lg) - 14px);
+}
 .doc {
 max-width: 760px;
 margin-inline: auto;
@@ -1147,6 +1209,19 @@ font-size: 16px;
 .feature-grid {
 grid-template-columns: 1fr;
 }
+.banner img {
+aspect-ratio: 2 / 1;
+object-fit: cover;
+}
+.game-page.frame-stitch .banner {
+padding: 10px;
+}
+.game-page.frame-stitch .banner::after {
+inset: 5px;
+}
+.game-page.frame-stitch .banner img {
+border-radius: calc(var(--radius-lg) - 10px);
+}
 .site-nav a {
 padding: 8px 10px;
 }
@@ -1193,10 +1268,11 @@ transition: none !important;
 }
 }
 </style>
+<meta name="apple-itunes-app" content="app-id=6822948115">
 <meta name="theme-color" content="#F2ECE0">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"MobileApplication","name":"Stitch Tales","description":"读出每行每列旁的数字，填对格子——每解开一道数织，它就会绣进你绣绷上的场景。","url":"https://paastudios.com/stitch-tales/zh-hans/","image":"https://paastudios.com/stitch-tales/images/icon.webp","inLanguage":"zh-Hans","applicationCategory":"GameApplication","applicationSubCategory":"十字绣数织谜题","operatingSystem":"iOS, Android","author":{"@type":"Organization","name":"PAA Studios","url":"https://paastudios.com"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"keywords":"数织, 数织谜题, nonogram, picross, 十字绣, 十字绣游戏, 刺绣, 逻辑谜题, 像素画谜题, 益智游戏, 烧脑游戏, 游戏, 手机游戏, 免费游戏, 离线游戏"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"MobileApplication","name":"Stitch Tales","description":"读出每行每列旁的数字，填对格子——每解开一道数织，它就会绣进你绣绷上的场景。","url":"https://paastudios.com/stitch-tales/zh-hans/","image":"https://paastudios.com/stitch-tales/images/icon.webp","inLanguage":"zh-Hans","applicationCategory":"GameApplication","applicationSubCategory":"十字绣数织谜题","operatingSystem":"iOS, Android","author":{"@type":"Organization","name":"PAA Studios","url":"https://paastudios.com"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"keywords":"数织, 数织谜题, nonogram, picross, 十字绣, 十字绣游戏, 刺绣, 逻辑谜题, 像素画谜题, 益智游戏, 烧脑游戏, 游戏, 手机游戏, 免费游戏, 离线游戏","screenshot":["https://paastudios.com/stitch-tales/images/screen-1.webp","https://paastudios.com/stitch-tales/images/screen-2.webp","https://paastudios.com/stitch-tales/images/screen-3.webp","https://paastudios.com/stitch-tales/images/screen-4.webp","https://paastudios.com/stitch-tales/images/screen-5.webp","https://paastudios.com/stitch-tales/images/screen-6.webp"],"sameAs":["https://apps.apple.com/app/id6822948115"]}</script>
 </head>
-<body class="game-page frame-stitch" data-scheme="light" style="--bg:#F2ECE0;--surface:#FBF8F2;--surface2:#E7DFCF;--line:#D3C6AE;--text:#2A231C;--muted:#5F5444;--accent:#B3263A;--accent-text:#FFFFFF;--glow:rgba(179, 38, 58, 0.12);--glow2:rgba(46, 122, 82, 0.12)">
+<body class="game-page frame-stitch" data-scheme="light" style="--bg:#F2ECE0;--surface:#FBF8F2;--surface2:#E7DFCF;--line:#D3C6AE;--text:#2A231C;--muted:#5F5444;--accent:#B3263A;--accent-text:#FFFFFF;--glow:rgba(179, 38, 58, 0.12);--glow2:rgba(46, 122, 82, 0.12);--stitch:#E7B7BE;--thread-1:#B3263A;--thread-2:#2E7A52;--thread-3:#C9A06A">
 <a class="skip" href="#main">跳到正文</a>
 <header class="site-header wrap">
   <a class="brand" href="/zh-hans/"><img src="/assets/logo.svg" width="34" height="34" alt=""><span>PAA Studios</span></a>
@@ -1253,40 +1329,66 @@ transition: none !important;
     <h1>Stitch Tales</h1>
     <p class="tagline">每道谜题，都是大图里的一针。</p>
     <p class="lead">读出每行每列旁的数字，填对格子——每解开一道数织，它就会绣进你绣绷上的场景。</p>
-    <p class="soon">即将登陆 App Store 和 Google Play</p>
-    <p class="platforms">可在 iPhone、iPad 和 Android 上免费畅玩</p>
+    <div class="stores"><a class="store" href="https://apps.apple.com/app/id6822948115?pt=129254796&amp;ct=stitch-tales-zh-hans&amp;mt=8"><img src="/assets/badges/app-store.svg" width="144" height="48" alt="在 App Store 下载 Stitch Tales"></a></div><p class="soon">即将登陆 Google Play</p>
+    <p class="platforms">支持 iPhone、iPad 和 Android</p>
   </div>
-  <div class="game-hero-art"><img class="art-image" src="/stitch-tales/images/hoop.svg" width="600" height="620" alt="绣绷上绣着一片花草地：蝴蝶、太阳、花朵，还有一朵尚未绣上的蘑菇" loading="eager" decoding="async"></div>
+  <div class="game-hero-art"><div class="phones"><figure class="device phone-left"><img src="/stitch-tales/images/screen-1.webp" srcset="/stitch-tales/images/screen-1-360.webp 360w, /stitch-tales/images/screen-1.webp 600w" sizes="(max-width: 560px) 40vw, 210px" width="600" height="1304" alt="数织上渐渐成形的猫头鹰，空格里标着叉号" loading="eager" decoding="async"></figure><figure class="device phone-right"><img src="/stitch-tales/images/screen-3.webp" srcset="/stitch-tales/images/screen-3-360.webp 360w, /stitch-tales/images/screen-3.webp 600w" sizes="(max-width: 560px) 40vw, 210px" width="600" height="1304" alt="“窗边的猫”场景特写：燕子、蝴蝶、猫咪和毛线球" loading="eager" decoding="async"></figure><figure class="device phone-center"><img src="/stitch-tales/images/screen-2.webp" srcset="/stitch-tales/images/screen-2-360.webp 360w, /stitch-tales/images/screen-2.webp 600w" sizes="(max-width: 560px) 40vw, 210px" width="600" height="1304" alt="绣绷里的“十二星座”场景，一个图案接一个图案地绣成" loading="eager" decoding="async"></figure></div></div>
 </section>
+
+<figure class="banner wrap"><img src="/stitch-tales/images/banner.webp" srcset="/stitch-tales/images/banner-720.webp 720w, /stitch-tales/images/banner-1280.webp 1280w, /stitch-tales/images/banner.webp 2240w" sizes="(max-width: 600px) 108vw, (max-width: 1184px) 92vw, 1120px" width="2240" height="960" alt="渐渐化作刺绣的数织拼布：章鱼和小丑鱼、巨嘴鸟、鸟居、燕子、狐狸、圣诞树等等" loading="lazy" decoding="async"></figure>
 
 <section class="block wrap rules" aria-labelledby="rules-title">
   <div>
     <h2 id="rules-title">玩法说明</h2>
-    
+    <p class="rules-intro">Stitch Tales 以数织为基础。数织是一种图画逻辑谜题，又称 Nonogram、图案逻辑或像素逻辑谜题。行左侧和列上方的数字会告诉你该填哪些格子；填对了，隐藏的图画就会浮现——在这里，它是绣进你绣绷场景里的一个图案。</p>
     <ol class="steps">
-      <li>每行每列旁的数字，依次表示要连续填满的格子数。</li>
-      <li>该填的格子就绣上，该空着的格子标上叉号。</li>
-      <li>小心——绣错一格，就会失去一颗刺绣爱心，也就是一点生命。</li>
+      <li>行或列旁边的数字告诉你要连续绣几格，以及它们的先后顺序。</li>
+      <li>两组之间至少隔着一个空格——用叉号把它标出来。</li>
+      <li>手指一划，绣线就跟着穿过格子。</li>
+      <li>绣错一针会失去三条生命中的一条，所以慢慢来。</li>
       <li>解开整个网格，图案就会绣进绣绷上的场景。</li>
     </ol>
-    
+    <ul class="rule-notes">
+      <li>列上方的数字从上往下读，行左侧的数字从左往右读。</li>
+      <li>在刺绣样布里，每个数字都有自己的线色：不同颜色的组可以紧挨着，同色的组之间则至少隔一个空格。</li>
+      <li>第一个图案会带你走一遍所有规则。</li>
+    </ul>
   </div>
   <figure class="rules-art"><img src="/stitch-tales/images/nonogram.svg" width="474" height="410" alt="一道快要解开的猫咪数织：石榴红的已绣格子，空格里标着叉号" loading="lazy" decoding="async"></figure>
 </section>
 
+<section class="block wrap" aria-labelledby="tips-title">
+  <div class="section-head"><h2 id="tips-title">解题技巧</h2></div>
+  <ol class="tips">
+    <li>先从数字最满的线入手：把各组的长度加起来，组与组之间再各加一个空格。总和等于这条线的长度，整条线就解开了；只差一两格的话，较长的组里已经有能确定要绣的格子。</li>
+    <li>把一组先推到一端，再推到另一端：两次都盖住的格子一定要绣。在 10 格长的线上，7 总会填满中间四格。</li>
+    <li>紧贴盘面边缘的已绣格子，就是第一组的开头：从那里把整组绣完，再在它后面标上叉号。</li>
+    <li>一条线解开后，它的空格都会标上叉号——每个叉号也在告诉与它相交的线：组不能经过这一格。</li>
+    <li>别靠猜：绣错一针就会失去一条生命。如果一条线上还没有能确定的格子，就先解与它相交的线，再回来看它。</li>
+  </ol>
+</section>
 
-
-
+<section class="block gallery" aria-labelledby="gallery-title">
+  <div class="wrap section-head"><h2 id="gallery-title">近距离看看</h2></div>
+  <div class="shots" tabindex="0" aria-label="屏幕截图">
+    <figure class="device shot"><img src="/stitch-tales/images/screen-1.webp" srcset="/stitch-tales/images/screen-1-360.webp 360w, /stitch-tales/images/screen-1.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="数织上渐渐成形的猫头鹰，空格里标着叉号" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-2.webp" srcset="/stitch-tales/images/screen-2-360.webp 360w, /stitch-tales/images/screen-2.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="绣绷里的“十二星座”场景，一个图案接一个图案地绣成" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-3.webp" srcset="/stitch-tales/images/screen-3-360.webp 360w, /stitch-tales/images/screen-3.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="“窗边的猫”场景特写：燕子、蝴蝶、猫咪和毛线球" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-4.webp" srcset="/stitch-tales/images/screen-4-360.webp 360w, /stitch-tales/images/screen-4.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="日历：每天一幅小刺绣，整个月的大图案是一只刺猬" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-5.webp" srcset="/stitch-tales/images/screen-5-360.webp 360w, /stitch-tales/images/screen-5.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="色彩缤纷的民间纹样，绣不完的刺绣样布" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-6.webp" srcset="/stitch-tales/images/screen-6-360.webp 360w, /stitch-tales/images/screen-6.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="绣好的绣绷收藏" loading="lazy" decoding="async"></figure>
+  </div>
+</section>
 
 <section class="block wrap" aria-labelledby="features-title">
   <div class="section-head"><h2 id="features-title">游戏内容</h2></div>
   <div class="feature-grid">
-    <div class="feature"><h3>等你来绣的场景</h3><p>花草地、巨石阵、水果野餐、太阳系、日式庭园、娃娃屋、冬日村庄、海底世界……还有更多。</p></div>
-    <div class="feature"><h3>真正的刺绣针法</h3><p>缎面绣、锁链绣、鱼骨绣和法式结粒绣——每个图案都用自己的绣线和质感绣成。</p></div>
-    <div class="feature"><h3>无尽的刺绣样布</h3><p>绣完第一个场景，就会解锁一块民间图案的刺绣样布——上面的图案永无止境。</p></div>
-    <div class="feature"><h3>卡住时有提示</h3><p>揭开一格或一整条线，然后继续刺绣。</p></div>
-    <div class="feature"><h3>每天一份礼物</h3><p>每天回来领取奖励，连续天数越长，奖励越丰厚。</p></div>
-    <div class="feature"><h3>看着舒服</h3><p>柔和的亚麻色调，轻柔的刺绣声，无需账号，无需联网。</p></div>
+    <div class="feature"><h3>一个又一个绣绷</h3><p>窗边的猫、彩窗飞鸟、冬日村庄、阿斯加德神殿、狂野西部，还有更多。每个绣完的绣绷都会收进你的收藏。</p></div>
+    <div class="feature"><h3>栩栩如生的刺绣</h3><p>每个图案都有自己的绣线和针法，亚麻布上有柔和的阴影，还有针与绣绷轻柔的声响。</p></div>
+    <div class="feature"><h3>每日刺绣日历</h3><p>每天都有一幅小刺绣等着你。绣完整个月，就能打开当月的大图案——错过的日子也会等你。</p></div>
+    <div class="feature"><h3>无尽的刺绣样布</h3><p>绣完第一个场景，就会解锁一块民间纹样的刺绣样布：用两三种颜色的线解彩色数织，纹样永远不会用完。</p></div>
+    <div class="feature"><h3>卡住时的提示</h3><p>揭开一格、揭开一条线或随机揭开 10 格——顶针还能替你挡下下一次失误。</p></div>
+    <div class="feature"><h3>没有计时器，不必着急</h3><p>每天一份礼物，iPhone 和 iPad 上有 Game Center 成就和排行榜，不联网也能玩。</p></div>
   </div>
 </section>
 

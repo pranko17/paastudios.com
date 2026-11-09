@@ -18,6 +18,7 @@ export default {
     storeGooglePlay: 'på Google Play',
     and: 'og',
     freeOn: 'Gratis til {platforms}',
+    madeFor: 'Til {platforms}',
     howToPlay: 'Sådan spiller du',
     tips: 'Tips til at løse',
     faq: 'Spørgsmål og svar',
@@ -194,41 +195,74 @@ export default {
         'spil uden internet',
       ],
       art: {
+        alts: [
+          'En ugle tager form på et nonogram med kryds i de tomme felter',
+          'Scenen »Dyrekredsen« i broderiringen, broderet figur for figur',
+          'Scenen »Kat i vinduet« tæt på: svaler, en sommerfugl, en kat og et garnnøgle',
+        ],
+      },
+      cardArt: {
         alt: 'En broderiring med en broderet blomstereng: en sommerfugl, en sol, blomster og en fluesvamp, der endnu ikke er broderet',
       },
+      banner: {
+        alt: 'Et kludetæppe af nonogrammer, der bliver til broderi: en blæksprutte med klovnfisk, en tukan, en torii-port, svaler, en ræv, et juletræ og mere til',
+      },
       rules: {
+        intro:
+          'Stitch Tales bygger på nonogrammer, logiske billedopgaver, der også er kendt som griddlers, hanjie eller japanske krydsord. Tallene ved rækkerne og over kolonnerne viser, hvilke felter du skal udfylde; udfylder du de rigtige, kommer et skjult billede frem – her en figur, der bliver broderet ind i scenen i din broderiring.',
         steps: [
-          'Tallene ved hver række og kolonne angiver i rækkefølge grupperne af udfyldte felter.',
-          'Brodér de felter, der skal udfyldes; markér dem, der skal forblive tomme, med et kryds.',
-          'Pas på – et forkert sting koster et liv, et af dine broderede hjerter.',
+          'Tallene ved en række eller over en kolonne viser, hvor mange felter i træk der skal broderes, og i hvilken rækkefølge.',
+          'Mellem to stykker er der altid mindst ét tomt felt – markér det med et kryds.',
+          'Stryg med fingeren, så følger tråden med hen over felterne.',
+          'Et forkert sting koster et af dine tre liv, så tag dig god tid.',
           'Løs gitteret, så bliver figuren broderet ind i scenen i din broderiring.',
+        ],
+        notes: [
+          'Tallene over en kolonne læses oppefra og ned, og tallene ved en række fra venstre mod højre.',
+          'På navnekluden har hvert tal sin egen garnfarve: stykker i forskellige farver må røre hinanden, mens stykker i samme farve skal have et tomt felt imellem.',
+          'Din første figur guider dig gennem alle reglerne.',
+        ],
+        tips: [
+          'Begynd med de mest fyldte linjer: læg stykkerne sammen med ét tomt felt imellem hvert. Er summen lig med linjens længde, er hele linjen løst; mangler der kun et felt eller to, har de længere stykker allerede felter, du kan være sikker på.',
+          'Skub et stykke så langt som muligt mod den ene ende og derefter mod den anden: de felter, det dækker begge gange, er altid broderet. Et 7-tal i en linje på 10 fylder altid de fire midterste.',
+          'Et sting helt ude ved kanten af gitteret er begyndelsen på det første stykke: brodér hele stykket derfra, og sæt et kryds efter det.',
+          'Når en linje er løst, får dens tomme felter kryds – og hvert kryds viser de tværgående linjer, hvor et stykke ikke kan ligge.',
+          'Gæt ikke: et forkert sting koster et liv. Er der endnu intet sikkert i en linje, så vend tilbage til den efter de linjer, der krydser den.',
         ],
         alt: 'Et næsten løst nonogram med en kat: granatrøde broderede felter, kryds i de tomme',
       },
+      screenshots: [
+        'En ugle tager form på et nonogram med kryds i de tomme felter',
+        'Scenen »Dyrekredsen« i broderiringen, broderet figur for figur',
+        'Scenen »Kat i vinduet« tæt på: svaler, en sommerfugl, en kat og et garnnøgle',
+        'Kalenderen: et lille broderi for hver dag og et pindsvin for hele måneden',
+        'Den endeløse navneklud med farverige folkemønstre',
+        'Samlingen af færdige broderiringe',
+      ],
       features: [
         {
-          title: 'Scener at brodere',
-          text: 'En blomstereng, Stonehenge, en frugtpicnic, solsystemet, en japansk have, et dukkehus, en vinterlandsby, havbunden – og mere til.',
+          title: 'Broderiring efter broderiring',
+          text: 'En kat i vinduet, fugle i glasmosaik, en vinterlandsby, Asgårds haller, det vilde vesten og mange flere. Hver færdig broderiring får sin plads i din samling.',
         },
         {
-          title: 'Ægte broderisting',
-          text: 'Fladsting, kædesting, fiskebenssting og franske knuder – hver figur er syet med sit eget garn og sin egen struktur.',
+          title: 'Broderi, der føles ægte',
+          text: 'Hver figur har sit eget garn og sine egne sting, bløde skygger på hørlærredet og de stille lyde af nål og broderiring.',
+        },
+        {
+          title: 'En kalender med dagens sting',
+          text: 'Et lille broderi venter hver dag. Brodér hele måneden, så låses månedens store figur op – de dage, du er gået glip af, venter på dig.',
         },
         {
           title: 'En endeløs navneklud',
-          text: 'Efter din første scene åbner en navneklud med traditionelle mønstre – og dens mønstre slipper aldrig op.',
+          text: 'Efter din første færdige scene åbner en navneklud med folkelige motiver: farvede nonogrammer i to eller tre slags garn, der aldrig slipper op.',
         },
         {
-          title: 'Hints, når du sidder fast',
-          text: 'Afslør et enkelt felt eller en hel linje, og brodér videre.',
+          title: 'Hints til de svære øjeblikke',
+          text: 'Afslør et felt, en hel linje eller 10 tilfældige felter – og et fingerbøl redder dig fra din næste fejl.',
         },
         {
-          title: 'En gave hver dag',
-          text: 'Kom tilbage hver dag efter en belønning, der vokser med din serie.',
-        },
-        {
-          title: 'Skånsomt for øjnene',
-          text: 'Bløde hørfarver, stille broderilyde, ingen konto og intet internet nødvendigt.',
+          title: 'Uden tidtagning, uden hast',
+          text: 'En gave hver dag, Game Center-præstationer og ranglister på iPhone og iPad, og du behøver ikke internet for at spille.',
         },
       ],
       supportNote: 'Du kan også kontakte os fra spillet under Profil → Kontakt os.',

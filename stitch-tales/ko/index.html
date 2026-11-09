@@ -582,7 +582,8 @@ width: auto;
 height: 48px;
 }
 .soon {
-display: inline-flex;
+display: flex;
+width: fit-content;
 align-items: center;
 gap: 10px;
 margin: 28px 0 0;
@@ -970,14 +971,6 @@ box-shadow:
 14px 0 0 color-mix(in srgb, var(--accent) 60%, transparent),
 28px 0 0 color-mix(in srgb, var(--accent) 30%, transparent);
 }
-.frame-stitch .feature::before {
-width: 46px;
-height: 3px;
-margin-block: 4px 23px;
-border-radius: 2px;
-background: repeating-linear-gradient(90deg, var(--accent) 0 8px, transparent 8px 13px);
-box-shadow: none;
-}
 .support-card {
 position: relative;
 display: grid;
@@ -993,7 +986,7 @@ background: var(--surface);
 content: "";
 position: absolute;
 inset: 10px;
-border: 2px dashed color-mix(in srgb, var(--accent) 30%, transparent);
+border: 2px dashed var(--stitch, color-mix(in srgb, var(--accent) 30%, transparent));
 border-radius: calc(var(--radius-lg) - 10px);
 pointer-events: none;
 }
@@ -1081,6 +1074,75 @@ color: var(--accent);
 inset: 7px;
 border-radius: calc(var(--radius) - 7px);
 }
+.banner {
+margin-block: 0;
+}
+.banner img {
+width: 100%;
+border-radius: var(--radius);
+}
+.game-page.frame-stitch,
+.doc-page.frame-stitch {
+background:
+radial-gradient(1100px 620px at 88% -8%, var(--glow), transparent 62%),
+radial-gradient(900px 560px at -12% 18%, var(--glow2), transparent 60%),
+repeating-linear-gradient(0deg, color-mix(in srgb, var(--muted) 7%, transparent) 0 1px, transparent 1px 4px),
+repeating-linear-gradient(90deg, color-mix(in srgb, var(--muted) 5%, transparent) 0 1px, transparent 1px 3px),
+var(--bg);
+background-repeat: no-repeat, no-repeat, repeat, repeat;
+}
+.game-page.frame-stitch :is(.feature, .steps li, .tips li, .support-card, .banner) {
+position: relative;
+border-color: transparent;
+background: var(--surface);
+box-shadow:
+0 1px 2px color-mix(in srgb, var(--text) 8%, transparent),
+0 14px 28px -20px color-mix(in srgb, var(--text) 50%, transparent);
+}
+.game-page.frame-stitch :is(.feature, .steps li, .tips li, .banner)::after {
+content: "";
+position: absolute;
+inset: 7px;
+border: 2px dashed var(--stitch);
+border-radius: calc(var(--radius) - 7px);
+pointer-events: none;
+}
+.game-page.frame-stitch .steps li {
+padding: 18px 24px 18px 18px;
+}
+.game-page.frame-stitch .steps li::before {
+border-radius: 50%;
+outline: 1.5px dashed color-mix(in srgb, var(--accent-text) 70%, transparent);
+outline-offset: -5px;
+}
+.game-page.frame-stitch .tips li::before {
+border-radius: 50%;
+}
+.game-page.frame-stitch :is(.section-head h2, .rules h2, .support-card h2, .feature)::before {
+content: "";
+display: block;
+width: 54px;
+height: 14px;
+margin-bottom: 14px;
+border-radius: 0;
+box-shadow: none;
+background: linear-gradient(90deg, var(--thread-1) 0 33.4%, var(--thread-2) 33.4% 66.6%, var(--thread-3) 66.6%);
+-webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 16'%3E%3Cpath d='M3 3l10 10M13 3 3 13M25 3l10 10M35 3 25 13M47 3l10 10M57 3 47 13' stroke='%23000' stroke-width='2.8' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
+mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 16'%3E%3Cpath d='M3 3l10 10M13 3 3 13M25 3l10 10M35 3 25 13M47 3l10 10M57 3 47 13' stroke='%23000' stroke-width='2.8' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.game-page.frame-stitch .feature::before {
+margin-bottom: 18px;
+}
+.game-page.frame-stitch .banner {
+padding: 14px;
+border-radius: var(--radius-lg);
+}
+.game-page.frame-stitch .banner::after {
+border-radius: calc(var(--radius-lg) - 7px);
+}
+.game-page.frame-stitch .banner img {
+border-radius: calc(var(--radius-lg) - 14px);
+}
 .doc {
 max-width: 760px;
 margin-inline: auto;
@@ -1147,6 +1209,19 @@ font-size: 16px;
 .feature-grid {
 grid-template-columns: 1fr;
 }
+.banner img {
+aspect-ratio: 2 / 1;
+object-fit: cover;
+}
+.game-page.frame-stitch .banner {
+padding: 10px;
+}
+.game-page.frame-stitch .banner::after {
+inset: 5px;
+}
+.game-page.frame-stitch .banner img {
+border-radius: calc(var(--radius-lg) - 10px);
+}
 .site-nav a {
 padding: 8px 10px;
 }
@@ -1193,10 +1268,11 @@ transition: none !important;
 }
 }
 </style>
+<meta name="apple-itunes-app" content="app-id=6822948115">
 <meta name="theme-color" content="#F2ECE0">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"MobileApplication","name":"Stitch Tales","description":"가로줄과 세로줄의 숫자를 읽고 알맞은 칸을 채우세요. 네모로직을 하나 풀 때마다 수틀 속 장면에 그림이 하나씩 수놓아집니다.","url":"https://paastudios.com/stitch-tales/ko/","image":"https://paastudios.com/stitch-tales/images/icon.webp","inLanguage":"ko","applicationCategory":"GameApplication","applicationSubCategory":"십자수 네모로직","operatingSystem":"iOS, Android","author":{"@type":"Organization","name":"PAA Studios","url":"https://paastudios.com"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"keywords":"네모로직, 노노그램, nonogram, 피크로스, picross, 로직 퍼즐, 십자수, 자수, 논리 퍼즐, 픽셀 아트 퍼즐, 두뇌 게임, 게임, 모바일 게임, 퍼즐 게임, 무료 게임, 오프라인 게임"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"MobileApplication","name":"Stitch Tales","description":"가로줄과 세로줄의 숫자를 읽고 알맞은 칸을 채우세요. 네모로직을 하나 풀 때마다 수틀 속 장면에 그림이 하나씩 수놓아집니다.","url":"https://paastudios.com/stitch-tales/ko/","image":"https://paastudios.com/stitch-tales/images/icon.webp","inLanguage":"ko","applicationCategory":"GameApplication","applicationSubCategory":"십자수 네모로직","operatingSystem":"iOS, Android","author":{"@type":"Organization","name":"PAA Studios","url":"https://paastudios.com"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"keywords":"네모로직, 노노그램, nonogram, 피크로스, picross, 로직 퍼즐, 십자수, 자수, 논리 퍼즐, 픽셀 아트 퍼즐, 두뇌 게임, 게임, 모바일 게임, 퍼즐 게임, 무료 게임, 오프라인 게임","screenshot":["https://paastudios.com/stitch-tales/images/screen-1.webp","https://paastudios.com/stitch-tales/images/screen-2.webp","https://paastudios.com/stitch-tales/images/screen-3.webp","https://paastudios.com/stitch-tales/images/screen-4.webp","https://paastudios.com/stitch-tales/images/screen-5.webp","https://paastudios.com/stitch-tales/images/screen-6.webp"],"sameAs":["https://apps.apple.com/app/id6822948115"]}</script>
 </head>
-<body class="game-page frame-stitch" data-scheme="light" style="--bg:#F2ECE0;--surface:#FBF8F2;--surface2:#E7DFCF;--line:#D3C6AE;--text:#2A231C;--muted:#5F5444;--accent:#B3263A;--accent-text:#FFFFFF;--glow:rgba(179, 38, 58, 0.12);--glow2:rgba(46, 122, 82, 0.12)">
+<body class="game-page frame-stitch" data-scheme="light" style="--bg:#F2ECE0;--surface:#FBF8F2;--surface2:#E7DFCF;--line:#D3C6AE;--text:#2A231C;--muted:#5F5444;--accent:#B3263A;--accent-text:#FFFFFF;--glow:rgba(179, 38, 58, 0.12);--glow2:rgba(46, 122, 82, 0.12);--stitch:#E7B7BE;--thread-1:#B3263A;--thread-2:#2E7A52;--thread-3:#C9A06A">
 <a class="skip" href="#main">본문으로 건너뛰기</a>
 <header class="site-header wrap">
   <a class="brand" href="/ko/"><img src="/assets/logo.svg" width="34" height="34" alt=""><span>PAA Studios</span></a>
@@ -1253,40 +1329,66 @@ transition: none !important;
     <h1>Stitch Tales</h1>
     <p class="tagline">퍼즐 하나하나가 큰 그림의 한 땀이 됩니다.</p>
     <p class="lead">가로줄과 세로줄의 숫자를 읽고 알맞은 칸을 채우세요. 네모로직을 하나 풀 때마다 수틀 속 장면에 그림이 하나씩 수놓아집니다.</p>
-    <p class="soon">곧 App Store 및 Google Play에 출시됩니다</p>
-    <p class="platforms">iPhone, iPad, Android에서 무료</p>
+    <div class="stores"><a class="store" href="https://apps.apple.com/app/id6822948115?pt=129254796&amp;ct=stitch-tales-ko&amp;mt=8"><img src="/assets/badges/app-store.svg" width="144" height="48" alt="App Store에서 Stitch Tales 다운로드"></a></div><p class="soon">곧 Google Play에 출시됩니다</p>
+    <p class="platforms">iPhone, iPad, Android 지원</p>
   </div>
-  <div class="game-hero-art"><img class="art-image" src="/stitch-tales/images/hoop.svg" width="600" height="620" alt="꽃밭을 수놓은 수틀: 나비, 해, 꽃들, 그리고 아직 수놓지 않은 버섯" loading="eager" decoding="async"></div>
+  <div class="game-hero-art"><div class="phones"><figure class="device phone-left"><img src="/stitch-tales/images/screen-1.webp" srcset="/stitch-tales/images/screen-1-360.webp 360w, /stitch-tales/images/screen-1.webp 600w" sizes="(max-width: 560px) 40vw, 210px" width="600" height="1304" alt="네모로직 위에 모습을 드러내는 부엉이와 빈칸의 엑스 표시" loading="eager" decoding="async"></figure><figure class="device phone-right"><img src="/stitch-tales/images/screen-3.webp" srcset="/stitch-tales/images/screen-3-360.webp 360w, /stitch-tales/images/screen-3.webp 600w" sizes="(max-width: 560px) 40vw, 210px" width="600" height="1304" alt="‘창가의 고양이’ 장면 확대: 제비, 나비, 고양이, 털실 뭉치" loading="eager" decoding="async"></figure><figure class="device phone-center"><img src="/stitch-tales/images/screen-2.webp" srcset="/stitch-tales/images/screen-2-360.webp 360w, /stitch-tales/images/screen-2.webp 600w" sizes="(max-width: 560px) 40vw, 210px" width="600" height="1304" alt="그림 하나씩 수놓아 가는 수틀 속 ‘황도 12궁’ 장면" loading="eager" decoding="async"></figure></div></div>
 </section>
+
+<figure class="banner wrap"><img src="/stitch-tales/images/banner.webp" srcset="/stitch-tales/images/banner-720.webp 720w, /stitch-tales/images/banner-1280.webp 1280w, /stitch-tales/images/banner.webp 2240w" sizes="(max-width: 600px) 108vw, (max-width: 1184px) 92vw, 1120px" width="2240" height="960" alt="자수로 변해 가는 네모로직 조각보: 흰동가리와 문어, 큰부리새, 도리이, 제비, 여우, 크리스마스트리 등" loading="lazy" decoding="async"></figure>
 
 <section class="block wrap rules" aria-labelledby="rules-title">
   <div>
     <h2 id="rules-title">게임 방법</h2>
-    
+    <p class="rules-intro">Stitch Tales는 네모로직을 바탕으로 만들었습니다. 노노그램, 네모네모로직이라고도 부르는 그림 논리 퍼즐입니다. 가로줄 옆과 세로줄 위의 숫자가 어떤 칸을 채울지 알려 줍니다. 알맞은 칸을 채우면 숨은 그림이 나타나는데, 이 게임에서는 그 그림이 수틀 속 장면에 수놓아집니다.</p>
     <ol class="steps">
-      <li>가로줄과 세로줄 옆의 숫자는 연속으로 채울 칸의 수를 순서대로 나타냅니다.</li>
-      <li>채워야 할 칸은 스티치로 수놓고, 비워 둘 칸은 엑스로 표시하세요.</li>
-      <li>조심하세요. 한 칸이라도 잘못 수놓으면 수놓은 하트, 즉 목숨이 하나 줄어요.</li>
-      <li>격자를 다 풀면 그 그림이 수틀 속 장면에 수놓아집니다.</li>
+      <li>가로줄 옆이나 세로줄 위의 숫자는 연속으로 몇 칸을 수놓을지, 어떤 순서인지 알려 줘요.</li>
+      <li>두 묶음 사이에는 항상 빈칸이 하나 이상 있어요. 그 칸에는 엑스를 표시하세요.</li>
+      <li>손가락으로 쭉 밀면 실이 칸을 따라 지나가요.</li>
+      <li>잘못 수놓으면 목숨 세 개 중 하나를 잃으니 천천히 하세요.</li>
+      <li>격자를 다 풀면 그 그림이 수틀 속 장면에 수놓아져요.</li>
     </ol>
-    
+    <ul class="rule-notes">
+      <li>세로줄 위의 숫자는 위에서 아래로, 가로줄 옆의 숫자는 왼쪽에서 오른쪽으로 읽어요.</li>
+      <li>샘플러에서는 숫자마다 실 색이 정해져 있어요. 색이 다른 묶음은 서로 붙어도 되지만, 같은 색 묶음 사이에는 빈칸이 꼭 있어야 해요.</li>
+      <li>첫 번째 그림이 모든 규칙을 차근차근 알려 줘요.</li>
+    </ul>
   </div>
   <figure class="rules-art"><img src="/stitch-tales/images/nonogram.svg" width="474" height="410" alt="거의 다 푼 고양이 네모로직: 석류색으로 수놓은 칸과 빈칸의 엑스 표시" loading="lazy" decoding="async"></figure>
 </section>
 
+<section class="block wrap" aria-labelledby="tips-title">
+  <div class="section-head"><h2 id="tips-title">풀이 요령</h2></div>
+  <ol class="tips">
+    <li>숫자가 가장 꽉 찬 줄부터 시작하세요. 묶음 길이를 모두 더하고, 묶음 사이마다 빈칸을 하나씩 더하세요. 합이 줄 길이와 같으면 줄 전체가 풀려요. 한두 칸만 모자라면 긴 묶음에는 이미 확실히 수놓을 칸이 있어요.</li>
+    <li>묶음을 한쪽 끝까지 밀었다가 반대쪽 끝까지 밀어 보세요. 두 번 다 덮이는 칸은 반드시 수놓는 칸이에요. 10칸짜리 줄의 7은 언제나 가운데 네 칸을 채워요.</li>
+    <li>판 맨 가장자리에 수놓인 칸은 첫 묶음의 시작이에요. 거기서부터 묶음 전체를 수놓고 바로 다음 칸에 엑스를 표시하세요.</li>
+    <li>줄이 풀리면 빈칸에 엑스가 표시돼요. 그리고 엑스 하나하나가 그 칸을 지나는 다른 줄에 묶음이 들어갈 수 없는 자리를 알려 줘요.</li>
+    <li>짐작으로 수놓지 마세요. 잘못 수놓으면 목숨을 하나 잃어요. 줄에 아직 확실한 칸이 없다면, 그 줄과 교차하는 줄을 먼저 풀고 다시 돌아오세요.</li>
+  </ol>
+</section>
 
-
-
+<section class="block gallery" aria-labelledby="gallery-title">
+  <div class="wrap section-head"><h2 id="gallery-title">자세히 보기</h2></div>
+  <div class="shots" tabindex="0" aria-label="스크린샷">
+    <figure class="device shot"><img src="/stitch-tales/images/screen-1.webp" srcset="/stitch-tales/images/screen-1-360.webp 360w, /stitch-tales/images/screen-1.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="네모로직 위에 모습을 드러내는 부엉이와 빈칸의 엑스 표시" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-2.webp" srcset="/stitch-tales/images/screen-2-360.webp 360w, /stitch-tales/images/screen-2.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="그림 하나씩 수놓아 가는 수틀 속 ‘황도 12궁’ 장면" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-3.webp" srcset="/stitch-tales/images/screen-3-360.webp 360w, /stitch-tales/images/screen-3.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="‘창가의 고양이’ 장면 확대: 제비, 나비, 고양이, 털실 뭉치" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-4.webp" srcset="/stitch-tales/images/screen-4-360.webp 360w, /stitch-tales/images/screen-4.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="달력: 날마다 작은 자수 하나, 그리고 그 달의 큰 그림인 고슴도치" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-5.webp" srcset="/stitch-tales/images/screen-5-360.webp 360w, /stitch-tales/images/screen-5.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="알록달록한 전통 무늬가 끝없이 이어지는 샘플러" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-6.webp" srcset="/stitch-tales/images/screen-6-360.webp 360w, /stitch-tales/images/screen-6.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="완성한 수틀 컬렉션" loading="lazy" decoding="async"></figure>
+  </div>
+</section>
 
 <section class="block wrap" aria-labelledby="features-title">
   <div class="section-head"><h2 id="features-title">주요 특징</h2></div>
   <div class="feature-grid">
-    <div class="feature"><h3>수놓을 장면</h3><p>꽃밭, 스톤헨지, 과일 피크닉, 태양계, 일본 정원, 인형의 집, 겨울 마을, 바닷속 등 다양한 장면.</p></div>
-    <div class="feature"><h3>진짜 자수 스티치</h3><p>새틴 스티치, 체인 스티치, 피시본 스티치, 프렌치 노트. 그림마다 저마다의 실과 질감으로 수놓아져요.</p></div>
-    <div class="feature"><h3>끝없는 샘플러</h3><p>첫 장면을 완성하면 전통 무늬 샘플러가 열려요. 무늬는 끝없이 이어집니다.</p></div>
-    <div class="feature"><h3>막혔을 땐 힌트</h3><p>칸 하나나 줄 하나를 통째로 열고 계속 수놓으세요.</p></div>
-    <div class="feature"><h3>매일 받는 선물</h3><p>매일 들러 보상을 받으세요. 연속 기록이 길어질수록 보상도 커져요.</p></div>
-    <div class="feature"><h3>눈이 편안한 디자인</h3><p>부드러운 리넨 색감과 잔잔한 바느질 소리. 계정도 인터넷도 필요 없어요.</p></div>
+    <div class="feature"><h3>수틀에 이어 또 수틀</h3><p>창가의 고양이, 스테인드글라스 새, 겨울 마을, 아스가르드의 전당, 서부 개척 시대 그리고 더 많은 장면. 완성한 수틀은 하나하나 컬렉션에 걸려요.</p></div>
+    <div class="feature"><h3>진짜 같은 자수</h3><p>그림마다 다른 실과 스티치, 리넨 위의 부드러운 그림자, 바늘과 수틀의 잔잔한 소리.</p></div>
+    <div class="feature"><h3>오늘의 자수 달력</h3><p>날마다 작은 자수가 기다려요. 한 달을 모두 수놓으면 그 달의 큰 그림이 열려요. 놓친 날도 기다려 줘요.</p></div>
+    <div class="feature"><h3>끝없는 샘플러</h3><p>첫 장면을 완성하면 전통 무늬 샘플러가 열려요. 두세 가지 색 실로 푸는 컬러 네모로직으로, 무늬는 결코 끝나지 않아요.</p></div>
+    <div class="feature"><h3>막힐 때 쓰는 힌트</h3><p>칸 열기, 줄 열기, 무작위 10칸 열기. 골무는 다음 실수를 막아 줘요.</p></div>
+    <div class="feature"><h3>타이머 없이 느긋하게</h3><p>매일 받는 선물, iPhone과 iPad의 Game Center 업적과 리더보드. 인터넷 없이도 즐길 수 있어요.</p></div>
   </div>
 </section>
 

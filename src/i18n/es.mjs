@@ -18,6 +18,7 @@ export default {
     storeGooglePlay: 'Google Play',
     and: 'y',
     freeOn: 'Gratis en {platforms}',
+    madeFor: 'Para {platforms}',
     howToPlay: 'Cómo se juega',
     tips: 'Consejos para resolver',
     faq: 'Preguntas y respuestas',
@@ -193,41 +194,74 @@ export default {
         'juego sin internet',
       ],
       art: {
+        alts: [
+          'Un búho tomando forma en un nonograma, con cruces en las casillas vacías',
+          'La escena «Zodiaco» en el bastidor, bordada figura a figura',
+          'Primer plano de la escena «Gato junto a la ventana»: golondrinas, una mariposa, un gato y un ovillo',
+        ],
+      },
+      cardArt: {
         alt: 'Un bastidor con un prado florido bordado: una mariposa, un sol, flores y una seta aún por bordar',
       },
+      banner: {
+        alt: 'Un patchwork de nonogramas que se convierten en bordado: un pulpo con peces payaso, un tucán, una puerta torii, golondrinas, un zorro, un árbol de Navidad y mucho más',
+      },
       rules: {
+        intro:
+          'Stitch Tales se basa en los nonogramas, puzles de lógica con imágenes también llamados crucigramas japoneses, griddlers o hanjie. Los números junto a las filas y sobre las columnas te dicen qué casillas rellenar; rellena las correctas y aparecerá un dibujo oculto: aquí, una figura bordada en la escena de tu bastidor.',
         steps: [
-          'Los números junto a cada fila y columna son, en orden, los tramos de casillas rellenas.',
-          'Borda las casillas que deben ir rellenas; marca con una cruz las que quedan vacías.',
-          'Cuidado: una puntada equivocada te cuesta una vida, uno de tus corazones bordados.',
+          'Los números junto a una fila o sobre una columna indican cuántas casillas seguidas hay que bordar y en qué orden.',
+          'Entre dos tramos siempre hay al menos una casilla vacía: márcala con una cruz.',
+          'Desliza el dedo y el hilo lo seguirá por las casillas.',
+          'Una puntada equivocada cuesta una de tus tres vidas, así que tómatelo con calma.',
           'Resuelve la cuadrícula y la figura quedará bordada en la escena de tu bastidor.',
+        ],
+        notes: [
+          'Sobre una columna, los números se leen de arriba abajo; junto a una fila, de izquierda a derecha.',
+          'En el dechado cada número tiene su propio color de hilo: los tramos de colores distintos pueden tocarse, pero los del mismo color siempre van separados por una casilla vacía.',
+          'Tu primera figura te guía por todas las reglas.',
+        ],
+        tips: [
+          'Empieza por las líneas más llenas: suma los tramos con una casilla vacía entre cada uno. Si el total coincide con la longitud de la línea, la línea entera está resuelta; si se queda corto por solo una o dos casillas, los tramos más largos ya tienen casillas seguras.',
+          'Desliza un tramo hasta un extremo y luego hasta el otro: las casillas que cubre las dos veces siempre van bordadas. Un 7 en una línea de 10 siempre ocupa las cuatro casillas centrales.',
+          'Una puntada justo en el borde del tablero es el inicio del primer tramo: borda el tramo entero desde ahí y pon una cruz justo después.',
+          'Cuando una línea está resuelta, sus casillas vacías reciben cruces, y cada cruz indica a las líneas que la atraviesan dónde no puede ir un tramo.',
+          'No bordes al azar: una puntada equivocada cuesta una vida. Si en una línea todavía no hay nada seguro, vuelve a ella después de avanzar en las líneas que la cruzan.',
         ],
         alt: 'Un nonograma de un gato casi resuelto: casillas bordadas en granate y cruces en las vacías',
       },
+      screenshots: [
+        'Un búho tomando forma en un nonograma, con cruces en las casillas vacías',
+        'La escena «Zodiaco» en el bastidor, bordada figura a figura',
+        'Primer plano de la escena «Gato junto a la ventana»: golondrinas, una mariposa, un gato y un ovillo',
+        'El calendario: un pequeño bordado para cada día y un erizo para todo el mes',
+        'El dechado sin fin de motivos populares de colores',
+        'La colección de bastidores terminados',
+      ],
       features: [
         {
-          title: 'Escenas para bordar',
-          text: 'Un prado florido, Stonehenge, un pícnic de frutas, el sistema solar, un jardín japonés, una casa de muñecas, un pueblo de invierno, el mundo bajo el mar… y muchas más.',
+          title: 'Bastidor tras bastidor',
+          text: 'Un gato junto a la ventana, pájaros de vitral, un pueblo de invierno, los salones de Asgard, el Salvaje Oeste y muchos más. Cada bastidor terminado se suma a tu colección.',
         },
         {
-          title: 'Puntadas de bordado de verdad',
-          text: 'Punto de raso, cadeneta, espiga y nudos franceses: cada figura se borda con su propio hilo y su propia textura.',
+          title: 'Un bordado que parece real',
+          text: 'Cada figura tiene sus propios hilos y puntadas, sombras suaves sobre el lino y el sonido delicado de la aguja y el bastidor.',
+        },
+        {
+          title: 'Un calendario de bordados diarios',
+          text: 'Cada día te espera un pequeño bordado. Borda el mes entero y se abrirá su gran figura; los días que te pierdas te esperarán.',
         },
         {
           title: 'Un dechado sin fin',
-          text: 'Tras tu primera escena se abre un dechado de motivos tradicionales, y sus motivos no se acaban nunca.',
+          text: 'Al terminar tu primera escena se abre un dechado de motivos populares: nonogramas a color con dos o tres hilos que nunca se acaban.',
         },
         {
-          title: 'Pistas si te atascas',
-          text: 'Revela una sola casilla o una línea entera y sigue bordando.',
+          title: 'Pistas para los momentos difíciles',
+          text: 'Revela una casilla, una línea entera o 10 casillas al azar, y el dedal te salva de tu próximo error.',
         },
         {
-          title: 'Un regalo cada día',
-          text: 'Vuelve a diario a por una recompensa que crece con tu racha.',
-        },
-        {
-          title: 'Descanso para la vista',
-          text: 'Suaves colores de lino, el leve sonido de las puntadas, sin cuenta y sin necesidad de internet.',
+          title: 'Sin reloj y sin prisas',
+          text: 'Un regalo cada día, logros y clasificaciones de Game Center en iPhone y iPad, y no necesitas internet para jugar.',
         },
       ],
       supportNote: 'También puedes escribirnos desde el juego, en Perfil → Escríbenos.',

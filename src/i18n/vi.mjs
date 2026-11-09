@@ -18,6 +18,7 @@ export default {
     storeGooglePlay: 'Google Play',
     and: 'và',
     freeOn: 'Miễn phí trên {platforms}',
+    madeFor: 'Dành cho {platforms}',
     howToPlay: 'Cách chơi',
     tips: 'Mẹo giải đố',
     faq: 'Hỏi đáp',
@@ -194,41 +195,74 @@ export default {
         'game offline',
       ],
       art: {
+        alts: [
+          'Một chú cú mèo dần thành hình trên nonogram, với dấu X ở các ô trống',
+          'Cảnh “Cung hoàng đạo” trên khung thêu, được thêu từng hình một',
+          'Cận cảnh “Mèo bên cửa sổ”: chim én, con bướm, chú mèo và cuộn len',
+        ],
+      },
+      cardArt: {
         alt: 'Khung thêu với đồng hoa đã thêu: một chú bướm, mặt trời, những bông hoa và một cây nấm còn chờ thêu',
       },
+      banner: {
+        alt: 'Những mảnh nonogram ghép lại đang hóa thành tranh thêu: bạch tuộc cùng cá hề, chim tu-căng, cổng torii, chim én, cáo, cây thông Noel và nhiều hơn nữa',
+      },
       rules: {
+        intro:
+          'Stitch Tales dựa trên nonogram — câu đố logic hình ảnh, còn gọi là griddlers, hanjie hay ô chữ Nhật Bản. Các con số cạnh hàng và trên cột cho bạn biết cần tô những ô nào; tô đúng các ô, một bức tranh ẩn sẽ hiện ra — ở đây là một hình được thêu vào cảnh trên khung thêu của bạn.',
         steps: [
-          'Các con số cạnh mỗi hàng và cột là độ dài các đoạn ô được tô, theo đúng thứ tự.',
-          'Thêu những ô chắc chắn được tô; đánh dấu X những ô để trống.',
-          'Cẩn thận — một mũi thêu sai sẽ mất một mạng, một trong những trái tim thêu của bạn.',
+          'Các con số cạnh một hàng hoặc trên một cột cho biết cần thêu bao nhiêu ô liền nhau và theo thứ tự nào.',
+          'Giữa hai nhóm luôn có ít nhất một ô trống — hãy đánh dấu X vào đó.',
+          'Vuốt ngón tay, sợi chỉ sẽ chạy theo qua từng ô.',
+          'Mỗi mũi thêu sai làm mất một trong ba mạng, nên cứ thong thả.',
           'Giải xong lưới, hình sẽ được thêu vào cảnh trên khung thêu của bạn.',
+        ],
+        notes: [
+          'Số trên cột đọc từ trên xuống dưới, số cạnh hàng đọc từ trái sang phải.',
+          'Trên khăn thêu, mỗi con số có màu chỉ riêng: các nhóm khác màu có thể nằm sát nhau, còn các nhóm cùng màu phải cách nhau một ô trống.',
+          'Hình đầu tiên sẽ dẫn bạn qua từng luật chơi.',
+        ],
+        tips: [
+          'Hãy bắt đầu với những dòng đầy nhất: cộng các nhóm lại, tính thêm một ô trống giữa mỗi hai nhóm. Nếu tổng bằng độ dài của dòng, cả dòng đã được giải; nếu chỉ thiếu một hai ô, các nhóm dài hơn đã có những ô chắc chắn.',
+          'Đẩy một nhóm sát hết cỡ về một đầu, rồi về đầu kia: những ô bị phủ cả hai lần chắc chắn phải thêu. Số 7 trong một dòng 10 ô luôn lấp kín bốn ô ở giữa.',
+          'Mũi thêu nằm ngay sát mép bảng là điểm bắt đầu của nhóm đầu tiên: hãy thêu trọn nhóm từ đó và đánh dấu X ngay sau nó.',
+          'Khi một dòng đã giải xong, các ô trống trong đó được đánh dấu X — và mỗi dấu X cho các dòng cắt ngang biết nhóm không thể nằm ở đâu.',
+          'Đừng đoán: một mũi thêu sai làm mất một mạng. Nếu trong một dòng chưa có gì chắc chắn, hãy quay lại với nó sau khi xử lý các dòng cắt ngang nó.',
         ],
         alt: 'Nonogram hình chú mèo sắp giải xong: các ô thêu màu đỏ lựu, dấu X ở các ô trống',
       },
+      screenshots: [
+        'Một chú cú mèo dần thành hình trên nonogram, với dấu X ở các ô trống',
+        'Cảnh “Cung hoàng đạo” trên khung thêu, được thêu từng hình một',
+        'Cận cảnh “Mèo bên cửa sổ”: chim én, con bướm, chú mèo và cuộn len',
+        'Lịch: một bức thêu nhỏ cho mỗi ngày và một chú nhím cho cả tháng',
+        'Khăn thêu bất tận với hoa văn dân gian đầy màu sắc',
+        'Bộ sưu tập các khung thêu đã hoàn thành',
+      ],
       features: [
         {
-          title: 'Những cảnh để thêu',
-          text: 'Đồng hoa, Stonehenge, dã ngoại trái cây, Hệ Mặt Trời, vườn Nhật Bản, nhà búp bê, làng mùa đông, đáy biển và nhiều cảnh khác nữa.',
+          title: 'Hết khung thêu này đến khung thêu khác',
+          text: 'Mèo bên cửa sổ, chim kính màu, làng mùa đông, sảnh đường Asgard, miền Tây hoang dã và còn nhiều nữa. Mỗi khung thêu hoàn thành đều có chỗ trong bộ sưu tập của bạn.',
         },
         {
-          title: 'Mũi thêu thật sự',
-          text: 'Mũi sa tanh, mũi xích, mũi xương cá và mũi nút kiểu Pháp — mỗi hình được thêu bằng chỉ và chất liệu riêng.',
+          title: 'Tranh thêu như thật',
+          text: 'Mỗi hình có chỉ và mũi thêu riêng, bóng mềm trên vải lanh cùng tiếng kim, tiếng khung khẽ khàng.',
+        },
+        {
+          title: 'Lịch thêu mỗi ngày',
+          text: 'Mỗi ngày có một bức thêu nhỏ chờ bạn. Thêu trọn cả tháng, hình lớn của tháng sẽ mở ra — những ngày bỏ lỡ vẫn chờ bạn.',
         },
         {
           title: 'Khăn thêu bất tận',
-          text: 'Sau cảnh đầu tiên, một chiếc khăn thêu hoa văn dân gian sẽ mở ra — và hoa văn trên đó không bao giờ hết.',
+          text: 'Sau cảnh đầu tiên bạn thêu xong, khăn thêu hoa văn dân gian sẽ mở ra: nonogram màu với hai hoặc ba sợi chỉ, không bao giờ hết.',
         },
         {
-          title: 'Gợi ý khi bị kẹt',
-          text: 'Mở một ô hoặc cả một dòng, rồi thêu tiếp.',
+          title: 'Gợi ý cho những lúc khó',
+          text: 'Mở một ô, trọn một dòng hoặc 10 ô ngẫu nhiên — và đê khâu sẽ che chắn cho lỗi tiếp theo của bạn.',
         },
         {
-          title: 'Quà mỗi ngày',
-          text: 'Ghé mỗi ngày để nhận phần thưởng tăng dần theo chuỗi ngày của bạn.',
-        },
-        {
-          title: 'Dịu mắt',
-          text: 'Màu vải lanh dịu nhẹ, tiếng thêu êm ái, không cần tài khoản và không cần internet.',
+          title: 'Không đồng hồ, không vội vàng',
+          text: 'Quà tặng mỗi ngày, thành tích và bảng xếp hạng Game Center trên iPhone và iPad, và chơi được không cần internet.',
         },
       ],
       supportNote: 'Bạn cũng có thể liên hệ với chúng tôi ngay trong trò chơi: Hồ sơ → Liên hệ.',

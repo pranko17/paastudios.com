@@ -18,6 +18,7 @@ export default {
     storeGooglePlay: 'no Google Play',
     and: 'e',
     freeOn: 'Grátis para {platforms}',
+    madeFor: 'Para {platforms}',
     howToPlay: 'Como jogar',
     tips: 'Dicas para resolver',
     faq: 'Perguntas e respostas',
@@ -193,41 +194,74 @@ export default {
         'jogo offline',
       ],
       art: {
+        alts: [
+          'Uma coruja tomando forma num nonograma, com cruzes nas casas vazias',
+          'A cena “Zodíaco” no bastidor, bordada figura a figura',
+          'Close da cena “Gato à janela”: andorinhas, uma borboleta, um gato e um novelo de lã',
+        ],
+      },
+      cardArt: {
         alt: 'Um bastidor com um campo florido bordado: uma borboleta, um sol, flores e um cogumelo ainda por bordar',
       },
+      banner: {
+        alt: 'Um patchwork de nonogramas virando bordado: um polvo com peixes-palhaço, um tucano, um portal torii, andorinhas, uma raposa, uma árvore de Natal e muito mais',
+      },
       rules: {
+        intro:
+          'Stitch Tales é baseado em nonogramas, quebra-cabeças de lógica com imagens, também conhecidos como griddlers, hanjie ou palavras cruzadas japonesas. Os números ao lado das linhas e acima das colunas dizem quais casas preencher; preencha as certas, e uma imagem escondida aparece — aqui, uma figura bordada na cena do seu bastidor.',
         steps: [
-          'Os números ao lado de cada linha e coluna são os trechos de casas preenchidas, em ordem.',
-          'Borde as casas que precisam ser preenchidas; marque com uma cruz as que ficam vazias.',
-          'Cuidado — um ponto errado custa uma vida, um dos seus corações bordados.',
+          'Os números ao lado de uma linha ou acima de uma coluna dizem quantas casas seguidas bordar, e em que ordem.',
+          'Entre dois trechos sempre há pelo menos uma casa vazia — marque-a com uma cruz.',
+          'Deslize o dedo, e a linha vai atrás dele pelas casas.',
+          'Um ponto errado custa uma das suas três vidas, então vá com calma.',
           'Resolva a grade, e a figura é bordada na cena do seu bastidor.',
+        ],
+        notes: [
+          'Leia os números acima de uma coluna de cima para baixo, e os ao lado de uma linha, da esquerda para a direita.',
+          'Na toalha bordada, cada número é bordado com uma cor própria: trechos de cores diferentes podem se encostar, mas os da mesma cor sempre têm uma casa vazia entre eles.',
+          'Sua primeira figura mostra todas as regras, passo a passo.',
+        ],
+        tips: [
+          'Comece pelas linhas mais cheias: some os trechos com uma casa vazia entre cada um. Se o total for igual ao comprimento da linha, ela está toda resolvida; se faltar só uma ou duas casas, os trechos mais longos já têm casas garantidas.',
+          'Empurre um trecho o máximo possível para uma ponta, depois para a outra: as casas que ele cobre nas duas vezes são sempre bordadas. Um 7 numa linha de 10 sempre preenche as quatro casas do meio.',
+          'Um ponto bem na borda da grade é o começo do primeiro trecho: borde o trecho inteiro a partir dali e coloque uma cruz logo depois.',
+          'Quando uma linha está resolvida, as casas vazias dela ganham cruzes — e cada cruz mostra às linhas que passam por ela onde um trecho não pode ficar.',
+          'Não chute: um ponto errado custa uma vida. Se ainda não há nada certo numa linha, volte a ela depois de avançar nas linhas que a cruzam.',
         ],
         alt: 'Um nonograma de um gato quase resolvido: casas bordadas em grená e cruzes nas vazias',
       },
+      screenshots: [
+        'Uma coruja tomando forma num nonograma, com cruzes nas casas vazias',
+        'A cena “Zodíaco” no bastidor, bordada figura a figura',
+        'Close da cena “Gato à janela”: andorinhas, uma borboleta, um gato e um novelo de lã',
+        'O calendário: um pequeno bordado para cada dia e um ouriço para o mês inteiro',
+        'A toalha bordada sem fim, com motivos folclóricos coloridos',
+        'A coleção de bastidores prontos',
+      ],
       features: [
         {
-          title: 'Cenas para bordar',
-          text: 'Um campo florido, Stonehenge, um piquenique de frutas, o sistema solar, um jardim japonês, uma casa de bonecas, uma vila de inverno, o fundo do mar… e muito mais.',
+          title: 'Bastidor após bastidor',
+          text: 'Um gato à janela, pássaros em vitral, uma vila de inverno, os salões de Asgard, o Velho Oeste e muito mais. Cada bastidor pronto entra na sua coleção.',
         },
         {
-          title: 'Pontos de bordado de verdade',
-          text: 'Ponto cheio, ponto corrente, espinha de peixe e nó francês — cada figura é bordada com linha e textura próprias.',
+          title: 'Um bordado que parece real',
+          text: 'Cada figura tem suas próprias linhas e pontos, sombras suaves no linho e os sons delicados da agulha e do bastidor.',
+        },
+        {
+          title: 'Um calendário de bordados do dia',
+          text: 'Um pequeno bordado espera por você todo dia. Borde o mês inteiro e a grande figura dele se abre — os dias perdidos vão esperar por você.',
         },
         {
           title: 'Uma toalha bordada sem fim',
-          text: 'Depois da primeira cena, abre-se uma toalha bordada com motivos folclóricos — e os motivos nunca acabam.',
+          text: 'Depois da primeira cena concluída, abre-se uma toalha bordada com motivos folclóricos: nonogramas coloridos em duas ou três linhas, que nunca acabam.',
         },
         {
-          title: 'Dicas quando você travar',
-          text: 'Revele uma casa ou uma linha inteira e continue bordando.',
+          title: 'Dicas para os momentos difíceis',
+          text: 'Revele uma casa, uma linha inteira ou 10 casas aleatórias — e o dedal salva você do próximo erro.',
         },
         {
-          title: 'Um presente todo dia',
-          text: 'Volte todos os dias para ganhar uma recompensa que cresce com a sua sequência.',
-        },
-        {
-          title: 'Descanso para os olhos',
-          text: 'Tons suaves de linho, sons delicados de bordado, sem conta e sem precisar de internet.',
+          title: 'Sem cronômetro, sem pressa',
+          text: 'Um presente todo dia, conquistas e rankings do Game Center no iPhone e no iPad, e não precisa de internet para jogar.',
         },
       ],
       supportNote: 'Você também pode falar com a gente pelo jogo, em Perfil → Fale conosco.',

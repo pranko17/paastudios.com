@@ -582,7 +582,8 @@ width: auto;
 height: 48px;
 }
 .soon {
-display: inline-flex;
+display: flex;
+width: fit-content;
 align-items: center;
 gap: 10px;
 margin: 28px 0 0;
@@ -970,14 +971,6 @@ box-shadow:
 14px 0 0 color-mix(in srgb, var(--accent) 60%, transparent),
 28px 0 0 color-mix(in srgb, var(--accent) 30%, transparent);
 }
-.frame-stitch .feature::before {
-width: 46px;
-height: 3px;
-margin-block: 4px 23px;
-border-radius: 2px;
-background: repeating-linear-gradient(90deg, var(--accent) 0 8px, transparent 8px 13px);
-box-shadow: none;
-}
 .support-card {
 position: relative;
 display: grid;
@@ -993,7 +986,7 @@ background: var(--surface);
 content: "";
 position: absolute;
 inset: 10px;
-border: 2px dashed color-mix(in srgb, var(--accent) 30%, transparent);
+border: 2px dashed var(--stitch, color-mix(in srgb, var(--accent) 30%, transparent));
 border-radius: calc(var(--radius-lg) - 10px);
 pointer-events: none;
 }
@@ -1081,6 +1074,75 @@ color: var(--accent);
 inset: 7px;
 border-radius: calc(var(--radius) - 7px);
 }
+.banner {
+margin-block: 0;
+}
+.banner img {
+width: 100%;
+border-radius: var(--radius);
+}
+.game-page.frame-stitch,
+.doc-page.frame-stitch {
+background:
+radial-gradient(1100px 620px at 88% -8%, var(--glow), transparent 62%),
+radial-gradient(900px 560px at -12% 18%, var(--glow2), transparent 60%),
+repeating-linear-gradient(0deg, color-mix(in srgb, var(--muted) 7%, transparent) 0 1px, transparent 1px 4px),
+repeating-linear-gradient(90deg, color-mix(in srgb, var(--muted) 5%, transparent) 0 1px, transparent 1px 3px),
+var(--bg);
+background-repeat: no-repeat, no-repeat, repeat, repeat;
+}
+.game-page.frame-stitch :is(.feature, .steps li, .tips li, .support-card, .banner) {
+position: relative;
+border-color: transparent;
+background: var(--surface);
+box-shadow:
+0 1px 2px color-mix(in srgb, var(--text) 8%, transparent),
+0 14px 28px -20px color-mix(in srgb, var(--text) 50%, transparent);
+}
+.game-page.frame-stitch :is(.feature, .steps li, .tips li, .banner)::after {
+content: "";
+position: absolute;
+inset: 7px;
+border: 2px dashed var(--stitch);
+border-radius: calc(var(--radius) - 7px);
+pointer-events: none;
+}
+.game-page.frame-stitch .steps li {
+padding: 18px 24px 18px 18px;
+}
+.game-page.frame-stitch .steps li::before {
+border-radius: 50%;
+outline: 1.5px dashed color-mix(in srgb, var(--accent-text) 70%, transparent);
+outline-offset: -5px;
+}
+.game-page.frame-stitch .tips li::before {
+border-radius: 50%;
+}
+.game-page.frame-stitch :is(.section-head h2, .rules h2, .support-card h2, .feature)::before {
+content: "";
+display: block;
+width: 54px;
+height: 14px;
+margin-bottom: 14px;
+border-radius: 0;
+box-shadow: none;
+background: linear-gradient(90deg, var(--thread-1) 0 33.4%, var(--thread-2) 33.4% 66.6%, var(--thread-3) 66.6%);
+-webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 16'%3E%3Cpath d='M3 3l10 10M13 3 3 13M25 3l10 10M35 3 25 13M47 3l10 10M57 3 47 13' stroke='%23000' stroke-width='2.8' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
+mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 16'%3E%3Cpath d='M3 3l10 10M13 3 3 13M25 3l10 10M35 3 25 13M47 3l10 10M57 3 47 13' stroke='%23000' stroke-width='2.8' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.game-page.frame-stitch .feature::before {
+margin-bottom: 18px;
+}
+.game-page.frame-stitch .banner {
+padding: 14px;
+border-radius: var(--radius-lg);
+}
+.game-page.frame-stitch .banner::after {
+border-radius: calc(var(--radius-lg) - 7px);
+}
+.game-page.frame-stitch .banner img {
+border-radius: calc(var(--radius-lg) - 14px);
+}
 .doc {
 max-width: 760px;
 margin-inline: auto;
@@ -1147,6 +1209,19 @@ font-size: 16px;
 .feature-grid {
 grid-template-columns: 1fr;
 }
+.banner img {
+aspect-ratio: 2 / 1;
+object-fit: cover;
+}
+.game-page.frame-stitch .banner {
+padding: 10px;
+}
+.game-page.frame-stitch .banner::after {
+inset: 5px;
+}
+.game-page.frame-stitch .banner img {
+border-radius: calc(var(--radius-lg) - 10px);
+}
 .site-nav a {
 padding: 8px 10px;
 }
@@ -1193,10 +1268,11 @@ transition: none !important;
 }
 }
 </style>
+<meta name="apple-itunes-app" content="app-id=6822948115">
 <meta name="theme-color" content="#F2ECE0">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"MobileApplication","name":"Stitch Tales","description":"Baca angka di sepanjang baris dan kolom, isi kotak yang benar — dan setiap nonogram yang terpecahkan tersulam ke dalam gambar di bingkai sulammu.","url":"https://paastudios.com/stitch-tales/id/","image":"https://paastudios.com/stitch-tales/images/icon.webp","inLanguage":"id","applicationCategory":"GameApplication","applicationSubCategory":"Nonogram kristik","operatingSystem":"iOS, Android","author":{"@type":"Organization","name":"PAA Studios","url":"https://paastudios.com"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"keywords":"nonogram, teka-teki nonogram, picross, griddlers, teka-teki gambar, kristik, sulam silang, sulaman, teka-teki logika, puzzle logika, pixel art, game, game mobile, game puzzle, game gratis, game offline"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"MobileApplication","name":"Stitch Tales","description":"Baca angka di sepanjang baris dan kolom, isi kotak yang benar — dan setiap nonogram yang terpecahkan tersulam ke dalam gambar di bingkai sulammu.","url":"https://paastudios.com/stitch-tales/id/","image":"https://paastudios.com/stitch-tales/images/icon.webp","inLanguage":"id","applicationCategory":"GameApplication","applicationSubCategory":"Nonogram kristik","operatingSystem":"iOS, Android","author":{"@type":"Organization","name":"PAA Studios","url":"https://paastudios.com"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"keywords":"nonogram, teka-teki nonogram, picross, griddlers, teka-teki gambar, kristik, sulam silang, sulaman, teka-teki logika, puzzle logika, pixel art, game, game mobile, game puzzle, game gratis, game offline","screenshot":["https://paastudios.com/stitch-tales/images/screen-1.webp","https://paastudios.com/stitch-tales/images/screen-2.webp","https://paastudios.com/stitch-tales/images/screen-3.webp","https://paastudios.com/stitch-tales/images/screen-4.webp","https://paastudios.com/stitch-tales/images/screen-5.webp","https://paastudios.com/stitch-tales/images/screen-6.webp"],"sameAs":["https://apps.apple.com/app/id6822948115"]}</script>
 </head>
-<body class="game-page frame-stitch" data-scheme="light" style="--bg:#F2ECE0;--surface:#FBF8F2;--surface2:#E7DFCF;--line:#D3C6AE;--text:#2A231C;--muted:#5F5444;--accent:#B3263A;--accent-text:#FFFFFF;--glow:rgba(179, 38, 58, 0.12);--glow2:rgba(46, 122, 82, 0.12)">
+<body class="game-page frame-stitch" data-scheme="light" style="--bg:#F2ECE0;--surface:#FBF8F2;--surface2:#E7DFCF;--line:#D3C6AE;--text:#2A231C;--muted:#5F5444;--accent:#B3263A;--accent-text:#FFFFFF;--glow:rgba(179, 38, 58, 0.12);--glow2:rgba(46, 122, 82, 0.12);--stitch:#E7B7BE;--thread-1:#B3263A;--thread-2:#2E7A52;--thread-3:#C9A06A">
 <a class="skip" href="#main">Langsung ke konten</a>
 <header class="site-header wrap">
   <a class="brand" href="/id/"><img src="/assets/logo.svg" width="34" height="34" alt=""><span>PAA Studios</span></a>
@@ -1253,40 +1329,66 @@ transition: none !important;
     <h1>Stitch Tales</h1>
     <p class="tagline">Setiap teka-teki adalah satu jahitan dalam gambar yang lebih besar.</p>
     <p class="lead">Baca angka di sepanjang baris dan kolom, isi kotak yang benar — dan setiap nonogram yang terpecahkan tersulam ke dalam gambar di bingkai sulammu.</p>
-    <p class="soon">Segera hadir di App Store dan Google Play</p>
-    <p class="platforms">Gratis di iPhone, iPad, dan Android</p>
+    <div class="stores"><a class="store" href="https://apps.apple.com/app/id6822948115?pt=129254796&amp;ct=stitch-tales-id&amp;mt=8"><img src="/assets/badges/app-store.svg" width="144" height="48" alt="Unduh Stitch Tales di App Store"></a></div><p class="soon">Segera hadir di Google Play</p>
+    <p class="platforms">Untuk iPhone, iPad, dan Android</p>
   </div>
-  <div class="game-hero-art"><img class="art-image" src="/stitch-tales/images/hoop.svg" width="600" height="620" alt="Bingkai sulam dengan padang bunga tersulam: kupu-kupu, matahari, bunga-bunga, dan jamur yang belum disulam" loading="eager" decoding="async"></div>
+  <div class="game-hero-art"><div class="phones"><figure class="device phone-left"><img src="/stitch-tales/images/screen-1.webp" srcset="/stitch-tales/images/screen-1-360.webp 360w, /stitch-tales/images/screen-1.webp 600w" sizes="(max-width: 560px) 40vw, 210px" width="600" height="1304" alt="Burung hantu yang mulai terbentuk di nonogram, dengan silang di kotak kosong" loading="eager" decoding="async"></figure><figure class="device phone-right"><img src="/stitch-tales/images/screen-3.webp" srcset="/stitch-tales/images/screen-3-360.webp 360w, /stitch-tales/images/screen-3.webp 600w" sizes="(max-width: 560px) 40vw, 210px" width="600" height="1304" alt="Adegan “Kucing di jendela” dari dekat: burung layang-layang, kupu-kupu, kucing, dan gulungan benang" loading="eager" decoding="async"></figure><figure class="device phone-center"><img src="/stitch-tales/images/screen-2.webp" srcset="/stitch-tales/images/screen-2-360.webp 360w, /stitch-tales/images/screen-2.webp 600w" sizes="(max-width: 560px) 40vw, 210px" width="600" height="1304" alt="Adegan “Zodiak” di bingkai sulam, disulam figur demi figur" loading="eager" decoding="async"></figure></div></div>
 </section>
+
+<figure class="banner wrap"><img src="/stitch-tales/images/banner.webp" srcset="/stitch-tales/images/banner-720.webp 720w, /stitch-tales/images/banner-1280.webp 1280w, /stitch-tales/images/banner.webp 2240w" sizes="(max-width: 600px) 108vw, (max-width: 1184px) 92vw, 1120px" width="2240" height="960" alt="Kolase nonogram yang berubah menjadi sulaman: gurita dengan ikan badut, burung tukan, gerbang torii, burung layang-layang, rubah, pohon Natal, dan lainnya" loading="lazy" decoding="async"></figure>
 
 <section class="block wrap rules" aria-labelledby="rules-title">
   <div>
     <h2 id="rules-title">Cara bermain</h2>
-    
+    <p class="rules-intro">Stitch Tales dibuat berdasarkan nonogram, teka-teki logika bergambar yang juga dikenal sebagai griddlers, hanjie, atau teka-teki silang Jepang. Angka di samping baris dan di atas kolom memberi tahu kotak mana yang perlu diisi; isi kotak yang benar, dan gambar tersembunyi pun muncul — di sini, sebuah figur yang tersulam ke dalam adegan di bingkai sulammu.</p>
     <ol class="steps">
-      <li>Angka di samping setiap baris dan kolom menunjukkan potongan kotak terisi, berurutan.</li>
-      <li>Sulam kotak yang harus terisi; tandai kotak yang tetap kosong dengan silang.</li>
-      <li>Hati-hati — satu sulaman yang salah mengurangi satu nyawa, salah satu hati sulamanmu.</li>
-      <li>Pecahkan kisinya, dan figurnya tersulam ke dalam gambar di bingkai sulammu.</li>
+      <li>Angka di samping baris atau di atas kolom memberi tahu berapa kotak berturut-turut yang perlu disulam, dan dalam urutan apa.</li>
+      <li>Di antara dua kelompok selalu ada setidaknya satu kotak kosong — tandai dengan silang.</li>
+      <li>Usap jarimu, dan benang akan mengikutinya melintasi kotak-kotak.</li>
+      <li>Tusukan yang salah mengurangi satu dari tiga nyawamu, jadi pelan-pelan saja.</li>
+      <li>Pecahkan kisinya, dan figurnya tersulam ke dalam adegan di bingkai sulammu.</li>
     </ol>
-    
+    <ul class="rule-notes">
+      <li>Angka di atas kolom dibaca dari atas ke bawah, angka di samping baris dari kiri ke kanan.</li>
+      <li>Di kain sulam, setiap angka punya warna benangnya sendiri: kelompok yang berbeda warna boleh bersentuhan, sedangkan kelompok yang sewarna harus dipisah satu kotak kosong.</li>
+      <li>Figur pertamamu akan menuntunmu melewati setiap aturan.</li>
+    </ul>
   </div>
   <figure class="rules-art"><img src="/stitch-tales/images/nonogram.svg" width="474" height="410" alt="Nonogram kucing yang hampir terpecahkan: kotak tersulam merah delima, silang di kotak kosong" loading="lazy" decoding="async"></figure>
 </section>
 
+<section class="block wrap" aria-labelledby="tips-title">
+  <div class="section-head"><h2 id="tips-title">Tips menyelesaikan</h2></div>
+  <ol class="tips">
+    <li>Mulailah dari garis yang paling penuh: jumlahkan kelompok-kelompoknya beserta satu kotak kosong di antara setiap dua kelompok. Jika totalnya sama dengan panjang garis, seluruh garis sudah terpecahkan; jika hanya kurang satu atau dua kotak, kelompok yang lebih panjang sudah punya kotak yang pasti.</li>
+    <li>Geser sebuah kelompok sejauh mungkin ke satu ujung, lalu ke ujung lainnya: kotak yang tertutup di kedua posisi itu pasti disulam. Angka 7 di garis sepanjang 10 kotak selalu mengisi empat kotak di tengahnya.</li>
+    <li>Tusukan tepat di tepi papan adalah awal kelompok pertama: sulam seluruh kelompok dari situ, lalu beri silang tepat sesudahnya.</li>
+    <li>Begitu sebuah garis terpecahkan, kotak kosongnya diberi silang — dan setiap silang memberi tahu garis yang memotongnya di mana kelompok tidak mungkin berada.</li>
+    <li>Jangan menebak: tusukan yang salah mengurangi satu nyawa. Jika belum ada yang pasti di sebuah garis, kembalilah ke sana setelah mengerjakan garis-garis yang memotongnya.</li>
+  </ol>
+</section>
 
-
-
+<section class="block gallery" aria-labelledby="gallery-title">
+  <div class="wrap section-head"><h2 id="gallery-title">Lihat lebih dekat</h2></div>
+  <div class="shots" tabindex="0" aria-label="Tangkapan layar">
+    <figure class="device shot"><img src="/stitch-tales/images/screen-1.webp" srcset="/stitch-tales/images/screen-1-360.webp 360w, /stitch-tales/images/screen-1.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Burung hantu yang mulai terbentuk di nonogram, dengan silang di kotak kosong" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-2.webp" srcset="/stitch-tales/images/screen-2-360.webp 360w, /stitch-tales/images/screen-2.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Adegan “Zodiak” di bingkai sulam, disulam figur demi figur" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-3.webp" srcset="/stitch-tales/images/screen-3-360.webp 360w, /stitch-tales/images/screen-3.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Adegan “Kucing di jendela” dari dekat: burung layang-layang, kupu-kupu, kucing, dan gulungan benang" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-4.webp" srcset="/stitch-tales/images/screen-4-360.webp 360w, /stitch-tales/images/screen-4.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Kalender: sulaman kecil untuk setiap hari dan landak untuk sebulan penuh" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-5.webp" srcset="/stitch-tales/images/screen-5-360.webp 360w, /stitch-tales/images/screen-5.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Kain sulam tanpa akhir dengan motif tradisional warna-warni" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-6.webp" srcset="/stitch-tales/images/screen-6-360.webp 360w, /stitch-tales/images/screen-6.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Koleksi bingkai sulam yang sudah selesai" loading="lazy" decoding="async"></figure>
+  </div>
+</section>
 
 <section class="block wrap" aria-labelledby="features-title">
   <div class="section-head"><h2 id="features-title">Isi game</h2></div>
   <div class="feature-grid">
-    <div class="feature"><h3>Adegan untuk disulam</h3><p>Padang bunga, Stonehenge, piknik buah, tata surya, taman Jepang, rumah boneka, desa musim dingin, dunia bawah laut, dan masih banyak lagi.</p></div>
-    <div class="feature"><h3>Tusuk sulam sungguhan</h3><p>Tusuk satin, tusuk rantai, tusuk tulang ikan, dan simpul Prancis — setiap figur disulam dengan benang dan teksturnya sendiri.</p></div>
-    <div class="feature"><h3>Kain sulam tanpa akhir</h3><p>Setelah adegan pertamamu, terbukalah kain sulam bermotif tradisional — dan polanya tak pernah habis.</p></div>
-    <div class="feature"><h3>Petunjuk saat buntu</h3><p>Buka satu kotak atau satu garis penuh, lalu lanjutkan menyulam.</p></div>
-    <div class="feature"><h3>Hadiah setiap hari</h3><p>Datang setiap hari untuk hadiah yang makin besar seiring rentetanmu.</p></div>
-    <div class="feature"><h3>Nyaman di mata</h3><p>Warna linen yang lembut, suara sulaman yang halus, tanpa akun dan tanpa perlu internet.</p></div>
+    <div class="feature"><h3>Bingkai demi bingkai</h3><p>Kucing di jendela, burung kaca patri, desa musim dingin, aula Asgard, Wild West, dan masih banyak lagi. Setiap bingkai yang selesai masuk ke koleksimu.</p></div>
+    <div class="feature"><h3>Sulaman yang terasa nyata</h3><p>Setiap figur punya benang dan tusukannya sendiri, bayangan lembut di atas linen, serta suara jarum dan bingkai yang menenangkan.</p></div>
+    <div class="feature"><h3>Kalender sulaman harian</h3><p>Setiap hari, sulaman kecil baru menantimu. Sulam sebulan penuh, dan figur besar bulan itu akan terbuka — hari yang terlewat tetap menunggumu.</p></div>
+    <div class="feature"><h3>Kain sulam tanpa akhir</h3><p>Setelah adegan pertamamu selesai, terbukalah kain sulam bermotif tradisional: nonogram berwarna dengan dua atau tiga benang yang tak pernah habis.</p></div>
+    <div class="feature"><h3>Petunjuk untuk saat-saat sulit</h3><p>Buka satu kotak, satu garis penuh, atau 10 kotak acak — dan bidal melindungimu dari kesalahan berikutnya.</p></div>
+    <div class="feature"><h3>Tanpa timer, tanpa buru-buru</h3><p>Hadiah setiap hari, pencapaian dan papan peringkat Game Center di iPhone dan iPad, dan bisa dimainkan tanpa internet.</p></div>
   </div>
 </section>
 

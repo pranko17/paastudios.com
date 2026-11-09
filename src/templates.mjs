@@ -15,23 +15,33 @@ const CSS = readFileSync(new URL('../assets/site.css', import.meta.url), 'utf8')
   .filter(Boolean)
   .join('\n');
 
-// A picture comes with a smaller copy next to it, <name>-<width>.<ext>
+// A picture comes with smaller copies next to it, <name>-<width>.<ext>
 // (tools/images.py writes them), and the browser picks by the width the page
-// shows it at and the screen density. Widths of the files:
-export const IMAGE_WIDTHS = { screen: [360, 600], icon: [128, 256] };
+// shows it at and the screen density. Widths of the files, the last one is
+// the picture itself:
+export const IMAGE_WIDTHS = { screen: [360, 600], icon: [128, 256], banner: [720, 1280, 2240] };
 
 export function imageVariant(image, width) {
   return image.replace(/(\.\w+)$/, `-${width}$1`);
 }
 
-function srcset(image, [small, full]) {
-  return `${imageVariant(image, small)} ${small}w, ${image} ${full}w`;
+function srcset(image, widths) {
+  const full = widths[widths.length - 1];
+  return [
+    ...widths.slice(0, -1).map((width) => {
+      return `${imageVariant(image, width)} ${width}w`;
+    }),
+    `${image} ${full}w`,
+  ].join(', ');
 }
 
 // Widths the screenshots are shown at, after site.css: hero phones take 44% of
 // a box up to 520px, gallery shots clamp(190px, 22vw, 250px) less the bezel
 const HERO_PHONE_SIZES = '(max-width: 560px) 40vw, 210px';
 const SHOT_SIZES = '(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px';
+// The banner fills the content column; on a phone it is cropped to 2 : 1 and
+// drawn wider than the column, as wide as its own proportions need
+const BANNER_SIZES = '(max-width: 600px) 108vw, (max-width: 1184px) 92vw, 1120px';
 
 export function esc(value) {
   return String(value)
@@ -81,8 +91,15 @@ function themeStyle(theme) {
     '--accent-text': theme.accentText,
     '--glow': theme.glow,
     '--glow2': theme.glow2,
+    '--stitch': theme.stitch,
+    '--thread-1': theme.threads?.[0],
+    '--thread-2': theme.threads?.[1],
+    '--thread-3': theme.threads?.[2],
   };
   return Object.entries(vars)
+    .filter(([, value]) => {
+      return value;
+    })
     .map(([name, value]) => {
       return `${name}:${value}`;
     })
@@ -327,16 +344,17 @@ function storeButtons({ studio, game, ui, campaign }) {
   return badges.length ? `<div class="stores">${badges.join('')}</div>${soon}` : soon;
 }
 
-function art(game, { eager = false } = {}) {
+// A hero picture: three phones or an illustration (`art` or `cardArt` of a game)
+function art(picture, { eager = false } = {}) {
   const loading = eager ? 'eager' : 'lazy';
-  if (game.art.phones) {
-    const [left, center, right] = game.art.phones;
+  if (picture.phones) {
+    const [left, center, right] = picture.phones;
     const phone = (shot, position) => {
       return `<figure class="device phone-${position}"><img src="${esc(shot.image)}" srcset="${esc(srcset(shot.image, IMAGE_WIDTHS.screen))}" sizes="${HERO_PHONE_SIZES}" width="600" height="1304" alt="${esc(shot.alt)}" loading="${loading}" decoding="async"></figure>`;
     };
     return `<div class="phones">${phone(left, 'left')}${phone(right, 'right')}${phone(center, 'center')}</div>`;
   }
-  return `<img class="art-image" src="${esc(game.art.image)}" width="${game.art.width}" height="${game.art.height}" alt="${esc(game.art.alt)}" loading="${loading}" decoding="async">`;
+  return `<img class="art-image" src="${esc(picture.image)}" width="${picture.width}" height="${picture.height}" alt="${esc(picture.alt)}" loading="${loading}" decoding="async">`;
 }
 
 function appIcon(game, size, className = 'app-icon') {
@@ -372,7 +390,7 @@ function gameCard({ studio, game: source, locale }) {
     ${storeButtons({ studio, game, ui, campaign: `home-${locale.code}` })}
     <a class="more" href="${link}">${esc(fill(ui.discover, { name: game.name }))} ${ARROW}</a>
   </div>
-  <a class="game-card-art" href="${link}" tabindex="-1" aria-hidden="true">${art(game)}</a>
+  <a class="game-card-art" href="${link}" tabindex="-1" aria-hidden="true">${art(game.cardArt ?? game.art)}</a>
 </article>`;
 }
 
@@ -489,12 +507,13 @@ export function localizeGame(game, locale) {
       return { ...shot, alt: alts?.[index] ?? shot.alt };
     });
   };
-  let art = game.art;
-  if (game.art.phones) {
-    art = { ...game.art, phones: withAlts(game.art.phones, text.art?.alts) };
-  } else if (text.art?.alt) {
-    art = { ...game.art, alt: text.art.alt };
-  }
+  // A single picture takes its translated alt, if there is one
+  const withAlt = (picture, translated) => {
+    return picture && translated?.alt ? { ...picture, alt: translated.alt } : picture;
+  };
+  const art = game.art.phones
+    ? { ...game.art, phones: withAlts(game.art.phones, text.art?.alts) }
+    : withAlt(game.art, text.art);
   return {
     ...game,
     genre: text.genre ?? game.genre,
@@ -503,6 +522,8 @@ export function localizeGame(game, locale) {
     platforms: text.platforms ?? game.platforms,
     keywords: text.keywords ?? game.keywords,
     art,
+    cardArt: withAlt(game.cardArt, text.cardArt),
+    banner: withAlt(game.banner, text.banner),
     rules: { ...game.rules, ...text.rules },
     screenshots: withAlts(game.screenshots, text.screenshots),
     features: text.features ?? game.features,
@@ -558,6 +579,9 @@ export function gamePage({ studio, games, game: source, locale, locales }) {
       .join('\n    ')}
   </div>
 </section>`
+    : '';
+  const banner = game.banner
+    ? `<figure class="banner wrap"><img src="${esc(game.banner.image)}" srcset="${esc(srcset(game.banner.image, IMAGE_WIDTHS.banner))}" sizes="${BANNER_SIZES}" width="${game.banner.width}" height="${game.banner.height}" alt="${esc(game.banner.alt)}" loading="lazy" decoding="async"></figure>`
     : '';
   const features = game.features
     .map((feature) => {
@@ -645,11 +669,11 @@ export function gamePage({ studio, games, game: source, locale, locales }) {
     <p class="tagline">${esc(game.tagline)}</p>
     <p class="lead">${esc(game.summary)}</p>
     ${storeButtons({ studio, game, ui, campaign: `${game.slug}-${locale.code}` })}
-    <p class="platforms">${esc(fill(ui.freeOn, { platforms: game.platforms }))}</p>
+    <p class="platforms">${esc(fill(game.mentionFree === false ? ui.madeFor : ui.freeOn, { platforms: game.platforms }))}</p>
   </div>
-  <div class="game-hero-art">${art(game, { eager: true })}</div>
+  <div class="game-hero-art">${art(game.art, { eager: true })}</div>
 </section>
-
+${banner ? `\n${banner}\n` : ''}
 <section class="block wrap rules" aria-labelledby="rules-title">
   <div>
     <h2 id="rules-title">${esc(ui.howToPlay)}</h2>

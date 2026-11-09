@@ -582,7 +582,8 @@ width: auto;
 height: 48px;
 }
 .soon {
-display: inline-flex;
+display: flex;
+width: fit-content;
 align-items: center;
 gap: 10px;
 margin: 28px 0 0;
@@ -970,14 +971,6 @@ box-shadow:
 14px 0 0 color-mix(in srgb, var(--accent) 60%, transparent),
 28px 0 0 color-mix(in srgb, var(--accent) 30%, transparent);
 }
-.frame-stitch .feature::before {
-width: 46px;
-height: 3px;
-margin-block: 4px 23px;
-border-radius: 2px;
-background: repeating-linear-gradient(90deg, var(--accent) 0 8px, transparent 8px 13px);
-box-shadow: none;
-}
 .support-card {
 position: relative;
 display: grid;
@@ -993,7 +986,7 @@ background: var(--surface);
 content: "";
 position: absolute;
 inset: 10px;
-border: 2px dashed color-mix(in srgb, var(--accent) 30%, transparent);
+border: 2px dashed var(--stitch, color-mix(in srgb, var(--accent) 30%, transparent));
 border-radius: calc(var(--radius-lg) - 10px);
 pointer-events: none;
 }
@@ -1081,6 +1074,75 @@ color: var(--accent);
 inset: 7px;
 border-radius: calc(var(--radius) - 7px);
 }
+.banner {
+margin-block: 0;
+}
+.banner img {
+width: 100%;
+border-radius: var(--radius);
+}
+.game-page.frame-stitch,
+.doc-page.frame-stitch {
+background:
+radial-gradient(1100px 620px at 88% -8%, var(--glow), transparent 62%),
+radial-gradient(900px 560px at -12% 18%, var(--glow2), transparent 60%),
+repeating-linear-gradient(0deg, color-mix(in srgb, var(--muted) 7%, transparent) 0 1px, transparent 1px 4px),
+repeating-linear-gradient(90deg, color-mix(in srgb, var(--muted) 5%, transparent) 0 1px, transparent 1px 3px),
+var(--bg);
+background-repeat: no-repeat, no-repeat, repeat, repeat;
+}
+.game-page.frame-stitch :is(.feature, .steps li, .tips li, .support-card, .banner) {
+position: relative;
+border-color: transparent;
+background: var(--surface);
+box-shadow:
+0 1px 2px color-mix(in srgb, var(--text) 8%, transparent),
+0 14px 28px -20px color-mix(in srgb, var(--text) 50%, transparent);
+}
+.game-page.frame-stitch :is(.feature, .steps li, .tips li, .banner)::after {
+content: "";
+position: absolute;
+inset: 7px;
+border: 2px dashed var(--stitch);
+border-radius: calc(var(--radius) - 7px);
+pointer-events: none;
+}
+.game-page.frame-stitch .steps li {
+padding: 18px 24px 18px 18px;
+}
+.game-page.frame-stitch .steps li::before {
+border-radius: 50%;
+outline: 1.5px dashed color-mix(in srgb, var(--accent-text) 70%, transparent);
+outline-offset: -5px;
+}
+.game-page.frame-stitch .tips li::before {
+border-radius: 50%;
+}
+.game-page.frame-stitch :is(.section-head h2, .rules h2, .support-card h2, .feature)::before {
+content: "";
+display: block;
+width: 54px;
+height: 14px;
+margin-bottom: 14px;
+border-radius: 0;
+box-shadow: none;
+background: linear-gradient(90deg, var(--thread-1) 0 33.4%, var(--thread-2) 33.4% 66.6%, var(--thread-3) 66.6%);
+-webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 16'%3E%3Cpath d='M3 3l10 10M13 3 3 13M25 3l10 10M35 3 25 13M47 3l10 10M57 3 47 13' stroke='%23000' stroke-width='2.8' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
+mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 16'%3E%3Cpath d='M3 3l10 10M13 3 3 13M25 3l10 10M35 3 25 13M47 3l10 10M57 3 47 13' stroke='%23000' stroke-width='2.8' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.game-page.frame-stitch .feature::before {
+margin-bottom: 18px;
+}
+.game-page.frame-stitch .banner {
+padding: 14px;
+border-radius: var(--radius-lg);
+}
+.game-page.frame-stitch .banner::after {
+border-radius: calc(var(--radius-lg) - 7px);
+}
+.game-page.frame-stitch .banner img {
+border-radius: calc(var(--radius-lg) - 14px);
+}
 .doc {
 max-width: 760px;
 margin-inline: auto;
@@ -1147,6 +1209,19 @@ font-size: 16px;
 .feature-grid {
 grid-template-columns: 1fr;
 }
+.banner img {
+aspect-ratio: 2 / 1;
+object-fit: cover;
+}
+.game-page.frame-stitch .banner {
+padding: 10px;
+}
+.game-page.frame-stitch .banner::after {
+inset: 5px;
+}
+.game-page.frame-stitch .banner img {
+border-radius: calc(var(--radius-lg) - 10px);
+}
 .site-nav a {
 padding: 8px 10px;
 }
@@ -1193,10 +1268,11 @@ transition: none !important;
 }
 }
 </style>
+<meta name="apple-itunes-app" content="app-id=6822948115">
 <meta name="theme-color" content="#F2ECE0">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"MobileApplication","name":"Stitch Tales","description":"Читай цифри біля рядків і стовпців, вишивай потрібні клітинки — і кожен розв’язаний японський кросворд вишиється на сцені у твоїх п’яльцях.","url":"https://paastudios.com/stitch-tales/uk/","image":"https://paastudios.com/stitch-tales/images/icon.webp","inLanguage":"uk","applicationCategory":"GameApplication","applicationSubCategory":"Японський кросворд-вишивка","operatingSystem":"iOS, Android","author":{"@type":"Organization","name":"PAA Studios","url":"https://paastudios.com"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"keywords":"японський кросворд, японські кросворди, нонограма, нонограми, nonogram, picross, вишивка хрестиком, вишивка, логічна головоломка, головоломка з картинкою, ігри для розуму, гра, мобільна гра, гра-головоломка, безкоштовна гра, гра без інтернету"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"MobileApplication","name":"Stitch Tales","description":"Читай цифри біля рядків і стовпців, вишивай потрібні клітинки — і кожен розв’язаний японський кросворд вишиється на сцені у твоїх п’яльцях.","url":"https://paastudios.com/stitch-tales/uk/","image":"https://paastudios.com/stitch-tales/images/icon.webp","inLanguage":"uk","applicationCategory":"GameApplication","applicationSubCategory":"Японський кросворд-вишивка","operatingSystem":"iOS, Android","author":{"@type":"Organization","name":"PAA Studios","url":"https://paastudios.com"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"keywords":"японський кросворд, японські кросворди, нонограма, нонограми, nonogram, picross, вишивка хрестиком, вишивка, логічна головоломка, головоломка з картинкою, ігри для розуму, гра, мобільна гра, гра-головоломка, безкоштовна гра, гра без інтернету","screenshot":["https://paastudios.com/stitch-tales/images/screen-1.webp","https://paastudios.com/stitch-tales/images/screen-2.webp","https://paastudios.com/stitch-tales/images/screen-3.webp","https://paastudios.com/stitch-tales/images/screen-4.webp","https://paastudios.com/stitch-tales/images/screen-5.webp","https://paastudios.com/stitch-tales/images/screen-6.webp"],"sameAs":["https://apps.apple.com/app/id6822948115"]}</script>
 </head>
-<body class="game-page frame-stitch" data-scheme="light" style="--bg:#F2ECE0;--surface:#FBF8F2;--surface2:#E7DFCF;--line:#D3C6AE;--text:#2A231C;--muted:#5F5444;--accent:#B3263A;--accent-text:#FFFFFF;--glow:rgba(179, 38, 58, 0.12);--glow2:rgba(46, 122, 82, 0.12)">
+<body class="game-page frame-stitch" data-scheme="light" style="--bg:#F2ECE0;--surface:#FBF8F2;--surface2:#E7DFCF;--line:#D3C6AE;--text:#2A231C;--muted:#5F5444;--accent:#B3263A;--accent-text:#FFFFFF;--glow:rgba(179, 38, 58, 0.12);--glow2:rgba(46, 122, 82, 0.12);--stitch:#E7B7BE;--thread-1:#B3263A;--thread-2:#2E7A52;--thread-3:#C9A06A">
 <a class="skip" href="#main">Перейти до вмісту</a>
 <header class="site-header wrap">
   <a class="brand" href="/uk/"><img src="/assets/logo.svg" width="34" height="34" alt=""><span>PAA Studios</span></a>
@@ -1253,40 +1329,66 @@ transition: none !important;
     <h1>Stitch Tales</h1>
     <p class="tagline">Кожна головоломка — стібок великої картини.</p>
     <p class="lead">Читай цифри біля рядків і стовпців, вишивай потрібні клітинки — і кожен розв’язаний японський кросворд вишиється на сцені у твоїх п’яльцях.</p>
-    <p class="soon">Незабаром у App Store та Google Play</p>
-    <p class="platforms">Безкоштовно на iPhone, iPad та Android</p>
+    <div class="stores"><a class="store" href="https://apps.apple.com/app/id6822948115?pt=129254796&amp;ct=stitch-tales-uk&amp;mt=8"><img src="/assets/badges/app-store.svg" width="144" height="48" alt="Завантажити Stitch Tales з App Store"></a></div><p class="soon">Незабаром у Google Play</p>
+    <p class="platforms">Для iPhone, iPad та Android</p>
   </div>
-  <div class="game-hero-art"><img class="art-image" src="/stitch-tales/images/hoop.svg" width="600" height="620" alt="П’яльці з вишитим лугом: метелик, сонце, квіти й мухомор, якого ще треба вишити" loading="eager" decoding="async"></div>
+  <div class="game-hero-art"><div class="phones"><figure class="device phone-left"><img src="/stitch-tales/images/screen-1.webp" srcset="/stitch-tales/images/screen-1-360.webp 360w, /stitch-tales/images/screen-1.webp 600w" sizes="(max-width: 560px) 40vw, 210px" width="600" height="1304" alt="Сова проступає на японському кросворді, у порожніх клітинках — хрестики" loading="eager" decoding="async"></figure><figure class="device phone-right"><img src="/stitch-tales/images/screen-3.webp" srcset="/stitch-tales/images/screen-3-360.webp 360w, /stitch-tales/images/screen-3.webp 600w" sizes="(max-width: 560px) 40vw, 210px" width="600" height="1304" alt="Сцена «Кіт біля вікна» зблизька: ластівки, метелик, кіт і клубок пряжі" loading="eager" decoding="async"></figure><figure class="device phone-center"><img src="/stitch-tales/images/screen-2.webp" srcset="/stitch-tales/images/screen-2-360.webp 360w, /stitch-tales/images/screen-2.webp 600w" sizes="(max-width: 560px) 40vw, 210px" width="600" height="1304" alt="Сцена «Зодіак» у п’яльцях, вишита фігура за фігурою" loading="eager" decoding="async"></figure></div></div>
 </section>
+
+<figure class="banner wrap"><img src="/stitch-tales/images/banner.webp" srcset="/stitch-tales/images/banner-720.webp 720w, /stitch-tales/images/banner-1280.webp 1280w, /stitch-tales/images/banner.webp 2240w" sizes="(max-width: 600px) 108vw, (max-width: 1184px) 92vw, 1120px" width="2240" height="960" alt="Клаптикове полотно з японських кросвордів, що перетворюються на вишивку: восьминіг із рибами-клоунами, тукан, ворота торії, ластівки, лисиця, новорічна ялинка й багато іншого" loading="lazy" decoding="async"></figure>
 
 <section class="block wrap rules" aria-labelledby="rules-title">
   <div>
     <h2 id="rules-title">Як грати</h2>
-    
+    <p class="rules-intro">В основі Stitch Tales — японські кросворди, вони ж нонограми: логічні головоломки з картинкою, відомі також як griddlers і hanjie. Цифри біля рядків і над стовпцями підказують, які клітинки заповнити; заповни потрібні — і проступить прихована картинка. Тут це фігура, що вишивається на сцені у твоїх п’яльцях.</p>
     <ol class="steps">
-      <li>Цифри біля кожного рядка й стовпця — групи клітинок поспіль, які треба вишити, у тому самому порядку.</li>
-      <li>Вишивай клітинки, що мають бути заповнені, а ті, що лишаються порожніми, позначай хрестиком.</li>
-      <li>Обережно: хибний стібок забирає життя — одне з вишитих сердець.</li>
+      <li>Цифри біля рядка чи над стовпцем підказують, скільки клітинок поспіль вишити і в якому порядку.</li>
+      <li>Між двома групами завжди є щонайменше одна порожня клітинка — познач її хрестиком.</li>
+      <li>Проведи пальцем — і нитка ляже по клітинках.</li>
+      <li>Хибний стібок коштує одного з трьох життів, тож не поспішай.</li>
       <li>Розв’яжи поле — і фігура вишиється на сцені у твоїх п’яльцях.</li>
     </ol>
-    
+    <ul class="rule-notes">
+      <li>Над стовпцем цифри читаються згори донизу, біля рядка — зліва направо.</li>
+      <li>На рушнику в кожної цифри свій колір нитки: групи різних кольорів можуть стояти впритул, а між групами одного кольору потрібна порожня клітинка.</li>
+      <li>Перша фігура сама проведе тебе всіма правилами.</li>
+    </ul>
   </div>
   <figure class="rules-art"><img src="/stitch-tales/images/nonogram.svg" width="474" height="410" alt="Майже розв’язаний японський кросворд із котом: клітинки, вишиті гранатовою ниткою, у порожніх — хрестики" loading="lazy" decoding="async"></figure>
 </section>
 
+<section class="block wrap" aria-labelledby="tips-title">
+  <div class="section-head"><h2 id="tips-title">Поради для розв’язування</h2></div>
+  <ol class="tips">
+    <li>Починай із найщільніших ліній: додай усі групи й по одній порожній клітинці між сусідніми. Якщо сума дорівнює довжині лінії, її розв’язано повністю; якщо бракує лише клітинки-двох, у довших груп уже є клітинки, щодо яких немає сумнівів.</li>
+    <li>Посунь групу якнайдалі до одного краю, потім до іншого: клітинки, які вона накриває обидва рази, точно будуть вишиті. Група із 7 клітинок у лінії з 10 завжди заповнює чотири середні.</li>
+    <li>Стібок біля самого краю поля — початок першої групи: виший від нього всю групу й постав хрестик одразу за нею.</li>
+    <li>Коли лінію розв’язано, її порожні клітинки отримують хрестики — і кожен хрестик підказує лініям, що її перетинають, де групи бути не може.</li>
+    <li>Не вгадуй: хибний стібок коштує життя. Якщо в лінії поки немає нічого певного, повернися до неї після ліній, які її перетинають.</li>
+  </ol>
+</section>
 
-
-
+<section class="block gallery" aria-labelledby="gallery-title">
+  <div class="wrap section-head"><h2 id="gallery-title">Великим планом</h2></div>
+  <div class="shots" tabindex="0" aria-label="Знімки екрана">
+    <figure class="device shot"><img src="/stitch-tales/images/screen-1.webp" srcset="/stitch-tales/images/screen-1-360.webp 360w, /stitch-tales/images/screen-1.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Сова проступає на японському кросворді, у порожніх клітинках — хрестики" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-2.webp" srcset="/stitch-tales/images/screen-2-360.webp 360w, /stitch-tales/images/screen-2.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Сцена «Зодіак» у п’яльцях, вишита фігура за фігурою" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-3.webp" srcset="/stitch-tales/images/screen-3-360.webp 360w, /stitch-tales/images/screen-3.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Сцена «Кіт біля вікна» зблизька: ластівки, метелик, кіт і клубок пряжі" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-4.webp" srcset="/stitch-tales/images/screen-4-360.webp 360w, /stitch-tales/images/screen-4.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Календар: маленька вишивка на кожен день і їжачок за весь місяць" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-5.webp" srcset="/stitch-tales/images/screen-5-360.webp 360w, /stitch-tales/images/screen-5.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Нескінченний рушник із кольоровими народними візерунками" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-6.webp" srcset="/stitch-tales/images/screen-6-360.webp 360w, /stitch-tales/images/screen-6.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Колекція готових п’ялець" loading="lazy" decoding="async"></figure>
+  </div>
+</section>
 
 <section class="block wrap" aria-labelledby="features-title">
   <div class="section-head"><h2 id="features-title">Що всередині</h2></div>
   <div class="feature-grid">
-    <div class="feature"><h3>Сцени для вишивки</h3><p>Квітучий луг, Стоунгендж, фруктовий пікнік, Сонячна система, японський сад, ляльковий будиночок, зимове село, морське дно — і не тільки.</p></div>
-    <div class="feature"><h3>Справжні шви</h3><p>Гладь, тамбурний шов, «риб’яча кістка» й французькі вузлики — кожну фігуру вишито своєю ниткою та у своїй фактурі.</p></div>
-    <div class="feature"><h3>Нескінченний рушник</h3><p>Після першої сцени відкриється рушник із народними візерунками — і візерунки на ньому не закінчуються.</p></div>
-    <div class="feature"><h3>Підказки у скрутну хвилину</h3><p>Відкрий одну клітинку або цілу лінію — і вишивай далі.</p></div>
-    <div class="feature"><h3>Подарунок щодня</h3><p>Заходь щодня по нагороду, що зростає разом із серією.</p></div>
-    <div class="feature"><h3>Приємно для очей</h3><p>М’які лляні кольори, тихі звуки стібків. Не потрібні ні акаунт, ні інтернет.</p></div>
+    <div class="feature"><h3>П’яльці за п’яльцями</h3><p>Кіт біля вікна, вітражні птахи, зимове село, чертоги Асгарду, Дикий Захід і багато іншого. А довишиті п’яльці займають своє місце у твоїй колекції.</p></div>
+    <div class="feature"><h3>Вишивка як справжня</h3><p>У кожної фігури свої нитки й стібки, м’які тіні на льоні та тихі звуки голки й п’ялець.</p></div>
+    <div class="feature"><h3>Календар вишивки дня</h3><p>Щодня на тебе чекає маленька вишивка. Виший увесь місяць — і відкриється його велика фігура, а пропущені дні зачекають.</p></div>
+    <div class="feature"><h3>Нескінченний рушник</h3><p>Після першої готової сцени відкриється рушник із народними візерунками: кольорові японські кросворди у дві-три нитки, які ніколи не закінчуються.</p></div>
+    <div class="feature"><h3>Підказки на складний випадок</h3><p>Відкрий клітинку, цілу лінію або 10 випадкових клітинок — а наперсток убереже від наступної помилки.</p></div>
+    <div class="feature"><h3>Без таймера і без поспіху</h3><p>Подарунок щодня, досягнення й таблиці рекордів Game Center на iPhone та iPad, а грати можна без інтернету.</p></div>
   </div>
 </section>
 

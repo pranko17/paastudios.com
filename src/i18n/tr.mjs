@@ -18,6 +18,7 @@ export default {
     storeGooglePlay: 'Google Play',
     and: 've',
     freeOn: '{platforms} için ücretsiz',
+    madeFor: '{platforms} için',
     howToPlay: 'Nasıl oynanır',
     tips: 'Çözüm taktikleri',
     faq: 'Sorular ve yanıtlar',
@@ -192,41 +193,74 @@ export default {
         'internetsiz oyun',
       ],
       art: {
+        alts: [
+          'Nonogramda şekillenen bir baykuş, boş karelerde çarpılar',
+          'Kasnakta figür figür işlenen “Zodyak” sahnesi',
+          '“Penceredeki kedi” sahnesine yakından bakış: kırlangıçlar, bir kelebek, bir kedi ve bir yün yumağı',
+        ],
+      },
+      cardArt: {
         alt: 'İçinde nakışlı bir çayır olan kasnak: kelebek, güneş, çiçekler ve henüz işlenmemiş bir mantar',
       },
+      banner: {
+        alt: 'Nakışa dönüşen nonogramlardan bir kırkyama: palyaço balıklarıyla bir ahtapot, bir tukan, bir torii kapısı, kırlangıçlar, bir tilki, bir yılbaşı ağacı ve daha fazlası',
+      },
       rules: {
+        intro:
+          'Stitch Tales, nonogramlara dayanır: griddlers, hanjie ya da Japon bulmacası olarak da bilinen resimli mantık bulmacalarına. Satırların yanındaki ve sütunların üstündeki sayılar hangi kareleri dolduracağını söyler; doğru kareleri doldurduğunda gizli bir resim ortaya çıkar — burada bu, kasnağındaki sahneye işlenen bir figürdür.',
         steps: [
-          'Her satırın ve sütunun yanındaki sayılar, sırayla yan yana kaç kare dikileceğini gösterir.',
-          'Dolu olması gereken kareleri dik; boş kalacakları çarpıyla işaretle.',
-          'Dikkat: her yanlış dikiş bir can götürür — nakışlı kalplerinden biri kırılır.',
+          'Bir satırın yanındaki ya da bir sütunun üstündeki sayılar, yan yana kaç kare dikeceğini ve hangi sırayla dikeceğini gösterir.',
+          'İki grup arasında her zaman en az bir boş kare vardır — onu çarpıyla işaretle.',
+          'Parmağını kaydır, iplik de onu izleyerek kareler boyunca ilerlesin.',
+          'Yanlış bir dikiş üç canından birine mal olur, o yüzden acele etme.',
           'Izgarayı çöz; figür kasnağındaki sahneye işlensin.',
+        ],
+        notes: [
+          'Sütunun üstündeki sayıları yukarıdan aşağıya, satırın yanındakileri soldan sağa oku.',
+          'Etaminde her sayının kendi iplik rengi vardır: farklı renkteki gruplar yan yana gelebilir, aynı renkteki grupların arasında ise boş bir kare olmalıdır.',
+          'İlk figürün sana tüm kuralları adım adım öğretir.',
+        ],
+        tips: [
+          'En dolu çizgilerden başla: grupların uzunluklarını, aralarına birer boş kare ekleyerek topla. Toplam çizginin uzunluğuna eşitse çizgi baştan sona çözülmüştür; yalnızca bir iki kare eksik kalıyorsa uzun gruplarda kesin olan kareler zaten vardır.',
+          'Bir grubu gidebildiği kadar bir uca kaydır, sonra öbür uca: iki seferde de kapladığı kareler kesinlikle dikilir. 10 karelik bir çizgide 7, ortadaki dört kareyi her zaman doldurur.',
+          'Izgaranın tam kenarındaki bir dikiş, ilk grubun başlangıcıdır: grubun tamamını oradan itibaren dik ve hemen ardına bir çarpı koy.',
+          'Bir çizgi çözülünce boş kareleri çarpı alır — ve her çarpı, o çizgiyi kesen çizgilere bir grubun nereye gelemeyeceğini söyler.',
+          'Tahmin yürütme: yanlış bir dikiş bir cana mal olur. Bir çizgide henüz hiçbir şey kesin değilse, onu kesen çizgilerle uğraştıktan sonra ona geri dön.',
         ],
         alt: 'Neredeyse çözülmüş bir kedi nonogramı: nar kırmızısı iplikle dikilmiş kareler, boş olanlarda çarpılar',
       },
+      screenshots: [
+        'Nonogramda şekillenen bir baykuş, boş karelerde çarpılar',
+        'Kasnakta figür figür işlenen “Zodyak” sahnesi',
+        '“Penceredeki kedi” sahnesine yakından bakış: kırlangıçlar, bir kelebek, bir kedi ve bir yün yumağı',
+        'Takvim: her gün için küçük bir nakış, bütün ay için bir kirpi',
+        'Renkli halk motifleriyle sonsuz etamin',
+        'Biten kasnakların koleksiyonu',
+      ],
       features: [
         {
-          title: 'İşlenecek sahneler',
-          text: 'Çiçekli çayır, Stonehenge, meyve pikniği, Güneş Sistemi, Japon bahçesi, bebek evi, kış köyü, deniz dibi ve daha fazlası.',
+          title: 'Kasnak üstüne kasnak',
+          text: 'Penceredeki kedi, vitray kuşlar, kış köyü, Asgard’ın salonları, Vahşi Batı ve çok daha fazlası. Biten her kasnak koleksiyonunda yerini alır.',
         },
         {
-          title: 'Gerçek nakış teknikleri',
-          text: 'Saten dolgu, zincir işi, balık kılçığı ve Fransız düğümü — her figür kendi ipliği ve dokusuyla işlenir.',
+          title: 'Gerçeği gibi nakış',
+          text: 'Her figürün kendi iplikleri ve dikişleri var; keten üzerinde yumuşak gölgeler, iğnenin ve kasnağın dingin sesleri.',
+        },
+        {
+          title: 'Günün nakışları takvimi',
+          text: 'Her gün küçük bir nakış seni bekliyor. Bütün ayı işle, ayın büyük figürü açılsın — kaçırdığın günler de seni bekler.',
         },
         {
           title: 'Sonsuz bir etamin',
-          text: 'İlk sahneni bitirince halk motifleriyle bir etamin açılır — ve desenleri hiç bitmez.',
+          text: 'İlk sahneni bitirince halk motifleriyle bir etamin açılır: iki ya da üç iplikle işlenen, hiç bitmeyen renkli nonogramlar.',
         },
         {
-          title: 'Takıldığında ipuçları',
-          text: 'Tek bir kareyi ya da bütün bir satırı veya sütunu aç, dikmeye devam et.',
+          title: 'Zor anlar için ipuçları',
+          text: 'Bir kare, bütün bir çizgi ya da rastgele 10 kare aç — yüksük de seni bir sonraki hatandan korur.',
         },
         {
-          title: 'Her gün bir hediye',
-          text: 'Her gün uğra; ödülün serinle birlikte büyüsün.',
-        },
-        {
-          title: 'Göz yormaz',
-          text: 'Yumuşak keten renkleri, hafif dikiş sesleri. Hesap da internet de gerekmez.',
+          title: 'Süre sınırı yok, acele yok',
+          text: 'Her gün bir hediye, iPhone ve iPad’de Game Center başarımları ve liderlik tabloları; oynamak için internet de gerekmez.',
         },
       ],
       supportNote: 'Bize oyunun içinden de ulaşabilirsin: “Profil” → “Bize yazın”.',

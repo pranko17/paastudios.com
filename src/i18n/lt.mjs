@@ -18,6 +18,7 @@ export default {
     storeGooglePlay: 'Google Play',
     and: 'ir',
     freeOn: 'Nemokamai {platforms}',
+    madeFor: 'Žaidimas {platforms}',
     howToPlay: 'Kaip žaisti',
     tips: 'Sprendimo patarimai',
     faq: 'Klausimai ir atsakymai',
@@ -195,41 +196,74 @@ export default {
         'žaidimas be interneto',
       ],
       art: {
+        alts: [
+          'Pelėda, ryškėjanti nonogramoje, tuščiuose langeliuose — kryželiai',
+          'Scena „Zodiakas“ lankelyje, išsiuvinėta figūra po figūros',
+          'Scenos „Katė prie lango“ stambus planas: kregždės, drugelis, katė ir siūlų kamuolys',
+        ],
+      },
+      cardArt: {
         alt: 'Siuvinėjimo lankelis su išsiuvinėta gėlių pieva: drugelis, saulė, gėlės ir musmirė, kurią dar reikia išsiuvinėti',
       },
+      banner: {
+        alt: 'Nonogramų skiautinis, virstantis siuviniu: aštuonkojis su klounžuvėmis, tukanas, torii vartai, kregždės, lapė, Kalėdų eglutė ir dar daugiau',
+      },
       rules: {
+        intro:
+          'Stitch Tales pagrįstas nonogramomis — loginiais galvosūkiais, atskleidžiančiais paveikslėlį. Jie dar vadinami japoniškais kryžiažodžiais, griddlers arba hanjie. Skaičiai prie eilučių ir virš stulpelių nurodo, kuriuos langelius užpildyti; užpildyk tinkamus, ir pasirodys paslėptas paveikslėlis — čia tai figūra, kuri įsiuvinėjama į sceną tavo lankelyje.',
         steps: [
-          'Skaičiai prie kiekvienos eilutės ir stulpelio — iš eilės einančių užpildytų langelių grupės, ta pačia tvarka.',
-          'Siuvinėk langelius, kurie turi būti užpildyti, o tuos, kurie lieka tušti, pažymėk kryželiu.',
-          'Atsargiai — neteisingas dygsnis atima vieną iš tavo išsiuvinėtų širdelių.',
+          'Skaičiai prie eilutės ar virš stulpelio nurodo, kiek langelių iš eilės išsiuvinėti ir kokia tvarka.',
+          'Tarp dviejų atkarpų visada yra bent vienas tuščias langelis — pažymėk jį kryželiu.',
+          'Perbrauk pirštu, ir siūlas seks paskui jį per langelius.',
+          'Neteisingas dygsnis atima vieną iš trijų tavo gyvybių, tad neskubėk.',
           'Išspręsk tinklelį, ir figūra bus įsiuvinėta į sceną tavo lankelyje.',
+        ],
+        notes: [
+          'Skaičius virš stulpelio skaityk iš viršaus į apačią, o prie eilutės — iš kairės į dešinę.',
+          'Raštuotame rankšluostyje kiekvienas skaičius turi savo siūlo spalvą: skirtingų spalvų atkarpos gali liestis, o tos pačios spalvos atkarpas visada skiria tuščias langelis.',
+          'Pirmoji figūra supažindins tave su visomis taisyklėmis.',
+        ],
+        tips: [
+          'Pradėk nuo pilniausių linijų: sudėk atkarpas ir pridėk po vieną tuščią langelį tarp kiekvienų dviejų. Jei suma lygi linijos ilgiui, visa linija išspręsta; jei trūksta tik langelio ar dviejų, ilgesnėse atkarpose jau yra tikrai žinomų langelių.',
+          'Pastumk atkarpą kiek tik galima į vieną linijos galą, paskui į kitą: langelius, kuriuos ji uždengia abu kartus, visada reikia išsiuvinėti. 10 langelių linijoje 7 visada užpildo keturis vidurinius langelius.',
+          'Dygsnis prie pat tinklelio krašto yra pirmosios atkarpos pradžia: išsiuvinėk nuo jo visą atkarpą ir už jos padėk kryželį.',
+          'Kai linija išspręsta, jos tušti langeliai gauna kryželius — ir kiekvienas kryželis skersinėms linijoms parodo, kur atkarpai vietos nėra.',
+          'Nespėliok: neteisingas dygsnis kainuoja gyvybę. Jei linijoje dar nėra nieko tikro, grįžk prie jos, kai padirbėsi su ją kertančiomis linijomis.',
         ],
         alt: 'Beveik išspręsta nonograma su kate: granatiniu siūlu išsiuvinėti langeliai, tuščiuose — kryželiai',
       },
+      screenshots: [
+        'Pelėda, ryškėjanti nonogramoje, tuščiuose langeliuose — kryželiai',
+        'Scena „Zodiakas“ lankelyje, išsiuvinėta figūra po figūros',
+        'Scenos „Katė prie lango“ stambus planas: kregždės, drugelis, katė ir siūlų kamuolys',
+        'Kalendorius: mažas siuvinys kiekvienai dienai ir ežiukas visam mėnesiui',
+        'Begalinis rankšluostis su spalvotais liaudies raštais',
+        'Baigtų lankelių kolekcija',
+      ],
       features: [
         {
-          title: 'Scenos siuvinėti',
-          text: 'Gėlių pieva, Stounhendžas, vaisių piknikas, Saulės sistema, japoniškas sodas, lėlių namelis, žiemos kaimelis, jūros dugnas — ir dar daugiau.',
+          title: 'Lankelis po lankelio',
+          text: 'Katė prie lango, vitražo paukščiai, žiemos kaimelis, Asgardo menės, Laukiniai Vakarai ir dar daugiau. Kiekvienas baigtas lankelis užima vietą tavo kolekcijoje.',
         },
         {
-          title: 'Tikri siuvinėjimo dygsniai',
-          text: 'Lygusis dygsnis, grandinėlė, žuvies ašakos dygsnis ir prancūziški mazgeliai — kiekviena figūra išsiuvinėta savo siūlu ir savo faktūra.',
+          title: 'Tarsi tikras siuvinys',
+          text: 'Kiekviena figūra — su savo siūlais ir dygsniais, švelniais šešėliais ant lino ir tyliais adatos bei lankelio garsais.',
+        },
+        {
+          title: 'Kasdienių dygsnių kalendorius',
+          text: 'Kiekvieną dieną laukia mažas siuvinys. Išsiuvinėk visas mėnesio dienas, ir atsivers didžioji jo figūra — praleistos dienos tavęs palauks.',
         },
         {
           title: 'Begalinis rankšluostis',
-          text: 'Po pirmosios scenos atsivers raštuotas rankšluostis su liaudies raštais — ir jo raštai niekada nesibaigia.',
+          text: 'Po pirmosios baigtos scenos atsivers raštuotas rankšluostis su liaudies raštais: spalvotos nonogramos dviem ar trimis siūlais, kurios niekada nesibaigia.',
         },
         {
-          title: 'Užuominos, kai užstringi',
-          text: 'Atverk vieną langelį ar visą liniją ir siuvinėk toliau.',
+          title: 'Užuominos sunkioms akimirkoms',
+          text: 'Atverk langelį, visą liniją ar 10 atsitiktinių langelių — o antpirštis apsaugos nuo kitos klaidos.',
         },
         {
-          title: 'Dovana kasdien',
-          text: 'Grįžk kasdien atsiimti dovanos, kuri didėja kartu su tavo serija.',
-        },
-        {
-          title: 'Malonu akims',
-          text: 'Švelnios lino spalvos, tylūs dygsnių garsai, nereikia nei paskyros, nei interneto.',
+          title: 'Be laikmačio ir skubos',
+          text: 'Dovana kasdien, Game Center pasiekimai ir lyderių lentelės iPhone ir iPad įrenginiuose, o žaisti galima be interneto.',
         },
       ],
       supportNote: 'Parašyti mums galima ir iš žaidimo: Profilis → Parašyk mums.',

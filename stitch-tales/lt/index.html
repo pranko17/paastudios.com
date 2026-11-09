@@ -582,7 +582,8 @@ width: auto;
 height: 48px;
 }
 .soon {
-display: inline-flex;
+display: flex;
+width: fit-content;
 align-items: center;
 gap: 10px;
 margin: 28px 0 0;
@@ -970,14 +971,6 @@ box-shadow:
 14px 0 0 color-mix(in srgb, var(--accent) 60%, transparent),
 28px 0 0 color-mix(in srgb, var(--accent) 30%, transparent);
 }
-.frame-stitch .feature::before {
-width: 46px;
-height: 3px;
-margin-block: 4px 23px;
-border-radius: 2px;
-background: repeating-linear-gradient(90deg, var(--accent) 0 8px, transparent 8px 13px);
-box-shadow: none;
-}
 .support-card {
 position: relative;
 display: grid;
@@ -993,7 +986,7 @@ background: var(--surface);
 content: "";
 position: absolute;
 inset: 10px;
-border: 2px dashed color-mix(in srgb, var(--accent) 30%, transparent);
+border: 2px dashed var(--stitch, color-mix(in srgb, var(--accent) 30%, transparent));
 border-radius: calc(var(--radius-lg) - 10px);
 pointer-events: none;
 }
@@ -1081,6 +1074,75 @@ color: var(--accent);
 inset: 7px;
 border-radius: calc(var(--radius) - 7px);
 }
+.banner {
+margin-block: 0;
+}
+.banner img {
+width: 100%;
+border-radius: var(--radius);
+}
+.game-page.frame-stitch,
+.doc-page.frame-stitch {
+background:
+radial-gradient(1100px 620px at 88% -8%, var(--glow), transparent 62%),
+radial-gradient(900px 560px at -12% 18%, var(--glow2), transparent 60%),
+repeating-linear-gradient(0deg, color-mix(in srgb, var(--muted) 7%, transparent) 0 1px, transparent 1px 4px),
+repeating-linear-gradient(90deg, color-mix(in srgb, var(--muted) 5%, transparent) 0 1px, transparent 1px 3px),
+var(--bg);
+background-repeat: no-repeat, no-repeat, repeat, repeat;
+}
+.game-page.frame-stitch :is(.feature, .steps li, .tips li, .support-card, .banner) {
+position: relative;
+border-color: transparent;
+background: var(--surface);
+box-shadow:
+0 1px 2px color-mix(in srgb, var(--text) 8%, transparent),
+0 14px 28px -20px color-mix(in srgb, var(--text) 50%, transparent);
+}
+.game-page.frame-stitch :is(.feature, .steps li, .tips li, .banner)::after {
+content: "";
+position: absolute;
+inset: 7px;
+border: 2px dashed var(--stitch);
+border-radius: calc(var(--radius) - 7px);
+pointer-events: none;
+}
+.game-page.frame-stitch .steps li {
+padding: 18px 24px 18px 18px;
+}
+.game-page.frame-stitch .steps li::before {
+border-radius: 50%;
+outline: 1.5px dashed color-mix(in srgb, var(--accent-text) 70%, transparent);
+outline-offset: -5px;
+}
+.game-page.frame-stitch .tips li::before {
+border-radius: 50%;
+}
+.game-page.frame-stitch :is(.section-head h2, .rules h2, .support-card h2, .feature)::before {
+content: "";
+display: block;
+width: 54px;
+height: 14px;
+margin-bottom: 14px;
+border-radius: 0;
+box-shadow: none;
+background: linear-gradient(90deg, var(--thread-1) 0 33.4%, var(--thread-2) 33.4% 66.6%, var(--thread-3) 66.6%);
+-webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 16'%3E%3Cpath d='M3 3l10 10M13 3 3 13M25 3l10 10M35 3 25 13M47 3l10 10M57 3 47 13' stroke='%23000' stroke-width='2.8' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
+mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 16'%3E%3Cpath d='M3 3l10 10M13 3 3 13M25 3l10 10M35 3 25 13M47 3l10 10M57 3 47 13' stroke='%23000' stroke-width='2.8' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.game-page.frame-stitch .feature::before {
+margin-bottom: 18px;
+}
+.game-page.frame-stitch .banner {
+padding: 14px;
+border-radius: var(--radius-lg);
+}
+.game-page.frame-stitch .banner::after {
+border-radius: calc(var(--radius-lg) - 7px);
+}
+.game-page.frame-stitch .banner img {
+border-radius: calc(var(--radius-lg) - 14px);
+}
 .doc {
 max-width: 760px;
 margin-inline: auto;
@@ -1147,6 +1209,19 @@ font-size: 16px;
 .feature-grid {
 grid-template-columns: 1fr;
 }
+.banner img {
+aspect-ratio: 2 / 1;
+object-fit: cover;
+}
+.game-page.frame-stitch .banner {
+padding: 10px;
+}
+.game-page.frame-stitch .banner::after {
+inset: 5px;
+}
+.game-page.frame-stitch .banner img {
+border-radius: calc(var(--radius-lg) - 10px);
+}
 .site-nav a {
 padding: 8px 10px;
 }
@@ -1193,10 +1268,11 @@ transition: none !important;
 }
 }
 </style>
+<meta name="apple-itunes-app" content="app-id=6822948115">
 <meta name="theme-color" content="#F2ECE0">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"MobileApplication","name":"Stitch Tales","description":"Skaityk skaičius prie eilučių ir stulpelių, siuvinėk tinkamus langelius — ir kiekviena išspręsta nonograma bus įsiuvinėta į sceną tavo lankelyje.","url":"https://paastudios.com/stitch-tales/lt/","image":"https://paastudios.com/stitch-tales/images/icon.webp","inLanguage":"lt","applicationCategory":"GameApplication","applicationSubCategory":"Kryželiu siuvinėta nonograma","operatingSystem":"iOS, Android","author":{"@type":"Organization","name":"PAA Studios","url":"https://paastudios.com"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"keywords":"nonograma, nonogramos, japoniškas kryžiažodis, japoniški kryžiažodžiai, picross, griddlers, siuvinėjimas kryželiu, siuvinėjimas, loginis galvosūkis, loginis žaidimas, skaičių galvosūkis, pikselių menas, žaidimas, mobilusis žaidimas, galvosūkių žaidimas, nemokamas žaidimas, žaidimas be interneto"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"MobileApplication","name":"Stitch Tales","description":"Skaityk skaičius prie eilučių ir stulpelių, siuvinėk tinkamus langelius — ir kiekviena išspręsta nonograma bus įsiuvinėta į sceną tavo lankelyje.","url":"https://paastudios.com/stitch-tales/lt/","image":"https://paastudios.com/stitch-tales/images/icon.webp","inLanguage":"lt","applicationCategory":"GameApplication","applicationSubCategory":"Kryželiu siuvinėta nonograma","operatingSystem":"iOS, Android","author":{"@type":"Organization","name":"PAA Studios","url":"https://paastudios.com"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"keywords":"nonograma, nonogramos, japoniškas kryžiažodis, japoniški kryžiažodžiai, picross, griddlers, siuvinėjimas kryželiu, siuvinėjimas, loginis galvosūkis, loginis žaidimas, skaičių galvosūkis, pikselių menas, žaidimas, mobilusis žaidimas, galvosūkių žaidimas, nemokamas žaidimas, žaidimas be interneto","screenshot":["https://paastudios.com/stitch-tales/images/screen-1.webp","https://paastudios.com/stitch-tales/images/screen-2.webp","https://paastudios.com/stitch-tales/images/screen-3.webp","https://paastudios.com/stitch-tales/images/screen-4.webp","https://paastudios.com/stitch-tales/images/screen-5.webp","https://paastudios.com/stitch-tales/images/screen-6.webp"],"sameAs":["https://apps.apple.com/app/id6822948115"]}</script>
 </head>
-<body class="game-page frame-stitch" data-scheme="light" style="--bg:#F2ECE0;--surface:#FBF8F2;--surface2:#E7DFCF;--line:#D3C6AE;--text:#2A231C;--muted:#5F5444;--accent:#B3263A;--accent-text:#FFFFFF;--glow:rgba(179, 38, 58, 0.12);--glow2:rgba(46, 122, 82, 0.12)">
+<body class="game-page frame-stitch" data-scheme="light" style="--bg:#F2ECE0;--surface:#FBF8F2;--surface2:#E7DFCF;--line:#D3C6AE;--text:#2A231C;--muted:#5F5444;--accent:#B3263A;--accent-text:#FFFFFF;--glow:rgba(179, 38, 58, 0.12);--glow2:rgba(46, 122, 82, 0.12);--stitch:#E7B7BE;--thread-1:#B3263A;--thread-2:#2E7A52;--thread-3:#C9A06A">
 <a class="skip" href="#main">Pereiti prie turinio</a>
 <header class="site-header wrap">
   <a class="brand" href="/lt/"><img src="/assets/logo.svg" width="34" height="34" alt=""><span>PAA Studios</span></a>
@@ -1253,40 +1329,66 @@ transition: none !important;
     <h1>Stitch Tales</h1>
     <p class="tagline">Kiekvienas galvosūkis — dygsnis didesniame paveiksle.</p>
     <p class="lead">Skaityk skaičius prie eilučių ir stulpelių, siuvinėk tinkamus langelius — ir kiekviena išspręsta nonograma bus įsiuvinėta į sceną tavo lankelyje.</p>
-    <p class="soon">Jau greitai: App Store ir Google Play</p>
-    <p class="platforms">Nemokamai iPhone, iPad ir Android įrenginiams</p>
+    <div class="stores"><a class="store" href="https://apps.apple.com/app/id6822948115?pt=129254796&amp;ct=stitch-tales-lt&amp;mt=8"><img src="/assets/badges/app-store.svg" width="144" height="48" alt="Atsisiųsk Stitch Tales iš App Store"></a></div><p class="soon">Jau greitai: Google Play</p>
+    <p class="platforms">Žaidimas iPhone, iPad ir Android įrenginiams</p>
   </div>
-  <div class="game-hero-art"><img class="art-image" src="/stitch-tales/images/hoop.svg" width="600" height="620" alt="Siuvinėjimo lankelis su išsiuvinėta gėlių pieva: drugelis, saulė, gėlės ir musmirė, kurią dar reikia išsiuvinėti" loading="eager" decoding="async"></div>
+  <div class="game-hero-art"><div class="phones"><figure class="device phone-left"><img src="/stitch-tales/images/screen-1.webp" srcset="/stitch-tales/images/screen-1-360.webp 360w, /stitch-tales/images/screen-1.webp 600w" sizes="(max-width: 560px) 40vw, 210px" width="600" height="1304" alt="Pelėda, ryškėjanti nonogramoje, tuščiuose langeliuose — kryželiai" loading="eager" decoding="async"></figure><figure class="device phone-right"><img src="/stitch-tales/images/screen-3.webp" srcset="/stitch-tales/images/screen-3-360.webp 360w, /stitch-tales/images/screen-3.webp 600w" sizes="(max-width: 560px) 40vw, 210px" width="600" height="1304" alt="Scenos „Katė prie lango“ stambus planas: kregždės, drugelis, katė ir siūlų kamuolys" loading="eager" decoding="async"></figure><figure class="device phone-center"><img src="/stitch-tales/images/screen-2.webp" srcset="/stitch-tales/images/screen-2-360.webp 360w, /stitch-tales/images/screen-2.webp 600w" sizes="(max-width: 560px) 40vw, 210px" width="600" height="1304" alt="Scena „Zodiakas“ lankelyje, išsiuvinėta figūra po figūros" loading="eager" decoding="async"></figure></div></div>
 </section>
+
+<figure class="banner wrap"><img src="/stitch-tales/images/banner.webp" srcset="/stitch-tales/images/banner-720.webp 720w, /stitch-tales/images/banner-1280.webp 1280w, /stitch-tales/images/banner.webp 2240w" sizes="(max-width: 600px) 108vw, (max-width: 1184px) 92vw, 1120px" width="2240" height="960" alt="Nonogramų skiautinis, virstantis siuviniu: aštuonkojis su klounžuvėmis, tukanas, torii vartai, kregždės, lapė, Kalėdų eglutė ir dar daugiau" loading="lazy" decoding="async"></figure>
 
 <section class="block wrap rules" aria-labelledby="rules-title">
   <div>
     <h2 id="rules-title">Kaip žaisti</h2>
-    
+    <p class="rules-intro">Stitch Tales pagrįstas nonogramomis — loginiais galvosūkiais, atskleidžiančiais paveikslėlį. Jie dar vadinami japoniškais kryžiažodžiais, griddlers arba hanjie. Skaičiai prie eilučių ir virš stulpelių nurodo, kuriuos langelius užpildyti; užpildyk tinkamus, ir pasirodys paslėptas paveikslėlis — čia tai figūra, kuri įsiuvinėjama į sceną tavo lankelyje.</p>
     <ol class="steps">
-      <li>Skaičiai prie kiekvienos eilutės ir stulpelio — iš eilės einančių užpildytų langelių grupės, ta pačia tvarka.</li>
-      <li>Siuvinėk langelius, kurie turi būti užpildyti, o tuos, kurie lieka tušti, pažymėk kryželiu.</li>
-      <li>Atsargiai — neteisingas dygsnis atima vieną iš tavo išsiuvinėtų širdelių.</li>
+      <li>Skaičiai prie eilutės ar virš stulpelio nurodo, kiek langelių iš eilės išsiuvinėti ir kokia tvarka.</li>
+      <li>Tarp dviejų atkarpų visada yra bent vienas tuščias langelis — pažymėk jį kryželiu.</li>
+      <li>Perbrauk pirštu, ir siūlas seks paskui jį per langelius.</li>
+      <li>Neteisingas dygsnis atima vieną iš trijų tavo gyvybių, tad neskubėk.</li>
       <li>Išspręsk tinklelį, ir figūra bus įsiuvinėta į sceną tavo lankelyje.</li>
     </ol>
-    
+    <ul class="rule-notes">
+      <li>Skaičius virš stulpelio skaityk iš viršaus į apačią, o prie eilutės — iš kairės į dešinę.</li>
+      <li>Raštuotame rankšluostyje kiekvienas skaičius turi savo siūlo spalvą: skirtingų spalvų atkarpos gali liestis, o tos pačios spalvos atkarpas visada skiria tuščias langelis.</li>
+      <li>Pirmoji figūra supažindins tave su visomis taisyklėmis.</li>
+    </ul>
   </div>
   <figure class="rules-art"><img src="/stitch-tales/images/nonogram.svg" width="474" height="410" alt="Beveik išspręsta nonograma su kate: granatiniu siūlu išsiuvinėti langeliai, tuščiuose — kryželiai" loading="lazy" decoding="async"></figure>
 </section>
 
+<section class="block wrap" aria-labelledby="tips-title">
+  <div class="section-head"><h2 id="tips-title">Sprendimo patarimai</h2></div>
+  <ol class="tips">
+    <li>Pradėk nuo pilniausių linijų: sudėk atkarpas ir pridėk po vieną tuščią langelį tarp kiekvienų dviejų. Jei suma lygi linijos ilgiui, visa linija išspręsta; jei trūksta tik langelio ar dviejų, ilgesnėse atkarpose jau yra tikrai žinomų langelių.</li>
+    <li>Pastumk atkarpą kiek tik galima į vieną linijos galą, paskui į kitą: langelius, kuriuos ji uždengia abu kartus, visada reikia išsiuvinėti. 10 langelių linijoje 7 visada užpildo keturis vidurinius langelius.</li>
+    <li>Dygsnis prie pat tinklelio krašto yra pirmosios atkarpos pradžia: išsiuvinėk nuo jo visą atkarpą ir už jos padėk kryželį.</li>
+    <li>Kai linija išspręsta, jos tušti langeliai gauna kryželius — ir kiekvienas kryželis skersinėms linijoms parodo, kur atkarpai vietos nėra.</li>
+    <li>Nespėliok: neteisingas dygsnis kainuoja gyvybę. Jei linijoje dar nėra nieko tikro, grįžk prie jos, kai padirbėsi su ją kertančiomis linijomis.</li>
+  </ol>
+</section>
 
-
-
+<section class="block gallery" aria-labelledby="gallery-title">
+  <div class="wrap section-head"><h2 id="gallery-title">Iš arčiau</h2></div>
+  <div class="shots" tabindex="0" aria-label="Ekrano nuotraukos">
+    <figure class="device shot"><img src="/stitch-tales/images/screen-1.webp" srcset="/stitch-tales/images/screen-1-360.webp 360w, /stitch-tales/images/screen-1.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Pelėda, ryškėjanti nonogramoje, tuščiuose langeliuose — kryželiai" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-2.webp" srcset="/stitch-tales/images/screen-2-360.webp 360w, /stitch-tales/images/screen-2.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Scena „Zodiakas“ lankelyje, išsiuvinėta figūra po figūros" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-3.webp" srcset="/stitch-tales/images/screen-3-360.webp 360w, /stitch-tales/images/screen-3.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Scenos „Katė prie lango“ stambus planas: kregždės, drugelis, katė ir siūlų kamuolys" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-4.webp" srcset="/stitch-tales/images/screen-4-360.webp 360w, /stitch-tales/images/screen-4.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Kalendorius: mažas siuvinys kiekvienai dienai ir ežiukas visam mėnesiui" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-5.webp" srcset="/stitch-tales/images/screen-5-360.webp 360w, /stitch-tales/images/screen-5.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Begalinis rankšluostis su spalvotais liaudies raštais" loading="lazy" decoding="async"></figure>
+    <figure class="device shot"><img src="/stitch-tales/images/screen-6.webp" srcset="/stitch-tales/images/screen-6-360.webp 360w, /stitch-tales/images/screen-6.webp 600w" sizes="(max-width: 863px) 170px, (max-width: 1136px) 20vw, 223px" width="600" height="1304" alt="Baigtų lankelių kolekcija" loading="lazy" decoding="async"></figure>
+  </div>
+</section>
 
 <section class="block wrap" aria-labelledby="features-title">
   <div class="section-head"><h2 id="features-title">Ką rasi žaidime</h2></div>
   <div class="feature-grid">
-    <div class="feature"><h3>Scenos siuvinėti</h3><p>Gėlių pieva, Stounhendžas, vaisių piknikas, Saulės sistema, japoniškas sodas, lėlių namelis, žiemos kaimelis, jūros dugnas — ir dar daugiau.</p></div>
-    <div class="feature"><h3>Tikri siuvinėjimo dygsniai</h3><p>Lygusis dygsnis, grandinėlė, žuvies ašakos dygsnis ir prancūziški mazgeliai — kiekviena figūra išsiuvinėta savo siūlu ir savo faktūra.</p></div>
-    <div class="feature"><h3>Begalinis rankšluostis</h3><p>Po pirmosios scenos atsivers raštuotas rankšluostis su liaudies raštais — ir jo raštai niekada nesibaigia.</p></div>
-    <div class="feature"><h3>Užuominos, kai užstringi</h3><p>Atverk vieną langelį ar visą liniją ir siuvinėk toliau.</p></div>
-    <div class="feature"><h3>Dovana kasdien</h3><p>Grįžk kasdien atsiimti dovanos, kuri didėja kartu su tavo serija.</p></div>
-    <div class="feature"><h3>Malonu akims</h3><p>Švelnios lino spalvos, tylūs dygsnių garsai, nereikia nei paskyros, nei interneto.</p></div>
+    <div class="feature"><h3>Lankelis po lankelio</h3><p>Katė prie lango, vitražo paukščiai, žiemos kaimelis, Asgardo menės, Laukiniai Vakarai ir dar daugiau. Kiekvienas baigtas lankelis užima vietą tavo kolekcijoje.</p></div>
+    <div class="feature"><h3>Tarsi tikras siuvinys</h3><p>Kiekviena figūra — su savo siūlais ir dygsniais, švelniais šešėliais ant lino ir tyliais adatos bei lankelio garsais.</p></div>
+    <div class="feature"><h3>Kasdienių dygsnių kalendorius</h3><p>Kiekvieną dieną laukia mažas siuvinys. Išsiuvinėk visas mėnesio dienas, ir atsivers didžioji jo figūra — praleistos dienos tavęs palauks.</p></div>
+    <div class="feature"><h3>Begalinis rankšluostis</h3><p>Po pirmosios baigtos scenos atsivers raštuotas rankšluostis su liaudies raštais: spalvotos nonogramos dviem ar trimis siūlais, kurios niekada nesibaigia.</p></div>
+    <div class="feature"><h3>Užuominos sunkioms akimirkoms</h3><p>Atverk langelį, visą liniją ar 10 atsitiktinių langelių — o antpirštis apsaugos nuo kitos klaidos.</p></div>
+    <div class="feature"><h3>Be laikmačio ir skubos</h3><p>Dovana kasdien, Game Center pasiekimai ir lyderių lentelės iPhone ir iPad įrenginiuose, o žaisti galima be interneto.</p></div>
   </div>
 </section>
 

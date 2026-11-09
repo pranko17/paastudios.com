@@ -18,6 +18,7 @@ export default {
     storeGooglePlay: 'Google Play',
     and: 'et',
     freeOn: 'Gratuit sur {platforms}',
+    madeFor: 'Sur {platforms}',
     howToPlay: 'Comment jouer',
     tips: 'Astuces pour résoudre',
     faq: 'Questions et réponses',
@@ -192,41 +193,74 @@ export default {
         'jeu hors ligne',
       ],
       art: {
+        alts: [
+          'Un hibou qui prend forme sur un logimage, avec des croix dans les cases vides',
+          'La scène « Zodiaque » dans le tambour, brodée figure après figure',
+          'Gros plan sur la scène « Chat à la fenêtre » : des hirondelles, un papillon, un chat et une pelote de laine',
+        ],
+      },
+      cardArt: {
         alt: 'Un tambour de broderie avec une prairie fleurie brodée : un papillon, un soleil, des fleurs et un champignon encore à broder',
       },
+      banner: {
+        alt: 'Un patchwork de logimages qui deviennent broderie : une pieuvre avec des poissons-clowns, un toucan, un portail torii, des hirondelles, un renard, un sapin de Noël et bien d’autres',
+      },
       rules: {
+        intro:
+          'Stitch Tales repose sur les logimages, des casse-têtes logiques en images qu’on appelle aussi nonogrammes, griddlers ou hanjie. Les chiffres à côté des lignes et au-dessus des colonnes indiquent quelles cases remplir ; remplissez les bonnes, et une image cachée apparaît — ici, une figure brodée dans la scène de votre tambour.',
         steps: [
-          'Les chiffres à côté de chaque ligne et de chaque colonne donnent, dans l’ordre, les blocs de cases remplies.',
-          'Brodez les cases à remplir ; marquez d’une croix celles qui restent vides.',
-          'Attention — un point mal placé vous coûte une vie, l’un de vos cœurs brodés.',
+          'Les chiffres à côté d’une ligne ou au-dessus d’une colonne indiquent combien de cases d’affilée broder, et dans quel ordre.',
+          'Entre deux morceaux, il y a toujours au moins une case vide — marquez-la d’une croix.',
+          'Faites glisser le doigt, et le fil le suit de case en case.',
+          'Un point mal placé coûte l’une de vos trois vies : prenez votre temps.',
           'Résolvez la grille, et la figure vient se broder dans la scène de votre tambour.',
+        ],
+        notes: [
+          'Les chiffres au-dessus d’une colonne se lisent de haut en bas, ceux à côté d’une ligne de gauche à droite.',
+          'Dans le marquoir, chaque chiffre a la couleur de son fil : des morceaux de couleurs différentes peuvent se toucher, mais ceux d’une même couleur sont toujours séparés par une case vide.',
+          'Votre première figure vous guide à travers toutes les règles.',
+        ],
+        tips: [
+          'Commencez par les lignes les plus remplies : additionnez les morceaux, avec une case vide entre chacun. Si le total égale la longueur de la ligne, elle est entièrement résolue ; s’il ne manque qu’une case ou deux, les morceaux les plus longs ont déjà des cases sûres.',
+          'Poussez un morceau aussi loin que possible vers un bout, puis vers l’autre : les cases qu’il couvre les deux fois sont forcément brodées. Un 7 dans une ligne de 10 remplit toujours les quatre cases du milieu.',
+          'Un point tout au bord de la grille est le début du premier morceau : brodez tout le morceau à partir de là et mettez une croix juste après.',
+          'Une fois une ligne résolue, ses cases vides reçoivent des croix — et chaque croix montre aux lignes perpendiculaires où un morceau ne peut pas aller.',
+          'Ne brodez pas au hasard : un point mal placé coûte une vie. Si rien n’est encore sûr dans une ligne, revenez-y après avoir avancé dans celles qui la croisent.',
         ],
         alt: 'Un logimage de chat presque résolu : des cases brodées grenat, des croix dans les cases vides',
       },
+      screenshots: [
+        'Un hibou qui prend forme sur un logimage, avec des croix dans les cases vides',
+        'La scène « Zodiaque » dans le tambour, brodée figure après figure',
+        'Gros plan sur la scène « Chat à la fenêtre » : des hirondelles, un papillon, un chat et une pelote de laine',
+        'Le calendrier : une petite broderie pour chaque jour et un hérisson pour tout le mois',
+        'Le marquoir sans fin aux motifs folkloriques colorés',
+        'La collection de tambours terminés',
+      ],
       features: [
         {
-          title: 'Des scènes à broder',
-          text: 'Une prairie fleurie, Stonehenge, un pique-nique fruité, le système solaire, un jardin japonais, une maison de poupée, un village d’hiver, le monde sous la mer… et bien d’autres.',
+          title: 'Tambour après tambour',
+          text: 'Un chat à la fenêtre, des oiseaux en vitrail, un village d’hiver, les salles d’Asgard, le Far West et bien d’autres. Chaque tambour terminé rejoint votre collection.',
         },
         {
-          title: 'De vrais points de broderie',
-          text: 'Passé plat, point de chaînette, point d’arête et points de nœud — chaque figure est brodée avec son propre fil et sa propre texture.',
+          title: 'Une broderie plus vraie que nature',
+          text: 'Chaque figure a ses fils et ses points, des ombres douces sur le lin et les bruits feutrés de l’aiguille et du tambour.',
+        },
+        {
+          title: 'Un calendrier de broderies du jour',
+          text: 'Une petite broderie vous attend chaque jour. Brodez tout le mois, et sa grande figure se débloque — les jours manqués vous attendront.',
         },
         {
           title: 'Un marquoir sans fin',
-          text: 'Après votre première scène, un marquoir de motifs traditionnels s’ouvre à vous — et ses motifs ne s’épuisent jamais.',
+          text: 'Après votre première scène terminée, un marquoir aux motifs folkloriques s’ouvre : des logimages en couleur à deux ou trois fils, qui ne s’épuisent jamais.',
         },
         {
-          title: 'Des indices quand vous bloquez',
-          text: 'Révélez une case ou une ligne entière, et continuez à broder.',
+          title: 'Des indices pour les passages délicats',
+          text: 'Révélez une case, une ligne entière ou 10 cases au hasard — et le dé à coudre vous protège de votre prochaine erreur.',
         },
         {
-          title: 'Un cadeau chaque jour',
-          text: 'Revenez chaque jour pour une récompense qui grandit avec votre série.',
-        },
-        {
-          title: 'Doux pour les yeux',
-          text: 'Des couleurs de lin tout en douceur, le léger bruit de l’aiguille, sans compte et sans connexion.',
+          title: 'Sans chrono ni hâte',
+          text: 'Un cadeau chaque jour, des succès et des classements Game Center sur iPhone et iPad, et nul besoin d’internet pour jouer.',
         },
       ],
       supportNote: 'Vous pouvez aussi nous écrire depuis le jeu : Profil → Nous écrire.',

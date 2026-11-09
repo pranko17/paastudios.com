@@ -601,8 +601,11 @@ p {
   height: 48px;
 }
 
+/* A line of its own, as wide as its text: next to a store badge the pill is
+   short, and the "Discover" link of a home page card would come up beside it */
 .soon {
-  display: inline-flex;
+  display: flex;
+  width: fit-content;
   align-items: center;
   gap: 10px;
   margin: 28px 0 0;
@@ -1067,15 +1070,6 @@ p {
     28px 0 0 color-mix(in srgb, var(--accent) 30%, transparent);
 }
 
-.frame-stitch .feature::before {
-  width: 46px;
-  height: 3px;
-  margin-block: 4px 23px;
-  border-radius: 2px;
-  background: repeating-linear-gradient(90deg, var(--accent) 0 8px, transparent 8px 13px);
-  box-shadow: none;
-}
-
 .support-card {
   position: relative;
   display: grid;
@@ -1092,7 +1086,7 @@ p {
   content: "";
   position: absolute;
   inset: 10px;
-  border: 2px dashed color-mix(in srgb, var(--accent) 30%, transparent);
+  border: 2px dashed var(--stitch, color-mix(in srgb, var(--accent) 30%, transparent));
   border-radius: calc(var(--radius-lg) - 10px);
   pointer-events: none;
 }
@@ -1194,6 +1188,107 @@ p {
   border-radius: calc(var(--radius) - 7px);
 }
 
+/* ---------------------------------------------------------------- banner -- */
+
+/* A wide picture between the hero and the rules of a game page. On a phone the
+   whole strip would be too low to make anything out: it is cropped to 2 : 1
+   around its middle (BANNER_SIZES in src/templates.mjs follows this) */
+.banner {
+  margin-block: 0;
+}
+
+.banner img {
+  width: 100%;
+  border-radius: var(--radius);
+}
+
+/* ------------------------------------------------------ embroidery pages -- */
+
+/* The page of a 'stitch' game is its linen: a fine weave over the background,
+   cards are ivory patches with a running stitch in the light thread of the
+   game (theme `stitch`), headings carry three cross-stitches in its floss
+   (theme `threads`). All of it is scoped to the page itself: the game's card
+   on the home page and its mini card on other game pages stay as they are */
+.game-page.frame-stitch,
+.doc-page.frame-stitch {
+  background:
+    radial-gradient(1100px 620px at 88% -8%, var(--glow), transparent 62%),
+    radial-gradient(900px 560px at -12% 18%, var(--glow2), transparent 60%),
+    repeating-linear-gradient(0deg, color-mix(in srgb, var(--muted) 7%, transparent) 0 1px, transparent 1px 4px),
+    repeating-linear-gradient(90deg, color-mix(in srgb, var(--muted) 5%, transparent) 0 1px, transparent 1px 3px),
+    var(--bg);
+  background-repeat: no-repeat, no-repeat, repeat, repeat;
+}
+
+/* A patch has no border of its own: the stitch holds its edge, a soft shadow
+   lays it on the linen */
+.game-page.frame-stitch :is(.feature, .steps li, .tips li, .support-card, .banner) {
+  position: relative;
+  border-color: transparent;
+  background: var(--surface);
+  box-shadow:
+    0 1px 2px color-mix(in srgb, var(--text) 8%, transparent),
+    0 14px 28px -20px color-mix(in srgb, var(--text) 50%, transparent);
+}
+
+.game-page.frame-stitch :is(.feature, .steps li, .tips li, .banner)::after {
+  content: "";
+  position: absolute;
+  inset: 7px;
+  border: 2px dashed var(--stitch);
+  border-radius: calc(var(--radius) - 7px);
+  pointer-events: none;
+}
+
+.game-page.frame-stitch .steps li {
+  padding: 18px 24px 18px 18px;
+}
+
+/* Step numbers are embroidered badges: garnet with a light stitch inside */
+.game-page.frame-stitch .steps li::before {
+  border-radius: 50%;
+  outline: 1.5px dashed color-mix(in srgb, var(--accent-text) 70%, transparent);
+  outline-offset: -5px;
+}
+
+.game-page.frame-stitch .tips li::before {
+  border-radius: 50%;
+}
+
+/* Three cross-stitches in the three threads over the headings and features,
+   where Pixtangle has its three cells: the crosses are a mask, the threads a
+   background of three bands, so the colors stay theme data */
+.game-page.frame-stitch :is(.section-head h2, .rules h2, .support-card h2, .feature)::before {
+  content: "";
+  display: block;
+  width: 54px;
+  height: 14px;
+  margin-bottom: 14px;
+  border-radius: 0;
+  box-shadow: none;
+  background: linear-gradient(90deg, var(--thread-1) 0 33.4%, var(--thread-2) 33.4% 66.6%, var(--thread-3) 66.6%);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 16'%3E%3Cpath d='M3 3l10 10M13 3 3 13M25 3l10 10M35 3 25 13M47 3l10 10M57 3 47 13' stroke='%23000' stroke-width='2.8' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 16'%3E%3Cpath d='M3 3l10 10M13 3 3 13M25 3l10 10M35 3 25 13M47 3l10 10M57 3 47 13' stroke='%23000' stroke-width='2.8' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+.game-page.frame-stitch .feature::before {
+  margin-bottom: 18px;
+}
+
+/* The banner sits in a wide patch of its own */
+.game-page.frame-stitch .banner {
+  padding: 14px;
+  border-radius: var(--radius-lg);
+}
+
+.game-page.frame-stitch .banner::after {
+  border-radius: calc(var(--radius-lg) - 7px);
+}
+
+.game-page.frame-stitch .banner img {
+  border-radius: calc(var(--radius-lg) - 14px);
+}
+
 /* --------------------------------------------------------- documents -- */
 
 .doc {
@@ -1279,6 +1374,23 @@ p {
   .principles-grid,
   .feature-grid {
     grid-template-columns: 1fr;
+  }
+
+  .banner img {
+    aspect-ratio: 2 / 1;
+    object-fit: cover;
+  }
+
+  .game-page.frame-stitch .banner {
+    padding: 10px;
+  }
+
+  .game-page.frame-stitch .banner::after {
+    inset: 5px;
+  }
+
+  .game-page.frame-stitch .banner img {
+    border-radius: calc(var(--radius-lg) - 10px);
   }
 
   .site-nav a {

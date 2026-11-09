@@ -18,6 +18,7 @@ export default {
     storeGooglePlay: 'na Google Play',
     and: 'a',
     freeOn: 'Zdarma pro {platforms}',
+    madeFor: 'Pro {platforms}',
     howToPlay: 'Jak hrát',
     tips: 'Tipy k řešení',
     faq: 'Otázky a odpovědi',
@@ -193,41 +194,74 @@ export default {
         'hra bez internetu',
       ],
       art: {
+        alts: [
+          'Sova, která se rýsuje na malované křížovce, s křížky v prázdných políčkách',
+          'Scéna „Zvěrokruh“ v rámečku, vyšívaná motiv po motivu',
+          'Detail scény „Kočka u okna“: vlaštovky, motýl, kočka a klubko příze',
+        ],
+      },
+      cardArt: {
         alt: 'Vyšívací rámeček s vyšitou loukou: motýl, slunce, květiny a muchomůrka, kterou ještě zbývá vyšít',
       },
+      banner: {
+        alt: 'Patchwork z malovaných křížovek, které se mění ve výšivku: chobotnice s klauny očkatými, tukan, brána torii, vlaštovky, liška, vánoční stromek a další',
+      },
       rules: {
+        intro:
+          'Stitch Tales vychází z nonogramů — obrázkových logických hlavolamů, známých také jako malované či japonské křížovky, griddlers nebo hanjie. Čísla u řádků a nad sloupci ti říkají, která políčka vyplnit; vyplň ta správná a objeví se skrytý obrázek. Tady je to motiv vyšitý do scény ve tvém rámečku.',
         steps: [
-          'Čísla u každého řádku a sloupce udávají v daném pořadí úseky vyplněných políček.',
-          'Vyšij políčka, která musí být vyplněná; ta, která zůstanou prázdná, označ křížkem.',
-          'Pozor — špatný steh tě stojí život, jedno z vyšitých srdíček.',
+          'Čísla u řádku nebo nad sloupcem říkají, kolik políček za sebou vyšít a v jakém pořadí.',
+          'Mezi dvěma úseky je vždy aspoň jedno prázdné políčko — označ ho křížkem.',
+          'Přejeď prstem a nit se za ním potáhne po políčkách.',
+          'Špatný steh tě stojí jeden ze tří životů, tak nespěchej.',
           'Vyřeš mřížku a motiv se vyšije do scény ve tvém rámečku.',
+        ],
+        notes: [
+          'Čísla nad sloupcem čti shora dolů, čísla u řádku zleva doprava.',
+          'Ve vzorníku má každé číslo vlastní barvu nitě: úseky různých barev se smí dotýkat, ale mezi úseky stejné barvy musí být prázdné políčko.',
+          'První motiv tě sám provede všemi pravidly.',
+        ],
+        tips: [
+          'Začni nejplnějšími liniemi: sečti úseky a mezi každé dva sousední přičti jedno prázdné políčko. Pokud součet odpovídá délce linie, je vyřešená celá; pokud chybí jen políčko nebo dvě, delší úseky už mají políčka, o kterých není pochyb.',
+          'Posuň úsek co nejdál k jednomu konci a pak k druhému: políčka, která zakrývá v obou polohách, jsou vždy vyšitá. Úsek délky 7 v linii o 10 políčkách vždy vyplní prostřední čtyři.',
+          'Steh hned u okraje pole je začátkem prvního úseku: vyšij od něj celý úsek a hned za něj dej křížek.',
+          'Jakmile je linie vyřešená, její prázdná políčka dostanou křížky — a každý křížek napoví liniím, které ji kříží, kde úsek být nemůže.',
+          'Nehádej: špatný steh tě stojí život. Pokud v linii zatím nic jistého není, vrať se k ní po liniích, které ji kříží.',
         ],
         alt: 'Téměř vyřešená malovaná křížovka s kočkou: políčka vyšitá granátovou nití, v prázdných křížky',
       },
+      screenshots: [
+        'Sova, která se rýsuje na malované křížovce, s křížky v prázdných políčkách',
+        'Scéna „Zvěrokruh“ v rámečku, vyšívaná motiv po motivu',
+        'Detail scény „Kočka u okna“: vlaštovky, motýl, kočka a klubko příze',
+        'Kalendář: malá výšivka na každý den a ježek za celý měsíc',
+        'Nekonečný vzorník s barevnými lidovými ornamenty',
+        'Sbírka hotových rámečků',
+      ],
       features: [
         {
-          title: 'Scény k vyšívání',
-          text: 'Rozkvetlá louka, Stonehenge, ovocný piknik, Sluneční soustava, japonská zahrada, domeček pro panenky, zimní vesnice, mořské dno — a další.',
+          title: 'Rámeček za rámečkem',
+          text: 'Kočka u okna, vitrážoví ptáci, zimní vesnice, síně Ásgardu, Divoký západ a mnoho dalších. Každý dokončený rámeček zaujme své místo ve tvé sbírce.',
         },
         {
-          title: 'Opravdové vyšívací stehy',
-          text: 'Plný steh, řetízkový steh, rybí kost a francouzské uzlíky — každý motiv je vyšitý vlastní nití a s vlastní strukturou.',
+          title: 'Výšivka jako skutečná',
+          text: 'Každý motiv má vlastní nitě a stehy, měkké stíny na lnu a tiché zvuky jehly a rámečku.',
+        },
+        {
+          title: 'Kalendář denních výšivek',
+          text: 'Každý den na tebe čeká malá výšivka. Vyšij celý měsíc a otevře se jeho velký motiv — zmeškané dny počkají.',
         },
         {
           title: 'Nekonečný vzorník',
-          text: 'Po první scéně se otevře vzorník s lidovými vzory — a jeho vzory nikdy nedojdou.',
+          text: 'Po první dokončené scéně se otevře vzorník lidových ornamentů: barevné malované křížovky ve dvou či třech nitích, které nikdy nedojdou.',
         },
         {
-          title: 'Nápovědy, když nevíš kudy kam',
-          text: 'Odkryj jedno políčko nebo celou linii a vyšívej dál.',
+          title: 'Nápovědy na těžké chvíle',
+          text: 'Odkryj políčko, celou linii nebo 10 náhodných políček — a náprstek tě ochrání před další chybou.',
         },
         {
-          title: 'Každý den dárek',
-          text: 'Vracej se každý den pro odměnu, která roste s tvou sérií.',
-        },
-        {
-          title: 'Šetrné k očím',
-          text: 'Jemné lněné barvy, tiché zvuky stehů, bez účtu a bez internetu.',
+          title: 'Bez stopek a bez spěchu',
+          text: 'Dárek každý den, úspěchy a žebříčky Game Center na iPhonu i iPadu a hrát můžeš i bez internetu.',
         },
       ],
       supportNote: 'Napsat nám můžeš i ze hry: Profil → Napiš nám.',

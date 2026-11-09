@@ -120,20 +120,28 @@ async function write(file, content) {
 
 // Every image a game refers to must be in the repository: a missing file
 // would ship as a broken picture. og.jpg is the link preview from tools/og.py;
-// the icon and screenshots also have their smaller copies
+// the icon, screenshots and banner also have their smaller copies
 async function checkImages(game) {
   const screens = [...(game.art.phones ?? []), ...game.screenshots].map((shot) => {
     return shot.image;
   });
+  const banner = game.banner ? [game.banner.image] : [];
   const images = [
     game.icon,
     imageVariant(game.icon, IMAGE_WIDTHS.icon[0]),
     ...screens.map((image) => {
       return imageVariant(image, IMAGE_WIDTHS.screen[0]);
     }),
+    ...banner.flatMap((image) => {
+      return IMAGE_WIDTHS.banner.slice(0, -1).map((width) => {
+        return imageVariant(image, width);
+      });
+    }),
+    ...banner,
     `/${game.slug}/images/og.jpg`,
     game.rules.image,
     game.art.image,
+    game.cardArt?.image,
     ...(game.art.phones ?? []).map((shot) => {
       return shot.image;
     }),
