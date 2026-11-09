@@ -59,7 +59,7 @@ from» и вся страница игры красятся переменным
 |---|---|---|
 | Главная | `/` | `/<код>/` |
 | Игра | `/<slug>/` | `/<slug>/<код>/`, если у игры есть перевод |
-| Поддержка Pixtangle | `/pixtangle/support.html` | `/pixtangle/<код>/support.html` |
+| Поддержка игры (Pixtangle, Stitch Tales) | `/<slug>/support.html` | `/<slug>/<код>/support.html` |
 | Политики, 404 | только английская | — |
 
 Страница из `content/` переводится, если у неё в `pages` стоит

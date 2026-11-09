@@ -263,11 +263,13 @@ export const games = [
     ],
     support: {
       email: 'stitchtales.support@paastudios.com',
+      url: '/stitch-tales/support.html',
       note: 'You can also reach us from the game under Profile → Contact us.',
     },
     privacyPolicy: '/stitch-tales/privacy-policy.html',
     pages: [
       { path: 'privacy-policy.html', titleKey: 'privacyPolicy', content: 'privacy-policy.html' },
+      { path: 'support.html', titleKey: 'support', content: 'support.html', translated: true },
     ],
   },
 ];
