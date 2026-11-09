@@ -204,9 +204,6 @@ export default {
       cardArt: {
         alt: 'Ein Stickrahmen mit einer gestickten Blumenwiese: ein Schmetterling, eine Sonne, Blumen und ein Fliegenpilz, der noch gestickt werden will',
       },
-      banner: {
-        alt: 'Ein Patchwork aus Nonogrammen, die zu Stickereien werden: ein Krake mit Clownfischen, ein Tukan, ein Torii-Tor, Schwalben, ein Fuchs, ein Weihnachtsbaum und mehr',
-      },
       rules: {
         intro:
           'Stitch Tales basiert auf Nonogrammen, Logikrätseln mit Bild, die auch Griddlers, Hanjie oder japanische Rätsel heißen. Die Zahlen neben den Zeilen und über den Spalten verraten dir, welche Felder du füllen musst; füllst du die richtigen, erscheint ein verborgenes Bild — hier eine Figur, die in die Szene in deinem Stickrahmen gestickt wird.',

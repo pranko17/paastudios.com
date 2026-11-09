@@ -206,9 +206,6 @@ export default {
       cardArt: {
         alt: 'Hímzőkeret kihímzett réttel: pillangó, nap, virágok és egy légyölő galóca, amelyet még ki kell hímezni',
       },
-      banner: {
-        alt: 'Nonogramokból varrt foltmozaik, amely hímzéssé alakul: polip bohóchalakkal, tukán, torii-kapu, fecskék, róka, karácsonyfa és még sok más',
-      },
       rules: {
         intro:
           'A Stitch Tales alapja a nonogram – képet rejtő logikai fejtörő, más néven japán rejtvény, griddlers vagy hanjie. A sorok melletti és az oszlopok fölötti számok megmutatják, mely cellákat kell kitölteni; töltsd ki a helyeseket, és előtűnik egy rejtett kép – itt egy figura, amely belehímződik a hímzőkereted jelenetébe.',

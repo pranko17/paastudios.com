@@ -205,9 +205,6 @@ export default {
       cardArt: {
         alt: 'Un gherghef cu o pajiște brodată: un fluture, un soare, flori și o ciupercă ce urmează să fie brodată',
       },
-      banner: {
-        alt: 'Un patchwork de nonograme care se transformă în broderie: o caracatiță cu pești-clovn, un tucan, o poartă torii, rândunele, o vulpe, un brad de Crăciun și multe altele',
-      },
       rules: {
         intro:
           'Stitch Tales se bazează pe nonograme, puzzle-uri logice cu imagini, cunoscute și ca griddlers, hanjie sau cuvinte încrucișate japoneze. Numerele de lângă rânduri și de deasupra coloanelor îți spun ce celule să umpli; umple-le pe cele potrivite și apare o imagine ascunsă — aici, o figură brodată în scena din ghergheful tău.',

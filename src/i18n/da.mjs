@@ -204,9 +204,6 @@ export default {
       cardArt: {
         alt: 'En broderiring med en broderet blomstereng: en sommerfugl, en sol, blomster og en fluesvamp, der endnu ikke er broderet',
       },
-      banner: {
-        alt: 'Et kludetæppe af nonogrammer, der bliver til broderi: en blæksprutte med klovnfisk, en tukan, en torii-port, svaler, en ræv, et juletræ og mere til',
-      },
       rules: {
         intro:
           'Stitch Tales bygger på nonogrammer, logiske billedopgaver, der også er kendt som griddlers, hanjie eller japanske krydsord. Tallene ved rækkerne og over kolonnerne viser, hvilke felter du skal udfylde; udfylder du de rigtige, kommer et skjult billede frem – her en figur, der bliver broderet ind i scenen i din broderiring.',

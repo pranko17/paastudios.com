@@ -205,9 +205,6 @@ export default {
       cardArt: {
         alt: 'Siuvinėjimo lankelis su išsiuvinėta gėlių pieva: drugelis, saulė, gėlės ir musmirė, kurią dar reikia išsiuvinėti',
       },
-      banner: {
-        alt: 'Nonogramų skiautinis, virstantis siuviniu: aštuonkojis su klounžuvėmis, tukanas, torii vartai, kregždės, lapė, Kalėdų eglutė ir dar daugiau',
-      },
       rules: {
         intro:
           'Stitch Tales pagrįstas nonogramomis — loginiais galvosūkiais, atskleidžiančiais paveikslėlį. Jie dar vadinami japoniškais kryžiažodžiais, griddlers arba hanjie. Skaičiai prie eilučių ir virš stulpelių nurodo, kuriuos langelius užpildyti; užpildyk tinkamus, ir pasirodys paslėptas paveikslėlis — čia tai figūra, kuri įsiuvinėjama į sceną tavo lankelyje.',

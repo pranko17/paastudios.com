@@ -204,9 +204,6 @@ export default {
       cardArt: {
         alt: 'Un telaio da ricamo con un prato fiorito ricamato: una farfalla, un sole, dei fiori e un fungo ancora da ricamare',
       },
-      banner: {
-        alt: 'Un patchwork di nonogrammi che diventano ricamo: un polpo con pesci pagliaccio, un tucano, un portale torii, rondini, una volpe, un albero di Natale e molto altro',
-      },
       rules: {
         intro:
           'Stitch Tales si basa sui nonogrammi, rompicapi logici a immagini noti anche come crucipixel, griddlers o hanjie. I numeri accanto alle righe e sopra le colonne ti dicono quali caselle riempire; riempi quelle giuste e apparirà un’immagine nascosta — qui, una figura ricamata nella scena del tuo telaio.',

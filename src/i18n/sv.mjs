@@ -203,9 +203,6 @@ export default {
       cardArt: {
         alt: 'En broderibåge med en broderad blomsteräng: en fjäril, en sol, blommor och en flugsvamp som ännu inte är broderad',
       },
-      banner: {
-        alt: 'Ett lapptäcke av nonogram som blir broderi: en bläckfisk med clownfiskar, en tukan, en toriiport, svalor, en räv, en julgran och mer',
-      },
       rules: {
         intro:
           'Stitch Tales bygger på nonogram, logiska bildpussel som även kallas japanska korsord, griddlers eller hanjie. Talen vid raderna och ovanför kolumnerna visar vilka rutor du ska fylla; fyller du de rätta dyker en dold bild fram – här en figur som broderas in i scenen i din broderibåge.',

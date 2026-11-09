@@ -252,12 +252,6 @@ export const games = [
       width: 600,
       height: 620,
     },
-    banner: {
-      image: '/stitch-tales/images/banner.webp',
-      alt: 'A patchwork of nonograms turning into embroidery: an octopus with clownfish, a toucan, a torii gate, swallows, a fox, a Christmas tree and more',
-      width: 2240,
-      height: 960,
-    },
     rules: {
       intro:
         'Stitch Tales is built on nonograms, picture logic puzzles also known as griddlers, hanjie or Japanese crosswords. The numbers beside the rows and above the columns tell you which cells to fill; fill the right ones, and a hidden picture appears — here, a figure embroidered into the scene in your hoop.',

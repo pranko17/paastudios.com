@@ -203,9 +203,6 @@ export default {
       cardArt: {
         alt: 'Um bastidor com um campo florido bordado: uma borboleta, um sol, flores e um cogumelo ainda por bordar',
       },
-      banner: {
-        alt: 'Um patchwork de nonogramas virando bordado: um polvo com peixes-palhaço, um tucano, um portal torii, andorinhas, uma raposa, uma árvore de Natal e muito mais',
-      },
       rules: {
         intro:
           'Stitch Tales é baseado em nonogramas, quebra-cabeças de lógica com imagens, também conhecidos como griddlers, hanjie ou palavras cruzadas japonesas. Os números ao lado das linhas e acima das colunas dizem quais casas preencher; preencha as certas, e uma imagem escondida aparece — aqui, uma figura bordada na cena do seu bastidor.',

@@ -204,9 +204,6 @@ export default {
       cardArt: {
         alt: 'Een borduurring met een geborduurde bloemenweide: een vlinder, een zon, bloemen en een vliegenzwam die nog geborduurd moet worden',
       },
-      banner: {
-        alt: 'Een lappendeken van nonogrammen die borduurwerk worden: een octopus met clownvissen, een toekan, een toriipoort, zwaluwen, een vos, een kerstboom en meer',
-      },
       rules: {
         intro:
           'Stitch Tales is gebaseerd op nonogrammen: logicapuzzels met een plaatje, ook bekend als Japanse puzzels, griddlers of hanjie. De getallen naast de rijen en boven de kolommen vertellen welke vakjes je moet vullen; vul je de juiste, dan verschijnt er een verborgen plaatje — hier een figuur die in de scène in je borduurring wordt geborduurd.',

@@ -206,9 +206,6 @@ export default {
       cardArt: {
         alt: 'Tikkimisraam tikitud lilleniiduga: liblikas, päike, lilled ja kärbseseen, mis ootab veel tikkimist',
       },
-      banner: {
-        alt: 'Tikandiks muutuvate nonogrammide lapitöö: kaheksajalg klounkaladega, tuukan, torii värav, pääsukesed, rebane, jõulukuusk ja palju muud',
-      },
       rules: {
         intro:
           'Stitch Tales põhineb nonogrammidel — loogikamõistatustel, millest sünnib pilt. Neid tuntakse ka jaapani ristsõnadena ning nimede griddlers ja hanjie all. Ridade kõrval ja veergude kohal olevad arvud näitavad, millised ruudud täita; täida õiged ruudud ja nähtavale tuleb peidetud pilt — siin kujund, mis tikitakse stseeni sinu raamis.',

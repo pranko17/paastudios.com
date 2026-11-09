@@ -204,9 +204,6 @@ export default {
       cardArt: {
         alt: 'Bingkai sulam dengan padang bunga tersulam: kupu-kupu, matahari, bunga-bunga, dan jamur yang belum disulam',
       },
-      banner: {
-        alt: 'Kolase nonogram yang berubah menjadi sulaman: gurita dengan ikan badut, burung tukan, gerbang torii, burung layang-layang, rubah, pohon Natal, dan lainnya',
-      },
       rules: {
         intro:
           'Stitch Tales dibuat berdasarkan nonogram, teka-teki logika bergambar yang juga dikenal sebagai griddlers, hanjie, atau teka-teki silang Jepang. Angka di samping baris dan di atas kolom memberi tahu kotak mana yang perlu diisi; isi kotak yang benar, dan gambar tersembunyi pun muncul — di sini, sebuah figur yang tersulam ke dalam adegan di bingkai sulammu.',

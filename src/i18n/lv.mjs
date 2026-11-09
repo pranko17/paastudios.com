@@ -205,9 +205,6 @@ export default {
       cardArt: {
         alt: 'Izšūšanas riņķis ar izšūtu ziedu pļavu: tauriņš, saule, ziedi un mušmire, kas vēl jāizšuj',
       },
-      banner: {
-        alt: 'Nonogrammu ielāpu sega, kas pārtop izšuvumā: astoņkājis ar klaunzivīm, tukāns, torii vārti, bezdelīgas, lapsa, Ziemassvētku egle un vēl daudz kas',
-      },
       rules: {
         intro:
           'Stitch Tales pamatā ir nonogrammas — loģikas mīklas, kas atklāj attēlu. Tās ir pazīstamas arī kā japāņu krustvārdu mīklas, griddlers vai hanjie. Skaitļi pie rindām un virs kolonnām norāda, kuras rūtiņas jāaizpilda; aizpildi pareizās, un parādīsies slēpts attēls — šeit tā ir figūra, kas tiek iešūta ainā tavā riņķī.',

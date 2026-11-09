@@ -204,9 +204,6 @@ export default {
       cardArt: {
         alt: 'Khung thêu với đồng hoa đã thêu: một chú bướm, mặt trời, những bông hoa và một cây nấm còn chờ thêu',
       },
-      banner: {
-        alt: 'Những mảnh nonogram ghép lại đang hóa thành tranh thêu: bạch tuộc cùng cá hề, chim tu-căng, cổng torii, chim én, cáo, cây thông Noel và nhiều hơn nữa',
-      },
       rules: {
         intro:
           'Stitch Tales dựa trên nonogram — câu đố logic hình ảnh, còn gọi là griddlers, hanjie hay ô chữ Nhật Bản. Các con số cạnh hàng và trên cột cho bạn biết cần tô những ô nào; tô đúng các ô, một bức tranh ẩn sẽ hiện ra — ở đây là một hình được thêu vào cảnh trên khung thêu của bạn.',

@@ -203,9 +203,6 @@ export default {
       cardArt: {
         alt: 'Vyšívací rámeček s vyšitou loukou: motýl, slunce, květiny a muchomůrka, kterou ještě zbývá vyšít',
       },
-      banner: {
-        alt: 'Patchwork z malovaných křížovek, které se mění ve výšivku: chobotnice s klauny očkatými, tukan, brána torii, vlaštovky, liška, vánoční stromek a další',
-      },
       rules: {
         intro:
           'Stitch Tales vychází z nonogramů — obrázkových logických hlavolamů, známých také jako malované či japonské křížovky, griddlers nebo hanjie. Čísla u řádků a nad sloupci ti říkají, která políčka vyplnit; vyplň ta správná a objeví se skrytý obrázek. Tady je to motiv vyšitý do scény ve tvém rámečku.',

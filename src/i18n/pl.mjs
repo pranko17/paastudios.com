@@ -202,9 +202,6 @@ export default {
       cardArt: {
         alt: 'Tamborek z wyhaftowaną łąką: motyl, słońce, kwiaty i muchomor, który dopiero czeka na wyhaftowanie',
       },
-      banner: {
-        alt: 'Patchwork z obrazków logicznych, które zamieniają się w haft: ośmiornica z błazenkami, tukan, brama torii, jaskółki, lis, choinka i wiele więcej',
-      },
       rules: {
         intro:
           'Stitch Tales opiera się na nonogramach — obrazkach logicznych, znanych też jako japońskie krzyżówki, griddlers czy hanjie. Liczby przy wierszach i nad kolumnami mówią, które pola wypełnić; wypełnij właściwe, a pojawi się ukryty obrazek. Tutaj jest nim figura wyhaftowana w scenie na twoim tamborku.',

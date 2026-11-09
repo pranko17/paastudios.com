@@ -205,9 +205,6 @@ export default {
       cardArt: {
         alt: 'Kirjontakehys, johon on kirjottu kukkaniitty: perhonen, aurinko, kukkia ja kärpässieni, joka odottaa vielä kirjomista',
       },
-      banner: {
-        alt: 'Tilkkutyö nonogrammeista, jotka muuttuvat kirjonnaksi: mustekala ja vuokkokaloja, tukaani, torii-portti, pääskysiä, kettu, joulukuusi ja paljon muuta',
-      },
       rules: {
         intro:
           'Stitch Tales perustuu nonogrammeihin eli kuvan paljastaviin logiikkapulmiin, jotka tunnetaan myös japanilaisina ristikoina sekä nimillä griddlers ja hanjie. Rivien vieressä ja sarakkeiden yläpuolella olevat numerot kertovat, mitkä ruudut täytetään. Täytä oikeat, niin esiin tulee piilokuva — täällä kuvio, joka kirjotaan kirjontakehyksesi kuvaan.',

@@ -202,9 +202,6 @@ export default {
       cardArt: {
         alt: 'İçinde nakışlı bir çayır olan kasnak: kelebek, güneş, çiçekler ve henüz işlenmemiş bir mantar',
       },
-      banner: {
-        alt: 'Nakışa dönüşen nonogramlardan bir kırkyama: palyaço balıklarıyla bir ahtapot, bir tukan, bir torii kapısı, kırlangıçlar, bir tilki, bir yılbaşı ağacı ve daha fazlası',
-      },
       rules: {
         intro:
           'Stitch Tales, nonogramlara dayanır: griddlers, hanjie ya da Japon bulmacası olarak da bilinen resimli mantık bulmacalarına. Satırların yanındaki ve sütunların üstündeki sayılar hangi kareleri dolduracağını söyler; doğru kareleri doldurduğunda gizli bir resim ortaya çıkar — burada bu, kasnağındaki sahneye işlenen bir figürdür.',

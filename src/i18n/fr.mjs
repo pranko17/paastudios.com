@@ -202,9 +202,6 @@ export default {
       cardArt: {
         alt: 'Un tambour de broderie avec une prairie fleurie brodée : un papillon, un soleil, des fleurs et un champignon encore à broder',
       },
-      banner: {
-        alt: 'Un patchwork de logimages qui deviennent broderie : une pieuvre avec des poissons-clowns, un toucan, un portail torii, des hirondelles, un renard, un sapin de Noël et bien d’autres',
-      },
       rules: {
         intro:
           'Stitch Tales repose sur les logimages, des casse-têtes logiques en images qu’on appelle aussi nonogrammes, griddlers ou hanjie. Les chiffres à côté des lignes et au-dessus des colonnes indiquent quelles cases remplir ; remplissez les bonnes, et une image cachée apparaît — ici, une figure brodée dans la scène de votre tambour.',
